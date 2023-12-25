@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Go</title>
+    <link href="./css/reset.css" rel="stylesheet">
+    <link rel="icon" href="./img/main/index_logo.png" type="image/icon type" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/prepare.css" rel="stylesheet">
+    <link href="./css/hurt.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div data-depth="0.3" class="logo">
+        <a href="#index">
+          <img src="./img/main/logo_new.png" alt="">
+        </a>
+      </div>
+      <div id="menu_burger" class="burger" >
+        <a href="#menu">
+          <img src="./img/main/hambergur_sprite.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
+        </a>
+      </div>
+    </nav>
+    <section class="pareallax">
+      <div id="scene">
+        <div data-depth="0.1" class="bg">
+          <img src="./img/main/background.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_back">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="sea-monster">
+          <img src="./img/main/fish_updown.gif" alt="">
+        </div>
+        <div data-depth="0.15" class="watterflow">
+          <img src="./img/main/waterfall.gif" alt="">
+        </div>
+
+        <div data-depth="0.2" class="fm">
+          <img src="./img/main/front-mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_front">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.25" class="ground">
+          <img src="./img/main/gorund.png" alt="">
+        </div>
+        <div data-depth="0.3" class="flower">
+          <img src="./img/main/stinkyflower.png" alt="">
+        </div>
+        <div data-depth="0.25" class="woodenhouse">
+          <img src="./img/main/woodenhouse.gif" alt="">
+        </div>
+        <div data-depth="0.3" class="grass_left">
+          <img src="./img/main/grass_left.png" alt="">
+        </div>
+        <div data-depth="0.3" class="grass_right">
+          <img src="./img/main/grass_right.png" alt="">
+        </div>
+        <div data-depth="0.3" class="sign">
+          <img src="./img/main/sign.png" alt="">
+        </div>
+        <div data-depth="0.3" class="hook">
+          <img src="./img/main/hook-of-God.png" alt="">
+        </div>
+      </div>
+    </section>
+    <!-- 漢堡選單 -->
+    <section class="menu">
+      <nav>
+        <div data-depth="0.3" class="logo">
+          <a href="#index">
+            <img src="./img/main/logo_new.png" alt="">
+          </a>
+        </div>
+        <div class="menu_close" id="close_icon" >
+          <a href="#menu">
+            <img src="./img/main/menu_close.png" onmousedown="mDownx(this)" onmouseup="mUpx(this)">
+          </a>
+        </div>
+      </nav>
+      <div class="menu_bgimg">
+        <div data-depth="0.1" class="bg">
+          <img src="./img/main/background.png" alt="">
+        </div>
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div class="menu_mountain">
+          <img src="./img/main/menu_mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_1">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_2">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+      </div>
+      <div data-depth="0.3" class="cloud_3">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div data-depth="0.3" class="cloud_4">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div class="hunted">
+        <img src="./img/main/menu_hunted.png" alt="">
+      </div>
+      <div class="menu_sign">
+        <img src="./img/main/menu_sign.png" alt="">
+      </div>
+      <div class="menu_hook">
+        <img src="./img/main/menu_hook.png" alt="">
+      </div>
+      <!-- 標題 -->
+      <div class="title">
+        <div class="woodtxt">
+          <h1>救難大木屋</h1>
+        </div>
+        <div class="entertxt">
+          <h1>登山口</h1>
+        </div>
+        <div class="heaven">
+          <h1>伊甸園</h1>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div class="cutline"></div>
+      <!--跳頁選項-->
+      <div class="wood_option">
+        <div class="preparing">
+          <a href="#package_top">
+            <p>登山裝備</p>
+          </a>
+        </div>
+        <div class="bandage">
+          <a>
+            <p>急救包紮</p>
+        </div>
+      </div>
+      <div class="enter_option">
+        <div class="snakbee">
+          <a>
+            <p>毒螫魔</p>
+          </a>
+        </div>
+        <div class="fish">
+          <a>
+            <p>鐵支麵粉鯛</p>
+        </div>
+        <div class="pig">
+          <a>
+            <p>相撲熊豬刃牙</p>
+        </div>
+        <div class="hypoxia">
+          <a href="#">
+            <p>高山絕氧獸</p>
+        </div>
+        <div class="hypothermia">
+          <a>
+            <p>凝寒失溫龍</p>
+        </div>
+      </div>
+      <div class="heaven_option">
+        <div class="commodity">
+          <a>
+            <p>商品購買</p>
+          </a>
+        </div>
+        <div class="membership">
+          <a>
+            <p>會員登入</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 背包頁:Start -->
+   <section class="package">
+    <div class="header">
+      <div class="header_left">
+        <img src="./img/package/logotype.png" id="logotype" />
+      </div>
+      <div class="header_center">
+        <p>ALTITUDE 100 M</p>
+        <img src="./img/package/title.png" id="title" />
+        <p>LEVEL 1-1</p>
+      </div>
+      <div class="header_right">
+        <img src="./img/package/hambergur.png" id="hambergur" />
+      </div>
+    </div>
+    <div class="contain">
+      <div class="left-main-line">
+        <span></span>
+      </div>
+      <div class="left-first-line">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="left-second-line">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="right-first-line">
+        <span></span>
+      </div>
+      <div class="right-second-line">
+        <span></span>
+      </div>
+      <div class="right-third-line">
+        <span></span>
+      </div>
+      <div class="bag">
+        <img src="./img/package/openbag.png" id="openbag" />
+        <img src="./img/package/closed_backpack.png" id="closed_backpack" />
+      </div>
+      <div class="frames">
+        <img id="living" src="./img/package/living.png" />
+        <img id="other" src="./img/package/other.png" />
+        <img id="food" src="./img/package/food.png" />
+        <img id="cook" src="./img/package/cook.png" />
+        <img id="walk" src="./img/package/walk.png" />
+        <img id="cloth" src="./img/package/cloth.png" />
+      </div>
+    </div>
+    <div class="bookbackground"></div>
+    <div class="living-book">
+      <img id="living-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="living-frame">
+      <img id="living-x" src="./img/package/x.png" />
+      <img id="tent" src="./img/package/tent.png" />
+      <img id="sleepbag" src="./img/package/sleepbag.gif" />
+      <div class="text">
+        <p class="title">居住類</p>
+        <p class="explain">放置於背包的最頂層</p>
+        <p class="detail1">1.帳篷</p>
+        <p class="detail2">2.睡袋</p>
+      </div>
+    </div>
+    <div class="other-book">
+      <img id="other-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="other-frame">
+      <img id="other-x" src="./img/package/x.png" />
+      <img id="garbagebag" src="./img/package/garbagebag.png" />
+      <img id="buttery" src="./img/package/buttery.gif" />
+      <div class="text">
+        <p class="title">雜項</p>
+        <p class="explain">放置於背包的背層</p>
+        <p class="detail1">1.垃圾袋</p>
+        <p class="detail2">2.電池</p>
+      </div>
+    </div>
+    <div class="food-book">
+      <img id="food-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="food-frame">
+      <img id="food-x" src="./img/package/x.png" />
+      <img id="water" src="./img/package/water.png" />
+      <img id="map" src="./img/package/map.png" />
+      <img id="innerfood" src="./img/package/innerfood.png" />
+      <img id="rope" src="./img/package/rope.png" />
+      <img id="flashlight" src="./img/package/flashlight.png" />
+      <img id="south" src="./img/package/south.png" />
+      <img id="emergencybox" src="./img/package/emergencybox.png" />
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail1">1.水</p>
+        <p class="detail2">2.紙本地圖</p>
+        <p class="detail3">3.繩索</p>
+        <p class="detail4">4.手電筒</p>
+        <p class="detail5">5.能量棒、鋁箔包快食</p>
+        <p class="detail6">6.指南針</p>
+        <p class="detail7">7.急救包</p>
+      </div>
+    </div>
+    <div class="cook-book">
+      <img id="cook-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="cook-frame">
+      <img id="cook-x" src="./img/package/x.png" />
+      <img id="knife" src="./img/package/knife.png" />
+      <img id="stove" src="./img/package/stove.png" />
+      <img id="lighter" src="./img/package/lighter.gif" />
+      <img id="spiderstove" src="./img/package/spider.png" />
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail1">1.小刀</p>
+        <p class="detail2">2.攻頂爐</p>
+        <p class="detail3">3.打火機</p>
+        <p class="detail4">4.蜘蛛爐</p>
+      </div>
+    </div>
+    <div class="walk-book">
+      <img id="walk-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="walk-frame">
+      <img id="walk-x" src="./img/package/x.png" />
+      <img id="shoes" src="./img/package/shoes.png" />
+      <img id="pole" src="./img/package/pole.png" />
+      <div class="text">
+        <p class="title">行走類</p>
+        <p class="explain">放置於背包中層的中間</p>
+        <p class="detail1">1.登山鞋</p>
+        <p class="detail2">2.登山杖</p>
+      </div>
+    </div>
+    <div class="cloth-book">
+      <img id="cloth-book" src="./img/package/book_close.gif" />
+    </div>
+    <div class="cloth-frame">
+      <img id="cloth-x" src="./img/package/x.png" />
+      <img id="hat" src="./img/package/hat.png" />
+      <img id="sweat" src="./img/package/sweat.png" />
+      <img id="hot" src="./img/package/hot.png" />
+      <img id="raincoat" src="./img/package/raincoat.png" />
+      <img id="pants" src="./img/package/pants.png" />
+      <img id="coat" src="./img/package/coat.png" />
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail1">1.內層 排汗衫</p>
+        <p class="detail2">2.外層 防風水大衣<br /></p>
+        <p class="detail3">3.中層 保暖衣<br /></p>
+        <p class="detail4">4.快乾登山褲<br /></p>
+        <p class="detail5">5.雨衣<br /></p>
+        <p class="detail6">6.保暖帽</p>
+      </div>
+    </div>
+   </section>
+
+    <!-- 背包頁:End-->
+    <!-- 包紮頁:End-->
+
+    <!-- <div class="footer">
+      <div class="fbg">
+        <img src="./img/footer_cloud.png" alt="">
+      </div>
+    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/jq.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/prepare.js"></script>
+    <script src="./js/hurt.js"></script>
+  </body>
+</html>
