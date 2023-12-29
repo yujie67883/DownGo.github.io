@@ -7,19 +7,18 @@
     <link href="./css/reset.css" rel="stylesheet">
     <link rel="icon" href="./img/main/index_logo.png" type="image/icon type" />
     <link href="./css/main.css" rel="stylesheet" />
-    <link href="./css/prepare.css" rel="stylesheet">
-    <link href="./css/hurt.css" rel="stylesheet">
-  </head>
+    </head>
   <body>
+    <!--index-->
     <nav>
       <div data-depth="0.3" class="logo">
         <a href="#index">
-          <img src="./img/main/logo_new.png" alt="">
+          <img src="./img/logotype.png" alt="">
         </a>
       </div>
       <div id="menu_burger" class="burger" >
         <a href="#menu">
-          <img src="./img/main/hambergur_sprite.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
+          <img src="./img/hambergur.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
         </a>
       </div>
     </nav>
@@ -75,12 +74,12 @@
       <nav>
         <div data-depth="0.3" class="logo">
           <a href="#index">
-            <img src="./img/main/logo_new.png" alt="">
+            <img src="./img/logotype.png" alt="">
           </a>
         </div>
         <div class="menu_close" id="close_icon" >
           <a href="#menu">
-            <img src="./img/main/menu_close.png" onmousedown="mDownx(this)" onmouseup="mUpx(this)">
+            <img src="./img/x.png" onmousedown="mDownx(this)" onmouseup="mUpx(this)">
           </a>
         </div>
       </nav>
@@ -179,10 +178,10 @@
     </section>
 
     <!-- 背包頁:Start -->
-   <section class="package">
+   <section class="package" id="package-id">
     <div class="header">
       <div class="header_left">
-        <img src="./img/package/logotype.png" id="logotype" />
+        <img src="./img/logotype.png" id="logotype" />
       </div>
       <div class="header_center">
         <p>ALTITUDE 100 M</p>
@@ -190,50 +189,49 @@
         <p>LEVEL 1-1</p>
       </div>
       <div class="header_right">
-        <img src="./img/package/hambergur.png" id="hambergur" />
+        <img src="./img/hambergur.png" id="hambergur" />
       </div>
     </div>
     <div class="contain">
       <div class="left-main-line">
-        <span></span>
+        <span class="span1"></span>
       </div>
       <div class="left-first-line">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="span2"></span>
+        <span class="span3"></span>
       </div>
       <div class="left-second-line">
-        <span></span>
-        <span></span>
+        <span class="span5"></span>
+        <span class="span6"></span>
       </div>
       <div class="right-first-line">
-        <span></span>
+        <span class="span7"></span>
       </div>
       <div class="right-second-line">
-        <span></span>
+        <span class="span8"></span>
       </div>
       <div class="right-third-line">
-        <span></span>
+        <span class="span9"></span>
       </div>
       <div class="bag">
-        <img src="./img/package/openbag.png" id="openbag" />
+        <img src="./img/package/openbag.png" class="openbag" id="openbag" />
         <img src="./img/package/closed_backpack.png" id="closed_backpack" />
       </div>
       <div class="frames">
-        <img id="living" src="./img/package/living.png" />
-        <img id="other" src="./img/package/other.png" />
-        <img id="food" src="./img/package/food.png" />
-        <img id="cook" src="./img/package/cook.png" />
-        <img id="walk" src="./img/package/walk.png" />
-        <img id="cloth" src="./img/package/cloth.png" />
+        <img class="living" id="living" src="./img/package/living.png" />
+        <img class="other" id="other" src="./img/package/other.png" />
+        <img class="food" id="food" src="./img/package/food.png" />
+        <img class="cook" id="cook" src="./img/package/cook.png" />
+        <img class="walk" id="walk" src="./img/package/walk.png" />
+        <img class="cloth" id="cloth" src="./img/package/cloth.png" />
       </div>
     </div>
     <div class="bookbackground"></div>
     <div class="living-book">
-      <img id="living-book" src="./img/package/book_close.gif" />
+      <img id="living-book" src="./img/書_闔上.gif" />
     </div>
     <div class="living-frame">
-      <img id="living-x" src="./img/package/x.png" />
+      <img id="living-x" src="./img/x.png" />
       <img id="tent" src="./img/package/tent.png" />
       <img id="sleepbag" src="./img/package/sleepbag.gif" />
       <div class="text">
@@ -244,10 +242,10 @@
       </div>
     </div>
     <div class="other-book">
-      <img id="other-book" src="./img/package/book_close.gif" />
+      <img id="other-book" src="./img/書_闔上.gif" />
     </div>
     <div class="other-frame">
-      <img id="other-x" src="./img/package/x.png" />
+      <img id="other-x" src="./img/x.png" />
       <img id="garbagebag" src="./img/package/garbagebag.png" />
       <img id="buttery" src="./img/package/buttery.gif" />
       <div class="text">
@@ -258,10 +256,10 @@
       </div>
     </div>
     <div class="food-book">
-      <img id="food-book" src="./img/package/book_close.gif" />
+      <img id="food-book" src="./img/書_闔上.gif" />
     </div>
     <div class="food-frame">
-      <img id="food-x" src="./img/package/x.png" />
+      <img id="food-x" src="./img/x.png" />
       <img id="water" src="./img/package/water.png" />
       <img id="map" src="./img/package/map.png" />
       <img id="innerfood" src="./img/package/innerfood.png" />
@@ -282,10 +280,10 @@
       </div>
     </div>
     <div class="cook-book">
-      <img id="cook-book" src="./img/package/book_close.gif" />
+      <img id="cook-book" src="./img/書_闔上.gif" />
     </div>
     <div class="cook-frame">
-      <img id="cook-x" src="./img/package/x.png" />
+      <img id="cook-x" src="./img/x.png" />
       <img id="knife" src="./img/package/knife.png" />
       <img id="stove" src="./img/package/stove.png" />
       <img id="lighter" src="./img/package/lighter.gif" />
@@ -300,10 +298,10 @@
       </div>
     </div>
     <div class="walk-book">
-      <img id="walk-book" src="./img/package/book_close.gif" />
+      <img id="walk-book" src="./img/書_闔上.gif" />
     </div>
     <div class="walk-frame">
-      <img id="walk-x" src="./img/package/x.png" />
+      <img id="walk-x" src="./img/x.png" />
       <img id="shoes" src="./img/package/shoes.png" />
       <img id="pole" src="./img/package/pole.png" />
       <div class="text">
@@ -314,10 +312,10 @@
       </div>
     </div>
     <div class="cloth-book">
-      <img id="cloth-book" src="./img/package/book_close.gif" />
+      <img id="cloth-book" src="./img/書_闔上.gif" />
     </div>
     <div class="cloth-frame">
-      <img id="cloth-x" src="./img/package/x.png" />
+      <img id="cloth-x" src="./img/x.png" />
       <img id="hat" src="./img/package/hat.png" />
       <img id="sweat" src="./img/package/sweat.png" />
       <img id="hot" src="./img/package/hot.png" />
@@ -338,6 +336,187 @@
    </section>
 
     <!-- 背包頁:End-->
+    <!--包紮頁：Start-->
+       <section class="hurt" id="hurt-id" >
+        <div class="header">
+      <div class="header_left">
+        <img src="./img/logotype.png" id="logotype" />
+      </div>
+      <div class="header_center">
+        <p>ALTITUDE 500 M</p>
+        <img src="./img/hurt/title.png" id="title" />
+        <p>LEVEL 1-2</p>
+      </div>
+      <div class="header_right">
+        <img src="./img/hambergur.png" id="hambergur" />
+      </div>
+    </div>
+    <div class="hurt-second-content">
+      <img id="whole-human" src="./img/hurt/hurt_人受傷動畫.gif" />
+      <div class="hurt_left-main-line">
+        <span></span>
+      </div>
+      <div class="hurt_left-first-line">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hurt_left-second-line">
+        <span></span>
+      </div>
+      <div class="hurt_left-third-line">
+        <span></span>
+      </div>
+      <div class="hurt_right-first-line">
+        <span></span>
+      </div>
+      <div class="hurt_right-second-line">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hurt_right-third-line">
+        <span></span>
+      </div>
+      <div class="hurt_frames">
+        <img id="cycle" src="./img/hurt/環形.png" />
+        <img id="return" src="./img/hurt/回反.png" />
+        <img id="spinreturn" src="./img/hurt/螺旋反折.png" />
+        <img id="eight" src="./img/hurt/八字.png" />
+        <img id="spin" src="./img/hurt/螺旋包紮.png" />
+      </div>
+      <div class="hurt_bookbackground"></div>
+      <div class="cycle-book">
+        <img id="cycle-book" src="./img/書_闔上.gif" />
+      </div>
+      <div class="cycle-frame">
+        <img id="cycle-x" src="./img/x.png" />
+        <img id="cycle-gif" src="./img/hurt/環形包紮手.png" />
+        <img class="cycle-return" id="cycle-return" src="./img/hurt/return.png" />
+        <img class="cycle-hint1" id="cycle-hint1" src="./img/hurt/circle.gif" />
+        <img class="cycle-hint2" id="cycle-hint2" src="./img/hurt/circle.gif" />
+        <img class="cycle-hint3" id="cycle-hint3" src="./img/hurt/circle.gif" />
+        <div class="cycle-text">
+          <p class="hurt_title">環形包紮法</p>
+          <p class="hurt_explain">用於小範圍等粗之肢體</p>
+          <p class="hurt_detail">
+            1. 先做定帶，將繃帶以環形纏繞於傷口上方<br />
+            2. 第一圈環繞稍作斜狀，大致傾斜45度<br />
+            3. 將第一圈斜一角壓入環形圈內環繞第二圈
+          </p>
+        </div>
+      </div>
+      <div class="return-book">
+        <img id="return-book" src="./img/書_闔上.gif" />
+      </div>
+      <div class="return-frame">
+        <img id="return-x" src="./img/x.png" />
+        <img id="return-gif" src="./img/hurt/回反包紮手.png" />
+        <img class="return-return" id="return-return" src="./img/hurt/return.png" />
+        <img class="return-hint1" id="return-hint1" src="./img/hurt/circle.gif" />
+        <img class="return-hint2" id="return-hint2" src="./img/hurt/circle.gif" />
+        <img class="return-hint3" id="return-hint3" src="./img/hurt/circle.gif" />
+        <img class="return-hint4" id="return-hint4" src="./img/hurt/circle.gif" />
+        <div class="return-text">
+          <p class="hurt_title">回反包紮法</p>
+          <p class="hurt_explain">用於包紮沒有頂端的部位如指端、頭部、截肢殘端</p>
+          <p class="hurt_detail">
+            1. 傷口用無菌或乾淨的敷料覆蓋，固定敷料<br />
+            2. 環形包紮兩周<br />
+            3.
+            將繃帶向上反折與環形包紮垂直，覆蓋殘端中央，再交替覆蓋左右兩邊，固定住反折部分，每周覆蓋上周三分之一到二分之一<br />
+            4. 再將繃帶反折環形包紮2周固定
+          </p>
+        </div>
+      </div>
+      <div class="spinreturn-book">
+        <img id="spinreturn-book" src="./img/書_闔上.gif" />
+      </div>
+      <div class="spinreturn-frame">
+        <img id="spinreturn-x" src="./img/x.png" />
+        <img id="spinreturn-gif" src="./img/hurt/螺旋反折手.png" />
+        <img
+          class="spinreturn-return"
+          id="spinreturn-return"
+          src="./img/hurt/return.png"
+        />
+        <img
+          class="spinreturn-hint1"
+          id="spinreturn-hint1"
+          src="./img/hurt/circle.gif"
+        />
+        <img
+          class="spinreturn-hint2"
+          id="spinreturn-hint2"
+          src="./img/hurt/circle.gif"
+        />
+        <img
+          class="spinreturn-hint3"
+          id="spinreturn-hint3"
+          src="./img/hurt/circle.gif"
+        />
+        <div class="spinreturn-text">
+          <p class="hurt_title">螺旋反折包紮法</p>
+          <p class="hurt_explain">應用肢體粗細不等處</p>
+          <p class="hurt_detail">
+            1. 先按環形法纏繞兩圈<br />
+            2. 將每圈繃帶反折，蓋住前圈三分之一或三分之二，由下而上地纏繞<br />
+            3.
+            折返時按住繃帶上面正中央，用另一隻手將繃帶向下折返，再向後繞拉緊以環形包紮結束
+          </p>
+        </div>
+      </div>
+      <div class="eight-book">
+        <img id="eight-book" src="./img/書_闔上.gif" />
+      </div>
+      <div class="eight-frame">
+        <img id="eight-x" src="./img/x.png" />
+        <img id="eight-gif" src="./img/hurt/八字包紮手.png" />
+        <img class="eight-return" id="eight-return" src="./img/hurt/return.png" />
+        <img class="eight-hint1" id="eight-hint1" src="./img/hurt/circle.gif" />
+        <img class="eight-hint2" id="eight-hint2" src="./img/hurt/circle.gif" />
+        <img class="eight-hint3" id="eight-hint3" src="./img/hurt/circle.gif" />
+        <div class="eight-text">
+          <p class="hurt_title">八字包紮法</p>
+          <p class="hurt_explain">多用於手掌、踝部和其他關節處傷口</p>
+          <p class="hurt_detail">
+            1. 包紮時從腕部開始，先環行纏繞兩圈<br />
+            2. 經手和腕「8」字形纏繞。<br />
+            3. 最後將繃帶尾端在腕部固定
+          </p>
+        </div>
+      </div>
+      <div class="spin-book">
+        <img id="spin-book" src="./img/書_闔上.gif" />
+      </div>
+      <div class="spin-frame">
+        <img id="spin-x" src="./img/x.png" />
+        <img id="spin-gif" src="./img/hurt/螺旋包紮手.png" />
+        <img class="spin-return" id="spin-return" src="./img/hurt/return.png" />
+        <img class="spin-hint1" id="spin-hint1" src="./img/hurt/circle.gif" />
+        <img class="spin-hint2" id="spin-hint2" src="./img/hurt/circle.gif" />
+        <div class="spin-text">
+          <p class="hurt_title">螺旋包紮法</p>
+          <p class="hurt_explain">多用於粗細相同的肢體、軀幹處</p>
+          <p class="hurt_detail">
+            1.
+            先按環形法纏繞兩圈，從第三圈開始每圈蓋住前圈三分之一或二分之一呈螺旋形<br />
+            2. 最後以環形包紮結束
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="hurt_first-content">
+      <div class="hurthuman">
+        <img id="human" src="./img/hurt/hurt_人受傷動畫.gif" />
+      </div>
+      <div class="linear">
+        <span></span>
+      </div>
+      <div class="talk">
+        <img id="talkframe" src="./img/hurt/talk.png" />
+        <div class="typetext" id="typeanimation"></div>
+      </div>
+    </div>
+       </section>
     <!-- 包紮頁:End-->
 
     <!-- <div class="footer">

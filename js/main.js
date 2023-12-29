@@ -10,9 +10,11 @@ $("#menu_burger").click(function () {
 });
 $("#close_icon").click(function () {
   $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
 });
 $(".wood_option .preparing").click(function () {
   $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
 });
 
 //hambuger_icon change

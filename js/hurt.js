@@ -1,13 +1,17 @@
 document.getElementById("human").addEventListener("click", function () {
-  document.getElementsByClassName("first-content")[0].classList.add("active");
-  document.getElementsByClassName("second-content")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_first-content")[0]
+    .classList.add("active");
+  document
+    .getElementsByClassName("hurt-second-content")[0]
+    .classList.add("active");
 });
 document.getElementById("whole-human").addEventListener("click", function () {
   document
-    .getElementsByClassName("first-content")[0]
+    .getElementsByClassName("hurt_first-content")[0]
     .classList.remove("active");
   document
-    .getElementsByClassName("second-content")[0]
+    .getElementsByClassName("hurt-second-content")[0]
     .classList.remove("active");
 });
 
@@ -26,10 +30,25 @@ var iSpeed = 100; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 20; // start scrolling up at this many lines
-
 var iTextPos = 0; // initialise text position
 var sContents = ""; // initialise contents variable
 var iRow; // initialise current row
+
+var functionEnable = false;
+
+document.getElementById("hurt-id").addEventListener("mouseover", function () {
+  if (!functionEnable) {
+    functionEnable = true;
+    console.log("First mouseover - function enabled");
+    disablefunction(); // Call the function when mouseover event occurs for the first time
+  }
+});
+
+function disablefunction() {
+  if (functionEnable) {
+    typewriter();
+  }
+}
 
 function typewriter() {
   sContents = " ";
@@ -39,28 +58,31 @@ function typewriter() {
   while (iRow < iIndex) {
     sContents += aText[iRow++] + "<br />";
   }
-  destination.innerHTML =
-    sContents + aText[iIndex].substring(0, iTextPos) + "_";
-  if (iTextPos++ == iArrLength) {
-    iTextPos = 0;
-    iIndex++;
-    if (iIndex != aText.length) {
-      iArrLength = aText[iIndex].length;
-      setTimeout("typewriter()", 500);
+  if (aText[iIndex]) {
+    destination.innerHTML =
+      sContents + aText[iIndex].substring(0, iTextPos) + "|";
+    if (iTextPos++ == iArrLength) {
+      iTextPos = 0;
+      iIndex++;
+      if (iIndex != aText.length) {
+        iArrLength = aText[iIndex].length;
+        setTimeout("typewriter()", 500);
+      }
+    } else {
+      setTimeout("typewriter()", iSpeed);
     }
-  } else {
-    setTimeout("typewriter()", iSpeed);
   }
 }
-typewriter();
 
 // 環形包紮
 document.getElementById("cycle").addEventListener("click", function () {
   document.getElementsByClassName("cycle-frame")[0].classList.add("active");
   document.getElementsByClassName("cycle-book")[0].classList.add("active");
-  document.getElementsByClassName("bookbackground")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_bookbackground")[0]
+    .classList.add("active");
   var img = document.getElementById("cycle-book");
-  img.src = "img/hurt/書_翻開.gif";
+  img.src = "img/書_翻開.gif";
   if (
     !document
       .getElementsByClassName("cycle-hint2")[0]
@@ -110,7 +132,7 @@ document.getElementById("cycle-x").addEventListener("click", function () {
   document.getElementsByClassName("cycle-frame")[0].classList.remove("active");
   document.getElementsByClassName("cycle-return")[0].classList.remove("active");
   var img = document.getElementById("cycle-book");
-  img.src = "img/hurt/書_闔上.gif";
+  img.src = "img/書_闔上.gif";
   if (
     !document
       .getElementsByClassName("cycle-hint2")[0]
@@ -125,7 +147,7 @@ document.getElementById("cycle-x").addEventListener("click", function () {
   setTimeout(() => {
     document.getElementsByClassName("cycle-book")[0].classList.remove("active");
     document
-      .getElementsByClassName("bookbackground")[0]
+      .getElementsByClassName("hurt_bookbackground")[0]
       .classList.remove("active");
   }, 1300);
 });
@@ -134,9 +156,11 @@ document.getElementById("cycle-x").addEventListener("click", function () {
 document.getElementById("return").addEventListener("click", function () {
   document.getElementsByClassName("return-frame")[0].classList.add("active");
   document.getElementsByClassName("return-book")[0].classList.add("active");
-  document.getElementsByClassName("bookbackground")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_bookbackground")[0]
+    .classList.add("active");
   var img = document.getElementById("return-book");
-  img.src = "img/hurt/書_翻開.gif";
+  img.src = "img/書_翻開.gif";
   if (
     !document
       .getElementsByClassName("return-hint2")[0]
@@ -203,7 +227,7 @@ document.getElementById("return-x").addEventListener("click", function () {
     .getElementsByClassName("return-return")[0]
     .classList.remove("active");
   var img = document.getElementById("return-book");
-  img.src = "img/hurt/書_闔上.gif";
+  img.src = "img/書_闔上.gif";
   if (
     !document
       .getElementsByClassName("return-hint2")[0]
@@ -223,7 +247,7 @@ document.getElementById("return-x").addEventListener("click", function () {
       .getElementsByClassName("return-book")[0]
       .classList.remove("active");
     document
-      .getElementsByClassName("bookbackground")[0]
+      .getElementsByClassName("hurt_bookbackground")[0]
       .classList.remove("active");
   }, 1300);
 });
@@ -234,9 +258,11 @@ document.getElementById("spinreturn").addEventListener("click", function () {
     .getElementsByClassName("spinreturn-frame")[0]
     .classList.add("active");
   document.getElementsByClassName("spinreturn-book")[0].classList.add("active");
-  document.getElementsByClassName("bookbackground")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_bookbackground")[0]
+    .classList.add("active");
   var img = document.getElementById("spinreturn-book");
-  img.src = "img/hurt/書_翻開.gif";
+  img.src = "img/書_翻開.gif";
   if (
     !document
       .getElementsByClassName("spinreturn-hint2")[0]
@@ -316,7 +342,7 @@ document.getElementById("spinreturn-x").addEventListener("click", function () {
     .getElementsByClassName("spinreturn-return")[0]
     .classList.remove("active");
   var img = document.getElementById("spinreturn-book");
-  img.src = "img/hurt/書_闔上.gif";
+  img.src = "img/書_闔上.gif";
   if (
     !document
       .getElementsByClassName("spinreturn-hint2")[0]
@@ -333,7 +359,7 @@ document.getElementById("spinreturn-x").addEventListener("click", function () {
       .getElementsByClassName("spinreturn-book")[0]
       .classList.remove("active");
     document
-      .getElementsByClassName("bookbackground")[0]
+      .getElementsByClassName("hurt_bookbackground")[0]
       .classList.remove("active");
   }, 1300);
 });
@@ -342,9 +368,11 @@ document.getElementById("spinreturn-x").addEventListener("click", function () {
 document.getElementById("eight").addEventListener("click", function () {
   document.getElementsByClassName("eight-frame")[0].classList.add("active");
   document.getElementsByClassName("eight-book")[0].classList.add("active");
-  document.getElementsByClassName("bookbackground")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_bookbackground")[0]
+    .classList.add("active");
   var img = document.getElementById("eight-book");
-  img.src = "img/hurt/書_翻開.gif";
+  img.src = "img/書_翻開.gif";
   if (
     !document
       .getElementsByClassName("eight-hint2")[0]
@@ -394,7 +422,7 @@ document.getElementById("eight-x").addEventListener("click", function () {
   document.getElementsByClassName("eight-frame")[0].classList.remove("active");
   document.getElementsByClassName("eight-return")[0].classList.remove("active");
   var img = document.getElementById("eight-book");
-  img.src = "img/hurt/書_闔上.gif";
+  img.src = "img/書_闔上.gif";
   if (
     !document
       .getElementsByClassName("eight-hint2")[0]
@@ -409,7 +437,7 @@ document.getElementById("eight-x").addEventListener("click", function () {
   setTimeout(() => {
     document.getElementsByClassName("eight-book")[0].classList.remove("active");
     document
-      .getElementsByClassName("bookbackground")[0]
+      .getElementsByClassName("hurt_bookbackground")[0]
       .classList.remove("active");
   }, 1300);
 });
@@ -418,9 +446,11 @@ document.getElementById("eight-x").addEventListener("click", function () {
 document.getElementById("spin").addEventListener("click", function () {
   document.getElementsByClassName("spin-frame")[0].classList.add("active");
   document.getElementsByClassName("spin-book")[0].classList.add("active");
-  document.getElementsByClassName("bookbackground")[0].classList.add("active");
+  document
+    .getElementsByClassName("hurt_bookbackground")[0]
+    .classList.add("active");
   var img = document.getElementById("spin-book");
-  img.src = "img/hurt/書_翻開.gif";
+  img.src = "img/書_翻開.gif";
   if (
     !document
       .getElementsByClassName("spin-hint2")[0]
@@ -459,7 +489,7 @@ document.getElementById("spin-x").addEventListener("click", function () {
   document.getElementsByClassName("spin-frame")[0].classList.remove("active");
   document.getElementsByClassName("spin-return")[0].classList.remove("active");
   var img = document.getElementById("spin-book");
-  img.src = "img/hurt/書_闔上.gif";
+  img.src = "img/書_闔上.gif";
   if (
     !document
       .getElementsByClassName("spin-hint2")[0]
@@ -471,7 +501,7 @@ document.getElementById("spin-x").addEventListener("click", function () {
   setTimeout(() => {
     document.getElementsByClassName("spin-book")[0].classList.remove("active");
     document
-      .getElementsByClassName("bookbackground")[0]
+      .getElementsByClassName("hurt_bookbackground")[0]
       .classList.remove("active");
   }, 1300);
 });
