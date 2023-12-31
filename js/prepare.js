@@ -10,6 +10,10 @@ $(".wood_option .preparing").click(function () {
   $(".menu").css("top", "-110vh");
   $(".menu").css("visibility", "hidden");
 });
+$(".wood_option .bandage").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+});
 
 document
   .getElementById("package-id")
