@@ -37,3 +37,14 @@ function mUpx(obj) {
   obj.style.width = "4vw";
   setTimeout(this, 300);
 }
+
+//transition to DwonGo_1.1
+const button = document.getElementById("myButton");
+const mask = document.getElementById("mask");
+
+button.addEventListener("click", () => {
+  mask.style.animation = "shrink ease-in-out 1.5s forwards";
+  setTimeout(() => {
+    window.location.href = "bag_hurt.html";
+  }, 1500);
+});

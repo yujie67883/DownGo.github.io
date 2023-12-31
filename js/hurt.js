@@ -26,7 +26,7 @@ var aText = new Array(
   " ",
   "點擊大南部史進行演練"
 );
-var iSpeed = 100; // time delay of print out
+var iSpeed = 110; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 20; // start scrolling up at this many lines
@@ -39,16 +39,11 @@ var functionEnable = false;
 document.getElementById("hurt-id").addEventListener("mouseover", function () {
   if (!functionEnable) {
     functionEnable = true;
-    console.log("First mouseover - function enabled");
-    disablefunction(); // Call the function when mouseover event occurs for the first time
+    setTimeout(() => {
+      typewriter();
+    }, 700);
   }
 });
-
-function disablefunction() {
-  if (functionEnable) {
-    typewriter();
-  }
-}
 
 function typewriter() {
   sContents = " ";
@@ -81,16 +76,13 @@ document.getElementById("cycle").addEventListener("click", function () {
   document
     .getElementsByClassName("hurt_bookbackground")[0]
     .classList.add("active");
+  var img = document.getElementById("cycle-gif");
+  img.src = "img/hurt/環形包紮手.png";
   var img = document.getElementById("cycle-book");
   img.src = "img/書_翻開.gif";
-  if (
-    !document
-      .getElementsByClassName("cycle-hint2")[0]
-      .classList.contains("active") &&
-    !document
-      .getElementsByClassName("cycle-hint3")[0]
-      .classList.contains("active")
-  ) {
+  document.getElementsByClassName("cycle-hint2")[0].classList.remove("active");
+  document.getElementsByClassName("cycle-hint3")[0].classList.remove("active");
+  {
     setTimeout(() => {
       document.getElementsByClassName("cycle-hint1")[0].classList.add("active");
     }, 1800);
@@ -161,17 +153,12 @@ document.getElementById("return").addEventListener("click", function () {
     .classList.add("active");
   var img = document.getElementById("return-book");
   img.src = "img/書_翻開.gif";
-  if (
-    !document
-      .getElementsByClassName("return-hint2")[0]
-      .classList.contains("active") &&
-    !document
-      .getElementsByClassName("return-hint3")[0]
-      .classList.contains("active") &&
-    !document
-      .getElementsByClassName("return-hint4")[0]
-      .classList.contains("active")
-  ) {
+  var img = document.getElementById("return-gif");
+  img.src = "img/hurt/回反包紮手.png";
+  document.getElementsByClassName("return-hint2")[0].classList.remove("active");
+  document.getElementsByClassName("return-hint3")[0].classList.remove("active");
+  document.getElementsByClassName("return-hint4")[0].classList.remove("active");
+  {
     setTimeout(() => {
       document
         .getElementsByClassName("return-hint1")[0]
@@ -263,14 +250,15 @@ document.getElementById("spinreturn").addEventListener("click", function () {
     .classList.add("active");
   var img = document.getElementById("spinreturn-book");
   img.src = "img/書_翻開.gif";
-  if (
-    !document
-      .getElementsByClassName("spinreturn-hint2")[0]
-      .classList.contains("active") &&
-    !document
-      .getElementsByClassName("spinreturn-hint3")[0]
-      .classList.contains("active")
-  ) {
+  var img = document.getElementById("spinreturn-gif");
+  img.src = "img/hurt/螺旋反折手.png";
+  document
+    .getElementsByClassName("spinreturn-hint2")[0]
+    .classList.remove("active");
+  document
+    .getElementsByClassName("spinreturn-hint3")[0]
+    .classList.remove("active");
+  {
     setTimeout(() => {
       document
         .getElementsByClassName("spinreturn-hint1")[0]
@@ -373,14 +361,11 @@ document.getElementById("eight").addEventListener("click", function () {
     .classList.add("active");
   var img = document.getElementById("eight-book");
   img.src = "img/書_翻開.gif";
-  if (
-    !document
-      .getElementsByClassName("eight-hint2")[0]
-      .classList.contains("active") &&
-    !document
-      .getElementsByClassName("eight-hint3")[0]
-      .classList.contains("active")
-  ) {
+  var img = document.getElementById("eight-gif");
+  img.src = "img/hurt/八字包紮手.png";
+  document.getElementsByClassName("eight-hint2")[0].classList.remove("active");
+  document.getElementsByClassName("eight-hint3")[0].classList.remove("active");
+  {
     setTimeout(() => {
       document.getElementsByClassName("eight-hint1")[0].classList.add("active");
     }, 1800);
@@ -451,11 +436,10 @@ document.getElementById("spin").addEventListener("click", function () {
     .classList.add("active");
   var img = document.getElementById("spin-book");
   img.src = "img/書_翻開.gif";
-  if (
-    !document
-      .getElementsByClassName("spin-hint2")[0]
-      .classList.contains("active")
-  ) {
+  document.getElementsByClassName("spin-hint2")[0].classList.remove("active");
+  var img = document.getElementById("spin-gif");
+  img.src = "img/hurt/螺旋包紮手.png";
+  {
     setTimeout(() => {
       document.getElementsByClassName("spin-hint1")[0].classList.add("active");
     }, 1800);
