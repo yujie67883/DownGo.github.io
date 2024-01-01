@@ -15,6 +15,16 @@ $(".wood_option .bandage").click(function () {
   $(".menu").css("visibility", "hidden");
 });
 
+// 轉場動畫
+const secondMask = document.getElementById("secondMask");
+
+document.addEventListener("DOMContentLoaded", function () {
+  secondMask.style.opacity = 1;
+  setTimeout(() => {
+    secondMask.style.opacity = 0; // 隱藏 GIF 遮罩
+  }, 2000);
+});
+// 背包頁:Start
 document
   .getElementById("package-id")
   .addEventListener("mouseover", function () {

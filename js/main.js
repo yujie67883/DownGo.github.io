@@ -43,7 +43,7 @@ const button = document.getElementById("myButton");
 const mask = document.getElementById("mask");
 
 button.addEventListener("click", () => {
-  mask.style.animation = "shrink ease-in-out 1.5s forwards";
+  mask.style.opacity = 1;
   setTimeout(() => {
     window.location.href = "bag_hurt.html";
   }, 1500);

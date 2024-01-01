@@ -312,14 +312,18 @@ body {
   z-index: 99;
 }
 
-/* footer色塊 */
-.footer {
-  height: fit-content;
-  background-color: #2e0d45;
-}
-
-.fbg img {
+/* 開頭轉場動畫設定 */
+#secondMask {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
+  background: url("../img/black_in.gif") center/cover no-repeat;
+  opacity: 100%;
+  pointer-events: none;
+  transition: opacity 0;
+  z-index: 1001;
 }
 
 /* backpack start*/
@@ -406,6 +410,9 @@ body {
   vertical-align: middle;
   width: 10vw;
   margin-left: 1vw;
+}
+.header_left a {
+  height: max-content;
 }
 .header_center {
   display: inline-block;

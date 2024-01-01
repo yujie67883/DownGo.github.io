@@ -310,34 +310,16 @@ nav .burger a img :active {
 }
 
 #mask {
-  position: absolute;
-  left: 0;
+  position: fixed;
   top: 0;
-  padding-left: 0;
-  padding-top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-  background: #fff url(../img/enter_cover.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-size: 7500%;
-  mix-blend-mode: multiply;
+  background: url("../img/back_out.gif") center/cover no-repeat;
+  opacity: 0;
   z-index: 99;
-}
-
-#mask img {
-  width: 150%;
-  height: 150%;
-}
-
-@keyframes shrink {
-  to {
-    background-size: 105%;
-    padding-left: 40vw;
-    padding-top: 50vh;
-  }
+  pointer-events: none; /* 點擊事件穿透遮罩 */
+  transition: opacity 0.5s;
 }
 
 /* hamburger */
@@ -346,6 +328,7 @@ nav .burger a img :active {
   position: relative;
   background-color: antiquewhite;
   height: 100vh;
+  overflow: hidden;
 }
 
 .menu nav {
