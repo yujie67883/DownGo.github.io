@@ -21,28 +21,92 @@ const secondMask = document.getElementById("secondMask");
 document.addEventListener("DOMContentLoaded", function () {
   secondMask.style.opacity = 1;
   setTimeout(() => {
-    secondMask.style.opacity = 0; // 隱藏 GIF 遮罩
+    secondMask.style.opacity = 0;
   }, 2000);
 });
+
+// header中間img翻頁效果
+document.addEventListener("DOMContentLoaded", function () {
+  const flipimg = document.querySelector(".flipimg");
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    flipimg.style.transform = `perspective(1000px) rotateX(${scrollPercentage}deg)`;
+    if (scrollPercentage >= 100) {
+      flipimg.style.opacity = "0";
+    } else {
+      flipimg.style.opacity = "100";
+    }
+  });
+});
+
+// header海拔高度滾動效果
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollingNumberElement = document.getElementById("scrollingNumber");
+
+  let currentNumber = 100;
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    const newNumber = Math.round(100 + (scrollPercentage / 100) * 400);
+
+    if (newNumber !== currentNumber) {
+      currentNumber = newNumber;
+      scrollingNumberElement.textContent = currentNumber;
+    }
+  });
+});
+
+// header level 等級滾動效果
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollingTextElement = document.getElementById("scrollingText");
+
+  let currentText = "1-1";
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
+
+    if (newText !== currentText) {
+      currentText = newText;
+      scrollingTextElement.textContent = currentText;
+    }
+  });
+});
+
 // 背包頁:Start
 document
   .getElementById("package-id")
   .addEventListener("mouseover", function () {
-    document.getElementsByClassName("span1")[0].classList.add("active");
-    document.getElementsByClassName("span2")[0].classList.add("active");
-    document.getElementsByClassName("span3")[0].classList.add("active");
-    document.getElementsByClassName("span5")[0].classList.add("active");
-    document.getElementsByClassName("span6")[0].classList.add("active");
-    document.getElementsByClassName("span7")[0].classList.add("active");
-    document.getElementsByClassName("span8")[0].classList.add("active");
-    document.getElementsByClassName("span9")[0].classList.add("active");
-    document.getElementsByClassName("openbag")[0].classList.add("active");
-    document.getElementsByClassName("living")[0].classList.add("active");
-    document.getElementsByClassName("other")[0].classList.add("active");
-    document.getElementsByClassName("food")[0].classList.add("active");
-    document.getElementsByClassName("cook")[0].classList.add("active");
-    document.getElementsByClassName("walk")[0].classList.add("active");
-    document.getElementsByClassName("cloth")[0].classList.add("active");
+    setTimeout(function () {
+      document.getElementsByClassName("span1")[0].classList.add("active");
+      document.getElementsByClassName("span2")[0].classList.add("active");
+      document.getElementsByClassName("span3")[0].classList.add("active");
+      document.getElementsByClassName("span5")[0].classList.add("active");
+      document.getElementsByClassName("span6")[0].classList.add("active");
+      document.getElementsByClassName("span7")[0].classList.add("active");
+      document.getElementsByClassName("span8")[0].classList.add("active");
+      document.getElementsByClassName("span9")[0].classList.add("active");
+      document.getElementsByClassName("openbag")[0].classList.add("active");
+      document.getElementsByClassName("living")[0].classList.add("active");
+      document.getElementsByClassName("other")[0].classList.add("active");
+      document.getElementsByClassName("food")[0].classList.add("active");
+      document.getElementsByClassName("cook")[0].classList.add("active");
+      document.getElementsByClassName("walk")[0].classList.add("active");
+      document.getElementsByClassName("cloth")[0].classList.add("active");
+    }, 1000);
   });
 
 //居住類

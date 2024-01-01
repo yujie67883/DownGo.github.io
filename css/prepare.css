@@ -347,7 +347,8 @@ body {
   filter: brightness(0.9);
   cursor: pointer;
 }
-#title {
+#title,
+#title2 {
   width: 10vw;
 }
 #closed_backpack {
@@ -384,6 +385,9 @@ body {
   cursor: pointer;
 }
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 8vh;
   color: #5f1c68;
@@ -395,11 +399,19 @@ body {
   letter-spacing: 1.1px;
   text-transform: uppercase;
   vertical-align: middle;
+  transition: transform ease;
 }
 .header p {
   display: inline-block;
   vertical-align: middle;
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.M {
+  margin-right: 5vw;
+}
+.level {
+  margin-left: 5vw;
 }
 .header img {
   display: inline-block;
@@ -418,8 +430,11 @@ body {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  margin-left: -65px;
-  width: 80vw;
+  width: 75vw;
+}
+.header_center div {
+  display: inline-block;
+  width: 5vw;
 }
 .header_right {
   display: inline-block;
@@ -428,6 +443,28 @@ body {
   width: 10vw;
   cursor: pointer;
 }
+
+/* header翻牌效果:Start */
+
+.flipimg {
+  position: fixed;
+  margin-top: 5.25vh;
+  width: 10vw;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  transition: transform ease; /* 添加翻頁效果的過渡 */
+  transform-origin: top center;
+  z-index: 2;
+}
+@media screen and (max-width: 1600px) {
+  .flipimg {
+    width: 3.55vh;
+  }
+}
+
+/* header翻牌效果:End */
+
 .bag {
   display: inline-block;
   width: 100vw;
@@ -437,6 +474,7 @@ body {
   animation-delay: 100ms;
 }
 .contain {
+  margin-top: 8vh;
   position: relative;
   z-index: 0;
 }
@@ -2289,6 +2327,7 @@ body {
   z-index: 30;
 }
 .hurt_first-content {
+  margin-top: 8vh;
   position: absolute;
   width: 100vw;
   height: 82vh;
@@ -2296,6 +2335,7 @@ body {
   transform: scale(1);
 }
 .hurt_first-content.active {
+  margin-top: 8vh;
   transform: scale(0);
   opacity: 0;
   animation: animation1;
@@ -2349,6 +2389,7 @@ body {
 }
 
 .hurt-second-content {
+  margin-top: 8vh;
   position: absolute;
   width: 95vw;
   height: 85vh;
@@ -2356,6 +2397,7 @@ body {
   margin-top: -4;
 }
 .hurt-second-content.active {
+  margin-top: 8vh;
   opacity: 1;
 }
 
