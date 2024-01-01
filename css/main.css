@@ -318,7 +318,7 @@ nav .burger a img :active {
   background: url("../img/back_out.gif") center/cover no-repeat;
   opacity: 0;
   z-index: 99;
-  pointer-events: none; /* 點擊事件穿透遮罩 */
+  pointer-events: none;
   transition: opacity 0.5s;
 }
 
