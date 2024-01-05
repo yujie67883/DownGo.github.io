@@ -229,8 +229,18 @@ body {
 .wood_option {
   position: absolute;
   top: 30vh;
-  left: 29.6vw;
+  left: 28.6vw;
   z-index: 5;
+}
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .wood_option {
+    left: 28.6vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wood_option {
+    left: 29.6vw;
+  }
 }
 
 .wood_option div {
