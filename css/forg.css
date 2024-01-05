@@ -1,0 +1,635 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+
+body {
+  font-family: "Noto Sans TC";
+}
+
+/* navigation */
+
+#logotype {
+  position: flex;
+  justify-content: center;
+  width: 18vw;
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+#title,
+#title2 {
+  width: 10vw;
+}
+#closed_backpack {
+  padding-top: 10vh;
+  width: 35vw;
+}
+.openbag {
+  position: absolute;
+  width: 36.5vw;
+  margin-left: -0.5vw;
+  margin-top: 7vh;
+  opacity: 0;
+}
+.openbag.active {
+  opacity: 1;
+  animation: apear;
+  animation-duration: 1800ms;
+}
+@keyframes apear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#bag_burger {
+  text-align: center;
+  width: 6vw;
+  text-shadow: 10px 10px 5px #5f1c68;
+  cursor: pointer;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8vh;
+  color: #5f1c68;
+  font-family: Noto Sans TC;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  transition: transform ease;
+}
+.header p {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 46px;
+  padding-bottom: 50px;
+}
+.M {
+  margin-right: 5vw;
+}
+.level {
+  margin-left: 5vw;
+}
+.header img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header_left {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10vw;
+  margin-left: 1vw;
+}
+.header_left a {
+  height: max-content;
+}
+.header_center {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 75vw;
+}
+.header_center div {
+  display: inline-block;
+  width: 5vw;
+}
+.header_right {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  width: 10vw;
+  cursor: pointer;
+}
+
+/* hamburger */
+
+.menu {
+  position: relative;
+  background-color: antiquewhite;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu nav {
+  position: absolute;
+  width: 96vw;
+  justify-content: space-between;
+  display: flex;
+  z-index: 4;
+  left: 0;
+  padding-top: 10;
+}
+
+.menu nav .logo {
+  padding-top: 3vh;
+  margin-left: 2vw;
+}
+
+.menu nav .logo img {
+  width: 18vw;
+}
+
+.menu_bgimg .bg img {
+  width: 110vw;
+  height: 110vh;
+  position: absolute;
+  left: -1vw;
+  top: -1vh;
+  filter: brightness(1.1);
+}
+
+/* 關閉漢堡的按鈕:S */
+.menu_close {
+  text-align: center;
+}
+
+.menu_close {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_bgimg .bm img {
+  position: absolute;
+  width: 100vw;
+  filter: brightness(0.85);
+  left: 0;
+  bottom: -30vh;
+  z-index: 0;
+}
+.menu_close a img {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 4vh;
+  width: 4.5vw;
+  text-shadow: 10px 10px 5px #5f1c68;
+  cursor: pointer;
+  margin: 0 0;
+}
+/* 關閉漢堡的按鈕:E */
+.cloud_1 img {
+  position: absolute;
+  width: 70vw;
+  top: 12.2vh;
+  right: -70vw;
+  opacity: 70%;
+  z-index: 0;
+  animation-name: cloudfloat_menu;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+}
+
+.cloud_2 img {
+  position: absolute;
+  width: 36vw;
+  bottom: 31vh;
+  right: -70vw;
+  opacity: 60%;
+  filter: brightness(0.98);
+  z-index: 1;
+  animation-name: cloudfloat_menu;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.cloud_3 img {
+  position: absolute;
+  width: 60vw;
+  bottom: 7vh;
+  right: -70vw;
+  opacity: 85%;
+  filter: brightness(0.98);
+  z-index: 0;
+  animation-name: cloudfloat_menu;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+  animation-delay: 9s;
+}
+
+.cloud_4 img {
+  position: absolute;
+  width: 39vw;
+  bottom: 36vh;
+  right: -70vw;
+  filter: brightness(0.98);
+  z-index: 1;
+  animation-name: cloudfloat_menu;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-delay: 11s;
+}
+
+@keyframes cloudfloat_menu {
+  0% {
+    right: -70vw;
+  }
+  100% {
+    right: 110vw;
+  }
+}
+
+.hunted img {
+  position: absolute;
+  width: 8vw;
+  left: 24vw;
+  bottom: 3.3vh;
+}
+
+.menu_sign img {
+  position: absolute;
+  width: 7vw;
+  left: 50vw;
+  bottom: 18vh;
+}
+
+.menu_hook img {
+  position: absolute;
+  width: 5vw;
+  right: 18vw;
+  top: 0;
+}
+
+.menu_mountain img {
+  position: absolute;
+  width: 90vw;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* menu的選項 畫面設定 */
+
+.title {
+  position: absolute;
+  left: calc(50% - 30vw);
+  top: 15vh;
+  display: flex;
+  justify-content: space-evenly;
+  width: 60vw;
+  height: 10vh;
+  z-index: 5;
+}
+
+.title div {
+  display: inline-block;
+  margin: 3vw;
+}
+
+.title div h1 {
+  color: #262626;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cutline {
+  position: absolute;
+  left: calc(50% - 28vw);
+  top: 28vh;
+  width: 56vw;
+  height: 0.2vh;
+  background-color: #000000;
+  z-index: 5;
+}
+
+.wood_option {
+  position: absolute;
+  top: 30vh;
+  left: 28.3vw;
+  z-index: 5;
+}
+
+.wood_option div {
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.wood_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.wood_option div a {
+  z-index: 5;
+  text-align: center;
+  text-decoration: none;
+  color: #262626;
+}
+
+.enter_option {
+  position: absolute;
+  top: 30vh;
+  left: 49.1vw;
+  z-index: 5;
+}
+
+.enter_option div {
+  width: fit-content;
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.enter_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.enter_option div a {
+  z-index: 3;
+  text-decoration: none;
+  color: #262626;
+}
+
+.heaven_option {
+  position: absolute;
+  top: 30vh;
+  left: 66vw;
+  z-index: 5;
+}
+
+.heaven_option div {
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.heaven_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.heaven_option div a {
+  z-index: 3;
+  text-decoration: none;
+  color: #262626;
+}
+
+/* 漢堡選單 overflow 設定 */
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  visibility: hidden;
+  transition: ease-in 220ms;
+  z-index: 99;
+}
+.cloud_1 img {
+  position: absolute;
+  width: 70vw;
+  top: 12.2vh;
+  right: -70vw;
+  opacity: 70%;
+  z-index: 0;
+  animation-name: cloudfloat_menu;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+}
+
+.cloud_2 img {
+  position: absolute;
+  width: 36vw;
+  bottom: 31vh;
+  right: -70vw;
+  opacity: 60%;
+  filter: brightness(0.98);
+  z-index: 1;
+  animation-name: cloudfloat_menu;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.cloud_3 img {
+  position: absolute;
+  width: 60vw;
+  bottom: 7vh;
+  right: -70vw;
+  opacity: 85%;
+  filter: brightness(0.98);
+  z-index: 0;
+  animation-name: cloudfloat_menu;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+  animation-delay: 9s;
+}
+
+.cloud_4 img {
+  position: absolute;
+  width: 39vw;
+  bottom: 36vh;
+  right: -70vw;
+  filter: brightness(0.98);
+  z-index: 1;
+  animation-name: cloudfloat_menu;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-delay: 11s;
+}
+
+@keyframes cloudfloat_menu {
+  0% {
+    right: -70vw;
+  }
+  100% {
+    right: 110vw;
+  }
+}
+
+.hunted img {
+  position: absolute;
+  width: 8vw;
+  left: 24vw;
+  bottom: 3.3vh;
+}
+
+.menu_sign img {
+  position: absolute;
+  width: 7vw;
+  left: 50vw;
+  bottom: 18vh;
+}
+
+.menu_hook img {
+  position: absolute;
+  width: 5vw;
+  right: 18vw;
+  top: 0;
+}
+
+.menu_mountain img {
+  position: absolute;
+  width: 90vw;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* menu的選項 畫面設定 */
+
+.title {
+  position: absolute;
+  left: calc(50% - 30vw);
+  top: 15vh;
+  display: flex;
+  justify-content: space-evenly;
+  width: 60vw;
+  height: 10vh;
+  z-index: 5;
+}
+
+.title div {
+  display: inline-block;
+  margin: 3vw;
+}
+
+.title div h1 {
+  color: #262626;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cutline {
+  position: absolute;
+  left: calc(50% - 28vw);
+  top: 28vh;
+  width: 56vw;
+  height: 0.2vh;
+  background-color: #000000;
+  z-index: 5;
+}
+
+.wood_option {
+  position: absolute;
+  top: 30vh;
+  left: 28.3vw;
+  z-index: 5;
+}
+
+.wood_option div {
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.wood_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.wood_option div a {
+  z-index: 5;
+  text-align: center;
+  text-decoration: none;
+  color: #262626;
+}
+
+.enter_option {
+  position: absolute;
+  top: 30vh;
+  left: 49.1vw;
+  z-index: 5;
+}
+
+.enter_option div {
+  width: fit-content;
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.enter_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.enter_option div a {
+  z-index: 3;
+  text-decoration: none;
+  color: #262626;
+}
+
+.heaven_option {
+  position: absolute;
+  top: 30vh;
+  left: 66vw;
+  z-index: 5;
+}
+
+.heaven_option div {
+  padding-top: 17px;
+  padding-bottom: 7px;
+  font-size: 22px;
+  border-bottom-style: none;
+  border-bottom-color: #262626;
+  border-width: 2px;
+}
+.heaven_option div:hover {
+  border-bottom-style: outset;
+  padding-bottom: 5px;
+  transition: all 180ms ease-out;
+}
+
+.heaven_option div a {
+  z-index: 3;
+  text-decoration: none;
+  color: #262626;
+}
+
+/* 漢堡選單 overflow 設定 */
+
+.menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  visibility: hidden;
+  transition: ease-in 220ms;
+  z-index: 99;
+}
+
+.forg_gif {
+  display: flex;
+  justify-content: center;
+  margin-top: 14%;
+}
+
+.forg_gif img {
+  width: 30%;
+}

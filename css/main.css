@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+
 body {
   width: fit-content;
   margin: 0;
@@ -27,7 +34,7 @@ nav {
 }
 
 .logo a img {
-  width: 15vw;
+  width: 20vw;
   left: 0;
   top: -30vh;
 }
@@ -342,7 +349,7 @@ nav .burger a img :active {
 }
 
 .menu nav .logo {
-  width: 30vh;
+  width: 30vw;
 }
 
 .menu_bgimg .bg img {

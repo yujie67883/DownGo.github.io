@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+
 body {
   width: fit-content;
   margin: 0;
@@ -8,6 +15,9 @@ body {
   background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Noto Sans TC";
+  font-weight: Medium;
+  scrollbar-color: transparent transparent;
 }
 
 /* header */
@@ -219,7 +229,7 @@ body {
 .wood_option {
   position: absolute;
   top: 30vh;
-  left: 28.3vw;
+  left: 29.6vw;
   z-index: 5;
 }
 
@@ -330,6 +340,7 @@ body {
 .header {
   z-index: 40;
 }
+
 .package {
   background-image: url(../img/background.png);
   background-repeat: no-repeat;
@@ -391,9 +402,9 @@ body {
   width: 100vw;
   height: 8vh;
   color: #5f1c68;
-  font-family: Noto Sans TC;
+  /* font-family: Noto Sans TC; */
   font-size: 18px;
-  font-style: normal;
+  font-style: Medium;
   font-weight: 900;
   line-height: normal;
   letter-spacing: 1.1px;
@@ -404,14 +415,8 @@ body {
 .header p {
   display: inline-block;
   vertical-align: middle;
-  padding-top: 50px;
+  padding-top: 46px;
   padding-bottom: 50px;
-}
-.M {
-  margin-right: 5vw;
-}
-.level {
-  margin-left: 5vw;
 }
 .header img {
   display: inline-block;
@@ -434,7 +439,33 @@ body {
 }
 .header_center div {
   display: inline-block;
-  width: 5vw;
+}
+.altitude {
+  width: fit-content;
+  margin-right: 19vw;
+}
+.level {
+  width: fit-content;
+  margin-left: 10vw;
+}
+.scrollingNumber {
+  position: absolute;
+  top: 5.5vh;
+  left: 35vw;
+}
+@media (min-width: 1600px) {
+  .scrollingNumber {
+    top: 4.2vh;
+  }
+}
+.M {
+  position: absolute;
+  top: -0.1vh;
+  left: 38.7vw;
+}
+.eleven {
+  margin-left: 2vw;
+  width: fit-content;
 }
 .header_right {
   display: inline-block;
@@ -442,25 +473,61 @@ body {
   text-align: right;
   width: 10vw;
   cursor: pointer;
+  z-index: 1000;
 }
 
 /* header翻牌效果:Start */
 
-.flipimg {
-  position: fixed;
-  margin-top: 5.25vh;
+.flip-card {
+  position: relative;
+  left: 47.5vw;
+  top: -11vh;
   width: 10vw;
-  object-fit: cover;
-  display: flex;
-  justify-content: center;
-  transition: transform ease; /* 添加翻頁效果的過渡 */
-  transform-origin: top center;
-  z-index: 2;
+  height: 4vh;
+  margin-left: 1vw;
 }
-@media screen and (max-width: 1600px) {
-  .flipimg {
-    width: 3.55vh;
+@media (min-width: 1600px) {
+  .flip-card {
+    width: 10vw;
+    top: -8.9vh;
   }
+}
+
+.thecard {
+  position: absolute;
+  display: flex;
+  /* left: 39vw;
+  top: -9.7vh; */
+  right: 2vw;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.firstCard,
+.secondCard,
+.thirdCard {
+  position: absolute;
+  top: 1.5vh;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.firstCard {
+  background: url("../img/package/title.png") center center / cover no-repeat;
+}
+
+.secondCard {
+  background: url("../img/hurt/title.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
+}
+
+.thirdCard {
+  background: url("../img/entery/title.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
 }
 
 /* header翻牌效果:End */
@@ -890,7 +957,7 @@ body {
 .text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 20vw;
   height: 30vh;
@@ -2380,7 +2447,7 @@ body {
   color: #5f1c68;
   font-family: Noto Sans TC;
   font-size: 1.25vw;
-  font-style: normal;
+  font-style: Medium;
   font-weight: 500;
   letter-spacing: 0.1vw;
   line-height: normal;
@@ -2577,7 +2644,7 @@ body {
 .cycle-text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 24vw;
   height: 30vh;
@@ -2588,7 +2655,7 @@ body {
 .return-text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 24vw;
   height: 30vh;
@@ -2599,7 +2666,7 @@ body {
 .spinreturn-text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 24vw;
   height: 30vh;
@@ -2610,7 +2677,7 @@ body {
 .eight-text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 25vw;
   height: 30vh;
@@ -2621,7 +2688,7 @@ body {
 .spin-text {
   color: #ffffff;
   font-family: Noto Sans TC;
-  font-style: normal;
+  font-style: Medium;
   letter-spacing: 1.1px;
   width: 24vw;
   height: 30vh;
@@ -3079,5 +3146,254 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* 登山口開始 */
+.entry {
+  background-image: url(../img/entery/entery_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.Btns {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.Btn-purcahse {
+  margin-top: 24vh;
+  margin-right: 3vw;
+  width: 12vw;
+  height: fit-content;
+  background-image: url(../img/prelude/btn_default.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Btn-purcahse a {
+  display: flex;
+  justify-content: center;
+  line-height: 6.4vh;
+  text-decoration: none;
+  color: #7b3e0e;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+.Btn-purcahse:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.Btn-purcahse a:hover {
+  color: #ac5a24;
+}
+.Btn-purcahse:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.Btn-purcahse a:active {
+  color: #4a2914;
+}
+
+.Btn-entry {
+  margin-top: 22vh;
+  margin-right: 3vw;
+  margin-left: 3vw;
+  width: 19vw;
+  height: 10vh;
+  background-image: url(../img/prelude/btn_default.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Btn-entry a {
+  display: flex;
+  justify-content: center;
+  line-height: 9.4vh;
+  text-decoration: none;
+  color: #7b3e0e;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-size: 25px;
+}
+@media (min-width: 1600px) {
+  .Btn-entry a {
+    line-height: 9.4vh;
+    letter-spacing: 8px;
+    font-size: 32px;
+  }
+}
+.Btn-entry:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.Btn-entry a:hover {
+  color: #ac5a24;
+}
+.Btn-entry:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.Btn-entry a:active {
+  color: #4a2914;
+}
+
+.Btn-Login {
+  margin-top: 24vh;
+  margin-left: 3vw;
+  width: 12vw;
+  height: fit-content;
+  background-image: url(../img/prelude/btn_default.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Btn-Login a {
+  display: flex;
+  justify-content: center;
+  line-height: 6.4vh;
+  text-decoration: none;
+  color: #7b3e0e;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+@media screen and (max-width: 1600px) {
+  .Btn-Login a {
+    line-height: 6.4vh;
+  }
+}
+.Btn-Login:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.Btn-Login a:hover {
+  color: #ac5a24;
+}
+.Btn-Login:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.Btn-Login a:active {
+  color: #4a2914;
+}
+
+/* 登山口後轉場裝飾 */
+.footer {
+  position: relative;
+}
+.grassign {
+  position: absolute;
+  top: 240vh;
+  height: 90vh;
+  overflow: hidden;
+  z-index: 150;
+}
+.grassign img {
+  width: 47vw;
+}
+.grassdown {
+  position: absolute;
+  left: 5vw;
+  top: 250vh;
+  height: 80vh;
+  overflow: hidden;
+  z-index: 140;
+}
+.grassdown img {
+  width: 90vw;
+}
+.grassright {
+  position: absolute;
+  right: 0;
+  top: 262vh;
+  height: 80vh;
+  overflow: hidden;
+  z-index: 150;
+}
+.grassright img {
+  width: 23vw;
+}
+
+/* footer */
+
+.footer {
+  background-color: #335117;
+  position: absolute;
+  height: 30vh;
+  width: 100vw;
+}
+.footer img {
+  width: 100vw;
+  height: fit-content;
+  position: absolute;
+  z-index: 160;
+}
+.footer_txt {
+  margin-left: 10vw;
+  width: 50vw;
+  /* overflow: hidden; */
+  position: absolute;
+  z-index: 180;
+}
+.footer_txt .title {
+  font-weight: 400;
+  font-size: 2vw;
+  top: 5vh;
+  left: calc(50% - -20vw);
+  width: 32vw;
+}
+.footer_txt .title div h1 {
+  font-size: 24px;
+  font-weight: 400;
+  width: 8vw;
+}
+@media (min-width: 1600px) {
+  .footer_txt .title div h1 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+.footer_txt .cutline {
+  left: calc(50% - -13vw);
+  width: 40vw;
+  top: 16vh;
+}
+.footer_txt .wood_option {
+  left: 42.8vw;
+  top: 17vh;
+  width: 6vw;
+}
+.footer_txt .wood_option div {
+  font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .footer_txt .wood_option div {
+    font-size: 24px;
+  }
+}
+.footer_txt .enter_option {
+  left: 57vw;
+  top: 17vh;
+  width: 8vw;
+}
+.footer_txt .enter_option div {
+  font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .footer_txt .enter_option div {
+    font-size: 24px;
+  }
+}
+.footer_txt .heaven_option {
+  left: 71vw;
+  top: 17vh;
+  width: 6vw;
+}
+.footer_txt .heaven_option div {
+  font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .footer_txt .heaven_option div {
+    font-size: 24px;
   }
 }

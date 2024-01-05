@@ -15,19 +15,61 @@ $(".wood_option .bandage").click(function () {
   $(".menu").css("visibility", "hidden");
 });
 
-// 轉場動畫
-const secondMask = document.getElementById("secondMask");
-
-document.addEventListener("DOMContentLoaded", function () {
-  secondMask.style.opacity = 1;
-  setTimeout(() => {
-    secondMask.style.opacity = 0;
-  }, 2000);
-});
-
 // header中間img翻頁效果
 document.addEventListener("DOMContentLoaded", function () {
-  const flipimg = document.querySelector(".flipimg");
+  const flipCard = document.querySelector(".thecard");
+
+  const packageSection = document.getElementById("package-id");
+  const hurtSection = document.getElementById("hurt-id");
+  const entrySection = document.getElementById("entry-id");
+
+  let currentCard = "firstCard";
+
+  function getVisibleSection() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    if (scrollY < packageSection.offsetTop + windowHeight / 2) {
+      return "firstCard";
+    } else if (scrollY < hurtSection.offsetTop + windowHeight * 0.3) {
+      return "secondCard";
+    } else if (scrollY < entrySection.offsetTop + windowHeight / 2) {
+      return "thirdCard";
+    } else {
+      return "unknown";
+    }
+  }
+
+  window.onscroll = function () {
+    const visibleSection = getVisibleSection();
+
+    if (visibleSection !== currentCard) {
+      currentCard = visibleSection;
+
+      if (currentCard === "firstCard") {
+        flipCard.style.transform = "rotateY(0deg)";
+        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
+        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
+      } else if (currentCard === "secondCard") {
+        flipCard.style.transform = "rotateY(180deg)";
+        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
+        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
+      } else if (currentCard === "thirdCard") {
+        flipCard.style.transform = "rotateY(180deg)";
+        flipCard.querySelector(".firstCard").style.transform =
+          "rotateY(180deg)";
+        flipCard.querySelector(".secondCard").style.transform =
+          "rotateY(180deg)";
+      }
+    }
+  };
+});
+
+// header海拔高度滾動效果
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollingNumberElement = document.getElementById("scrollingNumber");
+
+  let currentNumber = 100;
 
   window.addEventListener("scroll", function () {
     const scrollPercentage =
@@ -35,11 +77,34 @@ document.addEventListener("DOMContentLoaded", function () {
         (document.documentElement.scrollHeight - window.innerHeight)) *
       100;
 
-    flipimg.style.transform = `perspective(1000px) rotateX(${scrollPercentage}deg)`;
-    if (scrollPercentage >= 100) {
-      flipimg.style.opacity = "0";
-    } else {
-      flipimg.style.opacity = "100";
+    const newNumber = Math.round(100 + (scrollPercentage / 100) * 400);
+
+    if (newNumber !== currentNumber) {
+      currentNumber = newNumber;
+      scrollingNumberElement.textContent = currentNumber;
+    }
+  });
+});
+
+// header中間img翻頁效果
+document.addEventListener("DOMContentLoaded", function () {
+  const theCard = document.querySelector(".thecard");
+  const mainContainer = document.getElementById("maincontainer");
+
+  let isCardFlipped = false;
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    if (scrollPercentage >= 100 && !isCardFlipped) {
+      theCard.style.transform = "rotateY(180deg)";
+      isCardFlipped = true;
+    } else if (scrollPercentage < 100 && isCardFlipped) {
+      theCard.style.transform = "rotateY(0deg)";
+      isCardFlipped = false;
     }
   });
 });
@@ -66,6 +131,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // header level 等級滾動效果
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollingTextElement = document.getElementById("scrollingText");
+
+  let currentText = "1-1";
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
+
+    if (newText !== currentText) {
+      currentText = newText;
+      scrollingTextElement.textContent = currentText;
+    }
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
   const scrollingTextElement = document.getElementById("scrollingText");
 

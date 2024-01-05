@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+
 body {
   background-color: #fafafa;
+  font-family: "Noto Sans TC";
 }
 
 .music {
@@ -134,10 +142,10 @@ body {
 
 @keyframes slide {
   from {
-    top: 26px;
+    top: 22px;
   }
   to {
-    top: -283px; /*文字行數(li)越少，此處數字越大*/
+    top: -295px; /*文字行數(li)越少，此處數字越大*/
   }
 }
 
@@ -242,7 +250,8 @@ body {
   width: 12vw;
   height: fit-content;
   background-image: url(../img/prelude/btn_default.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   opacity: 0;
   animation: appear 300ms;
   animation-delay: 24.7s;
@@ -252,11 +261,12 @@ body {
 .botton a {
   display: flex;
   justify-content: center;
-  line-height: 7.4vh;
+  line-height: 6.4vh;
   text-decoration: none;
   color: #7b3e0e;
   font-weight: bold;
   letter-spacing: 3px;
+  font-size: 20px;
 }
 @media screen and (max-width: 1600px) {
   .botton a {
