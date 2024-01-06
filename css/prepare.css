@@ -3324,10 +3324,11 @@ body {
 }
 .grassign {
   position: absolute;
-  top: 240vh;
+  top: 252vh;
   height: 100vh;
   overflow: hidden;
   z-index: 150;
+  pointer-events: none;
 }
 .grassign img {
   width: 47vw;
@@ -3346,7 +3347,7 @@ body {
 .grassright {
   position: absolute;
   right: 0;
-  top: 262vh;
+  top: 270vh;
   height: 80vh;
   overflow: hidden;
   z-index: 150;
@@ -3366,7 +3367,7 @@ body {
   position: absolute;
   height: 30vh;
   width: 100vw;
-  top: 310vh;
+  top: 315vh;
 }
 .footer img {
   width: 100vw;
