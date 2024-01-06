@@ -6,7 +6,7 @@
 }
 
 body {
-  width: fit-content;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -3161,13 +3161,28 @@ body {
 
 /* 登山口開始 */
 .entry {
+  position: relative;
+}
+.bg {
   background-image: url(../img/entery/entery_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  width: 110vw;
+  height: 110vh;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  margin-top: 10vh;
+}
+.bg::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    bottom to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
 }
 .Btns {
   left: 16%;
@@ -3179,7 +3194,7 @@ body {
 }
 
 .Btn-purcahse {
-  margin-top: 24vh;
+  margin-top: 47vh;
   margin-right: 3vw;
   width: 17vw;
   height: 10vh;
@@ -3225,7 +3240,7 @@ body {
 }
 
 .Btn-entry {
-  margin-top: 22vh;
+  margin-top: 44vh;
   margin-right: 3vw;
   margin-left: 3vw;
   width: 19vw;
@@ -3272,7 +3287,7 @@ body {
 }
 
 .Btn-Login {
-  margin-top: 24vh;
+  margin-top: 47vh;
   margin-left: 3vw;
   width: 17vw;
   height: 10vh;
@@ -3324,7 +3339,7 @@ body {
 }
 .grassign {
   position: absolute;
-  top: 252vh;
+  top: 357vh;
   height: 100vh;
   overflow: hidden;
   z-index: 150;
@@ -3336,7 +3351,7 @@ body {
 .grassdown {
   position: absolute;
   left: 5vw;
-  top: 250vh;
+  top: 362vh;
   height: 80vh;
   overflow: hidden;
   z-index: 140;
@@ -3347,7 +3362,7 @@ body {
 .grassright {
   position: absolute;
   right: 0;
-  top: 270vh;
+  top: 382vh;
   height: 80vh;
   overflow: hidden;
   z-index: 150;
@@ -3367,7 +3382,8 @@ body {
   position: absolute;
   height: 30vh;
   width: 100vw;
-  top: 315vh;
+  top: 422vh;
+  background-color: #345117;
 }
 .footer img {
   width: 100vw;
@@ -3449,7 +3465,7 @@ body {
 .package,
 .hurt,
 .entry {
-  height: 110vh; /* 設置每個section的高度為視窗的高度 */
+  height: 150vh; /* 設置每個section的高度為視窗的高度 */
   background-size: cover; /* 背景大小為視窗大小 */
   background-attachment: fixed; /* 固定背景，創造parallax效果 */
 }
@@ -3463,5 +3479,130 @@ body {
 }
 
 .entry {
-  background-image: url("../img/entery/entery_bg.png"); /* 替換成你的背景圖片路徑 */
+  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
+}
+
+/* 轉場 */
+.parallax {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.transcloud1 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 103vh;
+  right: -10vw;
+  z-index: 100;
+  filter: brightness(0.93);
+  transition: top 0.3s linear;
+}
+.transcloud1 img {
+  width: 150vw;
+}
+.transcloud2 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 125vh;
+  right: -18vw;
+  z-index: 100;
+  transition: top 0.3s linear;
+  transform: scaleX(-1);
+  filter: brightness(0.99);
+}
+.transcloud2 img {
+  width: 150vw;
+}
+.transcloud3 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 146vh;
+  right: 20vw;
+  z-index: 100;
+  filter: brightness(1.03);
+  transition: top 0.3s linear;
+}
+.transcloud3 img {
+  width: 150vw;
+}
+.transcloud4 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 160vh;
+  right: -42vw;
+  z-index: 100;
+  filter: brightness(1.07);
+  transition: top 0.3s linear;
+  transform: scaleX(-1);
+}
+.transcloud4 img {
+  width: 150vw;
+}
+/* 轉場22 */
+.transcloud5 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 418vh;
+  right: -10vw;
+  z-index: 100;
+  filter: brightness(0.93);
+  transition: top 0.3s linear;
+}
+.transcloud5 img {
+  width: 150vw;
+}
+.transcloud6 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 440vh;
+  right: -18vw;
+  z-index: 100;
+  transition: top 0.3s linear;
+  transform: scaleX(-1);
+  filter: brightness(0.99);
+}
+.transcloud6 img {
+  width: 150vw;
+}
+.transcloud7 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 461vh;
+  right: 20vw;
+  z-index: 100;
+  filter: brightness(1.03);
+  transition: top 0.3s linear;
+}
+.transcloud7 img {
+  width: 150vw;
+}
+.transcloud8 {
+  width: fit-content;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 466vh;
+  right: -42vw;
+  z-index: 100;
+  filter: brightness(1.07);
+  transition: top 0.3s linear;
+  transform: scaleX(-1);
+}
+.transcloud8 img {
+  width: 150vw;
 }

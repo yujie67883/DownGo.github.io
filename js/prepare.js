@@ -628,3 +628,69 @@ gsap
     },
   })
   .to(".entry", { backgroundPosition: "50% 0", ease: "none" });
+
+// 雲轉場的parallax
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud1");
+
+  const newBottomValue = 103 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud2");
+
+  const newBottomValue = 125 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud3");
+
+  const newBottomValue = 146 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud4");
+
+  const newBottomValue = 160 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud5");
+
+  const newBottomValue = 418 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud6");
+
+  const newBottomValue = 440 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud7");
+
+  const newBottomValue = 461 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
+window.addEventListener("scroll", function () {
+  const scrollValue = window.scrollY;
+  const imgElement = document.getElementById("transcloud8");
+
+  const newBottomValue = 466 - scrollValue / 13 + "vh";
+
+  imgElement.style.top = newBottomValue;
+});
