@@ -3170,30 +3170,46 @@ body {
   position: relative;
 }
 .Btns {
+  left: 16%;
+  position: absolute;
   display: flex;
   justify-content: center;
   text-align: center;
+  z-index: 30;
 }
 
 .Btn-purcahse {
   margin-top: 24vh;
   margin-right: 3vw;
-  width: 12vw;
-  height: fit-content;
+  width: 17vw;
+  height: 10vh;
   background-image: url(../img/prelude/btn_default.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media (min-width: 1600px) {
+  .Btn-purcahse {
+    width: 18vw;
+    height: 10.2vh;
+  }
 }
 
 .Btn-purcahse a {
   display: flex;
   justify-content: center;
-  line-height: 6.4vh;
+  line-height: 8.4vh;
   text-decoration: none;
   color: #7b3e0e;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 8px;
   font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .Btn-purcahse a {
+    line-height: 9.4vh;
+    letter-spacing: 8px;
+    font-size: 32px;
+  }
 }
 .Btn-purcahse:hover {
   background-image: url(../img/prelude/btn_hover.png);
@@ -3213,10 +3229,16 @@ body {
   margin-right: 3vw;
   margin-left: 3vw;
   width: 19vw;
-  height: 10vh;
+  height: 10.2vh;
   background-image: url(../img/prelude/btn_default.png);
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (min-width: 1600px) {
+  .Btn-entry {
+    width: 22vw;
+    height: 12.5vh;
+  }
 }
 
 .Btn-entry a {
@@ -3231,9 +3253,9 @@ body {
 }
 @media (min-width: 1600px) {
   .Btn-entry a {
-    line-height: 9.4vh;
-    letter-spacing: 8px;
-    font-size: 32px;
+    line-height: 11.6vh;
+    letter-spacing: 11px;
+    font-size: 42px;
   }
 }
 .Btn-entry:hover {
@@ -3252,28 +3274,37 @@ body {
 .Btn-Login {
   margin-top: 24vh;
   margin-left: 3vw;
-  width: 12vw;
-  height: fit-content;
+  width: 17vw;
+  height: 10vh;
   background-image: url(../img/prelude/btn_default.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media (min-width: 1600px) {
+  .Btn-Login {
+    width: 18vw;
+    height: 10.2vh;
+  }
 }
 
 .Btn-Login a {
   display: flex;
   justify-content: center;
-  line-height: 6.4vh;
+  line-height: 8.4vh;
   text-decoration: none;
   color: #7b3e0e;
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: 8px;
   font-size: 20px;
 }
-@media screen and (max-width: 1600px) {
+@media (min-width: 1600px) {
   .Btn-Login a {
-    line-height: 6.4vh;
+    line-height: 9.4vh;
+    letter-spacing: 8px;
+    font-size: 32px;
   }
 }
+
 .Btn-Login:hover {
   background-image: url(../img/prelude/btn_hover.png);
 }
@@ -3294,7 +3325,7 @@ body {
 .grassign {
   position: absolute;
   top: 240vh;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   z-index: 150;
 }
@@ -3325,12 +3356,17 @@ body {
 }
 
 /* footer */
-
+.footerbg {
+  height: 20vh;
+  background-image: url(../img/grass_left.png);
+  background-size: initial;
+  background-position: center;
+}
 .footer {
-  background-color: #335117;
   position: absolute;
   height: 30vh;
   width: 100vw;
+  top: 310vh;
 }
 .footer img {
   width: 100vw;
@@ -3406,4 +3442,25 @@ body {
   .footer_txt .heaven_option div {
     font-size: 24px;
   }
+}
+
+/* parallax設定 */
+.package,
+.hurt,
+.entry {
+  height: 110vh; /* 設置每個section的高度為視窗的高度 */
+  background-size: cover; /* 背景大小為視窗大小 */
+  background-attachment: fixed; /* 固定背景，創造parallax效果 */
+}
+
+.package {
+  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
+}
+
+.hurt {
+  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
+}
+
+.entry {
+  background-image: url("../img/entery/entery_bg.png"); /* 替換成你的背景圖片路徑 */
 }

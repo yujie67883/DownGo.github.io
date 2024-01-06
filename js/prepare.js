@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
 
-    if (scrollY < packageSection.offsetTop + windowHeight / 2) {
+    if (scrollY < packageSection.offsetTop + windowHeight) {
       return "firstCard";
-    } else if (scrollY < hurtSection.offsetTop + windowHeight * 0.3) {
+    } else if (scrollY < hurtSection.offsetTop + windowHeight) {
       return "secondCard";
-    } else if (scrollY < entrySection.offsetTop + windowHeight / 2) {
+    } else if (scrollY < entrySection.offsetTop + windowHeight) {
       return "thirdCard";
     } else {
       return "unknown";
@@ -592,3 +592,39 @@ document.getElementById("cloth-x2").addEventListener("click", function () {
       .classList.remove("active");
   }, 1300);
 });
+
+// 頁面滾動的parallax
+gsap.registerPlugin(ScrollTrigger);
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".package",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  })
+  .to(".package", { backgroundPosition: "50% 0", ease: "none" });
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".hurt",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  })
+  .to(".hurt", { backgroundPosition: "50% 0", ease: "none" });
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".entry",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  })
+  .to(".entry", { backgroundPosition: "50% 0", ease: "none" });
