@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Got</title>
+    <link href="./css/reset.css" rel="stylesheet">
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/fight.css" rel="stylesheet" />
+  </head>
+  <body>
+        <!-- 漢堡選單 -->
+        <section class="menu">
+            <nav>
+              <div data-depth="0.3" class="logo">
+                <a href="./index.html">
+                  <img src="./img/logotype.png" alt="">
+                </a>
+              </div>
+              <div class="menu_close" id="close_icon" >
+                <a href="#menu">
+                  <img src="./img/x.png" onmousedown="mDownx(this)" onmouseup="mUpx(this)">
+                </a>
+              </div>
+            </nav>
+            <div class="menu_bgimg">
+              <div data-depth="0.1" class="bm">
+                <img src="./img/main/back-mountain.png" alt="">
+              </div>
+              <div class="menu_mountain">
+                <img src="./img/main/menu_mountain.png" alt="">
+              </div>
+              <div data-depth="0.3" class="cloud_1">
+                <img src="./img/main/clouds.png" alt="">
+              </div>
+              <div data-depth="0.3" class="cloud_2">
+                <img src="./img/main/clouds.png" alt="">
+              </div>
+            </div>
+            <div data-depth="0.3" class="cloud_3">
+              <img src="./img/main/clouds.png" alt="">
+            </div>
+            <div data-depth="0.3" class="cloud_4">
+              <img src="./img/main/clouds.png" alt="">
+            </div>
+            <div class="hunted">
+              <img src="./img/main/menu_hunted.png" alt="">
+            </div>
+            <div class="menu_sign">
+              <img src="./img/main/menu_sign.png" alt="">
+            </div>
+            <div class="menu_hook">
+              <img src="./img/main/menu_hook.png" alt="">
+            </div>
+            <!-- 標題 -->
+            <div class="title">
+              <div class="woodtxt">
+                <h1>救難大木屋</h1>
+              </div>
+              <div class="entertxt">
+                <h1>登山口</h1>
+              </div>
+              <div class="heaven">
+                <h1>伊甸園</h1>
+              </div>
+            </div>
+            <!-- 分隔線 -->
+            <div class="cutline"></div>
+            <!--跳頁選項-->
+            <div class="wood_option">
+              <div class="preparing">
+                <a href="#package-id">
+                  <p>登山裝備</p>
+                </a>
+              </div>
+              <div class="bandage">
+                <a href="#hurt-id">
+                  <p>急救包紮</p>
+              </div>
+            </div>
+            <div class="enter_option">
+              <div class="snakbee">
+                <a>
+                  <p>毒螫魔</p>
+                </a>
+              </div>
+              <div class="fish">
+                <a>
+                  <p>鐵支麵粉鯛</p>
+              </div>
+              <div class="pig">
+                <a>
+                  <p>相撲熊豬刃牙</p>
+              </div>
+              <div class="hypoxia">
+                <a href="#">
+                  <p>高山絕氧獸</p>
+              </div>
+              <div class="hypothermia">
+                <a>
+                  <p>凝寒失溫龍</p>
+              </div>
+            </div>
+            <div class="heaven_option">
+              <div class="commodity">
+                <a href="./frog.html">
+                  <p>商品購買</p>
+                </a>
+              </div>
+              <div class="membership">
+                <a href="./frog.html">
+                  <p>會員登入</p>
+              </div>
+            </div>
+        </section>
+
+        <!--開頭轉場動畫-->
+         <div id="secondMask"></div>
+      
+        <!-- 戰鬥頁:Start -->
+        <section class="fight" id="fight-id">
+          <div class="header">
+            <div class="header_left">
+              <a href="./index.html">
+                <img src="./img/logotype.png" id="logotype" />
+              </a>
+            </div>
+            <div class="header_center">
+              <p class="altitude">ALTITUDE</p> <div id="scrollingNumber" class="scrollingNumber">1000</div> <p class="M">M</p>
+              <p class="level">LEVEL</p>
+              <div id="scrollingText" class="eleven">2-1</div>
+            </div>
+            <div class="header_right">
+              <img src="./img/hambergur.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)" id="bag_burger" />
+            </div>
+            <!-- 翻牌效果:S -->
+            <div class="flip-card" id="maincontainer">
+              <div class="thecard">
+                <div class="firstCard"></div>
+                <div class="secondCard"></div>
+                <div class="thirdCard"></div>
+              </div>
+            </div>
+            <!-- 翻牌效果:E -->
+          </div>
+          <div class="content">
+            <div class="bg" >
+                <img id="longmt" src="./img/fight/longmt.png" alt="">
+            </div>
+            <div class="road">
+                <img id="road" src="./img/fight/road.png" alt="">
+            </div>
+            <div class="person">
+                <img src="./img/./fight/walk.gif" alt="">
+            </div>
+            <div class="Btns">
+                <div class="btn-go"><a>前進</a></div>
+                <div class="btn-run"><a>逃跑</a></div>
+            </div>
+            <!-- 標籤頁 -->
+            <div class="cards-snakbee">
+                <div class="card-info">
+                </br></br></br>
+                    <p>動速度快 有劇毒 但攻擊性不高 危險指數3</p>
+                </div>
+                <div class="card-tmi">
+                </br></br></br>
+                    <p>
+                        蛇：山野活動時帶一枝棍子，一路打草而行。蛇多半在草叢中出沒，不太會主動攻擊。
+                    </p></br>
+                    <p>
+                        蜜蜂：山區活動時，可能會因拉動樹枝而觸動蜂巢，因此不要隨意亂搖樹枝。
+                    </p>
+                </div>
+                <div class="card-help">
+                </br></br></br>
+                    <p>
+                        穿著顏色較不鮮豔的長袖衣褲、包頭鞋、攜帶防蚊液、戴粗布手套、勿噴灑香水、盡量走大路，多帶薄外套、帽子，除了遮陽外，亦可幫助減少身體暴露區域，在意外發生時派上用場。
+                    </p>
+                </div>
+            </div>
+            <div class="snakebee">
+                <img src="./img/fight/毒蘑 1.png" alt="">
+            </div>
+          </div>
+        </section>
+        <script src="./js/fight.js"></script>
+  </body>
+</html>
