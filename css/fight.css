@@ -19,6 +19,9 @@ body {
   font-family: "Noto Sans TC";
   font-weight: Medium;
   scrollbar-color: transparent transparent;
+  background-image: url(../img/main/background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* header */
@@ -330,7 +333,7 @@ body {
   left: 0;
   visibility: hidden;
   transition: ease-in 220ms;
-  z-index: 99;
+  z-index: 10000;
 }
 
 /* 開頭轉場動畫設定 */
@@ -510,8 +513,6 @@ body {
 .thecard {
   position: absolute;
   display: flex;
-  /* left: 39vw;
-    top: -9.7vh; */
   right: 2vw;
   width: 100%;
   height: 100%;
@@ -521,7 +522,9 @@ body {
 
 .firstCard,
 .secondCard,
-.thirdCard {
+.thirdCard,
+.forthCard,
+.fifthCard {
   position: absolute;
   top: -0.5vh;
   width: 100%;
@@ -531,16 +534,26 @@ body {
 }
 
 .firstCard {
-  background: url("../img/package/title.png") center center / cover no-repeat;
+  background: url("../img/fight/title_snake.png") center center / cover
+    no-repeat;
 }
 
 .secondCard {
-  background: url("../img/hurt/title.png") center center / cover no-repeat;
+  background: url("../img/fight/title_fish.png") center center / cover no-repeat;
   transform: rotateY(180deg);
 }
 
 .thirdCard {
-  background: url("../img/entery/title.png") center center / cover no-repeat;
+  background: url("../img/fight/title_bear.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
+}
+
+.forthCard {
+  background: url("../img/fight/title_hmt.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
+}
+.fifthCard {
+  background: url("../img/fight/title_clod.png") center center / cover no-repeat;
   transform: rotateY(180deg);
 }
 
@@ -557,9 +570,8 @@ body {
   display: flex;
   justify-content: center;
   position: fixed;
-  bottom: -80vh;
+  bottom: 0vh;
   transition: bottom 0.5s linear;
-  /* visibility: hidden; */
 }
 .road {
   width: 100vw;
@@ -573,22 +585,94 @@ body {
   position: fixed;
   transition: bottom 0.5s linear;
   width: 100%;
+  z-index: 1;
 }
 .person img {
   width: 30vw;
 }
+
+#personImage.active {
+  background-image: url(../img/fight/person_walk.gif);
+  display: block; /* :active 状态下显示图片 */
+}
+
 /* 怪獸 */
 .snakebee {
-  width: 100vw;
-  position: absolute;
-  top: 0;
+  width: 90vw;
+  height: 80vh;
+  position: fixed;
+  top: -125vh;
   display: flex;
   justify-content: center;
-  z-index: 100;
+  overflow: hidden;
+  transition: top 0.5s linear;
+  cursor: pointer;
 }
 .snakebee img {
   width: 75vw;
   position: absolute;
+  z-index: 0;
+}
+.fish {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -225vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: top 0.5s linear;
+  cursor: pointer;
+}
+.fish img {
+  width: 75vw;
+  position: absolute;
+  z-index: 0;
+}
+.pigbear {
+  width: 90vw;
+  height: 86vh;
+  position: fixed;
+  top: -325vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: top 0.5s linear;
+}
+.pigbear img {
+  width: 75vw;
+  position: absolute;
+  z-index: 0;
+}
+.hypoxia {
+  width: 90vw;
+  height: 72vh;
+  position: fixed;
+  top: -425vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: top 0.5s linear;
+}
+.hypoxia img {
+  width: 75vw;
+  position: absolute;
+  z-index: 0;
+}
+.dragon {
+  width: 90vw;
+  height: 72vh;
+  position: fixed;
+  top: -575vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transition: top 0.5s linear;
+}
+.dragon img {
+  width: 75vw;
+  position: absolute;
+  z-index: 0;
 }
 .person {
   width: fit-content;
@@ -704,43 +788,168 @@ body {
 .btn-run a:active {
   color: #4a2914;
 }
+
 /* 標籤頁 */
+.cards-pages {
+  position: fixed;
+  width: 21vw;
+  height: 27vh;
+  background-image: url(../img/fight/page01.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.card-info,
+.card-tmi,
+.card-help {
+  position: fixed;
+  width: 21vw;
+  height: 19vh;
+  overflow: scroll;
+  margin-top: 4.5vh;
+}
+.page-info {
+  width: 2vw;
+  height: 3vh;
+  /* background-color: #5f1c68; */
+  position: fixed;
+  z-index: 10;
+  cursor: pointer;
+}
+.page-info:hover {
+  filter: brightness(2);
+}
+.page-tmi {
+  width: 2vw;
+  height: 3vh;
+  /* background-color: #ac5a24; */
+  position: fixed;
+  z-index: 10;
+  left: 7.5vw;
+  cursor: pointer;
+}
+.page-help {
+  width: 2vw;
+  height: 3vh;
+  /* background-color: #03c1b0; */
+  position: fixed;
+  z-index: 10;
+  left: 10.1vw;
+  cursor: pointer;
+}
+
+.cards-alert {
+  left: 5vw;
+  top: 71vh;
+  position: absolute;
+  width: 25vw;
+  opacity: 1;
+  background-image: url(../img/fight/page01.png);
+}
+.cards-alert div p {
+  width: 18vw;
+  font-family: Noto Sans TC;
+  font-style: Medium;
+  letter-spacing: 1.1px;
+  line-height: 27px;
+  margin-left: 3.5vw;
+  margin-top: 6vh;
+  color: #ffffff;
+}
+
 .cards-snakbee {
   left: 5vw;
   top: 71vh;
   position: absolute;
   width: 25vw;
-}
-
-.card-info {
-  position: fixed;
-  width: 21vw;
-  height: 27vh;
-  background-image: url(../img/fight/sprite_0.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.card-tmi {
-  position: fixed;
-  width: 21vw;
-  height: 27vh;
-  background-image: url(../img/fight/sprite_1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.card-help {
-  position: fixed;
-  width: 21vw;
-  height: 27vh;
-  background-image: url(../img/fight/sprite_2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1;
 }
 .cards-snakbee div p {
   width: 18vw;
   font-family: Noto Sans TC;
   font-style: Medium;
   letter-spacing: 1.1px;
-  line-height: 22px;
+  line-height: 27px;
   margin-left: 2vw;
+  margin-top: 1vh;
+  color: #ffffff;
+}
+
+.cards-fish {
+  left: 5vw;
+  top: 71vh;
+  position: absolute;
+  width: 25vw;
+  opacity: 0;
+  transition: opacity 500mm;
+  z-index: 1;
+}
+.cards-fish div p {
+  width: 18vw;
+  font-family: Noto Sans TC;
+  font-style: Medium;
+  letter-spacing: 1.1px;
+  line-height: 27px;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  color: #ffffff;
+}
+.cards-pigbear {
+  left: 5vw;
+  top: 71vh;
+  position: absolute;
+  width: 25vw;
+  opacity: 0;
+  transition: opacity 500mm;
+  z-index: 1;
+}
+.cards-pigbear div p {
+  width: 18vw;
+  font-family: Noto Sans TC;
+  font-style: Medium;
+  letter-spacing: 1.1px;
+  line-height: 27px;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  color: #ffffff;
+}
+.cards-hypoxia {
+  left: 5vw;
+  top: 71vh;
+  position: absolute;
+  width: 25vw;
+  opacity: 0;
+  transition: opacity 500mm;
+  z-index: 1;
+}
+.cards-hypoxia div p {
+  width: 18vw;
+  font-family: Noto Sans TC;
+  font-style: Medium;
+  letter-spacing: 1.1px;
+  line-height: 27px;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  color: #ffffff;
+}
+.cards-dragon {
+  left: 5vw;
+  top: 71vh;
+  position: absolute;
+  width: 25vw;
+  opacity: 0;
+  transition: opacity 500mm;
+  z-index: 1;
+}
+.cards-dragon div p {
+  width: 18vw;
+  font-family: Noto Sans TC;
+  font-style: Medium;
+  letter-spacing: 1.1px;
+  line-height: 27px;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  color: #ffffff;
 }
