@@ -329,7 +329,7 @@ body {
   left: 0;
   visibility: hidden;
   transition: ease-in 220ms;
-  z-index: 99;
+  z-index: 2000;
 }
 
 /* 開頭轉場動畫設定 */
@@ -347,9 +347,6 @@ body {
 }
 
 /* backpack start*/
-.header {
-  z-index: 40;
-}
 
 .package {
   background-image: url(../img/background.png);
@@ -420,6 +417,7 @@ body {
   text-transform: uppercase;
   vertical-align: middle;
   transition: transform ease;
+  z-index: 1000;
 }
 .header p {
   display: inline-block;
@@ -498,7 +496,7 @@ body {
 @media (min-width: 1600px) {
   .flip-card {
     width: 10vw;
-    top: -8.9vh;
+    top: -7.9vh;
   }
 }
 
@@ -512,6 +510,9 @@ body {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  background-image: url(../img/package/title.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .firstCard,
@@ -523,10 +524,12 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  opacity: 1;
 }
 
 .firstCard {
   background: url("../img/package/title.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
 }
 
 .secondCard {
@@ -2467,6 +2470,7 @@ body {
 #human {
   width: 85vw;
   z-index: 3;
+  cursor: pointer;
 }
 .linear {
   position: fixed;
@@ -2967,6 +2971,7 @@ body {
   width: 5vw;
   margin-top: 50vh;
   margin-left: -9vw;
+  cursor: pointer;
 }
 .cycle-hint2.active {
   animation: apear;
@@ -2979,6 +2984,7 @@ body {
   width: 5vw;
   margin-top: 52vh;
   margin-left: -28vw;
+  cursor: pointer;
 }
 .cycle-hint3.active {
   animation: apear;
@@ -2991,6 +2997,7 @@ body {
   width: 5vw;
   margin-top: 50vh;
   margin-left: -9vw;
+  cursor: pointer;
 }
 #return-gif {
   width: 30vw;
@@ -3015,6 +3022,7 @@ body {
   width: 5vw;
   margin-top: 45vh;
   margin-left: -17vw;
+  cursor: pointer;
 }
 .return-hint2.active {
   animation: apear;
@@ -3027,6 +3035,7 @@ body {
   width: 5vw;
   margin-top: 33vh;
   margin-left: -12vw;
+  cursor: pointer;
 }
 .return-hint3.active {
   animation: apear;
@@ -3039,6 +3048,7 @@ body {
   width: 5vw;
   margin-top: 45vh;
   margin-left: -19vw;
+  cursor: pointer;
 }
 .return-hint4.active {
   animation: apear;
@@ -3051,6 +3061,7 @@ body {
   width: 5vw;
   margin-top: 33vh;
   margin-left: -18vw;
+  cursor: pointer;
 }
 #spinreturn-gif {
   width: 30vw;
@@ -3074,6 +3085,7 @@ body {
   width: 5vw;
   margin-top: 48vh;
   margin-left: -14vw;
+  cursor: pointer;
 }
 .spinreturn-hint2.active {
   animation: apear;
@@ -3086,6 +3098,7 @@ body {
   width: 5vw;
   margin-top: 46vh;
   margin-left: -22vw;
+  cursor: pointer;
 }
 .spinreturn-hint3.active {
   animation: apear;
@@ -3098,6 +3111,7 @@ body {
   width: 5vw;
   margin-top: 37vh;
   margin-left: -14vw;
+  cursor: pointer;
 }
 #eight-gif {
   width: 30vw;
@@ -3121,6 +3135,7 @@ body {
   width: 5vw;
   margin-top: 32vh;
   margin-left: -22vw;
+  cursor: pointer;
 }
 .eight-hint2.active {
   animation: apear;
@@ -3133,6 +3148,7 @@ body {
   width: 5vw;
   margin-top: 58vh;
   margin-left: -12vw;
+  cursor: pointer;
 }
 .eight-hint3.active {
   animation: apear;
@@ -3145,6 +3161,7 @@ body {
   width: 5vw;
   margin-top: 54vh;
   margin-left: -22vw;
+  cursor: pointer;
 }
 #spin-gif {
   width: 30vw;
@@ -3167,6 +3184,7 @@ body {
   width: 5vw;
   margin-top: 46vh;
   margin-left: -23vw;
+  cursor: pointer;
 }
 .spin-hint2.active {
   animation: apear;
@@ -3179,6 +3197,7 @@ body {
   width: 5vw;
   margin-top: 35vh;
   margin-left: -23vw;
+  cursor: pointer;
 }
 @keyframes apear {
   0% {
@@ -3608,7 +3627,7 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 418vh;
+  top: 400vh;
   right: -10vw;
   z-index: 100;
   filter: brightness(0.93);
@@ -3622,7 +3641,7 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 440vh;
+  top: 422vh;
   right: -18vw;
   z-index: 100;
   transition: top 0.3s linear;
@@ -3637,7 +3656,7 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 461vh;
+  top: 443vh;
   right: 20vw;
   z-index: 100;
   filter: brightness(1.03);
@@ -3651,7 +3670,7 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 466vh;
+  top: 448vh;
   right: -42vw;
   z-index: 100;
   filter: brightness(1.07);

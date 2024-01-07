@@ -113,13 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundImageSource = "./img/entery/title.png";
     }
 
+    // 应用翻牌效果
     theCard.style.transition = "all 0.3s ease";
     theCard.style.transform = "rotateY(180deg)";
 
+    // 在翻牌效果完成后更改背景图
     setTimeout(function () {
       theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
       theCard.style.transform = "rotateY(0deg)";
-    }, 500);
+    }, 300);
   });
 });
 
@@ -256,7 +258,7 @@ window.addEventListener("scroll", function () {
   const bgElement = document.querySelector(".bg");
   const imgElement = document.getElementById("hypoxia");
 
-  const newBottomValue = -425 + scrollValue / 6 + "vh";
+  const newBottomValue = -400 + scrollValue / 6 + "vh";
   const newTopValue = 2 + "vh";
 
   if (scrollValue >= 2 && scrollValue <= -60) {
@@ -266,7 +268,7 @@ window.addEventListener("scroll", function () {
   }
 
   if (scrollValue === 0) {
-    imgElement.style.top = "-425vh";
+    imgElement.style.top = "-400vh";
   }
 });
 //寒冰龍

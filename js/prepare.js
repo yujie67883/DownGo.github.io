@@ -89,23 +89,32 @@ document.addEventListener("DOMContentLoaded", function () {
 // header中間img翻頁效果
 document.addEventListener("DOMContentLoaded", function () {
   const theCard = document.querySelector(".thecard");
-  const mainContainer = document.getElementById("maincontainer");
-
   let isCardFlipped = false;
 
   window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
+    const scrollingNumber = parseInt(
+      document.getElementById("scrollingNumber").textContent
+    );
 
-    if (scrollPercentage >= 100 && !isCardFlipped) {
-      theCard.style.transform = "rotateY(180deg)";
-      isCardFlipped = true;
-    } else if (scrollPercentage < 100 && isCardFlipped) {
-      theCard.style.transform = "rotateY(0deg)";
-      isCardFlipped = false;
+    let backgroundImageSource = "../img/entery/title.png"; // 默认背景图源
+
+    if (scrollingNumber >= 200 && scrollingNumber < 400) {
+      backgroundImageSource = "./img/hurt/title.png";
+    } else if (scrollingNumber >= 400) {
+      backgroundImageSource = "./img/entery/title.png";
+    } else {
+      backgroundImageSource = "./img/package/title.png";
     }
+
+    // 应用翻牌效果
+    theCard.style.transition = "all 0.3s ease";
+    theCard.style.transform = "rotateY(180deg)";
+
+    // 在翻牌效果完成后更改背景图
+    setTimeout(function () {
+      theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
+      theCard.style.transform = "rotateY(0deg)";
+    }, 300);
   });
 });
 
@@ -132,9 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // header level 等級滾動效果
 document.addEventListener("DOMContentLoaded", function () {
+  const scrollingNumberElement = document.getElementById("scrollingNumber");
   const scrollingTextElement = document.getElementById("scrollingText");
 
-  let currentText = "1-1";
+  let currentNumber = 1000;
 
   window.addEventListener("scroll", function () {
     const scrollPercentage =
@@ -142,30 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
         (document.documentElement.scrollHeight - window.innerHeight)) *
       100;
 
-    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
+    const newNumber = Math.round(100 + (scrollPercentage / 100) * 400);
 
-    if (newText !== currentText) {
-      currentText = newText;
-      scrollingTextElement.textContent = currentText;
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingTextElement = document.getElementById("scrollingText");
+    if (newNumber !== currentNumber) {
+      currentNumber = newNumber;
+      scrollingNumberElement.textContent = currentNumber;
 
-  let currentText = "1-1";
+      // 根据 scrollingNumber 的值计算新的 scrollingText 内容
+      let newText;
+      if (currentNumber >= 400) {
+        newText = "1-3";
+      } else if (currentNumber >= 200) {
+        newText = "1-2";
+      } else {
+        newText = "1-1";
+      }
 
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
-
-    if (newText !== currentText) {
-      currentText = newText;
-      scrollingTextElement.textContent = currentText;
+      scrollingTextElement.textContent = newText;
     }
   });
 });
@@ -666,7 +669,7 @@ window.addEventListener("scroll", function () {
   const scrollValue = window.scrollY;
   const imgElement = document.getElementById("transcloud5");
 
-  const newBottomValue = 418 - scrollValue / 13 + "vh";
+  const newBottomValue = 400 - scrollValue / 13 + "vh";
 
   imgElement.style.top = newBottomValue;
 });
@@ -674,7 +677,7 @@ window.addEventListener("scroll", function () {
   const scrollValue = window.scrollY;
   const imgElement = document.getElementById("transcloud6");
 
-  const newBottomValue = 440 - scrollValue / 13 + "vh";
+  const newBottomValue = 422 - scrollValue / 13 + "vh";
 
   imgElement.style.top = newBottomValue;
 });
@@ -682,7 +685,7 @@ window.addEventListener("scroll", function () {
   const scrollValue = window.scrollY;
   const imgElement = document.getElementById("transcloud7");
 
-  const newBottomValue = 461 - scrollValue / 13 + "vh";
+  const newBottomValue = 443 - scrollValue / 13 + "vh";
 
   imgElement.style.top = newBottomValue;
 });
@@ -690,7 +693,7 @@ window.addEventListener("scroll", function () {
   const scrollValue = window.scrollY;
   const imgElement = document.getElementById("transcloud8");
 
-  const newBottomValue = 466 - scrollValue / 13 + "vh";
+  const newBottomValue = 448 - scrollValue / 13 + "vh";
 
   imgElement.style.top = newBottomValue;
 });

@@ -699,17 +699,19 @@ body {
   width: 75vw;
   position: absolute;
   z-index: 0;
+  margin-left: 9vw;
 }
 .hypoxia {
   width: 90vw;
   height: 72vh;
   position: fixed;
-  top: -425vh;
+  top: -400vh;
   display: flex;
   justify-content: center;
   overflow: hidden;
   transition: top 0.5s linear;
   cursor: pointer;
+  margin-left: 7vw;
 }
 .hypoxia img {
   width: 75vw;
