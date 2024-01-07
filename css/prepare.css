@@ -373,13 +373,12 @@ body {
   width: 10vw;
 }
 #closed_backpack {
-  padding-top: 10vh;
+  margin-top: 10vh;
   width: 35vw;
 }
 .openbag {
   position: absolute;
-  width: 36.5vw;
-  margin-left: -0.5vw;
+  width: 35vw;
   margin-top: 7vh;
   opacity: 0;
 }
@@ -552,6 +551,7 @@ body {
 }
 .contain {
   margin-top: 8vh;
+  margin-left: 2vw;
   position: relative;
   z-index: 0;
 }
@@ -2250,7 +2250,7 @@ body {
 }
 #hot {
   position: absolute;
-  width: 11vw;
+  width: 10.5vw;
   margin-top: 48vh;
   margin-left: 26vw;
   z-index: 2;
@@ -2284,7 +2284,7 @@ body {
 }
 .hot-detail img {
   vertical-align: middle;
-  width: 8vw;
+  width: 7.5vw;
 }
 .hot-detail p {
   margin-left: 2vw;
@@ -2345,7 +2345,7 @@ body {
 }
 #pants {
   position: absolute;
-  width: 8vw;
+  width: 7.5vw;
   margin-top: 50vh;
   margin-left: 26vw;
   z-index: 2;
@@ -2365,7 +2365,7 @@ body {
 }
 .pants-detail {
   position: absolute;
-  margin-top: 50vh;
+  margin-top: 51vh;
   margin-left: 19vw;
   width: 50vw;
   opacity: 0;
@@ -2380,7 +2380,7 @@ body {
 }
 .pants-detail img {
   vertical-align: middle;
-  width: 7vw;
+  width: 6.5vw;
 }
 .pants-detail p {
   margin-left: 2vw;
@@ -2390,6 +2390,36 @@ body {
   vertical-align: middle;
   display: inline-block;
   width: 15vw;
+}
+.scroll-hint img {
+  position: absolute;
+  margin-top: -3vh;
+  margin-left: 50vw;
+  width: 2vw;
+  transform: rotateY(180deg) rotate(90deg);
+}
+.scroll-hint {
+  opacity: 0;
+  scale: 0;
+}
+.scroll-hint.active {
+  opacity: 1;
+  scale: 1;
+  animation: hint;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes hint {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*hurt start*/
@@ -2461,7 +2491,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.1vw;
   line-height: normal;
-  margin-top: -55vh;
+  margin-top: -60vh;
   margin-left: 7vw;
 }
 
@@ -3159,6 +3189,31 @@ body {
   }
 }
 
+#hurt_start_arrow {
+  position: absolute;
+  margin-top: -3.8vh;
+  margin-left: 25vw;
+  width: 2vw;
+}
+
+.hurt_start_arrow {
+  scale: 0;
+  opacity: 0;
+}
+.hurt_start_arrow.active {
+  scale: 1;
+  opacity: 1;
+  animation: apear;
+  animation-duration: 1s;
+}
+.gradient span {
+  position: absolute;
+  margin-top: -10vh;
+  z-index: 1;
+  height: 40vh;
+  width: 100vw;
+  background: linear-gradient(#eadfff00, #eadfff, #eadfff00);
+}
 /* 登山口開始 */
 .entry {
   position: relative;

@@ -79,36 +79,36 @@
       </div>
     </div>
     <div class="enter_option">
-      <div class="snakbee">
+      <div class="snakbee_menu">
         <a href="#snakebee">
           <p>毒螫魔</p>
         </a>
       </div>
-      <div class="fish">
-        <a>
+      <div class="fish_menu">
+        <a href="#fish">
           <p>鐵支麵粉鯛</p>
       </div>
       <div class="pig">
-        <a>
+        <a href="#pigbear">
           <p>相撲熊豬刃牙</p>
       </div>
-      <div class="hypoxia">
-        <a href="#">
+      <div class="hypoxia_menu">
+        <a href="#hypoxia">
           <p>高山絕氧獸</p>
       </div>
       <div class="hypothermia">
-        <a>
+        <a href="#dragon">
           <p>凝寒失溫龍</p>
       </div>
     </div>
     <div class="heaven_option">
       <div class="commodity">
-        <a href="./frog.html">
+        <a href="./frog_purchase.html">
           <p>商品購買</p>
         </a>
       </div>
       <div class="membership">
-        <a href="./frog.html">
+        <a href="./frog_login.html">
           <p>會員登入</p>
       </div>
     </div>
@@ -135,6 +135,7 @@
       <!-- 翻牌效果 -->
       <div class="flip-card" id="maincontainer">
         <div class="thecard">
+          <div class="zeroCard"></div>
           <div class="firstCard"></div>
           <div class="secondCard"></div>
           <div class="thirdCard"></div>
@@ -152,11 +153,11 @@
           <img id="road" src="./img/fight/road.png" alt="">
       </div>
       <div class="person" >
-          <img id="personImage" src="./img/fight/person_stop.png" alt="">
+          <img id="personImage" src="./img/fight/person_walk.gif" alt="">
       </div>
       <div class="Btns">
-          <div class="btn-go"><a>前進</a></div>
-          <div class="btn-run"><a>逃跑</a></div>
+          <div class="btn-go" onclick="moveForward()"><a>前進</a></div>
+          <div class="btn-run" onclick="runAway()"><a>逃跑</a></div>
       </div>
       <!-- 標籤頁:start -->
       <!--說明頁-->

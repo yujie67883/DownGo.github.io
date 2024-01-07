@@ -7,7 +7,28 @@ window.addEventListener("scroll", function () {
 
   imgElement.style.bottom = newBottomValue;
 });
+//從首頁漢堡轉換到背包頁
+document.addEventListener("DOMContentLoaded", function () {
+  var mountainEquipLink = document.querySelector(".wood_option .preparing a");
 
+  mountainEquipLink.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    window.location.href = "bag_hurt.html##package-id";
+  });
+});
+//從首頁漢堡轉換到受傷頁
+document.addEventListener("DOMContentLoaded", function () {
+  var mountainEquipLink = document.querySelector(".wood_option .bandage a");
+
+  mountainEquipLink.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    window.location.href = "bag_hurt.html#hurt-id";
+  });
+});
+
+//漢堡頁轉換
 $("#bag_burger").click(function () {
   $(".menu").css("visibility", "visible").show();
   $(".menu").css("top", "0");
@@ -24,59 +45,25 @@ $(".wood_option .bandage").click(function () {
   $(".menu").css("top", "-110vh");
   $(".menu").css("visibility", "hidden");
 });
-$(".enter_option .snakbee").click(function () {
+$(".enter_option .snakbee_menu").click(function () {
   $(".menu").css("top", "-110vh");
   $(".menu").css("visibility", "hidden");
 });
-
-// header中間img翻頁效果
-document.addEventListener("DOMContentLoaded", function () {
-  const flipCard = document.querySelector(".thecard");
-
-  const packageSection = document.getElementById("package-id");
-  const hurtSection = document.getElementById("hurt-id");
-  const entrySection = document.getElementById("entry-id");
-
-  let currentCard = "firstCard";
-
-  function getVisibleSection() {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    if (scrollY < packageSection.offsetTop + windowHeight) {
-      return "firstCard";
-    } else if (scrollY < hurtSection.offsetTop + windowHeight) {
-      return "secondCard";
-    } else if (scrollY < entrySection.offsetTop + windowHeight) {
-      return "thirdCard";
-    } else {
-      return "unknown";
-    }
-  }
-
-  window.onscroll = function () {
-    const visibleSection = getVisibleSection();
-
-    if (visibleSection !== currentCard) {
-      currentCard = visibleSection;
-
-      if (currentCard === "firstCard") {
-        flipCard.style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "secondCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "thirdCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform =
-          "rotateY(180deg)";
-        flipCard.querySelector(".secondCard").style.transform =
-          "rotateY(180deg)";
-      }
-    }
-  };
+$(".enter_option .fish_menu").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+});
+$(".enter_option .pig").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+});
+$(".enter_option .hypoxia_menu").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+});
+$(".enter_option .hypothermia").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
 });
 
 // header海拔高度滾動效果
@@ -101,54 +88,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // header中間img翻頁效果
-document.addEventListener("DOMContentLoaded", function () {
-  const flipCard = document.querySelector(".thecard");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const flipCard = document.querySelector(".thecard");
 
-  const packageSection = document.getElementById("package-id");
-  const hurtSection = document.getElementById("hurt-id");
-  const entrySection = document.getElementById("entry-id");
+//   const packageSection = document.getElementById("package-id");
+//   const hurtSection = document.getElementById("hurt-id");
+//   const entrySection = document.getElementById("entry-id");
 
-  let currentCard = "firstCard";
+//   let currentCard = "firstCard";
 
-  function getVisibleSection() {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
+//   function getVisibleSection() {
+//     const scrollY = window.scrollY;
+//     const windowHeight = window.innerHeight;
 
-    if (scrollY < packageSection.offsetTop + windowHeight) {
-      return "firstCard";
-    } else if (scrollY < hurtSection.offsetTop + windowHeight) {
-      return "secondCard";
-    } else if (scrollY < entrySection.offsetTop + windowHeight) {
-      return "thirdCard";
-    } else {
-      return "unknown";
-    }
-  }
+//     if (scrollY < packageSection.offsetTop + windowHeight) {
+//       return "firstCard";
+//     } else if (scrollY < hurtSection.offsetTop + windowHeight) {
+//       return "secondCard";
+//     } else if (scrollY < entrySection.offsetTop + windowHeight) {
+//       return "thirdCard";
+//     } else {
+//       return "unknown";
+//     }
+//   }
 
-  window.onscroll = function () {
-    const visibleSection = getVisibleSection();
+//   window.onscroll = function () {
+//     const visibleSection = getVisibleSection();
 
-    if (visibleSection !== currentCard) {
-      currentCard = visibleSection;
+//     if (visibleSection !== currentCard) {
+//       currentCard = visibleSection;
 
-      if (currentCard === "firstCard") {
-        flipCard.style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "secondCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "thirdCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform =
-          "rotateY(180deg)";
-        flipCard.querySelector(".secondCard").style.transform =
-          "rotateY(180deg)";
-      }
-    }
-  };
-});
+//       if (currentCard === "firstCard") {
+//         flipCard.style.transform = "rotateY(0deg)";
+//         flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
+//         flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
+//       } else if (currentCard === "secondCard") {
+//         flipCard.style.transform = "rotateY(180deg)";
+//         flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
+//         flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
+//       } else if (currentCard === "thirdCard") {
+//         flipCard.style.transform = "rotateY(180deg)";
+//         flipCard.querySelector(".firstCard").style.transform =
+//           "rotateY(180deg)";
+//         flipCard.querySelector(".secondCard").style.transform =
+//           "rotateY(180deg)";
+//       }
+//     }
+//   };
+// });
 
 // header level 等級滾動效果
 document.addEventListener("DOMContentLoaded", function () {
@@ -190,25 +177,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 人物走停
-document.addEventListener("DOMContentLoaded", function () {
+// 人物逃跑
+function runAway() {
   var personImage = document.getElementById("personImage");
-  var personDiv = document.querySelector(".person");
-  var isScrolling;
-});
-window.addEventListener("scrollY", function () {
-  // 在滚动时添加 'active' 类
-  personImage.classList.add("active");
-  personImage.src = "./img/fight/person_walk.gif"; // 更改图片路径
 
-  // 清除之前的计时器
-  clearTimeout(isScrolling);
+  personImage.src = "./img/fight/person_run.gif";
 
-  // 设置计时器，在停止滚动时移除 'active' 类
-  isScrolling = setTimeout(function () {
-    personImage.classList.remove("active");
-    personImage.src = "./img/fight/person_stop.png"; // 恢复初始图片路径
-  }, 200); // 这里的 200 是一个延迟时间，你可以根据需要调整
+  setTimeout(function () {
+    personImage.src = "./img/fight/person_walk.gif";
+  }, 3000);
+}
+
+function moveForward() {}
+
+//路面滾動
+document.addEventListener("DOMContentLoaded", function () {
+  var roadImg = document.getElementById("road");
+
+  window.addEventListener("scroll", function () {
+    var scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    var newBottomValue = Math.max(-109, -scrollPercentage);
+
+    roadImg.style.bottom = newBottomValue + "vh";
+  });
 });
 
 //怪獸移動
