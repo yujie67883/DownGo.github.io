@@ -88,60 +88,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // header中間img翻頁效果
-// document.addEventListener("DOMContentLoaded", function () {
-//   const flipCard = document.querySelector(".thecard");
+document.addEventListener("DOMContentLoaded", function () {
+  const theCard = document.querySelector(".thecard");
+  let isCardFlipped = false;
 
-//   const packageSection = document.getElementById("package-id");
-//   const hurtSection = document.getElementById("hurt-id");
-//   const entrySection = document.getElementById("entry-id");
+  window.addEventListener("scroll", function () {
+    const scrollingNumber = parseInt(
+      document.getElementById("scrollingNumber").textContent
+    );
 
-//   let currentCard = "firstCard";
+    let backgroundImageSource = "../img/entery/title.png"; // 默认背景图源
 
-//   function getVisibleSection() {
-//     const scrollY = window.scrollY;
-//     const windowHeight = window.innerHeight;
+    if (scrollingNumber >= 1000 && scrollingNumber < 1500) {
+      backgroundImageSource = "./img/fight/title_snake.png";
+    } else if (scrollingNumber >= 1500 && scrollingNumber < 2000) {
+      backgroundImageSource = "./img/fight/title_fish.png";
+    } else if (scrollingNumber >= 2000 && scrollingNumber < 2500) {
+      backgroundImageSource = "./img/fight/title_bear.png";
+    } else if (scrollingNumber >= 2500 && scrollingNumber < 3000) {
+      backgroundImageSource = "./img/fight/title_hmt.png";
+    } else if (scrollingNumber >= 3000) {
+      backgroundImageSource = "./img/fight/title_clod.png";
+    } else {
+      backgroundImageSource = "./img/entery/title.png";
+    }
 
-//     if (scrollY < packageSection.offsetTop + windowHeight) {
-//       return "firstCard";
-//     } else if (scrollY < hurtSection.offsetTop + windowHeight) {
-//       return "secondCard";
-//     } else if (scrollY < entrySection.offsetTop + windowHeight) {
-//       return "thirdCard";
-//     } else {
-//       return "unknown";
-//     }
-//   }
+    theCard.style.transition = "all 0.3s ease";
+    theCard.style.transform = "rotateY(180deg)";
 
-//   window.onscroll = function () {
-//     const visibleSection = getVisibleSection();
-
-//     if (visibleSection !== currentCard) {
-//       currentCard = visibleSection;
-
-//       if (currentCard === "firstCard") {
-//         flipCard.style.transform = "rotateY(0deg)";
-//         flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-//         flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-//       } else if (currentCard === "secondCard") {
-//         flipCard.style.transform = "rotateY(180deg)";
-//         flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-//         flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-//       } else if (currentCard === "thirdCard") {
-//         flipCard.style.transform = "rotateY(180deg)";
-//         flipCard.querySelector(".firstCard").style.transform =
-//           "rotateY(180deg)";
-//         flipCard.querySelector(".secondCard").style.transform =
-//           "rotateY(180deg)";
-//       }
-//     }
-//   };
-// });
+    setTimeout(function () {
+      theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
+      theCard.style.transform = "rotateY(0deg)";
+    }, 500);
+  });
+});
 
 // header level 等級滾動效果
 document.addEventListener("DOMContentLoaded", function () {
+  const scrollingNumberElement = document.getElementById("scrollingNumber");
   const scrollingTextElement = document.getElementById("scrollingText");
 
-  let currentText = "1-1";
+  let currentNumber = 1000;
 
   window.addEventListener("scroll", function () {
     const scrollPercentage =
@@ -149,30 +136,29 @@ document.addEventListener("DOMContentLoaded", function () {
         (document.documentElement.scrollHeight - window.innerHeight)) *
       100;
 
-    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
+    const newNumber = Math.round(500 + (scrollPercentage / 100) * 4000);
 
-    if (newText !== currentText) {
-      currentText = newText;
-      scrollingTextElement.textContent = currentText;
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingTextElement = document.getElementById("scrollingText");
+    if (newNumber !== currentNumber) {
+      currentNumber = newNumber;
+      scrollingNumberElement.textContent = currentNumber;
 
-  let currentText = "1-1";
+      // 根据 scrollingNumber 的值计算新的 scrollingText 内容
+      let newText;
+      if (currentNumber >= 3000) {
+        newText = "2-5";
+      } else if (currentNumber >= 2500) {
+        newText = "2-4";
+      } else if (currentNumber >= 2000) {
+        newText = "2-3";
+      } else if (currentNumber >= 1500) {
+        newText = "2-2";
+      } else if (currentNumber >= 1000) {
+        newText = "2-1";
+      } else {
+        newText = "2-0";
+      }
 
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    const newText = scrollPercentage >= 50 ? "1-2" : "1-1";
-
-    if (newText !== currentText) {
-      currentText = newText;
-      scrollingTextElement.textContent = currentText;
+      scrollingTextElement.textContent = newText;
     }
   });
 });

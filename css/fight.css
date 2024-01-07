@@ -560,6 +560,9 @@ body {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+  background-image: url(../img/entery/title.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .firstCard,
@@ -574,14 +577,17 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  opacity: 1;
 }
 .zeroCard {
   background: url("../img/entery/title.png") center center / cover no-repeat;
+  transform: rotateY(180deg);
 }
 
 .firstCard {
   background: url("../img/fight/title_snake.png") center center / cover
     no-repeat;
+  transform: rotateY(180deg);
 }
 
 .secondCard {
