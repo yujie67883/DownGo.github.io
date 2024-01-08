@@ -770,6 +770,7 @@ body {
   background-image: url(../img/prelude/btn_default.png);
   background-size: contain;
   background-repeat: no-repeat;
+  opacity: 0;
 }
 @media (min-width: 1600px) {
   .btn-go {
