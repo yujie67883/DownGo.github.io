@@ -180,11 +180,17 @@ function runAway() {
 }
 
 function moveForward() {
-  // Get the target div
-  var toSnakebee = document.getElementById("snakebee");
+  console.log("click");
+  // Check if the wheelDelta property exists (for WebKit browsers)
+  var delta = event.wheelDelta || -event.deltaY;
 
-  // Use scrollIntoView to scroll the target div into view
-  toSnakebee.scrollIntoView({ behavior: "smooth" });
+  // Determine the amount to scroll (adjust as needed)
+  var scrollAmount = 100;
+
+  // Simulate scrolling down
+  if (delta < 0) {
+    document.getElementById("btn-go").scrollTop += scrollAmount;
+  }
 }
 
 //路面滾動
@@ -757,12 +763,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showCardContent("info");
 });
-
-//滑動到我想要的地方
-function scrollToFlexContainer() {
-  // Get the target flex container item
-  var targetFlexItem = document.getElementById("fish");
-
-  // Use scrollIntoView to scroll the target flex container item into view
-  targetFlexItem.scrollIntoView({ behavior: "smooth" });
-}

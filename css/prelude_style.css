@@ -247,7 +247,7 @@ body {
 .botton {
   position: fixed;
   margin-top: 12vh;
-  width: 12vw;
+  width: 10vw;
   height: fit-content;
   background-image: url(../img/prelude/btn_default.png);
   background-size: contain;
@@ -261,7 +261,7 @@ body {
 .botton a {
   display: flex;
   justify-content: center;
-  line-height: 6.4vh;
+  line-height: 6.1vh;
   text-decoration: none;
   color: #7b3e0e;
   font-weight: bold;
