@@ -179,7 +179,13 @@ function runAway() {
   });
 }
 
-function moveForward() {}
+function moveForward() {
+  // Get the target div
+  var toSnakebee = document.getElementById("snakebee");
+
+  // Use scrollIntoView to scroll the target div into view
+  toSnakebee.scrollIntoView({ behavior: "smooth" });
+}
 
 //路面滾動
 document.addEventListener("DOMContentLoaded", function () {
