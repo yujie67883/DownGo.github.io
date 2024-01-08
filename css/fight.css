@@ -861,7 +861,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
-  overflow-x: hidden;
 }
 
 .card-info,
@@ -870,7 +869,7 @@ body {
   position: fixed;
   width: 21vw;
   height: 19vh;
-  overflow: scroll;
+  overflow-y: scroll;
   margin-top: 4.5vh;
 }
 .page-info {

@@ -759,37 +759,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //滑動到我想要的地方
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber");
+function scrollToFlexContainer() {
+  // Get the target flex container item
+  var targetFlexItem = document.getElementById("fish");
 
-  let currentNumber = 1000;
-
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    const newNumber = Math.round(500 + (scrollPercentage / 100) * 4000);
-
-    if (newNumber !== currentNumber) {
-      currentNumber = newNumber;
-      scrollingNumberElement.textContent = currentNumber;
-    }
-  });
-
-  // 找到你的按鈕元素
-  const scrollToButton = document.getElementById("btn-go");
-
-  // 為按鈕添加點擊事件監聽器
-  document.addEventListener("DOMContentLoaded", function () {
-    // 指定你想要的高度值，這裡以 1000 為例
-    const targetHeight = 1000;
-
-    // 使用 window.scrollTo() 來滾動到指定高度位置
-    window.scrollTo({
-      top: targetHeight,
-      behavior: "smooth", // 可以使用 "smooth" 實現平滑滾動
-    });
-  });
-});
+  // Use scrollIntoView to scroll the target flex container item into view
+  targetFlexItem.scrollIntoView({ behavior: "smooth" });
+}
