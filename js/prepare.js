@@ -15,78 +15,7 @@ $(".wood_option .bandage").click(function () {
   $(".menu").css("visibility", "hidden");
 });
 
-// header中間img翻頁效果
-document.addEventListener("DOMContentLoaded", function () {
-  const flipCard = document.querySelector(".thecard");
-
-  const packageSection = document.getElementById("package-id");
-  const hurtSection = document.getElementById("hurt-id");
-  const entrySection = document.getElementById("entry-id");
-
-  let currentCard = "firstCard";
-
-  function getVisibleSection() {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-
-    if (scrollY < packageSection.offsetTop + windowHeight) {
-      return "firstCard";
-    } else if (scrollY < hurtSection.offsetTop + windowHeight) {
-      return "secondCard";
-    } else if (scrollY < entrySection.offsetTop + windowHeight) {
-      return "thirdCard";
-    } else {
-      return "unknown";
-    }
-  }
-
-  window.onscroll = function () {
-    const visibleSection = getVisibleSection();
-
-    if (visibleSection !== currentCard) {
-      currentCard = visibleSection;
-
-      if (currentCard === "firstCard") {
-        flipCard.style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "secondCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform = "rotateY(0deg)";
-        flipCard.querySelector(".secondCard").style.transform = "rotateY(0deg)";
-      } else if (currentCard === "thirdCard") {
-        flipCard.style.transform = "rotateY(180deg)";
-        flipCard.querySelector(".firstCard").style.transform =
-          "rotateY(180deg)";
-        flipCard.querySelector(".secondCard").style.transform =
-          "rotateY(180deg)";
-      }
-    }
-  };
-});
-
 // header海拔高度滾動效果
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber");
-
-  let currentNumber = 100;
-
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    const newNumber = Math.round(100 + (scrollPercentage / 100) * 400);
-
-    if (newNumber !== currentNumber) {
-      currentNumber = newNumber;
-      scrollingNumberElement.textContent = currentNumber;
-    }
-  });
-});
-
-// header中間img翻頁效果
 document.addEventListener("DOMContentLoaded", function () {
   const theCard = document.querySelector(".thecard");
   let isCardFlipped = false;
@@ -115,6 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
       theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
       theCard.style.transform = "rotateY(0deg)";
     }, 300);
+  });
+});
+
+// header中間img翻頁效果
+document.addEventListener("DOMContentLoaded", function () {
+  const theCard = document.querySelector(".thecard");
+  const mainContainer = document.getElementById("maincontainer");
+
+  let isCardFlipped = false;
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    if (scrollPercentage >= 100 && !isCardFlipped) {
+      theCard.style.transform = "rotateY(180deg)";
+      isCardFlipped = true;
+    } else if (scrollPercentage < 100 && isCardFlipped) {
+      theCard.style.transform = "rotateY(0deg)";
+      isCardFlipped = false;
+    }
   });
 });
 
@@ -194,10 +146,14 @@ document
       document.getElementsByClassName("walk")[0].classList.add("active");
       document.getElementsByClassName("cloth")[0].classList.add("active");
     }, 1000);
+    setTimeout(function () {
+      document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    }, 20000);
   });
 
 //居住類
 document.getElementById("living").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("living-frame")[0].classList.add("active");
   document.getElementsByClassName("living-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -205,6 +161,9 @@ document.getElementById("living").addEventListener("click", function () {
   img.src = "img/書_翻開.gif";
 });
 document.getElementById("living-x").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("living-frame")[0].classList.remove("active");
   var img = document.getElementById("living-book");
   img.src = "img/書_闔上.gif";
@@ -238,6 +197,7 @@ document.getElementById("sleepbag").addEventListener("mouseout", function () {
 
 //雜項
 document.getElementById("other").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("other-frame")[0].classList.add("active");
   document.getElementsByClassName("other-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -245,6 +205,9 @@ document.getElementById("other").addEventListener("click", function () {
   img.src = "img/書_翻開.gif";
 });
 document.getElementById("other-x").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("other-frame")[0].classList.remove("active");
   var img = document.getElementById("other-book");
   img.src = "img/書_闔上.gif";
@@ -282,6 +245,7 @@ document.getElementById("buttery").addEventListener("mouseout", function () {
 
 //飲食及安全求生類
 document.getElementById("food").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("food-frame1")[0].classList.add("active");
   document.getElementsByClassName("food-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -377,6 +341,9 @@ document
       .classList.remove("active");
   });
 document.getElementById("food-x1").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("food-frame1")[0].classList.remove("active");
   document.getElementsByClassName("food-frame2")[0].classList.remove("active");
   var img = document.getElementById("food-book");
@@ -389,6 +356,9 @@ document.getElementById("food-x1").addEventListener("click", function () {
   }, 1300);
 });
 document.getElementById("food-x2").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("food-frame1")[0].classList.remove("active");
   document.getElementsByClassName("food-frame2")[0].classList.remove("active");
   var img = document.getElementById("food-book");
@@ -403,6 +373,7 @@ document.getElementById("food-x2").addEventListener("click", function () {
 
 //烹煮類
 document.getElementById("cook").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("cook-frame")[0].classList.add("active");
   document.getElementsByClassName("cook-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -454,6 +425,9 @@ document
       .classList.remove("active");
   });
 document.getElementById("cook-x").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("cook-frame")[0].classList.remove("active");
   var img = document.getElementById("cook-book");
   img.src = "img/書_闔上.gif";
@@ -467,6 +441,7 @@ document.getElementById("cook-x").addEventListener("click", function () {
 
 //行走類
 document.getElementById("walk").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("walk-frame")[0].classList.add("active");
   document.getElementsByClassName("walk-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -474,6 +449,9 @@ document.getElementById("walk").addEventListener("click", function () {
   img.src = "img/書_翻開.gif";
 });
 document.getElementById("walk-x").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("walk-frame")[0].classList.remove("active");
   var img = document.getElementById("walk-book");
   img.src = "img/書_闔上.gif";
@@ -503,6 +481,7 @@ document.getElementById("pole").addEventListener("mouseout", function () {
 
 //衣著類
 document.getElementById("cloth").addEventListener("click", function () {
+  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
   document.getElementsByClassName("cloth-frame1")[0].classList.add("active");
   document.getElementsByClassName("cloth-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -572,6 +551,9 @@ document.getElementById("pants").addEventListener("mouseout", function () {
   document.getElementsByClassName("pants")[0].classList.remove("active");
 });
 document.getElementById("cloth-x1").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("cloth-frame1")[0].classList.remove("active");
   document.getElementsByClassName("cloth-frame2")[0].classList.remove("active");
   var img = document.getElementById("cloth-book");
@@ -584,6 +566,9 @@ document.getElementById("cloth-x1").addEventListener("click", function () {
   }, 1300);
 });
 document.getElementById("cloth-x2").addEventListener("click", function () {
+  setTimeout(function () {
+    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+  }, 1500);
   document.getElementsByClassName("cloth-frame1")[0].classList.remove("active");
   document.getElementsByClassName("cloth-frame2")[0].classList.remove("active");
   var img = document.getElementById("cloth-book");

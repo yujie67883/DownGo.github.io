@@ -113,11 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundImageSource = "./img/entery/title.png";
     }
 
-    // 应用翻牌效果
     theCard.style.transition = "all 0.3s ease";
     theCard.style.transform = "rotateY(180deg)";
 
-    // 在翻牌效果完成后更改背景图
     setTimeout(function () {
       theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
       theCard.style.transform = "rotateY(0deg)";
@@ -144,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
       currentNumber = newNumber;
       scrollingNumberElement.textContent = currentNumber;
 
-      // 根据 scrollingNumber 的值计算新的 scrollingText 内容
       let newText;
       if (currentNumber >= 3000) {
         newText = "2-5";
@@ -173,7 +170,13 @@ function runAway() {
 
   setTimeout(function () {
     personImage.src = "./img/fight/person_walk.gif";
-  }, 3000);
+  }, 1500);
+
+  //逃跑:滾動回到頁面頂端
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 
 function moveForward() {}
@@ -747,4 +750,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   showCardContent("info");
+});
+
+//滑動到我想要的地方
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollingNumberElement = document.getElementById("scrollingNumber");
+
+  let currentNumber = 1000;
+
+  window.addEventListener("scroll", function () {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
+
+    const newNumber = Math.round(500 + (scrollPercentage / 100) * 4000);
+
+    if (newNumber !== currentNumber) {
+      currentNumber = newNumber;
+      scrollingNumberElement.textContent = currentNumber;
+    }
+  });
+
+  // 找到你的按鈕元素
+  const scrollToButton = document.getElementById("btn-go");
+
+  // 為按鈕添加點擊事件監聽器
+  document.addEventListener("DOMContentLoaded", function () {
+    // 指定你想要的高度值，這裡以 1000 為例
+    const targetHeight = 1000;
+
+    // 使用 window.scrollTo() 來滾動到指定高度位置
+    window.scrollTo({
+      top: targetHeight,
+      behavior: "smooth", // 可以使用 "smooth" 實現平滑滾動
+    });
+  });
 });
