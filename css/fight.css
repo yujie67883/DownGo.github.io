@@ -869,7 +869,7 @@ body {
   position: fixed;
   width: 21vw;
   height: 19vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-top: 4.5vh;
 }
 .page-info {
