@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (document.documentElement.scrollHeight - window.innerHeight)) *
       100;
 
-    const newNumber = Math.round(500 + (scrollPercentage / 100) * 4000);
+    const newNumber = Math.round(500 + (scrollPercentage / 100) * 3000);
 
     if (newNumber !== currentNumber) {
       currentNumber = newNumber;

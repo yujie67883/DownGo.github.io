@@ -614,7 +614,7 @@ body {
 /* 戰鬥頁開始 */
 .bg {
   width: 100vw;
-  height: 500vh;
+  height: 426vh;
   overflow: hidden;
 }
 .bg img {
@@ -664,9 +664,10 @@ body {
   cursor: pointer;
 }
 .snakebee img {
-  width: 75vw;
+  width: 65vw;
   position: absolute;
   z-index: 0;
+  margin-left: 12vw;
 }
 .fish {
   width: 100vw;
@@ -680,7 +681,7 @@ body {
   cursor: pointer;
 }
 .fish img {
-  width: 75vw;
+  width: 71vw;
   position: absolute;
   z-index: 0;
 }
@@ -696,7 +697,7 @@ body {
   cursor: pointer;
 }
 .pigbear img {
-  width: 75vw;
+  width: 62vw;
   position: absolute;
   z-index: 0;
   margin-left: 9vw;
@@ -714,7 +715,7 @@ body {
   margin-left: 7vw;
 }
 .hypoxia img {
-  width: 75vw;
+  width: 71vw;
   position: absolute;
   z-index: 0;
 }
@@ -731,7 +732,7 @@ body {
 }
 .dragon img {
   margin-left: 12vw;
-  width: 75vw;
+  width: 71vw;
   position: absolute;
   z-index: 0;
 }
@@ -860,6 +861,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 .card-info,

@@ -6,6 +6,23 @@ document.getElementById("human").addEventListener("click", function () {
     .getElementsByClassName("hurt-second-content")[0]
     .classList.add("active");
 });
+document.getElementById("hurt-id").addEventListener("mouseover", function () {
+  setTimeout(() => {
+    document
+      .getElementsByClassName("hurt_start_arrow")[0]
+      .classList.add("active");
+  }, 17500);
+});
+document
+  .getElementById("hurt_start_arrow")
+  .addEventListener("click", function () {
+    document
+      .getElementsByClassName("hurt_first-content")[0]
+      .classList.add("active");
+    document
+      .getElementsByClassName("hurt-second-content")[0]
+      .classList.add("active");
+  });
 document.getElementById("whole-human").addEventListener("click", function () {
   document
     .getElementsByClassName("hurt_first-content")[0]
