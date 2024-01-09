@@ -179,19 +179,15 @@ function runAway() {
   });
 }
 
-function moveForward() {
-  console.log("click");
-  // Check if the wheelDelta property exists (for WebKit browsers)
-  var delta = event.wheelDelta || -event.deltaY;
+//前進按鈕
+(function () {
+  document.getElementById("btn-go").addEventListener("click", function (e) {
+    var _top = e.target.offsetHeight - e.target.offsetHeight / 2;
+    document.getElementById("snakebee").scrollTop = _top;
 
-  // Determine the amount to scroll (adjust as needed)
-  var scrollAmount = 100;
-
-  // Simulate scrolling down
-  if (delta < 0) {
-    document.getElementById("btn-go").scrollTop += scrollAmount;
-  }
-}
+    console.log("click");
+  });
+})();
 
 //路面滾動
 document.addEventListener("DOMContentLoaded", function () {

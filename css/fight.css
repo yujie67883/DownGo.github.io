@@ -656,12 +656,13 @@ body {
   width: 90vw;
   height: 80vh;
   position: fixed;
-  top: -125vh;
+  top: -120vh;
   display: flex;
   justify-content: center;
   overflow: hidden;
   transition: top 0.5s linear;
   cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 .snakebee img {
   width: 65vw;
@@ -679,6 +680,7 @@ body {
   overflow: hidden;
   transition: top 0.5s linear;
   cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 .fish img {
   width: 71vw;
@@ -694,7 +696,9 @@ body {
   justify-content: center;
   overflow: hidden;
   transition: top 0.5s linear;
+  margin-top: -3vh;
   cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 .pigbear img {
   width: 62vw;
@@ -713,6 +717,8 @@ body {
   transition: top 0.5s linear;
   cursor: pointer;
   margin-left: 7vw;
+  margin-top: -25vh;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 .hypoxia img {
   width: 71vw;
@@ -729,6 +735,7 @@ body {
   overflow: hidden;
   transition: top 0.5s linear;
   cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 .dragon img {
   margin-left: 12vw;
@@ -750,8 +757,12 @@ body {
   width: fit-content;
   height: 30vh;
   z-index: 200;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
 }
 /* 按鈕 */
+.content {
+  overflow-y: auto;
+}
 .Btns {
   left: 16%;
   position: absolute;
@@ -771,11 +782,15 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0;
+  scale: 0;
 }
+
 @media (min-width: 1600px) {
   .btn-go {
     width: 18vw;
     height: 10.2vh;
+    opacity: 0;
+    scale: 0;
   }
 }
 .btn-go a {
@@ -798,9 +813,11 @@ body {
 .btn-go:hover {
   background-image: url(../img/prelude/btn_hover.png);
 }
+
 .btn-go a:hover {
   color: #ac5a24;
 }
+
 .btn-go:active {
   background-image: url(../img/prelude/btn_active.png);
 }

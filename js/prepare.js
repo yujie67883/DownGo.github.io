@@ -147,13 +147,17 @@ document
       document.getElementsByClassName("cloth")[0].classList.add("active");
     }, 1000);
     setTimeout(function () {
-      document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+      document
+        .getElementsByClassName("prepare-scroll-hint")[0]
+        .classList.add("active");
     }, 20000);
   });
 
 //居住類
 document.getElementById("living").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("living-frame")[0].classList.add("active");
   document.getElementsByClassName("living-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -162,7 +166,9 @@ document.getElementById("living").addEventListener("click", function () {
 });
 document.getElementById("living-x").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("living-frame")[0].classList.remove("active");
   var img = document.getElementById("living-book");
@@ -197,7 +203,9 @@ document.getElementById("sleepbag").addEventListener("mouseout", function () {
 
 //雜項
 document.getElementById("other").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("other-frame")[0].classList.add("active");
   document.getElementsByClassName("other-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -206,7 +214,9 @@ document.getElementById("other").addEventListener("click", function () {
 });
 document.getElementById("other-x").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("other-frame")[0].classList.remove("active");
   var img = document.getElementById("other-book");
@@ -245,7 +255,9 @@ document.getElementById("buttery").addEventListener("mouseout", function () {
 
 //飲食及安全求生類
 document.getElementById("food").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("food-frame1")[0].classList.add("active");
   document.getElementsByClassName("food-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -342,7 +354,9 @@ document
   });
 document.getElementById("food-x1").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("food-frame1")[0].classList.remove("active");
   document.getElementsByClassName("food-frame2")[0].classList.remove("active");
@@ -357,7 +371,9 @@ document.getElementById("food-x1").addEventListener("click", function () {
 });
 document.getElementById("food-x2").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("food-frame1")[0].classList.remove("active");
   document.getElementsByClassName("food-frame2")[0].classList.remove("active");
@@ -373,7 +389,9 @@ document.getElementById("food-x2").addEventListener("click", function () {
 
 //烹煮類
 document.getElementById("cook").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("cook-frame")[0].classList.add("active");
   document.getElementsByClassName("cook-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -426,7 +444,9 @@ document
   });
 document.getElementById("cook-x").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("cook-frame")[0].classList.remove("active");
   var img = document.getElementById("cook-book");
@@ -441,7 +461,9 @@ document.getElementById("cook-x").addEventListener("click", function () {
 
 //行走類
 document.getElementById("walk").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("walk-frame")[0].classList.add("active");
   document.getElementsByClassName("walk-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -450,7 +472,9 @@ document.getElementById("walk").addEventListener("click", function () {
 });
 document.getElementById("walk-x").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("walk-frame")[0].classList.remove("active");
   var img = document.getElementById("walk-book");
@@ -481,7 +505,9 @@ document.getElementById("pole").addEventListener("mouseout", function () {
 
 //衣著類
 document.getElementById("cloth").addEventListener("click", function () {
-  document.getElementsByClassName("scroll-hint")[0].classList.remove("active");
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.remove("active");
   document.getElementsByClassName("cloth-frame1")[0].classList.add("active");
   document.getElementsByClassName("cloth-book")[0].classList.add("active");
   document.getElementsByClassName("bookbackground")[0].classList.add("active");
@@ -552,7 +578,9 @@ document.getElementById("pants").addEventListener("mouseout", function () {
 });
 document.getElementById("cloth-x1").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("cloth-frame1")[0].classList.remove("active");
   document.getElementsByClassName("cloth-frame2")[0].classList.remove("active");
@@ -567,7 +595,9 @@ document.getElementById("cloth-x1").addEventListener("click", function () {
 });
 document.getElementById("cloth-x2").addEventListener("click", function () {
   setTimeout(function () {
-    document.getElementsByClassName("scroll-hint")[0].classList.add("active");
+    document
+      .getElementsByClassName("prepare-scroll-hint")[0]
+      .classList.add("active");
   }, 1500);
   document.getElementsByClassName("cloth-frame1")[0].classList.remove("active");
   document.getElementsByClassName("cloth-frame2")[0].classList.remove("active");

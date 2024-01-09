@@ -2394,20 +2394,37 @@ body {
   display: inline-block;
   width: 15vw;
 }
-.scroll-hint img {
+.prepare-scroll-hint img {
   position: absolute;
   margin-top: -3vh;
   margin-left: 50vw;
   width: 2vw;
   transform: rotateY(180deg) rotate(90deg);
 }
-.scroll-hint {
+.hurt-scroll-hint img {
+  position: absolute;
+  margin-top: 98vh;
+  margin-left: 49.5vw;
+  width: 2vw;
+  transform: rotateY(180deg) rotate(90deg);
+}
+.prepare-scroll-hint,
+.hurt-scroll-hint {
   opacity: 0;
   scale: 0;
 }
-.scroll-hint.active {
+.prepare-scroll-hint.active {
   opacity: 1;
   scale: 1;
+  width: 2vw;
+  animation: hint;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.hurt-scroll-hint.active {
+  opacity: 1;
+  scale: 1;
+  width: 2vw;
   animation: hint;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -2514,23 +2531,23 @@ body {
 
 #whole-human {
   width: 43vw;
-  margin-left: 32vw;
+  margin-left: 34vw;
   margin-top: 7vh;
 }
 .hurt_left-main-line {
   background-color: #ffffff00;
   position: absolute;
-  width: 5vw;
+  width: 5.5vw;
   height: 1vh;
-  margin-top: -50vh;
-  margin-left: 33vw;
+  margin-top: -55vh;
+  margin-left: 35vw;
   overflow: hidden;
 }
 .hurt_left-first-line {
   background-color: #5f1c6800;
   position: absolute;
-  margin-top: -69.75vh;
-  margin-left: 27vw;
+  margin-top: -74.75vh;
+  margin-left: 29vw;
   width: 6vw;
   height: 20vh;
   overflow: hidden;
@@ -2541,7 +2558,7 @@ body {
   width: 10vw;
   height: 1vh;
   margin-top: -32vh;
-  margin-left: 27vw;
+  margin-left: 29vw;
   overflow: hidden;
 }
 .hurt_left-third-line {
@@ -2550,7 +2567,7 @@ body {
   width: 15vw;
   height: 1vh;
   margin-top: -15vh;
-  margin-left: 27vw;
+  margin-left: 29vw;
   overflow: hidden;
 }
 .hurt_left-main-line span:nth-child(1) {
@@ -2599,7 +2616,7 @@ body {
   width: 4.15vw;
   height: 1vh;
   margin-top: -30.75vh;
-  margin-left: 61vw;
+  margin-left: 63vw;
   overflow: hidden;
 }
 .hurt_right-second-line {
@@ -2608,7 +2625,7 @@ body {
   width: 7vw;
   height: 39vh;
   margin-top: -69.75vh;
-  margin-left: 65vw;
+  margin-left: 67vw;
   overflow: hidden;
 }
 .hurt_right-third-line {
@@ -2617,7 +2634,7 @@ body {
   width: 16vw;
   height: 1vh;
   margin-top: -24vh;
-  margin-left: 56vw;
+  margin-left: 58vw;
   overflow: hidden;
 }
 .hurt_right-first-line span:nth-child(1) {
@@ -2656,31 +2673,31 @@ body {
   position: absolute;
   width: 10vw;
   margin-top: -80vh;
-  margin-left: 16vw;
+  margin-left: 18vw;
 }
 #return {
   position: absolute;
   width: 10vw;
   margin-top: -52vh;
-  margin-left: 16vw;
+  margin-left: 18vw;
 }
 #spinreturn {
   position: absolute;
   width: 10vw;
   margin-top: -24vh;
-  margin-left: 16vw;
+  margin-left: 18vw;
 }
 #eight {
   position: absolute;
   width: 10vw;
   margin-top: -80vh;
-  margin-left: 73vw;
+  margin-left: 75vw;
 }
 #spin {
   position: absolute;
   width: 10vw;
   margin-top: -50vh;
-  margin-left: 73vw;
+  margin-left: 75vw;
 }
 .frames img:hover {
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.6));
@@ -3213,6 +3230,7 @@ body {
   margin-top: -3.8vh;
   margin-left: 25vw;
   width: 2vw;
+  cursor: pointer;
 }
 
 .hurt_start_arrow {
