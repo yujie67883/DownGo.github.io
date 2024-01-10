@@ -180,14 +180,114 @@ function runAway() {
 }
 
 //前進按鈕
-(function () {
-  document.getElementById("btn-go").addEventListener("click", function (e) {
-    var _top = e.target.offsetHeight - e.target.offsetHeight / 2;
-    document.getElementById("snakebee").scrollTop = _top;
 
-    console.log("click");
+document.getElementById("btn-go1").classList.add("active");
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    const scrollingNumber = parseInt(
+      document.getElementById("scrollingNumber").textContent
+    );
+    // Reset active class on other buttons
+    document.getElementById("btn-go2").classList.remove("active");
+    document.getElementById("btn-go3").classList.remove("active");
+    document.getElementById("btn-go4").classList.remove("active");
+    document.getElementById("btn-go5").classList.remove("active");
+
+    // Add active class based on scrollingNumber
+    if (scrollingNumber >= 1000 && scrollingNumber < 1350) {
+      document.getElementById("btn-go1").classList.add("active");
+    } else if (scrollingNumber >= 1350 && scrollingNumber < 2000) {
+      document.getElementById("btn-go2").classList.add("active");
+    } else if (scrollingNumber >= 2000 && scrollingNumber < 2200) {
+      document.getElementById("btn-go3").classList.add("active");
+    } else if (scrollingNumber >= 2200 && scrollingNumber < 3000) {
+      document.getElementById("btn-go4").classList.add("active");
+    } else if (scrollingNumber >= 3000) {
+      document.getElementById("btn-go5").classList.add("active");
+    } else if (scrollingNumber < 1000 && scrollingNumber == 0) {
+      document.getElementById("btn-go1").classList.add("active");
+    }
   });
-})();
+});
+
+function go1() {
+  // Assuming 'snakebee' is the id of the div you want to scroll to
+  var snakebeeDiv = document.getElementById("snakebee");
+  console.log("click1");
+
+  if (snakebeeDiv) {
+    var targetPosition =
+      window.scrollY - snakebeeDiv.getBoundingClientRect().top / 1.75;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+
+function go2() {
+  // Assuming 'snakebee' is the id of the div you want to scroll to
+  var fishDiv = document.getElementById("fish");
+  console.log("click2");
+
+  if (fishDiv) {
+    var targetPosition =
+      window.scrollY - fishDiv.getBoundingClientRect().top / 1.7;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+function go3() {
+  // Assuming 'snakebee' is the id of the div you want to scroll to
+  var pigbearDiv = document.getElementById("pigbear");
+  console.log("click3");
+
+  if (pigbearDiv) {
+    var targetPosition =
+      window.scrollY - pigbearDiv.getBoundingClientRect().top / 1.75;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+function go4() {
+  // Assuming 'snakebee' is the id of the div you want to scroll to
+  var hypoxiaDiv = document.getElementById("hypoxia");
+  console.log("click4");
+
+  if (hypoxiaDiv) {
+    var targetPosition =
+      window.scrollY - hypoxiaDiv.getBoundingClientRect().top / 1.68;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+
+function go5() {
+  // Assuming 'snakebee' is the id of the div you want to scroll to
+  var dragonDiv = document.getElementById("dragon");
+  console.log("click5");
+
+  if (dragonDiv) {
+    var targetPosition =
+      window.scrollY - dragonDiv.getBoundingClientRect().top / 1.68;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
 
 //路面滾動
 document.addEventListener("DOMContentLoaded", function () {

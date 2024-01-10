@@ -774,7 +774,11 @@ body {
   right: -50vw;
   cursor: pointer;
 }
-.btn-go {
+.btn-go1,
+.btn-go2,
+.btn-go3,
+.btn-go4,
+.btn-go5 {
   position: fixed;
   width: 17vw;
   height: 10vh;
@@ -784,16 +788,43 @@ body {
   opacity: 0;
   scale: 0;
 }
-
+.btn-go1.active {
+  opacity: 1;
+  scale: 1;
+}
+.btn-go2.active {
+  opacity: 1;
+  scale: 1;
+}
+.btn-go3.active {
+  opacity: 1;
+  scale: 1;
+}
+.btn-go4.active {
+  opacity: 1;
+  scale: 1;
+}
+.btn-go5.active {
+  opacity: 1;
+  scale: 1;
+}
 @media (min-width: 1600px) {
-  .btn-go {
+  .btn-go1,
+  .btn-go2,
+  .btn-go3,
+  .btn-go4,
+  .btn-go5 {
     width: 18vw;
     height: 10.2vh;
     opacity: 0;
     scale: 0;
   }
 }
-.btn-go a {
+.btn-go1 a,
+.btn-go2 a,
+.btn-go3 a,
+.btn-go4 a,
+.btn-go5 a {
   display: flex;
   justify-content: center;
   line-height: 8.4vh;
@@ -804,24 +835,75 @@ body {
   font-size: 20px;
 }
 @media (min-width: 1600px) {
-  .btn-go a {
+  .btn-go1 a,
+  .btn-go2 a,
+  .btn-go3 a,
+  .btn-go4 a,
+  .btn-go5 a {
     line-height: 9.4vh;
     letter-spacing: 8px;
     font-size: 32px;
   }
 }
-.btn-go:hover {
+.btn-go1:hover {
   background-image: url(../img/prelude/btn_hover.png);
 }
-
-.btn-go a:hover {
+.btn-go2:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.btn-go3:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.btn-go4:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.btn-go5:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.btn-go1 a:hover {
+  color: #ac5a24;
+}
+.btn-go2 a:hover {
+  color: #ac5a24;
+}
+.btn-go3 a:hover {
+  color: #ac5a24;
+}
+.btn-go4 a:hover {
+  color: #ac5a24;
+}
+.btn-go5 a:hover {
   color: #ac5a24;
 }
 
-.btn-go:active {
+.btn-go1:active {
   background-image: url(../img/prelude/btn_active.png);
 }
-.btn-go a:active {
+.btn-go2:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.btn-go3:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.btn-go4:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.btn-go5:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.btn-go1 a:active {
+  color: #4a2914;
+}
+.btn-go2 a:active {
+  color: #4a2914;
+}
+.btn-go3 a:active {
+  color: #4a2914;
+}
+.btn-go4 a:active {
+  color: #4a2914;
+}
+.btn-go5 a:active {
   color: #4a2914;
 }
 
@@ -934,7 +1016,7 @@ body {
   font-style: Medium;
   letter-spacing: 1.1px;
   line-height: 27px;
-  margin-left: 3.5vw;
+  margin-left: 2vw;
   margin-top: 6vh;
   color: #ffffff;
 }
