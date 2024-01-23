@@ -47,3 +47,8 @@ button.addEventListener("click", () => {
     window.location.href = "bag_hurt.html";
   }, 1500);
 });
+
+//返回上一頁
+function goBack() {
+  window.history.back();
+}

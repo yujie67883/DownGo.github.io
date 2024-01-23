@@ -485,6 +485,19 @@ nav .burger a img :active {
   z-index: 1;
 }
 
+.alert {
+  position: absolute;
+  right: 2vw;
+  bottom: 2vh;
+  z-index: 5;
+  opacity: 65%;
+}
+
+.alert img {
+  width: 5vw;
+  cursor: pointer;
+}
+
 /* menu的選項 畫面設定 */
 
 .title {
@@ -519,6 +532,10 @@ nav .burger a img :active {
   z-index: 5;
 }
 
+.menu p {
+  font-family: "Noto Sans TC";
+}
+
 .wood_option {
   position: absolute;
   top: 30vh;
@@ -534,10 +551,12 @@ nav .burger a img :active {
   border-bottom-color: #262626;
   border-width: 2px;
 }
+
 .wood_option div:hover {
   border-bottom-style: outset;
   padding-bottom: 5px;
   transition: all 180ms ease-out;
+  cursor: pointer;
 }
 
 .wood_option div a {
@@ -567,12 +586,28 @@ nav .burger a img :active {
   border-bottom-style: outset;
   padding-bottom: 5px;
   transition: all 180ms ease-out;
+  cursor: pointer;
 }
 
 .enter_option div a {
   z-index: 3;
   text-decoration: none;
   color: #262626;
+}
+
+.enter_option div a p {
+  display: inline-block;
+}
+
+.purple {
+  color: #5f1c68;
+  font-size: large;
+  opacity: 0;
+}
+
+.enter_option div:hover .purple {
+  opacity: 1;
+  transition: opacity 180ms ease-out;
 }
 
 .heaven_option {
@@ -594,6 +629,7 @@ nav .burger a img :active {
   border-bottom-style: outset;
   padding-bottom: 5px;
   transition: all 180ms ease-out;
+  cursor: pointer;
 }
 
 .heaven_option div a {

@@ -627,9 +627,61 @@ body {
 .forg_gif {
   display: flex;
   justify-content: center;
-  margin-top: 14%;
+  margin-top: 10%;
 }
 
 .forg_gif img {
   width: 30%;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.Btn-Login {
+  margin-left: 3vw;
+  width: 12vw;
+  height: 7vh;
+  background-image: url(../img/prelude/btn_default.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1600px) {
+  .Btn-Login {
+    width: 11vw;
+    height: 7.2vh;
+  }
+}
+
+.Btn-Login a {
+  display: flex;
+  justify-content: center;
+  line-height: 6.4vh;
+  text-decoration: none;
+  color: #7b3e0e;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .Btn-Login a {
+    line-height: 6.4vh;
+    letter-spacing: 8px;
+    font-size: 26px;
+    padding-left: 8px;
+  }
+}
+
+.Btn-Login:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.Btn-Login a:hover {
+  color: #ac5a24;
+}
+.Btn-Login:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.Btn-Login a:active {
+  color: #4a2914;
 }
