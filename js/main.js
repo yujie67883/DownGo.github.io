@@ -7,10 +7,12 @@ let parallaxInstance = new Parallax(scene);
 $("#menu_burger").click(function () {
   $(".menu").css("visibility", "visible").show();
   $(".menu").css("top", "0");
+  $("#myButton").css("pointer-events", "none");
 });
 $("#close_icon").click(function () {
   $(".menu").css("top", "-110vh");
   $(".menu").css("visibility", "hidden");
+  $("#myButton").css("pointer-events", "auto");
 });
 $(".wood_option .preparing").click(function () {
   $(".menu").css("top", "-110vh");
@@ -50,17 +52,20 @@ button.addEventListener("click", () => {
 });
 
 //從首頁漢堡轉換到受傷頁
-// 當DOM完全載入後執行
 document.addEventListener("DOMContentLoaded", function () {
-  // 獲取<a>元素
   var mountainEquipLink = document.querySelector(".wood_option .bandage a");
 
-  // 添加點擊事件監聽器
   mountainEquipLink.addEventListener("click", function (event) {
-    // 阻止默認行為，防止頁面刷新
     event.preventDefault();
 
-    // 導向到"./bag_hurt.html#hurt_id"
     window.location.href = "bag_hurt.html#hurt-id";
   });
 });
+
+// hint
+window.onload = function () {
+  setTimeout(function () {
+    var hintDiv = document.querySelector(".hint");
+    hintDiv.style.display = "flex";
+  }, 3000);
+};

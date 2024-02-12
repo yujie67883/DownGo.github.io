@@ -290,13 +290,14 @@ nav .burger a img :active {
 
 #myButton {
   position: absolute;
-  bottom: 13vh;
-  right: 28vw;
-  width: 8vw;
-  height: 13vh;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 90vh;
   background: none;
   border: none;
   cursor: pointer;
+  pointer-events: auto;
   opacity: 0;
   z-index: 1;
   animation-name: circleout;
@@ -660,4 +661,55 @@ nav .burger a img :active {
 
 .fbg img {
   width: 100vw;
+}
+
+/* 提示句 */
+.hint {
+  width: 100vw;
+  margin-top: 6vh;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  justify-content: center;
+  z-index: 50;
+  animation: hintted 1500ms linear infinite, flash 750ms infinite alternate;
+  pointer-events: none;
+}
+@keyframes hintted {
+  0% {
+    margin-top: 6vh;
+  }
+  25% {
+    margin-top: 5vh;
+  }
+  50% {
+    margin-top: 6vh;
+  }
+  75% {
+    margin-top: 7vh;
+  }
+  100% {
+    margin-top: 6vh;
+  }
+}
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hint p {
+  font-size: large;
+  text-decoration: none;
+  color: #2e0d45;
+  font-family: "Noto Sans TC";
+  font-size: 18px;
+}
+@media (min-width: 1600px) {
+  .hint p {
+    font-size: 24px;
+  }
 }
