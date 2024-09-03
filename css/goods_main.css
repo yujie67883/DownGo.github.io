@@ -336,7 +336,7 @@ body {
 .marktape .picture {
   background: url(../img/goods/IMG_7724.jpg) no-repeat;
   background-size: 160%;
-  background-position: right;
+  background-position: 90%;
   transition: 300ms ease;
 }
 .marktape:hover .picture {
