@@ -1,9 +1,14 @@
 @font-face {
-  font-family: "Noto Sans TC";
+  font-family: "Noto Sans TC medium";
   src: local("Noto Sans TC"),
     url("../fonts/NotoSansTC-Medium.woff") format("woff"),
     url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
 }
+@font-face {
+  font-family: "Micro5";
+  src: local("Micro5-Regular"), url("../fonts/Micro5-Regular.ttf") format("ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
 body {
   width: 100vw;
@@ -383,7 +388,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: 30;
+  z-index: 0;
   position: relative;
 }
 #logotype {
@@ -436,12 +441,11 @@ body {
   width: 100vw;
   height: 8vh;
   color: #5f1c68;
-  /* font-family: Noto Sans TC; */
-  font-size: 18px;
-  font-style: Medium;
+  font-family: Micro5;
+  font-size: 30px;
   font-weight: 900;
-  line-height: normal;
-  letter-spacing: 1.1px;
+  line-height: 14px;
+  letter-spacing: 5%;
   text-transform: uppercase;
   vertical-align: middle;
   transition: transform ease;
@@ -534,6 +538,7 @@ body {
   /* left: 39vw;
   top: -9.7vh; */
   right: 2vw;
+  top: 2vh;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -808,7 +813,7 @@ body {
 }
 .living {
   width: 10vw;
-  margin-top: -82vh;
+  margin-top: -84vh;
   margin-left: 75vw;
   position: absolute;
   opacity: 0;
@@ -833,7 +838,7 @@ body {
     opacity: 0;
   }
   100% {
-    margin-top: -82vh;
+    margin-top: -84vh;
     margin-left: 75vw;
   }
 }
@@ -870,7 +875,7 @@ body {
 }
 .food {
   width: 10vw;
-  margin-top: -36vh;
+  margin-top: -34vh;
   margin-left: 75vw;
   position: absolute;
   opacity: 0;
@@ -895,7 +900,7 @@ body {
     opacity: 0;
   }
   100% {
-    margin-top: -36vh;
+    margin-top: -34vh;
     margin-left: 75vw;
   }
 }
@@ -992,9 +997,7 @@ body {
     margin-left: 11vw;
   }
 }
-.frames img:hover {
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.6));
-}
+
 .text {
   color: #ffffff;
   font-family: Noto Sans TC;
@@ -2423,57 +2426,30 @@ body {
   width: 15vw;
 }
 .prepare-scroll-hint img {
-  position: absolute;
-  margin-top: -3vh;
-  margin-left: 50vw;
-  width: 2vw;
-  transform: rotateY(180deg) rotate(90deg);
-}
-.hurt-scroll-hint img {
-  position: absolute;
-  margin-top: 98vh;
-  margin-left: 49.5vw;
-  width: 2vw;
-  transform: rotateY(180deg) rotate(90deg);
-}
-.prepare-scroll-hint,
-.hurt-scroll-hint {
-  opacity: 0;
-  scale: 0;
-}
-.prepare-scroll-hint.active {
-  opacity: 1;
-  scale: 1;
-  width: 2vw;
-  animation: hint;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-.hurt-scroll-hint.active {
-  opacity: 1;
-  scale: 1;
-  width: 2vw;
+  position: fixed;
+  margin-top: -15vh;
+  margin-left: 90vw;
+  width: 6vw;
+  /* transform: rotateY(180deg) rotate(90deg); */
   animation: hint;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 @keyframes hint {
   0% {
-    opacity: 0;
-    scale: 1;
+    margin-top: -15vh;
   }
   50% {
-    opacity: 100;
+    margin-top: -13vh;
   }
   100% {
-    opacity: 0;
+    margin-top: -15vh;
   }
 }
 
 /*hurt start*/
 
 .hurt {
-  background-image: url(../img/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -2481,7 +2457,17 @@ body {
   overflow: hidden;
   z-index: 30;
 }
-.hurt_first-content {
+.hurt_forest {
+  position: absolute;
+  width: 100vw;
+  margin-top: -45vh;
+  overflow: hidden;
+}
+.hurt_forest img {
+  position: relative;
+  top: -2vh;
+}
+/* .hurt_first-content {
   margin-top: 8vh;
   position: absolute;
   width: 100vw;
@@ -2505,7 +2491,7 @@ body {
     opacity: 0;
     scale: 0;
   }
-}
+} */
 .hurthuman {
   overflow: hidden;
   margin-top: 10vh;
@@ -2549,7 +2535,7 @@ body {
   position: absolute;
   width: 95vw;
   height: 85vh;
-  opacity: 0;
+  /* opacity: 0; */
   margin-top: -4;
 }
 .hurt-second-content.active {
@@ -2661,7 +2647,7 @@ body {
   position: absolute;
   width: 16vw;
   height: 1vh;
-  margin-top: -24vh;
+  margin-top: -16vh;
   margin-left: 58vw;
   overflow: hidden;
 }
@@ -2712,7 +2698,7 @@ body {
 #spinreturn {
   position: absolute;
   width: 10vw;
-  margin-top: -24vh;
+  margin-top: -23vh;
   margin-left: 18vw;
 }
 #eight {
@@ -2724,12 +2710,10 @@ body {
 #spin {
   position: absolute;
   width: 10vw;
-  margin-top: -50vh;
+  margin-top: -43vh;
   margin-left: 75vw;
 }
-.frames img:hover {
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.6));
-}
+
 .cycle-text {
   color: #ffffff;
   font-family: Noto Sans TC;
@@ -3280,18 +3264,38 @@ body {
   background: linear-gradient(#eadfff00, #eadfff, #eadfff00);
 }
 /* 登山口開始 */
+.pareallax {
+  background-image: url(../img/main/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  height: 100vh;
+  /* display: flex; */
+  overflow: hidden;
+}
+
+#scene div {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: -1vw;
+  top: -1vh;
+}
+
 .entry {
   position: relative;
 }
 .bg {
-  background-image: url(../img/entery/entery_bg.png);
+  background-image: url(../img/login/深處.png);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 110vw;
+  width: 100vw;
   height: 110vh;
   overflow: hidden;
   position: absolute;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 .bg::after {
   position: absolute;
@@ -3304,21 +3308,49 @@ body {
   );
   pointer-events: none;
 }
+.entrybg_1 img {
+  position: absolute;
+  width: 105vw;
+  left: -2vw;
+  z-index: 1;
+}
+.entrybg_2 img {
+  position: absolute;
+  width: 100vw;
+  left: 0vw;
+  bottom: -62vh;
+  z-index: 2;
+}
+.entrybg_3 img {
+  position: absolute;
+  width: 104vw;
+  left: -2vw;
+  z-index: 3;
+}
+.gress img {
+  position: absolute;
+  width: 106vw;
+  left: -3vw;
+  bottom: 39vh;
+  z-index: 4;
+}
 .Btns {
-  left: 16%;
+  /* left: 19%; */
+  width: 77vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  z-index: 30;
+  z-index: 100;
 }
 
 .Btn-purcahse {
-  margin-top: 47vh;
-  margin-right: 3vw;
-  width: 17vw;
-  height: 10vh;
-  background-image: url(../img/prelude/btn_default.png);
+  margin-top: 40vh;
+  margin-right: 5vw;
+  width: 62vw;
+  background-image: url(../img/entery/grn-default.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -3332,12 +3364,12 @@ body {
 .Btn-purcahse a {
   display: flex;
   justify-content: center;
-  line-height: 8.4vh;
+  line-height: 10.3vh;
   text-decoration: none;
-  color: #7b3e0e;
+  color: #ffe0b1;
   font-weight: bold;
-  letter-spacing: 8px;
-  font-size: 20px;
+  letter-spacing: 3px;
+  font-size: 28px;
 }
 @media (min-width: 1600px) {
   .Btn-purcahse a {
@@ -3347,71 +3379,69 @@ body {
   }
 }
 .Btn-purcahse:hover {
-  background-image: url(../img/prelude/btn_hover.png);
+  background-image: url(../img/entery/grn-hover.png);
 }
 .Btn-purcahse a:hover {
-  color: #ac5a24;
+  color: #ffe0b1;
 }
 .Btn-purcahse:active {
-  background-image: url(../img/prelude/btn_active.png);
+  background-image: url(../img/entery/grn-active.png);
 }
 .Btn-purcahse a:active {
-  color: #4a2914;
+  color: #b29d7c;
 }
 
 .Btn-entry {
-  margin-top: 44vh;
-  margin-right: 3vw;
-  margin-left: 3vw;
-  width: 19vw;
-  height: 10.2vh;
-  background-image: url(../img/prelude/btn_default.png);
-  background-size: cover;
+  margin-top: 40vh;
+  width: 62vw;
+  background-image: url(../img/entery/grn-default.png);
+  background-size: contain;
   background-repeat: no-repeat;
 }
 @media (min-width: 1600px) {
   .Btn-entry {
-    width: 22vw;
-    height: 12.5vh;
+    width: 18vw;
+    height: 10.2vh;
   }
 }
 
 .Btn-entry a {
   display: flex;
   justify-content: center;
-  line-height: 9.4vh;
+  line-height: 10.3vh;
   text-decoration: none;
-  color: #7b3e0e;
+  color: #ffe0b1;
   font-weight: bold;
-  letter-spacing: 8px;
-  font-size: 25px;
+  letter-spacing: 3px;
+  padding-left: 0.5vw;
+  font-size: 28px;
 }
 @media (min-width: 1600px) {
   .Btn-entry a {
-    line-height: 11.6vh;
-    letter-spacing: 11px;
-    font-size: 42px;
+    line-height: 9.4vh;
+    letter-spacing: 8px;
+    font-size: 32px;
   }
 }
 .Btn-entry:hover {
-  background-image: url(../img/prelude/btn_hover.png);
+  background-image: url(../img/entery/grn-hover.png);
 }
 .Btn-entry a:hover {
-  color: #ac5a24;
+  color: #ffe0b1;
 }
 .Btn-entry:active {
-  background-image: url(../img/prelude/btn_active.png);
+  background-image: url(../img/entery/grn-active.png);
 }
 .Btn-entry a:active {
-  color: #4a2914;
+  color: #b29d7c;
 }
 
 .Btn-Login {
-  margin-top: 47vh;
-  margin-left: 3vw;
-  width: 17vw;
-  height: 10vh;
-  background-image: url(../img/prelude/btn_default.png);
+  margin-top: 40vh;
+  margin-left: 5vw;
+  width: 62vw;
+  height: 20vh;
+  background-image: url(../img/entery/grn-default.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -3425,12 +3455,12 @@ body {
 .Btn-Login a {
   display: flex;
   justify-content: center;
-  line-height: 8.4vh;
+  line-height: 10.3vh;
   text-decoration: none;
-  color: #7b3e0e;
+  color: #ffe0b1;
   font-weight: bold;
-  letter-spacing: 8px;
-  font-size: 20px;
+  letter-spacing: 3px;
+  font-size: 28px;
 }
 @media (min-width: 1600px) {
   .Btn-Login a {
@@ -3441,25 +3471,22 @@ body {
 }
 
 .Btn-Login:hover {
-  background-image: url(../img/prelude/btn_hover.png);
+  background-image: url(../img/entery/grn-hover.png);
 }
 .Btn-Login a:hover {
-  color: #ac5a24;
+  color: #ffe0b1;
 }
 .Btn-Login:active {
-  background-image: url(../img/prelude/btn_active.png);
+  background-image: url(../img/entery/grn-active.png);
 }
 .Btn-Login a:active {
-  color: #4a2914;
+  color: #b29d7c;
 }
 
 /* 登山口後轉場裝飾 */
-.footer {
-  position: relative;
-}
 .grassign {
   position: absolute;
-  top: 357vh;
+  top: 364vh;
   height: 100vh;
   overflow: hidden;
   z-index: 150;
@@ -3491,238 +3518,96 @@ body {
   width: 23vw;
 }
 
-/* footer */
-.footerbg {
-  height: 20vh;
-  background-image: url(../img/grass_left.png);
-  background-size: initial;
-  background-position: center;
-}
-.footer {
-  position: absolute;
-  height: 30vh;
-  width: 100vw;
-  top: 422vh;
-  background-color: #345117;
-}
-.footer img {
-  width: 100vw;
-  height: fit-content;
-  position: absolute;
-  z-index: 160;
-}
-.footer_txt {
-  margin-left: 10vw;
-  width: 50vw;
-  /* overflow: hidden; */
-  position: absolute;
-  z-index: 180;
-}
-.footer_txt .title {
-  font-weight: 400;
-  font-size: 2vw;
-  top: 5vh;
-  left: calc(50% - -20vw);
-  width: 32vw;
-}
-.footer_txt .title div h1 {
-  font-size: 24px;
-  font-weight: 400;
-  width: 8vw;
-}
-@media (min-width: 1600px) {
-  .footer_txt .title div h1 {
-    font-size: 28px;
-    font-weight: 700;
-  }
-}
-.footer_txt .cutline {
-  left: calc(50% - -13vw);
-  width: 40vw;
-  top: 16vh;
-}
-.footer_txt .wood_option {
-  left: 42.8vw;
-  top: 17vh;
-  width: 6vw;
-}
-.footer_txt .wood_option div {
-  font-size: 20px;
-}
-@media (min-width: 1600px) {
-  .footer_txt .wood_option div {
-    font-size: 24px;
-  }
-}
-.footer_txt .enter_option {
-  left: 57vw;
-  top: 17vh;
-  width: 8vw;
-}
-.footer_txt .enter_option div {
-  font-size: 20px;
-}
-@media (min-width: 1600px) {
-  .footer_txt .enter_option div {
-    font-size: 24px;
-  }
-}
-.footer_txt .heaven_option {
-  left: 71vw;
-  top: 17vh;
-  width: 6vw;
-}
-.footer_txt .heaven_option div {
-  font-size: 20px;
-}
-@media (min-width: 1600px) {
-  .footer_txt .heaven_option div {
-    font-size: 24px;
-  }
-}
-
-/* parallax設定 */
 .package,
 .hurt,
 .entry {
-  height: 150vh; /* 設置每個section的高度為視窗的高度 */
-  background-size: cover; /* 背景大小為視窗大小 */
+  height: 150vh;
+  background-size: cover;
   background-attachment: fixed; /* 固定背景，創造parallax效果 */
 }
 
-.package {
-  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
-}
-
-.hurt {
-  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
-}
-
-.entry {
-  background-image: url("../img/background.png"); /* 替換成你的背景圖片路徑 */
-}
-
-/* 轉場 */
-.parallax {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-.transcloud1 {
-  width: fit-content;
+/* footer */
+.footer {
   position: absolute;
+  height: 32vh;
+  width: 80vw;
+  background-color: #2b0c40;
+  padding-top: 9vh;
+  padding-bottom: 4vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  top: 103vh;
-  right: -10vw;
-  z-index: 100;
-  filter: brightness(0.93);
-  transition: top 0.3s linear;
+  align-items: center;
 }
-.transcloud1 img {
-  width: 150vw;
-}
-.transcloud2 {
-  width: fit-content;
-  position: absolute;
+.footer .contents {
+  width: 70vw;
+  height: 22vh;
   display: flex;
-  justify-content: center;
-  top: 125vh;
-  right: -18vw;
-  z-index: 100;
-  transition: top 0.3s linear;
-  transform: scaleX(-1);
-  filter: brightness(0.99);
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.transcloud2 img {
-  width: 150vw;
-}
-.transcloud3 {
-  width: fit-content;
-  position: absolute;
+.contents .shortcuts {
+  width: 32vw;
+  font-family: Micro5;
+  font-size: 23px;
+  line-height: auto;
+  color: #ffffff;
   display: flex;
-  justify-content: center;
-  top: 146vh;
-  right: 20vw;
-  z-index: 100;
-  filter: brightness(1.03);
-  transition: top 0.3s linear;
+  justify-content: space-between;
 }
-.transcloud3 img {
-  width: 150vw;
+.shortcuts a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
 }
-.transcloud4 {
-  width: fit-content;
-  position: absolute;
+.shortcuts a:hover {
+  border-bottom: solid 1.5px #ffffff;
+}
+.shortcuts p {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.divider {
+  width: -webkit-fill-available;
+  height: 0.1vh;
+  background-color: #5e3d6a;
+}
+.contents .infos {
   display: flex;
-  justify-content: center;
-  top: 160vh;
-  right: -42vw;
-  z-index: 100;
-  filter: brightness(1.07);
-  transition: top 0.3s linear;
-  transform: scaleX(-1);
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff;
 }
-.transcloud4 img {
-  width: 150vw;
-}
-/* 轉場22 */
-.transcloud5 {
-  width: fit-content;
-  position: absolute;
+.infos div {
   display: flex;
-  justify-content: center;
-  top: 400vh;
-  right: -10vw;
-  z-index: 100;
-  filter: brightness(0.93);
-  transition: top 0.3s linear;
+  flex-direction: row;
+  padding-bottom: 2vh;
 }
-.transcloud5 img {
-  width: 150vw;
+.infos div p {
+  margin-right: 1vw;
 }
-.transcloud6 {
-  width: fit-content;
-  position: absolute;
+.copyright {
+  font-family: Noto Sans TC;
+  color: #ffffff;
+  line-height: 29px;
   display: flex;
-  justify-content: center;
-  top: 422vh;
-  right: -18vw;
-  z-index: 100;
-  transition: top 0.3s linear;
-  transform: scaleX(-1);
-  filter: brightness(0.99);
+  flex-direction: row;
+  margin-top: 9vh;
 }
-.transcloud6 img {
-  width: 150vw;
+.copyicon {
+  font-size: 16px;
+  padding-right: 4px;
 }
-.transcloud7 {
-  width: fit-content;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 443vh;
-  right: 20vw;
-  z-index: 100;
-  filter: brightness(1.03);
-  transition: top 0.3s linear;
-}
-.transcloud7 img {
-  width: 150vw;
-}
-.transcloud8 {
-  width: fit-content;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 448vh;
-  right: -42vw;
-  z-index: 100;
-  filter: brightness(1.07);
-  transition: top 0.3s linear;
-  transform: scaleX(-1);
-}
-.transcloud8 img {
-  width: 150vw;
+.copytext {
+  font-size: 12px;
 }

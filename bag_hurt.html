@@ -128,23 +128,6 @@
     <!--開頭轉場動畫-->
     <div id="secondMask"></div>
 
-    <!-- 轉場 -->
-    <div class="parallax">
-      <div class="transcloud1" id="transcloud1">
-        <img src="./img/main/clouds.png" alt="">
-      </div>
-      <div class="transcloud2" id="transcloud2">
-        <img src="./img/main/clouds.png" alt="">
-      </div>
-    </div>
-    <div class="transcloud3" id="transcloud3">
-      <img src="./img/main/clouds.png" alt="">
-    </div>
-    <div class="transcloud4" id="transcloud4">
-      <img src="./img/main/clouds.png" alt="">
-    </div>
-    </div>
-
     <!-- 背包頁:Start -->
     <div class="header">
       <div class="header_left">
@@ -195,12 +178,12 @@
         <img src="./img/package/closed_backpack.png" id="closed_backpack" />
       </div>
       <div class="frames">
-        <img class="living" id="living" src="./img/package/living.png" />
-        <img class="other" id="other" src="./img/package/other.png" />
-        <img class="food" id="food" src="./img/package/food.png" />
-        <img class="cook" id="cook" src="./img/package/cook.png" />
-        <img class="walk" id="walk" src="./img/package/walk.png" />
-        <img class="cloth" id="cloth" src="./img/package/cloth.png" />
+        <img class="living" id="living" src="./img/package/living.svg" />
+        <img class="other" id="other" src="./img/package/other.svg" />
+        <img class="food" id="food" src="./img/package/food.svg" />
+        <img class="cook" id="cook" src="./img/package/cook.svg" />
+        <img class="walk" id="walk" src="./img/package/walk.svg" />
+        <img class="cloth" id="cloth" src="./img/package/cloth.svg" />
       </div>
     </div>
     <div class="bookbackground"></div>
@@ -467,13 +450,16 @@
       </div>
     </div>
     <div class="prepare-scroll-hint">
-      <img src="./img/package/arrow.png">
+      <img src="./img/青蛙向下.png">
     </div>
    </section>
-
     <!-- 背包頁:End-->
+
     <!--包紮頁：Start-->
        <section class="hurt" id="hurt-id" >
+        <div class="hurt_forest">
+          <img src="./img/bg_forest.svg" alt="">
+        </div>
     <div class="hurt-second-content">
       <img id="whole-human" src="./img/hurt/hurt_人受傷動畫.gif" />
       <div class="hurt_left-main-line">
@@ -500,11 +486,11 @@
         <span></span>
       </div>
       <div class="hurt_frames">
-        <img id="cycle" src="./img/hurt/環形.png" />
-        <img id="return" src="./img/hurt/回反.png" />
-        <img id="spinreturn" src="./img/hurt/螺旋反折.png" />
-        <img id="eight" src="./img/hurt/八字.png" />
-        <img id="spin" src="./img/hurt/螺旋包紮.png" />
+        <img id="cycle" src="./img/hurt/環形包紮法.svg" />
+        <img id="return" src="./img/hurt/回反包紮法.svg" />
+        <img id="spinreturn" src="./img/hurt/螺旋反折包紮法.svg" />
+        <img id="eight" src="./img/hurt/八字包紮法.svg" />
+        <img id="spin" src="./img/hurt/螺旋包紮法.svg" />
       </div>
       <div class="hurt_bookbackground"></div>
       <div class="cycle-book">
@@ -627,7 +613,7 @@
         </div>
       </div>
     </div>
-    <div class="hurt_first-content">
+    <!-- <div class="hurt_first-content">
       <div class="hurthuman">
         <img id="human" src="./img/hurt/hurt_人受傷動畫.gif" />
       </div>
@@ -639,40 +625,19 @@
         <div class="typetext" id="typeanimation"></div>
         <img class="hurt_start_arrow" id="hurt_start_arrow" src="./img/hurt/arrow.png"/>
       </div>
-    </div>
+    </div> -->
     <div class="hurt-scroll-hint">
       <img src="./img/package/arrow.png">
     </div>
        </section>
     <!-- 包紮頁:End-->
-
-
-    <!-- 轉場22 -->
-    <div class="parallax">
-      <div class="transcloud5" id="transcloud5">
-        <img src="./img/main/clouds.png" alt="">
-      </div>
-      <div class="transcloud6" id="transcloud6">
-        <img src="./img/main/clouds.png" alt="">
-      </div>
-    </div>
-    <div class="transcloud7" id="transcloud7">
-      <img src="./img/main/clouds.png" alt="">
-    </div>
-    <div class="transcloud8" id="transcloud8">
-      <img src="./img/main/clouds.png" alt="">
-    </div>
-    </div>
-    <div class="gradient">
-      <span></span> 
-    </div>
     
     <!--登山口:Start-->
-    <section class="entry" id="entry-id">
+    <section class="entry parallax" id="entry-id">
       <div class="bg"></div>
       <div class="Btns">
         <div class="Btn-purcahse">
-          <a href="./frog_purchase.html">購買商品</a>
+          <a href="./frog_purchase.html">購買</a>
         </div>
         <div class="Btn-entry">
           <a href="./fight.html">進入登山口</a>
@@ -681,84 +646,48 @@
           <a href="./frog_login.html">會員登入</a>
         </div>
       </div>
+      <div id="scene">
+        <div data-depth="0.15" class="entrybg_1">
+          <img src="./img/login/深處.png" alt="">
+        </div>
+        <div data-depth="0.4" class="entrybg_2">
+          <img src="./img/login/地面.png" alt="">
+        </div>
+        <div data-depth="0.25" class="entrybg_3">
+          <img src="./img/login/山壁.png" alt="">
+        </div>
+        <div data-depth="0.3" class="gress">
+          <img src="./img/gress.svg" alt="">
+        </div>
+      </div>
     </section>
     <!--登山口:End-->
-    <div class="grassdown">
-      <img src="./img/entery/grass_down.png" alt="">
-    </div>
-    <div class="grassign">
-      <img src="./img/entery/grassign.png" alt="">
-    </div>
-    <div class="grassright">
-      <img src="./img/entery/grass_right.png" alt="">
-    </div>
-    <!--footer-->
-    <div class="footerbg"></div>
     <section class="footer">
-      <div class="footercloud">
-        <img  src="./img/entery/footer.png" alt="">
-      </div>
-      <div class="footer_txt">
-         <!-- 標題 -->
-        <div class="title">
-          <div class="woodtxt">
-            <h1>救難大木屋</h1>
+      <div class="contents">
+        <div class="shortcuts">
+          <p class="NOTICE">NOTICE</p>
+          <a href="./login.html" class="MEMBERSHIP">
+            <p>MEMBERSHIP</p>
+          </a>
+          <p class="GUIDE">GUIDE</p>
+          <p class="PRIVACY POLICY">PRIVACY POLICY</p>
+          <p class="ABOUT">ABOUT</p>
+        </div>
+        <div class="divider"></div>
+        <div class="infos">
+          <div class="info1">
+            <p>COMPANY：Down Go Work Studio</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
           </div>
-          <div class="entertxt">
-            <h1>登山口</h1>
+          <div class="info2">
+            <p>TEL:02-8960-4282</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
           </div>
-          <div class="heaven">
-            <h1>伊甸園</h1>
         </div>
       </div>
-      <!-- 分隔線 -->
-      <div class="cutline"></div>
-      <!--跳頁選項-->
-        <div class="wood_option">
-          <div class="preparing">
-            <a href="#package-id">
-              <p>登山裝備</p>
-            </a>
-          </div>
-          <div class="bandage">
-            <a href="#hurt-id">
-              <p>急救包紮</p>
-          </div>
-        </div>
-        <div class="enter_option">
-          <div class="snakbee">
-            <a>
-              <p>毒螫魔</p>
-            </a>
-          </div>
-          <div class="fish">
-            <a>
-              <p>鐵支麵粉鯛</p>
-          </div>
-          <div class="pig">
-            <a>
-              <p>相撲熊豬刃牙</p>
-          </div>
-          <div class="hypoxia">
-            <a href="#">
-              <p>高山絕氧獸</p>
-          </div>
-          <div class="hypothermia">
-            <a>
-              <p>凝寒失溫龍</p>
-          </div>
-        </div>
-        <div class="heaven_option">
-          <div class="commodity">
-            <a href="./frog_purchase.html">
-              <p>商品購買</p>
-            </a>
-          </div>
-          <div class="membership">
-            <a href="./frog_login.html">
-              <p>會員登入</p>
-          </div>
-        </div>
+      <div class="copyright">
+        <p class="copyicon">©</p>
+        <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
       </div>
     </section>
 
@@ -770,7 +699,10 @@
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/jq.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/parallax.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/prepare.js"></script>
     <script src="./js/hurt.js"></script>
   </body>

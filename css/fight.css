@@ -10,7 +10,7 @@ body {
   width: fit-content;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   list-style: none;
   box-sizing: border-box;
   background-color: #fff;
@@ -19,23 +19,36 @@ body {
   font-family: "Noto Sans TC";
   font-weight: Medium;
   scrollbar-color: transparent transparent;
-  background-image: url(../img/main/background.png);
+  background: #2e0d45;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 /* header */
-.header_right {
+.header_right .burger {
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0;
+  cursor: pointer;
+}
+
+.header_right .burger a img {
+  text-align: center;
+  width: 6vw;
+  text-shadow: 10px 10px 5px #5f1c68;
   cursor: pointer;
 }
 
 /* hamburger */
 
 .menu {
-  position: relative;
+  position: absolute;
   background-color: antiquewhite;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 100;
 }
 
 .menu nav {
@@ -402,6 +415,7 @@ body {
   visibility: hidden;
   transition: ease-in 220ms;
   z-index: 10000;
+  overflow: hidden;
 }
 
 /* 開頭轉場動畫設定 */
@@ -418,10 +432,7 @@ body {
   z-index: 1001;
 }
 
-/* backpack start*/
-.header {
-  z-index: 40;
-}
+/* 戰鬥頁開始*/
 
 .package {
   background-image: url(../img/background.png);
@@ -480,20 +491,15 @@ body {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  padding-left: 1.3vw;
+  width: 96vw;
   height: 8vh;
+  background-color: #2e0d45;
   color: #fff2df;
-  /* font-family: Noto Sans TC; */
-  font-size: 18px;
-  font-style: Medium;
-  font-weight: 900;
-  line-height: normal;
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  transition: transform ease;
-  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+  align-items: baseline;
 }
 .header p {
   display: inline-block;
@@ -515,630 +521,394 @@ body {
 .header_left a {
   height: max-content;
 }
-.header_center {
+/* .header_right {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  width: 74vw;
-  z-index: 1000;
-}
-.header_center div {
-  display: inline-block;
-}
-.altitude {
-  width: fit-content;
-  margin-right: 19vw;
-}
-.level {
-  width: fit-content;
-  margin-left: 10vw;
-}
-.scrollingNumber {
-  position: absolute;
-  top: 5.5vh;
-  left: 35vw;
-}
-@media (min-width: 1600px) {
-  .scrollingNumber {
-    top: 4.2vh;
-  }
-}
-.M {
-  position: absolute;
-  top: -0.1vh;
-  left: 38.7vw;
-}
-.eleven {
-  margin-left: 2vw;
-  width: fit-content;
-}
-.header_right {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: right;
   width: 10vw;
   cursor: pointer;
   z-index: 1000;
-}
+} */
 
-/* header翻牌效果:Start */
-
-.flip-card {
-  position: relative;
-  left: 47.5vw;
-  top: -11vh;
-  width: 10vw;
-  height: 4vh;
-  margin-left: 1vw;
-}
-@media (min-width: 1600px) {
-  .flip-card {
-    width: 10vw;
-    top: -7.7vh;
+/* 怪物畫框 */
+@keyframes bounce-up {
+  0% {
+    bottom: var(--start-bottom);
+  }
+  50% {
+    bottom: calc(var(--start-bottom) - 4vh);
+  }
+  100% {
+    bottom: var(--start-bottom);
   }
 }
-
-.thecard {
-  position: absolute;
-  display: flex;
-  right: 2vw;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 0.5s ease;
-  background-image: url(../img/entery/title.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+@keyframes bounce-back {
+  0% {
+    bottom: var(--start-bottom);
+  }
+  50% {
+    bottom: calc(var(--start-bottom) + 2vh);
+  }
+  100% {
+    bottom: var(--start-bottom);
+  }
 }
-
-.firstCard,
-.secondCard,
-.thirdCard,
-.forthCard,
-.fifthCard,
-.zeroCard {
-  position: absolute;
-  top: -0.5vh;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  opacity: 1;
-}
-.zeroCard {
-  background: url("../img/entery/title.png") center center / cover no-repeat;
-  transform: rotateY(180deg);
-}
-
-.firstCard {
-  background: url("../img/fight/title_snake.png") center center / cover
-    no-repeat;
-  transform: rotateY(180deg);
-}
-
-.secondCard {
-  background: url("../img/fight/title_fish.png") center center / cover no-repeat;
-  transform: rotateY(180deg);
-}
-
-.thirdCard {
-  background: url("../img/fight/title_bear.png") center center / cover no-repeat;
-  transform: rotateY(180deg);
-}
-
-.forthCard {
-  background: url("../img/fight/title_hmt.png") center center / cover no-repeat;
-  transform: rotateY(180deg);
-}
-.fifthCard {
-  background: url("../img/fight/title_clod.png") center center / cover no-repeat;
-  transform: rotateY(180deg);
-}
-
-/* header翻牌效果:End */
-
-/* 戰鬥頁開始 */
 .bg {
-  width: 100vw;
-  height: 426vh;
-  overflow: hidden;
-}
-.bg img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0vh;
-  transition: bottom 0.5s linear;
-}
-.road {
-  width: 100vw;
-  height: 30vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-.road img {
   position: absolute;
-  bottom: 0vh;
-  transition: bottom 0.5s linear;
-  width: 103%;
+  left: 2.1vw;
+  bottom: -100vh;
+  width: 69vw;
+  transition: bottom 800ms ease-in-out;
+  --start-bottom: -100vh;
 }
-.person img {
-  width: 30vw;
+@media (max-width: 1600px) {
+  .bg {
+    bottom: -97vh;
+  }
+  .bg img {
+    width: 69vw;
+  }
 }
-#personImage1 {
-  display: block;
-}
-#personImage2 {
-  display: none;
-}
-
-/* 怪獸 */
-.snakebee {
-  width: 90vw;
-  height: 80vh;
+.grond {
   position: fixed;
-  top: -120vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  transition: top 0.5s linear;
-  cursor: pointer;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+  left: 2vw;
+  bottom: 10vh;
+  width: 71vw;
+  height: 31vh;
+  background-image: url(../img/fight/2.0_草地\ 1.png);
+  background-size: contain;
 }
-.snakebee img {
-  width: 65vw;
-  position: absolute;
-  z-index: 0;
-  margin-left: 12vw;
-}
-.fish {
+.battlebox {
+  margin-top: 3vh;
   width: 100vw;
   height: 100vh;
-  position: fixed;
-  top: -225vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  transition: top 0.5s linear;
-  cursor: pointer;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
-.fish img {
+.battlebox img {
   width: 71vw;
-  position: absolute;
-  z-index: 0;
-}
-.pigbear {
-  width: 90vw;
-  height: 86vh;
+  height: 70vh;
   position: fixed;
-  top: -325vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  transition: top 0.5s linear;
-  margin-top: -3vh;
-  cursor: pointer;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+  left: 2vw;
+  top: 5vh;
 }
-.pigbear img {
-  width: 62vw;
-  position: absolute;
-  z-index: 0;
-  margin-left: 9vw;
-}
-.hypoxia {
-  width: 90vw;
-  height: 72vh;
+.downcover {
+  background-color: #2e0d45;
+  width: 100vw;
+  height: 27vh;
   position: fixed;
-  top: -400vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  transition: top 0.5s linear;
-  cursor: pointer;
-  margin-left: 7vw;
-  margin-top: -25vh;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+  left: 0;
+  bottom: 0;
 }
-.hypoxia img {
-  width: 71vw;
+.boxcover img {
   position: absolute;
-  z-index: 0;
-}
-.dragon {
-  width: 90vw;
-  height: 72vh;
-  position: fixed;
-  top: -575vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  transition: top 0.5s linear;
-  cursor: pointer;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
-}
-.dragon img {
-  margin-left: 12vw;
-  width: 71vw;
-  position: absolute;
-  z-index: 0;
+  left: 2vw;
+  bottom: -3vh;
+  width: 71%;
+  z-index: 5;
 }
 .person {
-  width: fit-content;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  left: 50vw;
-  top: 63vh;
-}
-.person img {
   position: fixed;
-  width: fit-content;
+  width: 10vw;
   height: 30vh;
-  z-index: 200;
-  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.6));
+  left: 10vw;
+  bottom: 31vh;
 }
-/* 按鈕 */
-.content {
-  overflow-y: auto;
+.person {
+  width: 12vw;
 }
-.Btns {
-  left: 16%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  z-index: 30;
-  top: 75vh;
-  right: -50vw;
-  cursor: pointer;
-}
-.btn-go1,
-.btn-go2,
-.btn-go3,
-.btn-go4,
-.btn-go5 {
-  position: fixed;
-  width: 17vw;
-  height: 10vh;
-  background-image: url(../img/prelude/btn_default.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0;
-  scale: 0;
-}
-.btn-go1.active {
-  opacity: 1;
-  scale: 1;
-}
-.btn-go2.active {
-  opacity: 1;
-  scale: 1;
-}
-.btn-go3.active {
-  opacity: 1;
-  scale: 1;
-}
-.btn-go4.active {
-  opacity: 1;
-  scale: 1;
-}
-.btn-go5.active {
-  opacity: 1;
-  scale: 1;
-}
-@media (min-width: 1600px) {
-  .btn-go1,
-  .btn-go2,
-  .btn-go3,
-  .btn-go4,
-  .btn-go5 {
-    width: 18vw;
-    height: 10.2vh;
-    opacity: 0;
-    scale: 0;
+@media (max-width: 1600px) {
+  .person img {
+    width: 10vw;
+  }
+  .person {
+    bottom: 28vh;
   }
 }
-.btn-go1 a,
-.btn-go2 a,
-.btn-go3 a,
-.btn-go4 a,
-.btn-go5 a {
-  display: flex;
-  justify-content: center;
-  line-height: 8.4vh;
-  text-decoration: none;
-  color: #7b3e0e;
-  font-weight: bold;
-  letter-spacing: 8px;
+/* 地圖本 */
+.map {
+  position: fixed;
+  right: 0;
+  bottom: 29vh;
+  width: 28vw;
+  height: 60vh;
+}
+@media (max-width: 1600px) {
+  .map img {
+    width: 28vw;
+  }
+}
+.mario {
+  position: fixed;
+  right: 10vw;
+  bottom: 40vh;
+  transition: bottom 900ms ease-out;
+}
+.mario img {
+  width: 3vw;
+}
+.line {
+  width: 6.6vw;
+  height: 3px;
+  background-color: #fff2df;
+  margin-top: 0.7vh;
+  /* position: fixed;
+  right: 13.1vw;
+  bottom: 35vh; */
+}
+.altitue {
+  position: fixed;
+  right: 13vw;
+  bottom: 43vh;
+  color: #fff2df;
+  font-family: Noto Sans TC;
   font-size: 20px;
+  transition: bottom 900ms ease-out;
 }
-@media (min-width: 1600px) {
-  .btn-go1 a,
-  .btn-go2 a,
-  .btn-go3 a,
-  .btn-go4 a,
-  .btn-go5 a {
-    line-height: 9.4vh;
-    letter-spacing: 8px;
-    font-size: 32px;
+
+.altitueNum.rolling {
+  animation: roll-up 0.5s ease-in-out;
+}
+@media (max-width: 1600px) {
+  .line {
+    width: 6.2vw;
+  }
+  .altitueNum {
+    font-size: 16px;
+    right: 17.4vw;
   }
 }
-.btn-go1:hover {
-  background-image: url(../img/prelude/btn_hover.png);
-}
-.btn-go2:hover {
-  background-image: url(../img/prelude/btn_hover.png);
-}
-.btn-go3:hover {
-  background-image: url(../img/prelude/btn_hover.png);
-}
-.btn-go4:hover {
-  background-image: url(../img/prelude/btn_hover.png);
-}
-.btn-go5:hover {
-  background-image: url(../img/prelude/btn_hover.png);
-}
-.btn-go1 a:hover {
-  color: #ac5a24;
-}
-.btn-go2 a:hover {
-  color: #ac5a24;
-}
-.btn-go3 a:hover {
-  color: #ac5a24;
-}
-.btn-go4 a:hover {
-  color: #ac5a24;
-}
-.btn-go5 a:hover {
-  color: #ac5a24;
-}
-
-.btn-go1:active {
-  background-image: url(../img/prelude/btn_active.png);
-}
-.btn-go2:active {
-  background-image: url(../img/prelude/btn_active.png);
-}
-.btn-go3:active {
-  background-image: url(../img/prelude/btn_active.png);
-}
-.btn-go4:active {
-  background-image: url(../img/prelude/btn_active.png);
-}
-.btn-go5:active {
-  background-image: url(../img/prelude/btn_active.png);
-}
-.btn-go1 a:active {
-  color: #4a2914;
-}
-.btn-go2 a:active {
-  color: #4a2914;
-}
-.btn-go3 a:active {
-  color: #4a2914;
-}
-.btn-go4 a:active {
-  color: #4a2914;
-}
-.btn-go5 a:active {
-  color: #4a2914;
-}
-
-.btn-run {
+.located {
   position: fixed;
-  width: 17vw;
-  height: 10vh;
-  background-image: url(../img/prelude/btn_default.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  top: 86vh;
+  right: 8.3vw;
+  bottom: 17vh;
+  width: 9vw;
 }
-@media (min-width: 1600px) {
-  .btn-run {
-    width: 18vw;
-    height: 10.2vh;
-  }
-}
-.btn-run a {
+.located div {
   display: flex;
-  justify-content: center;
-  line-height: 8.4vh;
-  text-decoration: none;
-  color: #7b3e0e;
-  font-weight: bold;
-  letter-spacing: 8px;
-  font-size: 20px;
+  justify-content: space-between;
+  /* padding-left: 1vw; */
 }
-@media (min-width: 1600px) {
-  .btn-run a {
-    line-height: 9.4vh;
-    letter-spacing: 8px;
-    font-size: 32px;
-  }
+.located p {
+  font-family: Noto Sans TC;
+  font-weight: 700;
+  font-size: 13px;
+  color: #ffe0b1;
+  display: inline-block;
 }
-.btn-run:hover {
-  background-image: url(../img/prelude/btn_hover.png);
+.ALTITUE {
+  margin-bottom: 0.5vw;
+  padding-left: 1vw;
 }
-.btn-run a:hover {
-  color: #ac5a24;
+.num {
+  font-family: Noto Sans TC;
+  font-weight: 700;
+  font-size: 13px;
+  color: #ffe0b1;
+  height: 2vh;
+  overflow: hidden;
 }
-.btn-run:active {
-  background-image: url(../img/prelude/btn_active.png);
+.num p {
+  padding-left: 0.5vw;
 }
-.btn-run a:active {
-  color: #4a2914;
+.ALTITUEnum {
+  flex-direction: column;
+  margin-top: -8.2vh;
+  transition: margin-top 900ms ease-out;
+}
+.ALTITUEnum p {
+  margin-bottom: 0.5vh;
+}
+.LEVEL {
+  padding-left: 1vw;
+}
+.LEVELnum {
+  width: 3.1vw;
 }
 
-/* 標籤頁 */
-.cards-pages {
+/* 前進、後退按鈕 */
+.Btn_go {
   position: fixed;
-  width: 21vw;
-  height: 27vh;
-  background-image: url(../img/fight/page01.png);
+  left: 61.3vw;
+  bottom: 15vh;
+  background-image: url(../img/fight/Btn_short.png);
   background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
+  filter: none;
+  width: 10.2vw;
+  height: 8vh;
+  text-align: center;
+  line-height: 7vh;
+  color: #7b3e0e;
+  font-family: Noto Sans TC;
+  font-size: 26px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  z-index: 9;
+}
+@media (min-width: 1600px) {
+  .Btn_go {
+    line-height: 8vh;
+    font-size: 34px;
+  }
+}
+.Btn_go:hover {
+  background-image: url(../img/fight/Btn_hover.png);
+  color: #ac5a24;
+}
+.Btn_go:active {
+  background-image: url(../img/fight/Btn_active.png);
+  color: #4a2914;
+}
+.Btn_back {
+  position: fixed;
+  left: 61.3vw;
+  bottom: 5vh;
+  background-image: url(../img/fight/Btn_short.png);
+  background-size: cover;
+  filter: none;
+  width: 10.2vw;
+  height: 8vh;
+  text-align: center;
+  line-height: 7vh;
+  color: #7b3e0e;
+  font-family: Noto Sans TC;
+  font-size: 28px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  z-index: 9;
+}
+@media (min-width: 1600px) {
+  .Btn_back {
+    line-height: 8vh;
+    font-size: 34px;
+  }
+}
+.Btn_back:hover {
+  background-image: url(../img/fight/Btn_hover.png);
+  color: #ac5a24;
+}
+.Btn_back:active {
+  background-image: url(../img/fight/Btn_active.png);
+  color: #4a2914;
 }
 
-.card-info,
-.card-tmi,
-.card-help {
-  position: fixed;
-  width: 21vw;
-  height: 19vh;
-  overflow-y: auto;
-  margin-top: 4.5vh;
-}
-.page-info {
-  width: 2vw;
-  height: 3vh;
-  /* background-color: #5f1c68; */
-  position: fixed;
-  z-index: 10;
-  cursor: pointer;
-}
-.page-info:hover {
-  filter: brightness(2);
-}
-.page-tmi {
-  width: 2vw;
-  height: 3vh;
-  /* background-color: #ac5a24; */
-  position: fixed;
-  z-index: 10;
-  left: 7.5vw;
-  cursor: pointer;
-}
-.page-help {
-  width: 2vw;
-  height: 3vh;
-  /* background-color: #03c1b0; */
-  position: fixed;
-  z-index: 10;
-  left: 10.1vw;
-  cursor: pointer;
-}
-
-.cards-alert {
-  left: 5vw;
-  top: 71vh;
+/* 毒蜇魔 */
+.snake {
   position: absolute;
-  width: 25vw;
+  left: 17vw;
+  bottom: 30vh;
+  z-index: 4;
+  transition: bottom 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@media (max-width: 1600px) {
+  .snake img {
+    width: 62vw;
+  }
+}
+
+/* 對話框 */
+.dialogbox img {
+  width: 58vw;
+  height: 23vh;
+  position: fixed;
+  bottom: 3vh;
+  left: 3vw;
+  z-index: 9;
+}
+.options {
+  font-family: Noto Sans TC;
+  font-size: 26px;
+  color: #ffe0b1;
+  position: fixed;
+  left: 51vw;
+  bottom: 7vh;
+  width: 5vw;
+  text-align: center;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 1vh;
+  z-index: 10;
+}
+@media (min-width: 1600px) {
+  .options {
+    font-size: 36px;
+  }
+}
+.arrow img {
+  width: 2vw;
+  position: fixed;
+  left: 49vw;
+}
+.OptIntro {
+  background-color: none;
+  padding: 1vh;
+  cursor: pointer;
+}
+.aIntro img {
+  bottom: 17vh;
+  opacity: 0;
+}
+.OptIntro:hover {
+  background-color: none;
+}
+.OptIntro:hover .aIntro img {
   opacity: 1;
-  background-image: url(../img/fight/page01.png);
-}
-.cards-alert div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 6vh;
-  color: #ffffff;
 }
 
-.cards-snakbee {
-  left: 5vw;
-  top: 71vh;
-  position: absolute;
-  width: 25vw;
-  opacity: 0;
-  z-index: 1;
+.OptReact {
+  background-color: none;
+  padding: 1vh;
+  cursor: pointer;
 }
-.cards-snakbee div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 1vh;
-  color: #ffffff;
+.aReact img {
+  bottom: 12vh;
+  opacity: 0;
+}
+.OptReact:hover {
+  background-color: none;
+}
+.OptReact:hover .aReact img {
+  opacity: 1;
 }
 
-.cards-fish {
-  left: 5vw;
-  top: 71vh;
-  position: absolute;
-  width: 25vw;
+.OptTMI {
+  background-color: none;
+  padding: 1vh;
+  cursor: pointer;
+}
+.aTMI img {
+  bottom: 6.6vh;
   opacity: 0;
-  transition: opacity 500mm;
-  z-index: 1;
 }
-.cards-fish div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 1vh;
-  color: #ffffff;
+@media (max-width: 1600px) {
+  .aTMI img {
+    bottom: 7.4vh;
+  }
 }
-.cards-pigbear {
+.OptTMI:hover {
+  background-color: none;
+}
+.OptTMI:hover .aTMI img,
+.OptTMI.active .aTMI img {
+  opacity: 1;
+}
+
+/* 文案 */
+.text_intro {
+  position: fixed;
   left: 5vw;
-  top: 71vh;
-  position: absolute;
-  width: 25vw;
-  opacity: 0;
-  transition: opacity 500mm;
-  z-index: 1;
+  bottom: 7vh;
+  width: 39vw;
+  height: 14vh;
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-size: 16px;
+  color: #7b3e0e;
+  line-height: 1.5;
+  z-index: 10;
 }
-.cards-pigbear div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 1vh;
-  color: #ffffff;
-}
-.cards-hypoxia {
-  left: 5vw;
-  top: 71vh;
-  position: absolute;
-  width: 25vw;
-  opacity: 0;
-  transition: opacity 500mm;
-  z-index: 1;
-}
-.cards-hypoxia div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 1vh;
-  color: #ffffff;
-}
-.cards-dragon {
-  left: 5vw;
-  top: 71vh;
-  position: absolute;
-  width: 25vw;
-  opacity: 0;
-  transition: opacity 500mm;
-  z-index: 1;
-}
-.cards-dragon div p {
-  width: 18vw;
-  font-family: Noto Sans TC;
-  font-style: Medium;
-  letter-spacing: 1.1px;
-  line-height: 27px;
-  margin-left: 2vw;
-  margin-top: 1vh;
-  color: #ffffff;
+@media (max-width: 1600px) {
+  .text_intro {
+    font-size: 15px;
+  }
 }

@@ -1,3 +1,4 @@
+//call out hamburger
 $("#bag_burger").click(function () {
   $(".menu").css("visibility", "visible").show();
   $(".menu").css("top", "0");
@@ -25,24 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("scrollingNumber").textContent
     );
 
-    let backgroundImageSource = "../img/entery/title.png"; // 默认背景图源
+    let backgroundImageSource = "../img/entery/title.png";
 
-    if (scrollingNumber >= 200 && scrollingNumber < 400) {
+    if (scrollingNumber >= 200 && scrollingNumber < 350) {
       backgroundImageSource = "./img/hurt/title.png";
-    } else if (scrollingNumber >= 400) {
+    } else if (scrollingNumber >= 350) {
       backgroundImageSource = "./img/entery/title.png";
     } else {
       backgroundImageSource = "./img/package/title.png";
     }
 
     // 应用翻牌效果
-    theCard.style.transition = "all 0.3s ease";
-    theCard.style.transform = "rotateY(180deg)";
+    // theCard.style.transition = "all 0.1s ease";
+    // theCard.style.transform = "rotateY(180deg)";
 
     // 在翻牌效果完成后更改背景图
     setTimeout(function () {
       theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
-      theCard.style.transform = "rotateY(0deg)";
+      theCard.style.transform = "rotateY(360deg)";
     }, 300);
   });
 });
@@ -126,34 +127,38 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 背包頁:Start
-document
-  .getElementById("package-id")
-  .addEventListener("mouseover", function () {
-    setTimeout(function () {
-      document.getElementsByClassName("span1")[0].classList.add("active");
-      document.getElementsByClassName("span2")[0].classList.add("active");
-      document.getElementsByClassName("span3")[0].classList.add("active");
-      document.getElementsByClassName("span5")[0].classList.add("active");
-      document.getElementsByClassName("span6")[0].classList.add("active");
-      document.getElementsByClassName("span7")[0].classList.add("active");
-      document.getElementsByClassName("span8")[0].classList.add("active");
-      document.getElementsByClassName("span9")[0].classList.add("active");
-      document.getElementsByClassName("openbag")[0].classList.add("active");
-      document.getElementsByClassName("living")[0].classList.add("active");
-      document.getElementsByClassName("other")[0].classList.add("active");
-      document.getElementsByClassName("food")[0].classList.add("active");
-      document.getElementsByClassName("cook")[0].classList.add("active");
-      document.getElementsByClassName("walk")[0].classList.add("active");
-      document.getElementsByClassName("cloth")[0].classList.add("active");
-    }, 1000);
-    setTimeout(function () {
-      document
-        .getElementsByClassName("prepare-scroll-hint")[0]
-        .classList.add("active");
-    }, 20000);
-  });
+setTimeout(function () {
+  document.getElementsByClassName("span1")[0].classList.add("active");
+  document.getElementsByClassName("span2")[0].classList.add("active");
+  document.getElementsByClassName("span3")[0].classList.add("active");
+  document.getElementsByClassName("span5")[0].classList.add("active");
+  document.getElementsByClassName("span6")[0].classList.add("active");
+  document.getElementsByClassName("span7")[0].classList.add("active");
+  document.getElementsByClassName("span8")[0].classList.add("active");
+  document.getElementsByClassName("span9")[0].classList.add("active");
+  document.getElementsByClassName("openbag")[0].classList.add("active");
+  document.getElementsByClassName("living")[0].classList.add("active");
+  document.getElementsByClassName("other")[0].classList.add("active");
+  document.getElementsByClassName("food")[0].classList.add("active");
+  document.getElementsByClassName("cook")[0].classList.add("active");
+  document.getElementsByClassName("walk")[0].classList.add("active");
+  document.getElementsByClassName("cloth")[0].classList.add("active");
+}, 200);
+setTimeout(function () {
+  document
+    .getElementsByClassName("prepare-scroll-hint")[0]
+    .classList.add("active");
+}, 20000);
 
 //居住類
+document.getElementById("living").addEventListener("mouseover", function () {
+  var img = document.getElementById("living");
+  img.src = "img/package/livinghover.svg";
+});
+document.getElementById("living").addEventListener("mouseout", function () {
+  var img = document.getElementById("living");
+  img.src = "img/package/living.svg";
+});
 document.getElementById("living").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -202,6 +207,14 @@ document.getElementById("sleepbag").addEventListener("mouseout", function () {
 });
 
 //雜項
+document.getElementById("other").addEventListener("mouseover", function () {
+  var img = document.getElementById("other");
+  img.src = "img/package/otherhover.svg";
+});
+document.getElementById("other").addEventListener("mouseout", function () {
+  var img = document.getElementById("other");
+  img.src = "img/package/other.svg";
+});
 document.getElementById("other").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -254,6 +267,14 @@ document.getElementById("buttery").addEventListener("mouseout", function () {
 });
 
 //飲食及安全求生類
+document.getElementById("food").addEventListener("mouseover", function () {
+  var img = document.getElementById("food");
+  img.src = "img/package/foodhover.svg";
+});
+document.getElementById("food").addEventListener("mouseout", function () {
+  var img = document.getElementById("food");
+  img.src = "img/package/food.svg";
+});
 document.getElementById("food").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -388,6 +409,14 @@ document.getElementById("food-x2").addEventListener("click", function () {
 });
 
 //烹煮類
+document.getElementById("cook").addEventListener("mouseover", function () {
+  var img = document.getElementById("cook");
+  img.src = "img/package/cookhover.svg";
+});
+document.getElementById("cook").addEventListener("mouseout", function () {
+  var img = document.getElementById("cook");
+  img.src = "img/package/cook.svg";
+});
 document.getElementById("cook").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -460,6 +489,14 @@ document.getElementById("cook-x").addEventListener("click", function () {
 });
 
 //行走類
+document.getElementById("walk").addEventListener("mouseover", function () {
+  var img = document.getElementById("walk");
+  img.src = "img/package/walkhover.svg";
+});
+document.getElementById("walk").addEventListener("mouseout", function () {
+  var img = document.getElementById("walk");
+  img.src = "img/package/walk.svg";
+});
 document.getElementById("walk").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -504,6 +541,14 @@ document.getElementById("pole").addEventListener("mouseout", function () {
 });
 
 //衣著類
+document.getElementById("cloth").addEventListener("mouseover", function () {
+  var img = document.getElementById("cloth");
+  img.src = "img/package/clothhover.svg";
+});
+document.getElementById("cloth").addEventListener("mouseout", function () {
+  var img = document.getElementById("cloth");
+  img.src = "img/package/cloth.svg";
+});
 document.getElementById("cloth").addEventListener("click", function () {
   document
     .getElementsByClassName("prepare-scroll-hint")[0]
@@ -646,69 +691,3 @@ gsap
     },
   })
   .to(".entry", { backgroundPosition: "50% 0", ease: "none" });
-
-// 雲轉場的parallax
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud1");
-
-  const newBottomValue = 103 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud2");
-
-  const newBottomValue = 125 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud3");
-
-  const newBottomValue = 146 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud4");
-
-  const newBottomValue = 160 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud5");
-
-  const newBottomValue = 400 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud6");
-
-  const newBottomValue = 422 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud7");
-
-  const newBottomValue = 443 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("transcloud8");
-
-  const newBottomValue = 448 - scrollValue / 13 + "vh";
-
-  imgElement.style.top = newBottomValue;
-});

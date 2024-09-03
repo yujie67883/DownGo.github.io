@@ -6,23 +6,6 @@ document.getElementById("human").addEventListener("click", function () {
     .getElementsByClassName("hurt-second-content")[0]
     .classList.add("active");
 });
-document.getElementById("hurt-id").addEventListener("mouseover", function () {
-  setTimeout(() => {
-    document
-      .getElementsByClassName("hurt_start_arrow")[0]
-      .classList.add("active");
-  }, 17500);
-});
-document
-  .getElementById("hurt_start_arrow")
-  .addEventListener("click", function () {
-    document
-      .getElementsByClassName("hurt_first-content")[0]
-      .classList.add("active");
-    document
-      .getElementsByClassName("hurt-second-content")[0]
-      .classList.add("active");
-  });
 document.getElementById("whole-human").addEventListener("click", function () {
   document
     .getElementsByClassName("hurt_first-content")[0]
@@ -87,6 +70,14 @@ function typewriter() {
 }
 
 // 環形包紮
+document.getElementById("cycle").addEventListener("mouseover", function () {
+  var img = document.getElementById("cycle");
+  img.src = "img/hurt/環形包紮法_haver.svg";
+});
+document.getElementById("cycle").addEventListener("mouseout", function () {
+  var img = document.getElementById("cycle");
+  img.src = "img/hurt/環形包紮法.svg";
+});
 document.getElementById("cycle").addEventListener("click", function () {
   document.getElementsByClassName("cycle-frame")[0].classList.add("active");
   document.getElementsByClassName("cycle-book")[0].classList.add("active");
@@ -162,6 +153,14 @@ document.getElementById("cycle-x").addEventListener("click", function () {
 });
 
 // 回反包紮
+document.getElementById("return").addEventListener("mouseover", function () {
+  var img = document.getElementById("return");
+  img.src = "img/hurt/回反包紮法_haver.svg";
+});
+document.getElementById("return").addEventListener("mouseout", function () {
+  var img = document.getElementById("return");
+  img.src = "img/hurt/回反包紮法.svg";
+});
 document.getElementById("return").addEventListener("click", function () {
   document.getElementsByClassName("return-frame")[0].classList.add("active");
   document.getElementsByClassName("return-book")[0].classList.add("active");
@@ -257,6 +256,16 @@ document.getElementById("return-x").addEventListener("click", function () {
 });
 
 // 螺旋回反包紮
+document
+  .getElementById("spinreturn")
+  .addEventListener("mouseover", function () {
+    var img = document.getElementById("spinreturn");
+    img.src = "img/hurt/螺旋反折包紮法_haver.svg";
+  });
+document.getElementById("spinreturn").addEventListener("mouseout", function () {
+  var img = document.getElementById("spinreturn");
+  img.src = "img/hurt/螺旋反折包紮法.svg";
+});
 document.getElementById("spinreturn").addEventListener("click", function () {
   document
     .getElementsByClassName("spinreturn-frame")[0]
@@ -370,6 +379,14 @@ document.getElementById("spinreturn-x").addEventListener("click", function () {
 });
 
 // 八字包紮
+document.getElementById("eight").addEventListener("mouseover", function () {
+  var img = document.getElementById("eight");
+  img.src = "img/hurt/八字包紮法_haver.svg";
+});
+document.getElementById("eight").addEventListener("mouseout", function () {
+  var img = document.getElementById("eight");
+  img.src = "img/hurt/八字包紮法.svg";
+});
 document.getElementById("eight").addEventListener("click", function () {
   document.getElementsByClassName("eight-frame")[0].classList.add("active");
   document.getElementsByClassName("eight-book")[0].classList.add("active");
@@ -445,6 +462,14 @@ document.getElementById("eight-x").addEventListener("click", function () {
 });
 
 // 螺旋包紮
+document.getElementById("spin").addEventListener("mouseover", function () {
+  var img = document.getElementById("spin");
+  img.src = "img/hurt/螺旋包紮法_haver.svg";
+});
+document.getElementById("spin").addEventListener("mouseout", function () {
+  var img = document.getElementById("spin");
+  img.src = "img/hurt/螺旋包紮法.svg";
+});
 document.getElementById("spin").addEventListener("click", function () {
   document.getElementsByClassName("spin-frame")[0].classList.add("active");
   document.getElementsByClassName("spin-book")[0].classList.add("active");

@@ -1,12 +1,244 @@
-// 山的滾動
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const imgElement = document.getElementById("longmt");
+//{{ Btn-前進 }}
+let gotopRunning = false;
+document.querySelector(".Btn_go").addEventListener("click", function () {
+  if (gotopRunning) return;
 
-  const newBottomValue = 0 - scrollValue / 5 + "vh";
+  gotopRunning = true;
+  //山的滾動
+  const bgElement = document.querySelector(".bg");
+  const currentBottom = getComputedStyle(bgElement).bottom;
 
-  imgElement.style.bottom = newBottomValue;
+  const viewportHeight = window.innerHeight;
+  const currentBottomValue = (parseFloat(currentBottom) / viewportHeight) * 100;
+
+  const newBottomValue = currentBottomValue - 44;
+
+  if (newBottomValue <= -300) {
+    //反彈效果動畫
+    bgElement.style.setProperty("--start-bottom", `${currentBottomValue}vh`);
+    bgElement.style.animation = "bounce-up 1s ease-in-out";
+
+    bgElement.addEventListener(
+      "animationend",
+      function () {
+        bgElement.style.animation = "";
+      },
+      { once: true }
+    );
+  } else {
+    bgElement.style.bottom = `${newBottomValue}vh`;
+  }
+
+  //瑪利歐的移動
+  const marioPlace = document.querySelector(".mario");
+  const currentPlace = getComputedStyle(marioPlace).bottom;
+
+  const currentPlaceValue = (parseFloat(currentPlace) / viewportHeight) * 100;
+
+  const newPlaceValue = currentPlaceValue + 4.3;
+
+  if (newPlaceValue >= 59) {
+    gotopRunning = false;
+    return;
+  } else {
+    marioPlace.style.bottom = `${newPlaceValue}vh`;
+  }
+
+  //海拔指標的移動
+  const altitueVallue = document.querySelector(".altitue");
+  const altitueNum = document.querySelector(".altitueNum");
+  const currentAltitue = getComputedStyle(altitueVallue).bottom;
+
+  const currentAltitueValue =
+    (parseFloat(currentAltitue) / viewportHeight) * 100;
+
+  const newAltitueValue = currentAltitueValue + 4.3;
+
+  if (newAltitueValue >= 61) {
+    return;
+  } else {
+    altitueVallue.style.bottom = `${newAltitueValue}vh`;
+  }
+
+  if (newAltitueValue < 39) {
+    animateNumber(50, 500, 900, altitueNum);
+    // (開始, 結束, 總時長ms, #altitueNum)
+  } else if (newAltitueValue >= 39 && newAltitueValue < 43) {
+    animateNumber(500, 1000, 900, altitueNum);
+    $(".snake").css("bottom", "30vh");
+    $(".snake").css("z-index", "4");
+    console.log("30");
+  } else if (newAltitueValue >= 43 && newAltitueValue < 48) {
+    animateNumber(1000, 1500, 900, altitueNum);
+    $(".snake").css("bottom", "-32vh");
+    $(".snake").css("z-index", "-1");
+    console.log("-32");
+  } else if (newAltitueValue >= 48 && newAltitueValue < 52) {
+    animateNumber(1500, 2000, 900, altitueNum);
+  } else if (newAltitueValue >= 52 && newAltitueValue < 56) {
+    animateNumber(2000, 2500, 900, altitueNum);
+  } else if (newAltitueValue >= 56 && newAltitueValue < 61) {
+    animateNumber(2500, 3000, 900, altitueNum);
+  }
+
+  //地圖下方海拔數字滾動
+  const altitueEnum = document.querySelector(".ALTITUEnum");
+  const currentMarginTop = parseFloat(getComputedStyle(altitueEnum).marginTop);
+  const currentMarginTopValue =
+    (parseFloat(currentMarginTop) / viewportHeight) * 100;
+
+  const newMarginTopValue = currentMarginTopValue + 2;
+
+  altitueEnum.style.marginTop = `${newMarginTopValue}vh`;
+
+  //人物跑動
+  const personImage = document.querySelector("#personImage");
+
+  personImage.src = "./img/fight/人物_走路.gif";
+
+  setTimeout(function () {
+    personImage.src = "./img/fight/背影.png";
+  }, 1000);
 });
+
+//{{ Btn-逃跑 }}
+let godownRunning = false;
+document.querySelector(".Btn_back").addEventListener("click", function () {
+  if (godownRunning) return;
+
+  godownRunning = true;
+  //山的滾動
+  const bgElement = document.querySelector(".bg");
+  const currentBottom = getComputedStyle(bgElement).bottom;
+
+  const viewportHeight = window.innerHeight;
+  const currentBottomValue = (parseFloat(currentBottom) / viewportHeight) * 100;
+
+  const newBottomValue = currentBottomValue + 44;
+
+  if (newBottomValue >= 0) {
+    //反彈效果動畫
+    bgElement.style.setProperty("--start-bottom", `${currentBottomValue}vh`);
+    bgElement.style.animation = "bounce-back 1s ease-in-out";
+
+    bgElement.addEventListener(
+      "animationend",
+      function () {
+        bgElement.style.animation = "";
+      },
+      { once: true }
+    );
+  } else {
+    bgElement.style.bottom = `${newBottomValue}vh`;
+  }
+
+  //瑪利歐的移動
+  const marioPlace = document.querySelector(".mario");
+  const currentPlace = getComputedStyle(marioPlace).bottom;
+
+  const currentPlaceValue = (parseFloat(currentPlace) / viewportHeight) * 100;
+
+  const newPlaceValue = currentPlaceValue - 4.3;
+
+  if (newPlaceValue <= 30) {
+    godownRunning = false;
+    return;
+  } else {
+    marioPlace.style.bottom = `${newPlaceValue}vh`;
+  }
+
+  //海拔指標的移動
+  const altitueVallue = document.querySelector(".altitue");
+  const altitueNum = document.querySelector(".altitueNum");
+  const currentAltitue = getComputedStyle(altitueVallue).bottom;
+
+  const currentAltitueValue =
+    (parseFloat(currentAltitue) / viewportHeight) * 100;
+
+  const newAltitueValue = currentAltitueValue - 4.3;
+
+  if (newAltitueValue >= 61) {
+    return;
+  } else {
+    altitueVallue.style.bottom = `${newAltitueValue}vh`;
+  }
+
+  if (newAltitueValue < 38) {
+    animateNumber(500, 50, 900, altitueNum);
+    // (開始, 結束, 總時長ms, #altitueNum)
+  } else if (newAltitueValue >= 38 && newAltitueValue < 43) {
+    animateNumber(1000, 500, 900, altitueNum);
+    $(".snake").css("bottom", "-32vh");
+    $(".snake").css("z-index", "-1");
+    console.log("-32");
+  } else if (newAltitueValue >= 43 && newAltitueValue < 47) {
+    animateNumber(1500, 1000, 900, altitueNum);
+    $(".snake").css("bottom", "30vh");
+    $(".snake").css("z-index", "4");
+    console.log("30");
+  } else if (newAltitueValue >= 47 && newAltitueValue < 51) {
+    animateNumber(2000, 1500, 900, altitueNum);
+  } else if (newAltitueValue >= 51 && newAltitueValue < 55) {
+    animateNumber(2500, 2000, 900, altitueNum);
+  } else if (newAltitueValue >= 55 && newAltitueValue < 61) {
+    animateNumber(3000, 2500, 900, altitueNum);
+  }
+
+  //地圖下方海拔數字滾動
+  const altitueEnum = document.querySelector(".ALTITUEnum");
+  const currentMarginTop = parseFloat(getComputedStyle(altitueEnum).marginTop);
+  const currentMarginTopValue =
+    (parseFloat(currentMarginTop) / viewportHeight) * 100;
+
+  const newMarginTopValue = currentMarginTopValue - 2;
+
+  altitueEnum.style.marginTop = `${newMarginTopValue}vh`;
+
+  //人物跑動
+  const personImage = document.querySelector("#personImage");
+
+  personImage.src = "./img/fight/人物_逃跑.gif";
+
+  setTimeout(function () {
+    personImage.src = "./img/fight/背影.png";
+  }, 1000);
+});
+
+function animateNumber(start, end, duration, element) {
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const currentNumber = Math.round(start + (end - start) * progress);
+    element.textContent = currentNumber;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      gotopRunning = false;
+      godownRunning = false;
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+//Call out hamburger
+$(".header_right").click(function () {
+  $(".menu").css("visibility", "visible").show();
+  $(".menu").css("top", "0");
+  $("#myButton").css("pointer-events", "none");
+});
+$("#close_icon").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+  $("#myButton").css("pointer-events", "auto");
+});
+$(".wood_option .preparing").click(function () {
+  $(".menu").css("top", "-110vh");
+  $(".menu").css("visibility", "hidden");
+});
+
 //從首頁漢堡轉換到背包頁
 document.addEventListener("DOMContentLoaded", function () {
   var mountainEquipLink = document.querySelector(".wood_option .preparing a");
@@ -66,796 +298,125 @@ $(".enter_option .hypothermia").click(function () {
   $(".menu").css("visibility", "hidden");
 });
 
-// header海拔高度滾動效果
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber");
+//hambuger_icon change
+function mDownb(obj) {
+  obj.style.width = "5.4vw";
+  setTimeout(this, 300);
+}
 
-  let currentNumber = 1000;
+function mUpb(obj) {
+  obj.style.width = "6vw";
+  setTimeout(this, 300);
+}
 
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
+function mDownx(obj) {
+  obj.style.width = "3.8vw";
+  setTimeout(this, 300);
+}
 
-    const newNumber = Math.round(500 + (scrollPercentage / 100) * 3000);
+function mUpx(obj) {
+  obj.style.width = "4vw";
+  setTimeout(this, 300);
+}
 
-    if (newNumber !== currentNumber) {
-      currentNumber = newNumber;
-      scrollingNumberElement.textContent = currentNumber;
-    }
-  });
-});
+//{{ 文案 }}
+//intro內容
+var aText = new Array(
+  "登山時可能會遇到野獸或是突發難以預料的狀況，那怎麼辦呢！？",
+  "此處以海拔每500m為分界，將可能遇到情況結合成怪物，並附上相應的應急狀況",
+  "登山前記得來熟悉一下備戰守則歐"
+);
 
-// header中間img翻頁效果
-document.addEventListener("DOMContentLoaded", function () {
-  const theCard = document.querySelector(".thecard");
-  let isCardFlipped = false;
+//毒蜇魔
+var snake_info = new Array(
+  "【怪物簡介】",
+  "\u00A0\u00A0蛇與蜜蜂的亞種",
+  "\u00A0\u00A0移動速度快，有劇毒，但攻擊性不高。", // \u00A0 = 不換行空格
+  "\u00A0\u00A0危險指數\u00A0\u00A0★★★☆☆"
+);
 
-  window.addEventListener("scroll", function () {
-    const scrollingNumber = parseInt(
-      document.getElementById("scrollingNumber").textContent
-    );
+var snake_react = new Array(
+  "【蜜蜂】:\u00A0遭遇到虎頭蜂時，運用衣物、樹葉等覆蓋在身上，減少裸露在外的區域，降低被螫的針數。奔跑時順著風跑，避免體味散發。",
+  "【蛇】:\u00A0用手機拍下或是記住蛇的樣子，就醫時向醫師描述清楚。如果有出血，傷口位置低於心臟，減慢血液回流的速度。用止血帶止血時，不要綁死以免造成肢體其餘部位加速壞死。"
+);
 
-    let backgroundImageSource = "../img/entery/title.png"; // 默认背景图源
+var snake_TMI = new Array(
+  "【科普小知識】",
+  "蛇：山野活動時帶一枝棍子，一路打草而行。蛇多半在草叢中出沒，不太會主動攻擊。",
+  "蜜蜂：山區活動時，可能會因拉動樹枝而觸動蜂巢，因此不要隨意亂搖樹枝。"
+);
 
-    if (scrollingNumber >= 1000 && scrollingNumber < 1500) {
-      backgroundImageSource = "./img/fight/title_snake.png";
-    } else if (scrollingNumber >= 1500 && scrollingNumber < 2000) {
-      backgroundImageSource = "./img/fight/title_fish.png";
-    } else if (scrollingNumber >= 2000 && scrollingNumber < 2500) {
-      backgroundImageSource = "./img/fight/title_bear.png";
-    } else if (scrollingNumber >= 2500 && scrollingNumber < 3000) {
-      backgroundImageSource = "./img/fight/title_hmt.png";
-    } else if (scrollingNumber >= 3000) {
-      backgroundImageSource = "./img/fight/title_clod.png";
-    } else {
-      backgroundImageSource = "./img/entery/title.png";
-    }
+var currentTextArray = aText; //默認顯示aText內容
 
-    theCard.style.transition = "all 0.3s ease";
-    theCard.style.transform = "rotateY(180deg)";
+var iSpeed = 70; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = currentTextArray[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+var iTextPos = 0; // initialise text position
+var sContents = ""; // initialise contents variable
+var iRow; // initialise current row
 
-    setTimeout(function () {
-      theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
-      theCard.style.transform = "rotateY(0deg)";
-    }, 300);
-  });
-});
+var functionEnable = false;
 
-// header level 等級滾動效果
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber");
-  const scrollingTextElement = document.getElementById("scrollingText");
+function typewriter() {
+  sContents = " ";
+  iRow = Math.max(0, iIndex - iScrollAt);
+  var destination = document.querySelector("#typeanimation");
 
-  let currentNumber = 1000;
-
-  window.addEventListener("scroll", function () {
-    const scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    const newNumber = Math.round(500 + (scrollPercentage / 100) * 4000);
-
-    if (newNumber !== currentNumber) {
-      currentNumber = newNumber;
-      scrollingNumberElement.textContent = currentNumber;
-
-      let newText;
-      if (currentNumber >= 3000) {
-        newText = "2-5";
-      } else if (currentNumber >= 2500) {
-        newText = "2-4";
-      } else if (currentNumber >= 2000) {
-        newText = "2-3";
-      } else if (currentNumber >= 1500) {
-        newText = "2-2";
-      } else if (currentNumber >= 1000) {
-        newText = "2-1";
-      } else {
-        newText = "2-0";
+  while (iRow < iIndex) {
+    sContents += currentTextArray[iRow++] + "<br />";
+  }
+  if (currentTextArray[iIndex]) {
+    destination.innerHTML =
+      sContents + currentTextArray[iIndex].substring(0, iTextPos) + "";
+    if (iTextPos++ == iArrLength) {
+      iTextPos = 0;
+      iIndex++;
+      if (iIndex != currentTextArray.length) {
+        iArrLength = currentTextArray[iIndex].length;
+        setTimeout("typewriter()", 500);
       }
-
-      scrollingTextElement.textContent = newText;
+    } else {
+      setTimeout("typewriter()", iSpeed);
     }
-  });
-});
-
-// 人物逃跑
-function runAway() {
-  var personImage = document.getElementById("personImage");
-
-  personImage.src = "./img/fight/person_run.gif";
-
-  setTimeout(function () {
-    personImage.src = "./img/fight/person_walk.gif";
-  }, 1500);
-
-  //逃跑:滾動回到頁面頂端
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}
-
-//前進按鈕
-
-document.getElementById("btn-go1").classList.add("active");
-
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", function () {
-    const scrollingNumber = parseInt(
-      document.getElementById("scrollingNumber").textContent
-    );
-    // Reset active class on other buttons
-    document.getElementById("btn-go2").classList.remove("active");
-    document.getElementById("btn-go3").classList.remove("active");
-    document.getElementById("btn-go4").classList.remove("active");
-    document.getElementById("btn-go5").classList.remove("active");
-
-    // Add active class based on scrollingNumber
-    if (scrollingNumber >= 1000 && scrollingNumber < 1350) {
-      document.getElementById("btn-go1").classList.add("active");
-    } else if (scrollingNumber >= 1350 && scrollingNumber < 2000) {
-      document.getElementById("btn-go2").classList.add("active");
-    } else if (scrollingNumber >= 2000 && scrollingNumber < 2200) {
-      document.getElementById("btn-go3").classList.add("active");
-    } else if (scrollingNumber >= 2200 && scrollingNumber < 3000) {
-      document.getElementById("btn-go4").classList.add("active");
-    } else if (scrollingNumber >= 3000) {
-      document.getElementById("btn-go5").classList.add("active");
-    } else if (scrollingNumber < 1000 && scrollingNumber == 0) {
-      document.getElementById("btn-go1").classList.add("active");
-    }
-  });
-});
-
-function go1() {
-  // Assuming 'snakebee' is the id of the div you want to scroll to
-  var snakebeeDiv = document.getElementById("snakebee");
-  console.log("click1");
-
-  if (snakebeeDiv) {
-    var targetPosition =
-      window.scrollY - snakebeeDiv.getBoundingClientRect().top / 1.75;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
   }
 }
 
-function go2() {
-  // Assuming 'snakebee' is the id of the div you want to scroll to
-  var fishDiv = document.getElementById("fish");
-  console.log("click2");
-
-  if (fishDiv) {
-    var targetPosition =
-      window.scrollY - fishDiv.getBoundingClientRect().top / 1.7;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-}
-function go3() {
-  // Assuming 'snakebee' is the id of the div you want to scroll to
-  var pigbearDiv = document.getElementById("pigbear");
-  console.log("click3");
-
-  if (pigbearDiv) {
-    var targetPosition =
-      window.scrollY - pigbearDiv.getBoundingClientRect().top / 1.75;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-}
-function go4() {
-  // Assuming 'snakebee' is the id of the div you want to scroll to
-  var hypoxiaDiv = document.getElementById("hypoxia");
-  console.log("click4");
-
-  if (hypoxiaDiv) {
-    var targetPosition =
-      window.scrollY - hypoxiaDiv.getBoundingClientRect().top / 1.68;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-}
-
-function go5() {
-  // Assuming 'snakebee' is the id of the div you want to scroll to
-  var dragonDiv = document.getElementById("dragon");
-  console.log("click5");
-
-  if (dragonDiv) {
-    var targetPosition =
-      window.scrollY - dragonDiv.getBoundingClientRect().top / 1.68;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-  }
-}
-
-//路面滾動
-document.addEventListener("DOMContentLoaded", function () {
-  var roadImg = document.getElementById("road");
-
-  window.addEventListener("scroll", function () {
-    var scrollPercentage =
-      (window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-      100;
-
-    var newBottomValue = Math.max(-109, -scrollPercentage);
-
-    roadImg.style.bottom = newBottomValue + "vh";
-  });
-});
-
-//怪獸移動
-//毒蘑
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const bgElement = document.querySelector(".bg");
-  const imgElement = document.getElementById("snakebee");
-
-  const newBottomValue = -125 + scrollValue / 6 + "vh";
-  const newTopValue = -23 + "vh";
-
-  if (scrollValue >= -147.2 && scrollValue <= -116.8) {
-    imgElement.style.top = newTopValue;
-  } else {
-    imgElement.style.top = newBottomValue;
-  }
-
-  if (scrollValue === 0) {
-    imgElement.style.top = "-125vh";
-  }
-});
-//鐵支麵粉鯛
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const bgElement = document.querySelector(".bg");
-  const imgElement = document.getElementById("fish");
-
-  const newBottomValue = -225 + scrollValue / 6 + "vh";
-  const newTopValue = -73 + "vh";
-
-  if (scrollValue >= 8 && scrollValue <= -37) {
-    imgElement.style.top = newTopValue;
-  } else {
-    imgElement.style.top = newBottomValue;
-  }
-
-  if (scrollValue === 0) {
-    imgElement.style.top = "-225vh";
-  }
-});
-//熊豬
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const bgElement = document.querySelector(".bg");
-  const imgElement = document.getElementById("pigbear");
-
-  const newBottomValue = -325 + scrollValue / 6 + "vh";
-  const newTopValue = 2 + "vh";
-
-  if (scrollValue >= 2 && scrollValue <= -60) {
-    imgElement.style.top = newTopValue;
-  } else {
-    imgElement.style.top = newBottomValue;
-  }
-
-  if (scrollValue === 0) {
-    imgElement.style.top = "-325vh";
-  }
-});
-//缺氧
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const bgElement = document.querySelector(".bg");
-  const imgElement = document.getElementById("hypoxia");
-
-  const newBottomValue = -400 + scrollValue / 6 + "vh";
-  const newTopValue = 2 + "vh";
-
-  if (scrollValue >= 2 && scrollValue <= -60) {
-    imgElement.style.top = newTopValue;
-  } else {
-    imgElement.style.top = newBottomValue;
-  }
-
-  if (scrollValue === 0) {
-    imgElement.style.top = "-400vh";
-  }
-});
-//寒冰龍
-window.addEventListener("scroll", function () {
-  const scrollValue = window.scrollY;
-  const bgElement = document.querySelector(".bg");
-  const imgElement = document.getElementById("dragon");
-
-  const newBottomValue = -575 + scrollValue / 6 + "vh";
-  const newTopValue = 2 + "vh";
-
-  if (scrollValue >= 2 && scrollValue <= -60) {
-    imgElement.style.top = newTopValue;
-  } else {
-    imgElement.style.top = newBottomValue;
-  }
-
-  if (scrollValue === 0) {
-    imgElement.style.top = "-575vh";
+//intro執行
+document.querySelector("#fight-id").addEventListener("mouseover", function () {
+  if (!functionEnable) {
+    functionEnable = true;
+    setTimeout(() => {
+      typewriter();
+    }, 700);
   }
 });
 
-//檔案出現:毒螫魔
-document.addEventListener("DOMContentLoaded", function () {
-  var snakebee = document.getElementById("snakebee");
-  var snakbee = document.querySelector(".cards-snakbee");
-
-  snakebee.addEventListener("click", function () {
-    console.log("#snakebee clicked");
-
-    var currentZIndex = parseInt(getComputedStyle(snakbee).zIndex) || 0;
-
-    var newZIndex = currentZIndex + 2;
-
-    snakbee.style.zIndex = newZIndex.toString();
-
-    snakbee.style.opacity = 1;
-  });
+//毒蜇魔
+document.querySelector(".OptIntro").addEventListener("click", function () {
+  currentTextArray = snake_info;
+  iArrLength = currentTextArray[0].length;
+  iIndex = 0;
+  iTextPos = 0;
+  iRow = 0;
+  sContents = "";
+  typewriter();
 });
-
-//標籤頁點換:毒螫魔
-document.addEventListener("DOMContentLoaded", function () {
-  var cardsPages = document.getElementById("cards-pages-snakbee");
-  var pageInfo = document.getElementById("page-info-snakbee");
-  var pageTmi = document.getElementById("page-tmi-snakbee");
-  var pageHelp = document.getElementById("page-help-snakbee");
-
-  pageInfo.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page01.png)";
-  });
-
-  pageTmi.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page02.png)";
-  });
-
-  pageHelp.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page03.png)";
-  });
+document.querySelector(".OptReact").addEventListener("click", function () {
+  currentTextArray = snake_react;
+  iArrLength = currentTextArray[0].length;
+  iIndex = 0;
+  iTextPos = 0;
+  iRow = 0;
+  sContents = "";
+  typewriter();
 });
-//文字切換:毒螫魔
-document.addEventListener("DOMContentLoaded", function () {
-  var cardInfo = document.querySelector(".snakbee-info");
-  var cardTmi = document.querySelector(".snakbee-tmi");
-  var cardHelp = document.querySelector(".snakbee-help");
-
-  var pageInfo = document.getElementById("page-info-snakbee");
-  var pageTmi = document.getElementById("page-tmi-snakbee");
-  var pageHelp = document.getElementById("page-help-snakbee");
-
-  var snakebee = document.getElementById("snakebee");
-
-  function hideAllCards() {
-    cardInfo.style.display = "none";
-    cardTmi.style.display = "none";
-    cardHelp.style.display = "none";
-  }
-
-  function showCardContent(cardToShow) {
-    if (cardToShow === "info") {
-      cardInfo.style.display = "block";
-      cardTmi.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "tmi") {
-      cardTmi.style.display = "block";
-      cardInfo.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "help") {
-      cardHelp.style.display = "block";
-      cardInfo.style.display = "none";
-      cardTmi.style.display = "none";
-    }
-  }
-
-  pageInfo.addEventListener("click", function () {
-    showCardContent("info");
-  });
-
-  pageTmi.addEventListener("click", function () {
-    showCardContent("tmi");
-  });
-
-  pageHelp.addEventListener("click", function () {
-    showCardContent("help");
-  });
-
-  if (performance.navigation.type === 1) {
-    hideAllCards();
-  }
-
-  showCardContent("info");
-});
-
-//檔案出現:鐵支麵粉雕
-document.addEventListener("DOMContentLoaded", function () {
-  var fish = document.getElementById("fish");
-  var cardsFish = document.querySelector(".cards-fish");
-
-  fish.addEventListener("click", function () {
-    console.log("#fish clicked");
-
-    var currentZIndex = parseInt(getComputedStyle(cardsFish).zIndex) || 0;
-
-    var newZIndex = currentZIndex + 2;
-
-    cardsFish.style.zIndex = newZIndex.toString();
-
-    cardsFish.style.opacity = 1;
-  });
-});
-
-//標籤頁點換:鐵支麵粉雕
-document.addEventListener("DOMContentLoaded", function () {
-  var cardsPages = document.getElementById("cards-pages-fish");
-  var pageInfo = document.getElementById("page-info-fish");
-  var pageTmi = document.getElementById("page-tmi-fish");
-  var pageHelp = document.getElementById("page-help-fish");
-
-  pageInfo.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page01.png)";
-  });
-
-  pageTmi.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page02.png)";
-  });
-
-  pageHelp.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page03.png)";
-  });
-});
-//文字切換:鐵支麵粉雕
-document.addEventListener("DOMContentLoaded", function () {
-  var cardInfo = document.querySelector(".fish-info");
-  var cardTmi = document.querySelector(".fish-tmi");
-  var cardHelp = document.querySelector(".fish-help");
-
-  var pageInfo = document.getElementById("page-info-fish");
-  var pageTmi = document.getElementById("page-tmi-fish");
-  var pageHelp = document.getElementById("page-help-fish");
-
-  var fish = document.getElementById("fish");
-
-  function hideAllCards() {
-    cardInfo.style.display = "none";
-    cardTmi.style.display = "none";
-    cardHelp.style.display = "none";
-  }
-
-  function showCardContent(cardToShow) {
-    if (cardToShow === "info") {
-      cardInfo.style.display = "block";
-      cardTmi.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "tmi") {
-      cardTmi.style.display = "block";
-      cardInfo.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "help") {
-      cardHelp.style.display = "block";
-      cardInfo.style.display = "none";
-      cardTmi.style.display = "none";
-    }
-  }
-
-  hideAllCards();
-
-  pageInfo.addEventListener("click", function () {
-    showCardContent("info");
-  });
-
-  pageTmi.addEventListener("click", function () {
-    showCardContent("tmi");
-  });
-
-  pageHelp.addEventListener("click", function () {
-    showCardContent("help");
-  });
-
-  if (performance.navigation.type === 1) {
-    hideAllCards();
-  }
-
-  showCardContent("info");
-});
-
-//檔案出現:熊豬
-document.addEventListener("DOMContentLoaded", function () {
-  var pigbear = document.getElementById("pigbear");
-  var cardsPigbear = document.querySelector(".cards-pigbear");
-
-  pigbear.addEventListener("click", function () {
-    console.log("#pigbear clicked");
-
-    var currentZIndex = parseInt(getComputedStyle(cardsPigbear).zIndex) || 0;
-
-    var newZIndex = currentZIndex + 2;
-
-    cardsPigbear.style.zIndex = newZIndex.toString();
-
-    cardsPigbear.style.opacity = 1;
-  });
-});
-
-//標籤頁點換:熊豬
-document.addEventListener("DOMContentLoaded", function () {
-  var cardsPages = document.getElementById("cards-pages-pigbear");
-  var pageInfo = document.getElementById("page-info-pigbear");
-  var pageTmi = document.getElementById("page-tmi-pigbear");
-  var pageHelp = document.getElementById("page-help-pigbear");
-
-  pageInfo.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page01.png)";
-  });
-
-  pageTmi.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page02.png)";
-  });
-
-  pageHelp.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page03.png)";
-  });
-});
-//文字切換:熊豬
-document.addEventListener("DOMContentLoaded", function () {
-  var cardInfo = document.querySelector(".pigbear-info");
-  var cardTmi = document.querySelector(".pigbear-tmi");
-  var cardHelp = document.querySelector(".pigbear-help");
-
-  var pageInfo = document.getElementById("page-info-pigbear");
-  var pageTmi = document.getElementById("page-tmi-pigbear");
-  var pageHelp = document.getElementById("page-help-pigbear");
-
-  var pigbear = document.getElementById("pigbear");
-
-  function hideAllCards() {
-    cardInfo.style.display = "none";
-    cardTmi.style.display = "none";
-    cardHelp.style.display = "none";
-  }
-
-  function showCardContent(cardToShow) {
-    if (cardToShow === "info") {
-      cardInfo.style.display = "block";
-      cardTmi.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "tmi") {
-      cardTmi.style.display = "block";
-      cardInfo.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "help") {
-      cardHelp.style.display = "block";
-      cardInfo.style.display = "none";
-      cardTmi.style.display = "none";
-    }
-  }
-
-  hideAllCards();
-
-  pageInfo.addEventListener("click", function () {
-    showCardContent("info");
-  });
-
-  pageTmi.addEventListener("click", function () {
-    showCardContent("tmi");
-  });
-
-  pageHelp.addEventListener("click", function () {
-    showCardContent("help");
-  });
-
-  if (performance.navigation.type === 1) {
-    hideAllCards();
-  }
-
-  showCardContent("info");
-});
-
-//檔案出現:高山絕氧獸
-document.addEventListener("DOMContentLoaded", function () {
-  var hypoxia = document.getElementById("hypoxia");
-  var cardsHypoxia = document.querySelector(".cards-hypoxia");
-
-  hypoxia.addEventListener("click", function () {
-    console.log("#hypoxia clicked");
-
-    var currentZIndex = parseInt(getComputedStyle(cardsHypoxia).zIndex) || 0;
-
-    var newZIndex = currentZIndex + 2;
-
-    cardsHypoxia.style.zIndex = newZIndex.toString();
-
-    cardsHypoxia.style.opacity = 1;
-  });
-});
-
-//標籤頁點換:高山絕氧獸
-document.addEventListener("DOMContentLoaded", function () {
-  var cardsPages = document.getElementById("cards-pages-hypoxia");
-  var pageInfo = document.getElementById("page-info-hypoxia");
-  var pageTmi = document.getElementById("page-tmi-hypoxia");
-  var pageHelp = document.getElementById("page-help-hypoxia");
-
-  pageInfo.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page01.png)";
-  });
-
-  pageTmi.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page02.png)";
-  });
-
-  pageHelp.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page03.png)";
-  });
-});
-//文字切換:高山絕氧獸
-document.addEventListener("DOMContentLoaded", function () {
-  var cardInfo = document.querySelector(".hypoxia-info");
-  var cardTmi = document.querySelector(".hypoxia-tmi");
-  var cardHelp = document.querySelector(".hypoxia-help");
-
-  var pageInfo = document.getElementById("page-info-hypoxia");
-  var pageTmi = document.getElementById("page-tmi-hypoxia");
-  var pageHelp = document.getElementById("page-help-hypoxia");
-
-  var hypoxia = document.getElementById("hypoxia");
-
-  function hideAllCards() {
-    cardInfo.style.display = "none";
-    cardTmi.style.display = "none";
-    cardHelp.style.display = "none";
-  }
-
-  function showCardContent(cardToShow) {
-    if (cardToShow === "info") {
-      cardInfo.style.display = "block";
-      cardTmi.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "tmi") {
-      cardTmi.style.display = "block";
-      cardInfo.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "help") {
-      cardHelp.style.display = "block";
-      cardInfo.style.display = "none";
-      cardTmi.style.display = "none";
-    }
-  }
-
-  hideAllCards();
-
-  pageInfo.addEventListener("click", function () {
-    showCardContent("info");
-  });
-
-  pageTmi.addEventListener("click", function () {
-    showCardContent("tmi");
-  });
-
-  pageHelp.addEventListener("click", function () {
-    showCardContent("help");
-  });
-
-  if (performance.navigation.type === 1) {
-    hideAllCards();
-  }
-
-  showCardContent("info");
-});
-
-//檔案出現:寒冰龍
-document.addEventListener("DOMContentLoaded", function () {
-  var dragon = document.getElementById("dragon");
-  var cardsDragon = document.querySelector(".cards-dragon");
-
-  dragon.addEventListener("click", function () {
-    console.log("#dragon clicked");
-
-    var currentZIndex = parseInt(getComputedStyle(cardsDragon).zIndex) || 0;
-
-    var newZIndex = currentZIndex + 2;
-
-    cardsDragon.style.zIndex = newZIndex.toString();
-
-    cardsDragon.style.opacity = 1;
-  });
-});
-
-//標籤頁點換:寒冰龍
-document.addEventListener("DOMContentLoaded", function () {
-  var cardsPages = document.getElementById("cards-pages-dragon");
-  var pageInfo = document.getElementById("page-info-dragon");
-  var pageTmi = document.getElementById("page-tmi-dragon");
-  var pageHelp = document.getElementById("page-help-dragon");
-
-  pageInfo.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page01.png)";
-  });
-
-  pageTmi.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page02.png)";
-  });
-
-  pageHelp.addEventListener("click", function () {
-    cardsPages.style.backgroundImage = "url(./img/fight/page03.png)";
-  });
-});
-//文字切換:寒冰龍
-document.addEventListener("DOMContentLoaded", function () {
-  var cardInfo = document.querySelector(".dragon-info");
-  var cardTmi = document.querySelector(".dragon-tmi");
-  var cardHelp = document.querySelector(".dragon-help");
-
-  var pageInfo = document.getElementById("page-info-dragon");
-  var pageTmi = document.getElementById("page-tmi-dragon");
-  var pageHelp = document.getElementById("page-help-dragon");
-
-  var dragon = document.getElementById("dragon");
-
-  function hideAllCards() {
-    cardInfo.style.display = "none";
-    cardTmi.style.display = "none";
-    cardHelp.style.display = "none";
-  }
-
-  function showCardContent(cardToShow) {
-    if (cardToShow === "info") {
-      cardInfo.style.display = "block";
-      cardTmi.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "tmi") {
-      cardTmi.style.display = "block";
-      cardInfo.style.display = "none";
-      cardHelp.style.display = "none";
-    } else if (cardToShow === "help") {
-      cardHelp.style.display = "block";
-      cardInfo.style.display = "none";
-      cardTmi.style.display = "none";
-    }
-  }
-
-  hideAllCards();
-
-  pageInfo.addEventListener("click", function () {
-    showCardContent("info");
-  });
-
-  pageTmi.addEventListener("click", function () {
-    showCardContent("tmi");
-  });
-
-  pageHelp.addEventListener("click", function () {
-    showCardContent("help");
-  });
-
-  if (performance.navigation.type === 1) {
-    hideAllCards();
-  }
-
-  showCardContent("info");
+document.querySelector(".OptTMI").addEventListener("click", function () {
+  currentTextArray = snake_TMI;
+  iArrLength = currentTextArray[0].length;
+  iIndex = 0;
+  iTextPos = 0;
+  iRow = 0;
+  sContents = "";
+  typewriter();
 });
