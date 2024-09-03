@@ -259,6 +259,11 @@ body {
   margin-bottom: 5vh;
   cursor: pointer;
 }
+.picture_border {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
 .picture {
   width: 21.6vw;
   height: 21.6vw;
@@ -285,6 +290,38 @@ body {
     3% 94%,
     0% 94%
   );
+  z-index: 2;
+}
+.border {
+  position: absolute;
+  background: #e1e1e1;
+  width: 100.5%;
+  height: 101%;
+  top: -0.18vh;
+  left: -0.1vw;
+  clip-path: polygon(
+    0% 6%,
+    3% 6%,
+    3% 3%,
+    6% 3%,
+    6% 0%,
+    94% 0%,
+    94% 3%,
+    97% 3%,
+    97% 6%,
+    100% 6%,
+    100% 94%,
+    97% 94%,
+    97% 97%,
+    94% 97%,
+    94% 100%,
+    6% 100%,
+    6% 97%,
+    3% 97%,
+    3% 94%,
+    0% 94%
+  );
+  z-index: -1;
 }
 .bandage .picture {
   background: url(../img/goods/IMG_7711.JPG) no-repeat;
@@ -445,7 +482,7 @@ body {
   width: 33vw;
   height: 23.6vw;
   background: url(../img/goods/bandaging_set.png) no-repeat;
-  background-size: 110%;
+  background-size: 112%;
   background-position: center;
   transition: 300ms ease;
   filter: drop-shadow(0 0 0.1px #e1e1e1);
