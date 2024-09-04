@@ -21,11 +21,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Noto Sans TC";
-  font-weight: Medium;
-  scrollbar-color: transparent transparent;
+  font-weight: 400;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+::-webkit-scrollbar-track {
+  background: none;
 }
 /* header */
 .header_right {
