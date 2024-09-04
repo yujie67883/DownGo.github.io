@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Down Go</title>
+    <title>會員登入</title>
     <link rel="icon" href="./img/mario.png" type="image/icon type" />
     <link href="./css/reset.css" rel="stylesheet" />
     <link href="./css/login.css" rel="stylesheet" />
@@ -12,7 +12,7 @@
     <div class="header">
       <div class="nav">
         <div class="header_left">
-          <a href="./index.html">
+          <a href="./goods_main.html">
             <img src="./img/logotype.png" id="logotype" />
           </a>
         </div>
@@ -105,13 +105,21 @@
     <section class="footer">
       <div class="contents">
         <div class="shortcuts">
-          <p class="NOTICE">NOTICE</p>
+          <a href="#" class="NOTICE">
+            <p>NOTICE</p>
+          </a>
           <a href="./login.html" class="MEMBERSHIP">
             <p>MEMBERSHIP</p>
           </a>
-          <p class="GUIDE">GUIDE</p>
-          <p class="PRIVACY POLICY">PRIVACY POLICY</p>
-          <p class="ABOUT">ABOUT</p>
+          <a href="#" class="GUIDE">
+            <p>GUIDE</p>
+          </a>
+          <a href="#" class="PRIVACY_POLICY">
+            <p>PRIVACY POLICY</p>
+          </a>
+          <a href="#" class="ABOUT">
+            <p>ABOUT</p>
+          </a>
         </div>
         <div class="divider"></div>
         <div class="infos">
@@ -130,5 +138,12 @@
         <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
       </div>
     </section>
+    <script>
+      //刷新頁面時置頂復位
+      window.onbeforeunload = function () {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+    </script>
   </body>
 </html>
