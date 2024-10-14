@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員註冊</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/signup.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav">
+        <div class="header_left">
+          <a href="./goods_main.html">
+            <img src="./img/logotype.png" id="logotype" />
+          </a>
+        </div>
+        <div class="header_center">
+          <div class="altitude_texts">
+            <p class="altitude">ALTITUDE</p>
+            <p class="unlimited">∞</p>
+            <p class="M">M</p>
+          </div>
+          <div class="thecard">
+            <img src="./img/login_signup/chip_signup.png" alt="" />
+          </div>
+          <div class="level_texts">
+            <p class="level">LEVEL</p>
+            <div id="scrollingText" class="eleven">3-1</div>
+          </div>
+        </div>
+        <div class="header_right">
+          <div class="notification">
+            <img class="bell" src="./img/login_signup/header_鈴鐺.png" alt="" />
+            <img class="bell_badge" src="./img/login_signup/badge.png" alt="" />
+          </div>
+          <div class="cart">
+            <img
+              class="cart_icon"
+              src="./img/login_signup/header_購物車.png"
+              alt=""
+            />
+            <p class="cart_badge">2</p>
+          </div>
+          <a href="#membership" class="profile_photo">
+            <img src="./img/login_signup/profile.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--註冊內容框-->
+    <div class="contents">
+      <div class="main">
+        <div class="name">
+          <h5>名稱</h5>
+          <div class="box">
+            <input type="text" placeholder="姓氏" />
+            <input class="input_name" type="text" placeholder="名字" />
+          </div>
+        </div>
+        <div class="account">
+          <h5>帳號</h5>
+          <div class="box">
+            <input type="email" placeholder="請輸入您的電子郵件 / Emal" />
+          </div>
+        </div>
+        <div class="password">
+          <h5>密碼</h5>
+          <div class="box">
+            <input
+              class="password-input"
+              type="password"
+              placeholder="請輸入密碼"
+            />
+            <div class="eyes">
+              <img src="./img/login_signup/visibility.svg" alt="" />
+            </div>
+            <input
+              class="biocheck"
+              type="password"
+              placeholder="請再次輸入確認密碼"
+            />
+          </div>
+        </div>
+        <div class="born">
+          <h5>出生日期</h5>
+          <div class="box">
+            <input class="year" type="text" placeholder="年" />
+            <div class="dropdown-container">
+              <input class="month" type="text" placeholder="月" readonly />
+              <div class="month-dropdown dropdown">
+                <div class="dropdown-option">January</div>
+                <div class="dropdown-option">Febuary</div>
+                <div class="dropdown-option">March</div>
+                <div class="dropdown-option">April</div>
+                <div class="dropdown-option">May</div>
+                <div class="dropdown-option">June</div>
+                <div class="dropdown-option">July</div>
+                <div class="dropdown-option">August</div>
+                <div class="dropdown-option">September</div>
+                <div class="dropdown-option">October</div>
+                <div class="dropdown-option">November</div>
+                <div class="dropdown-option">December</div>
+              </div>
+            </div>
+            <div class="pixeldropdown">
+              <img src="./img/goods/pixel_dropdown.svg" alt="" />
+            </div>
+            <input class="date" type="text" placeholder="日" />
+          </div>
+        </div>
+        <div class="phone">
+          <h5>電話號碼</h5>
+          <div class="box">
+            <div class="dropdown-container">
+              <input class="country" type="text" placeholder="+886" readonly />
+              <div class="country-dropdown dropdown">
+                <div class="dropdown-option">臺灣 +886</div>
+              </div>
+            </div>
+            <div class="pixeldropdown">
+              <img src="./img/goods/pixel_dropdown.svg" alt="" />
+            </div>
+            <input class="phone_Num" type="text" placeholder="09-" />
+          </div>
+          <p>Down Go可能會撥打您的電話號碼，或是傳送有關會員資訊的簡訊</p>
+        </div>
+        <div class="agree">
+          <label class="subscribe">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <p>訂閱Down_Go電子報，第一手掌握產品優惠及會員福利等最新消息</p>
+          </label>
+          <div class="policy">
+            <label>
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p class="p1">同意</p>
+            <a href="#" class="connections">隱私權政策與條款</a>
+            <p class="p2">之內容與服務範圍。</p>
+          </div>
+        </div>
+        <div class="Btns">
+          <div id="signup">
+            <p>註冊</p>
+          </div>
+          <a href="./login.html" id="goback">
+            <p>返回</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <section class="footer">
+      <div class="contents">
+        <div class="shortcuts">
+          <p class="NOTICE">NOTICE</p>
+          <a href="./login.html" class="MEMBERSHIP">
+            <p>MEMBERSHIP</p>
+          </a>
+          <p class="GUIDE">GUIDE</p>
+          <p class="PRIVACY POLICY">PRIVACY POLICY</p>
+          <p class="ABOUT">ABOUT</p>
+        </div>
+        <div class="divider"></div>
+        <div class="infos">
+          <div class="info1">
+            <p>COMPANY：Down Go Work Studio</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+          <div class="info2">
+            <p>TEL:02-8960-4282</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyicon">©</p>
+        <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
+      </div>
+    </section>
+    <script>
+      //刷新頁面時置頂復位
+      window.onbeforeunload = function () {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+
+      //顯示密碼
+      const eyesIcon = document.querySelector(".eyes img");
+      const passwordInput = document.querySelector(".password-input");
+      const biocheckInput = document.querySelector(".biocheck");
+
+      document.querySelector(".eyes").addEventListener("click", function () {
+        const isPasswordHidden = passwordInput.type === "password";
+
+        // Toggle password visibility
+        passwordInput.type = isPasswordHidden ? "text" : "password";
+        biocheckInput.type = isPasswordHidden ? "text" : "password";
+
+        // Toggle icon
+        eyesIcon.src = isPasswordHidden
+          ? "./img/login_signup/visibility_off.svg"
+          : "./img/login_signup/visibility.svg";
+      });
+
+      //月份dropdown
+      document.querySelector(".month").addEventListener("click", function () {
+        toggleDropdown(".month-dropdown");
+        toggleImageRotation(".born .pixeldropdown img");
+      });
+
+      document.querySelector(".country").addEventListener("click", function () {
+        toggleDropdown(".country-dropdown");
+        toggleImageRotation(".phone .pixeldropdown img");
+      });
+
+      function toggleDropdown(dropdownClass) {
+        document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+          dropdown.style.display = "none";
+        });
+
+        const dropdown = document.querySelector(dropdownClass);
+        if (dropdown) {
+          dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+        }
+      }
+
+      function toggleImageRotation(imgSelector) {
+        const img = document.querySelector(imgSelector);
+        if (img) {
+          img.classList.toggle("rotated");
+        }
+      }
+
+      document.querySelectorAll(".dropdown-option").forEach(function (option) {
+        option.addEventListener("click", function () {
+          const input = this.closest(".dropdown-container").querySelector(
+            "input"
+          );
+          input.value = this.textContent;
+          this.parentNode.style.display = "none";
+
+          resetImageRotation(".born .pixeldropdown img");
+          resetImageRotation(".phone .pixeldropdown img");
+        });
+      });
+
+      function resetImageRotation(imgSelector) {
+        const img = document.querySelector(imgSelector);
+        if (img) {
+          img.classList.remove("rotated");
+        }
+      }
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown-container")) {
+          document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+            dropdown.style.display = "none";
+          });
+
+          resetImageRotation(".born .pixeldropdown img");
+          resetImageRotation(".phone .pixeldropdown img");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Noto Sans TC";
+}
+
+.music {
+  display: none;
+}
+
+.charactor {
+  margin-left: calc(78% - 50vw);
+  margin-top: 10vh;
+}
+
+.charactor img {
+  width: 50vw;
+  display: flex;
+  justify-items: center;
+  margin-left: -2.5em;
+  margin-bottom: 5vh;
+  animation: goleft;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-delay: 18.5s;
+  /* position: relative; */
+}
+@keyframes goleft {
+  from {
+    margin-left: -2.5em;
+  }
+  to {
+    margin-left: -15vw;
+  }
+}
+.hurtface {
+  position: absolute;
+  top: 10vh;
+  margin-left: calc(78% - 50vw);
+  display: flex;
+  justify-content: center;
+}
+.hurtface img {
+  width: 50vw;
+  height: fit-content;
+  margin-left: -2.5em;
+  opacity: 0;
+  animation: cry 2.8s;
+  animation-fill-mode: forwards;
+  animation-delay: 12s;
+}
+@keyframes cry {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.sign {
+  margin-left: calc(48% - 7vw);
+  margin-top: -39vh;
+  position: absolute;
+}
+
+.sign img {
+  opacity: 0;
+  width: 14vw;
+  animation: goright;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-delay: 18.5s;
+}
+@keyframes goright {
+  0% {
+    margin-left: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    margin-left: 15vw;
+    opacity: 100%;
+  }
+}
+
+/* 打字效果:start */
+
+.wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 6vh;
+}
+
+/* 半透明遮罩 */
+.wrapper .cover {
+  background-color: #fafafa;
+  opacity: 50%;
+  height: 26px;
+  width: 100%;
+  position: absolute;
+  margin-top: -5px;
+}
+
+/* 字框範圍 */
+.wrapper .dynamic-txts {
+  height: 50px;
+  line-height: 50px;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+/* 換行的動畫
+  steps(x)中的 x =[ 文字行數(li) - 1 ]*/
+.dynamic-txts li {
+  list-style: none;
+  font-size: 20px;
+  color: #202020;
+  font-family: Noto Sans TC;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  top: 22px;
+  position: relative;
+  animation: slide 22s steps(11);
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+@keyframes slide {
+  from {
+    top: 22px;
+  }
+  to {
+    top: -295px; /*文字行數(li)越少，此處數字越大*/
+  }
+}
+
+.dynamic-txts li span {
+  position: relative;
+}
+
+/* 打字效果的 | 和遮罩
+   可以換background顏色確認範圍
+   steps() => 填入最長那一行的字數即可 */
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fafafa;
+  border-left: 2px solid #202020;
+  animation: typing 1.5s steps(17);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  100% {
+    left: 140%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+.dynamic-txts li .fst::after {
+  animation-delay: 2s;
+}
+.dynamic-txts li .sec::after {
+  animation-delay: 4s;
+}
+.dynamic-txts li .thr::after {
+  animation-delay: 6s;
+}
+.dynamic-txts li .for::after {
+  animation-delay: 8s;
+}
+.dynamic-txts li .fiv::after {
+  animation-delay: 10s;
+}
+.dynamic-txts li .six::after {
+  animation-delay: 12s;
+}
+.dynamic-txts li .sev::after {
+  animation-delay: 14s;
+}
+.dynamic-txts li .eight::after {
+  animation-delay: 16s;
+}
+.dynamic-txts li .nin::after {
+  animation-delay: 18s;
+}
+.dynamic-txts li .ten::after {
+  animation-delay: 20s;
+}
+.dynamic-txts li .ele::after {
+  animation-delay: 22s;
+}
+.dynamic-txts li .twl::after {
+  animation-delay: 24s;
+}
+
+/* 打字效果:end */
+
+.arrow {
+  opacity: 0;
+  position: fixed;
+  /* margin-top: 9vh; */
+  animation: appear 500ms;
+  animation-delay: 24.5s;
+  animation-fill-mode: forwards;
+}
+.arrow img {
+  width: 1vw;
+  animation: hopping linear 400ms infinite alternate;
+}
+@keyframes hopping {
+  from {
+    margin-top: 8.5vh;
+  }
+  to {
+    margin-top: 9.5vh;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/* “進入冒險”按鈕 */
+.botton {
+  position: fixed;
+  margin-top: 12vh;
+  width: 10vw;
+  height: fit-content;
+  background-image: url(../img/prelude/btn_default.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: appear 300ms;
+  animation-delay: 24.7s;
+  animation-fill-mode: forwards;
+}
+
+.botton a {
+  display: flex;
+  justify-content: center;
+  line-height: 6.1vh;
+  text-decoration: none;
+  color: #7b3e0e;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+@media screen and (max-width: 1600px) {
+  .botton a {
+    line-height: 6.4vh;
+  }
+}
+.botton:hover {
+  background-image: url(../img/prelude/btn_hover.png);
+}
+.botton a:hover {
+  color: #ac5a24;
+}
+.botton:active {
+  background-image: url(../img/prelude/btn_active.png);
+}
+.botton a:active {
+  color: #4a2914;
+}
+
+/* 音量鍵 */
+#volumeBtn {
+  background-color: #fafafa;
+  border: none;
+  cursor: pointer;
+  width: 4vw;
+  position: absolute;
+  right: 3vw;
+  bottom: 3vh;
+}

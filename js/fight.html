@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Go</title>
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/fight.css" rel="stylesheet" />
+    <link href="./css/fight_mobile.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 跳轉小青蛙 -->
+    <div id="frogjump">
+      <img id="jump" src="./img/goods/jump.gif" alt="" />
+    </div>
+    <!-- 漢堡選單 -->
+    <section class="menu">
+      <nav>
+        <div data-depth="0.3" class="logo">
+          <a href="#index">
+            <img src="./img/logotype.png" alt="">
+          </a>
+        </div>
+        <div class="menu_close" id="close_icon" >
+          <a href="#menu">
+            <img src="./img/x.png">
+          </a>
+        </div>
+      </nav>
+      <div class="menu_bgimg">
+        <div data-depth="0.1" class="bg">
+          <img src="./img/main/background.png" alt="">
+        </div>
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div class="menu_mountain">
+          <img src="./img/main/menu_mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_1">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_2">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+      </div>
+      <div data-depth="0.3" class="cloud_3">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div data-depth="0.3" class="cloud_4">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div class="hunted">
+        <img src="./img/main/menu_hunted.png" alt="">
+      </div>
+      <div class="menu_sign">
+        <img src="./img/main/menu_sign.png" alt="">
+      </div>
+      <div class="menu_hook">
+        <img src="./img/main/menu_hook.png" alt="">
+      </div>
+      <!-- 標題 -->
+      <div class="title">
+        <div class="woodtxt">
+          <h1>救難大木屋</h1>
+        </div>
+        <div class="entertxt">
+          <h1>登山口</h1>
+        </div>
+        <div class="heaven">
+          <h1>伊甸園</h1>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div class="cutline"></div>
+      <!--跳頁選項-->
+      <div class="wood_option">
+        <div class="preparing">
+          <a href="./bag_hurt.html">
+            <p>登山裝備</p>
+          </a>
+        </div>
+        <div class="bandage">
+          <a href="./bag_hurt.html">
+            <p>急救包紮</p>
+        </div>
+      </div>
+      <div class="enter_option">
+        <div class="snakbee">
+          <a href="./fight.html">
+            <p class="black">毒螫魔</p>
+            <p class="purple">小心毒蟲</p>
+          </a>
+        </div>
+        <div class="fish">
+          <a href="./fight.html">
+            <p class="black">鐵支麵粉鯛</p>
+            <p class="purple">水域安全</p>
+        </div>
+        <div class="pig">
+          <a href="./fight.html">
+            <p class="black">相撲熊豬刃牙</p>
+            <p class="purple">野獸防衛</p>
+        </div>
+        <div class="hypoxia">
+          <a href="./fight.html">
+            <p class="black">高山絕氧獸</p>
+            <p class="purple hmz">高山症</p>
+        </div>
+        <div class="hypothermia">
+          <a href="./fight.html">
+            <p class="black">凝寒失溫龍</p>
+            <p class="purple">失溫防治</p>
+        </div>
+      </div>
+      <div class="heaven_option">
+        <div class="commodity">
+          <a id="toshop">
+            <p>商品購買</p>
+          </a>
+        </div>
+        <div class="membership">
+          <a id="tomember">
+            <p>會員登入</p>
+          </a>
+        </div>
+      </div>
+      <div class="alert">
+        <a href="./prelude.html">
+          <img src="./img/prelude/15+.png">
+        </a>
+      </div>
+    </section>
+  <div class="desktop">
+    <!--開頭轉場動畫-->
+    <div id="secondMask"></div>
+    <!--header設定-->
+    <section class="fight" id="fight-id">
+          <div class="header">
+            <div class="header_left">
+                <a href="./index.html">
+                <img src="./img/logotype.png" id="logotype" />
+                </a>
+            </div>
+            <div class="header_right">
+              <div id="menu_burger" class="burger" >
+                <a href="#menu">
+                  <img src="./img/hambergur2.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
+                </a>
+              </div>
+            </div>
+          </div>
+       <!--怪物畫框-->
+      <div class="fightbg" id="bg">
+        <img src="./img/fight/海拔動畫.png" alt="">
+      </div>
+      <div class="grond"></div>
+      <div class="battlebox">
+        <img src="./img/fight/fight_box.png" alt="">
+      </div>
+      <div class="downcover"></div>
+      <div class="boxcover">
+        <img src="./img/fight/box_cover.png" alt="">
+      </div>
+      <div class="person">
+      <img id="personImage" src="./img/fight/背影.png" alt="">
+      </div>
+
+      <!--地圖本-->
+      <div class="map">
+        <img src="./img/fight/map.png" alt="">
+      </div>
+      <div class="flip-card" id="maincontainer">
+        <div class="thecard"></div>
+      </div>
+      <div class="mario">
+        <img src="./img/mario.png" alt="">
+      </div>
+      <div class="altitue">
+        <div class="altitueNum" id="altitueNum">500</div>
+        <div class="line"></div>
+      </div>
+      <div class="located">
+        <div class="ALTITUE">
+          <p class="A_title">ALTITUE</p>
+          <div class="num">
+            <div class="ALTITUEnum">
+              <p class="position0">3000</p>
+              <p class="position1">2500</p>
+              <p class="position2">2000</p>
+              <p class="position3">1500</p>
+              <p class="position4">1000</p>
+              <p class="position5">500</p>
+              <p class="position6">50</p>
+            </div>
+            <p class="ALTITUEm">M</p>
+          </div>
+        </div>
+        <div class="LEVEL">
+          <p class="L_title">LEVEL</p>
+          <p class="LEVELnum">2-3</p>
+        </div>
+      </div>
+
+      <!--按鈕-->
+      <div class="Btns">
+        <div class="Btn_go" id="btnGo">
+          <p>前進</p>
+        </div>
+        <div class="Btn_back">
+          <p>逃跑</p>
+        </div>
+      </div>
+
+      <!--提示-->
+      <div class="hint">
+        <img src="./img/fight/cursor_point.svg" alt="">
+      </div>
+
+      <!--怪物-->
+      <div class="wtsnake">
+        <img src="./img/fight/毒蜇魔.gif" alt="">
+      </div>
+      <div class="wtfish">
+        <img src="./img/fight/鐵支麵粉鯛.gif" alt="">
+      </div>
+      <div class="wtpig">
+        <img src="./img/fight/相撲熊豬刃牙.gif" alt="">
+      </div>
+      <div class="wthypoxia">
+        <img src="./img/fight/高山絕氧獸.gif" alt="">
+      </div>
+      <div class="wtcold">
+        <img src="./img/fight/寒冰龍.gif" alt="">
+      </div>
+
+      <!--對話框-->
+      <div class="dialogbox">
+        <img src="./img/fight/dialogbox.png" alt="">
+      </div>
+      <div class="options">
+        <div class="OptIntro" id="OptIntro">
+          <p>簡介</p>
+          <div class="arrow aIntro">
+            <img src="./img/next.png" alt="">
+          </div>
+        </div>
+        <div class="OptReact" id="OptReact">
+          <p>應急</p>
+          <div class="arrow aReact">
+            <img src="./img/next.png" alt="">
+          </div>
+        </div>
+        <div class="OptTMI" id="OptTMI">
+          <p>科普</p>
+          <div class="arrow aTMI">
+            <img src="./img/next.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!--文案-->
+      <div class="text_intro" id="typeanimation">
+      </div>
+    </section>
+</div>
+<div class="mobile">
+      <!--header設定-->
+      <section class="fight_mobile" id="fight_mobile">
+        <div class="mobile_nav">
+          <div class="nav_left">
+              <a href="./index.html">
+              <img src="./img/logotype.png" id="mblogotype" />
+              </a>
+          </div>
+          <div class="nav_right">
+            <div class="mobile_burger menu_burger">
+              <a id="mobile_burger">
+                <img src="./img/hambergur2.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      <!--畫面設定-->
+      <div class="mbmt">
+        <img class="mobile_mt" src="./img/fight/海拔動畫.png" alt="">
+      </div>
+      <div class="mbbg"></div>
+      <div class="mbperson">
+        <img id="mbPersonImage" src="./img/fight/背影.png" alt="">
+        </div>
+      <div class="mbgrond"></div>
+      <div class="mbbox"></div>
+      <div class="mb_btn">
+        <div class="mb_info">簡介</div>
+        <div class="mb_react">應急</div>
+        <div class="mb_tmi">科普</div>   
+      </div>
+      <div class="mb_Btns">
+        <div class="mbbtn_go">
+          <p>前進</p>
+        </div>
+        <div class="mbbtn_back">
+          <p>後退</p>
+        </div>
+      </div>
+      <div class="wall"></div>
+      <!--文案-->
+      <div class="mbtext">
+        <div class="typean_content" id="mbtypeanimation"></div>
+      </div>
+    <!--怪物-->
+    <div class="wtsnake">
+      <img src="./img/fight/毒蜇魔.gif" alt="">
+    </div>
+    <div class="wtfish">
+      <img src="./img/fight/鐵支麵粉鯛.gif" alt="">
+    </div>
+    <div class="wtpig">
+      <img src="./img/fight/相撲熊豬刃牙.gif" alt="">
+    </div>
+    <div class="wthypoxia">
+      <img src="./img/fight/高山絕氧獸.gif" alt="">
+    </div>
+    <div class="wtcold">
+      <img src="./img/fight/寒冰龍.gif" alt="">
+    </div>
+</div>
+    <script src="./js/jq.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/fight.js"></script>
+  </body>
+</html>

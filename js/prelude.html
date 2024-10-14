@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <title>Down Go</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/prelude_style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="charactor">
+      <img src="./img/prelude/person.gif" alt="" />
+    </div>
+    <!-- 膝蓋中箭的時候換成哭哭的表情 -->
+      <div class="hurtface">
+      <img src="./img/prelude/hurtface.gif" alt="">
+    </div>
+    <div class="sign">
+      <img src="./img/prelude/15+.png" alt="" />
+    </div>
+    <!-- 打字效果 -->
+    <div class="wrapper">
+      <div class="static-txt"></div>
+      <ul class="dynamic-txts">
+        <li><span class="fst">你好冒險者，歡迎來到這裡…</span></li>
+        <li><span class="sec">Down Go 救難大木屋！！！</span></li>
+        <li><span class="thr">這裡提供許多關於山區的基本知識</span></li>
+        <li><span class="for">以及緊急救難的包紮方法</span></li>
+        <li><span class="fiv">想當初我也曾經是個冒險者</span></li>
+        <li><span class="six">直到我的膝蓋中了一箭…</span></li>
+        <li><span class="sev">接下來就是你的冒險了！！！</span></li>
+        <li><span class="eight">更高的海拔上棲息著許多兇殘的怪物</span></li>
+        <li><span class="nin">也不免會有一些血腥暴力的畫面</span></li>
+        <li><span class="ten">如果是未滿15歲的少年冒險家</span></li>
+        <li><span class="ele">請一定要有經驗豐富的獵人陪同入山喔！</span></li>
+        <li><span class="twl">在前往更高的山區前，你準備好了嗎？</span></li>
+      </ul>
+      <!-- 半透明遮罩-->
+      <div class="cover"></div>
+      <!--按鈕-->
+      <div class="arrow">
+        <img src="./img/prelude/next.png" alt="">
+      </div>
+      <div class="botton">
+        <a href="./index.html">開始冒險</a>
+      </div>
+      <!--音量鍵-->
+      <img id="volumeBtn" src="./img/prelude/volume_enable.png" alt="Volume On" onclick="toggleVolume()" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
+
+      <audio id="myAudio">
+        <source src="./music/After School Jamboree - The Green Orbs.mp3" type="audio/mp3">
+        <!-- Your browser does not support the audio element. -->
+      </audio>
+    
+      <script src="./js/prelude.js"></script>
+  </body>
+</html>

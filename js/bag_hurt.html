@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Go</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet">
+    <link rel="preload" href="./img/black_in.gif" as="image">
+    <link href="./css/prepare.css" rel="stylesheet" />
+    <link href="./css/prepare_forphone.css" rel="stylesheet"/>
+    </head>
+  <body>
+    <!-- 漢堡選單 -->
+    <section class="menu">
+      <nav>
+        <div data-depth="0.3" class="logo">
+          <a href="./index.html">
+            <img src="./img/logotype.png" alt="">
+          </a>
+        </div>
+        <div class="menu_close" id="close_icon" >
+          <a href="#menu">
+            <img src="./img/x.png">
+          </a>
+        </div>
+      </nav>
+      <div class="menu_bgimg">
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div class="menu_mountain">
+          <img src="./img/main/menu_mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_1">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_2">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+      </div>
+      <div data-depth="0.3" class="cloud_3">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div data-depth="0.3" class="cloud_4">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div class="hunted">
+        <img src="./img/main/menu_hunted.png" alt="">
+      </div>
+      <div class="menu_sign">
+        <img src="./img/main/menu_sign.png" alt="">
+      </div>
+      <div class="menu_hook">
+        <img src="./img/main/menu_hook.png" alt="">
+      </div>
+      <!-- 標題 -->
+      <div class="title">
+        <div class="woodtxt">
+          <h1>救難大木屋</h1>
+        </div>
+        <div class="entertxt">
+          <h1>登山口</h1>
+        </div>
+        <div class="heaven">
+          <h1>伊甸園</h1>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div class="cutline"></div>
+      <div class="cutline2"></div>
+      <div class="cutline3"></div>
+
+      <!--跳頁選項-->
+      <div class="wood_option">
+        <div class="preparing">
+          <a href="#package-id">
+            <p>登山裝備</p>
+          </a>
+        </div>
+        <div class="bandage">
+          <a href="#hurt-id">
+            <p>急救包紮</p>
+        </div>
+      </div>
+      <div class="enter_option">
+        <div class="snakbee">
+          <a href="./fight.html">
+            <p class="hover">毒螫魔</p>
+            <p class="purple">小心毒蟲</p>
+          </a>
+        </div>
+        <div class="fish">
+          <a href="./fight.html">
+            <p class="hover">鐵支麵粉鯛</p>
+            <p class="purple">水域安全</p>
+        </div>
+        <div class="pig">
+          <a href="./fight.html">
+            <p class="hover">相撲熊豬刃牙</p>
+            <p class="purple">野獸防衛</p>
+        </div>
+        <div class="hypoxia">
+          <a href="./fight.html">
+            <p class="hover">高山絕氧獸</p>
+            <p class="purple">高山症</p>
+        </div>
+        <div class="hypothermia">
+          <a href="./fight.html">
+            <p class="hover">凝寒失溫龍</p>
+            <p class="purple">失溫防治</p>
+        </div>
+      </div>
+      <div class="heaven_option">
+        <div class="commodity">
+          <a id="toshop">
+            <p>商品購買</p>
+          </a>
+        </div>
+        <div class="membership">
+          <a id="tomember">
+            <p>會員登入</p>
+        </div>
+      </div>
+      <div class="alert">
+        <a href="./prelude.html">
+          <img src="./img/prelude/15+.png">
+        </a>
+      </div>
+    </section>
+
+    <!-- 跳轉小青蛙 -->
+    <div id="frogjump">
+      <img id="jump" src="./img/goods/jump.gif" alt="" />
+    </div>
+
+    <!--開頭轉場動畫-->
+    <div id="secondMask"></div>
+
+<!-- 背包頁:Start -->
+<div class="header-forphone">
+  <div id="scrollingNumber-forphone" class="scrollingNumber-forphone">100</div>
+  <p class="M-forphone">M</p>
+  <div class="flip-card-forphone" id="maincontainer-forphone">
+    <div class="thecard-forphone">
+    </div>
+  </div>
+  <div id="scrollingText-forphone" class="eleven-forphone">1-1</div>
+</div>
+<div class="header">
+<div class="header_left">
+  <a href="./index.html">
+    <img src="./img/logotype.png" id="logotype" />
+  </a>
+</div>
+<div class="header_center">
+  <p class="altitude">ALTITUDE</p> <div id="scrollingNumber" class="scrollingNumber">100</div> <p class="M">M</p>
+  <p class="level">LEVEL</p>
+  <div id="scrollingText" class="eleven">1-1</div>
+</div>
+<div class="header_right">
+  <img src="./img/hambergur.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)" id="bag_burger" />
+</div>
+<!-- 翻牌效果:S -->
+<div class="flip-card" id="maincontainer">
+  <div class="thecard">
+  </div>
+</div>
+<!-- 翻牌效果:E -->
+</div>
+    </div>
+    </div>
+   <section class="package" id="package-id">
+    <div class="contain">
+      <div class="left-main-line">
+        <span class="span1"></span>
+      </div>
+      <div class="left-first-line">
+        <span class="span2"></span>
+        <span class="span3"></span>
+      </div>
+      <div class="left-second-line">
+        <span class="span5"></span>
+        <span class="span6"></span>
+      </div>
+      <div class="right-first-line">
+        <span class="span7"></span>
+      </div>
+      <div class="right-second-line">
+        <span class="span8"></span>
+      </div>
+      <div class="right-third-line">
+        <span class="span9"></span>
+      </div>
+      <div class="bag">
+        <img src="./img/package/openbag.png" class="openbag" id="openbag" />
+        <img src="./img/package/closed_backpack 1.svg" id="closed_backpack" />
+      </div>
+      <div class="frames">
+        <img class="living" id="living" src="./img/package/living.svg" />
+        <img class="other" id="other" src="./img/package/other.svg" />
+        <img class="food" id="food" src="./img/package/food.svg" />
+        <img class="cook" id="cook" src="./img/package/cook.svg" />
+        <img class="walk" id="walk" src="./img/package/walk.svg" />
+        <img class="cloth" id="cloth" src="./img/package/cloth.svg" />
+      </div>
+      <div class="frames-forphone">
+        <img class="living-forphone" id="living-forphone" src="img/閃圈/居住.gif"/>
+        <img class="other-forphone" id="other-forphone" src="img/閃圈/雜項.gif"/>
+        <img class="food-forphone" id="food-forphone" src="img/閃圈/飲食求生.gif"/>
+        <img class="cook-forphone" id="cook-forphone" src="img/閃圈/烹煮.gif"/>
+        <img class="walk-forphone" id="walk-forphone" src="img/閃圈/行走.gif"/>
+        <img class="cloth-forphone" id="cloth-forphone" src="img/閃圈/穿著.gif"/>
+      </div>
+    </div>
+    <div class="bookbackground"></div>
+    <!--居住類-->
+    <div class="living-book">
+      <img id="living-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="living-frame">
+      <img id="living-x" src="./img/x.png" />
+      <img class="tent" id="tent" src="./img/package/tent.png" />
+      <img class="sleepbag" id="sleepbag" src="./img/package/sleepbag.gif" />
+      <div class="text">
+        <p class="title">居住類</p>
+        <p class="explain">放置於背包的最頂層</p>
+        <p class="detail1">1.帳篷</p>
+        <div class="tent-detail">          <p>
+            在帳篷裡過夜可以恢復體力，儲備隔日攻頂的體力。
+          </p>
+        </div>
+        <p class="detail2">2.睡袋</p>
+        <div class="sleepbag-detail">
+          <p>
+            睡覺時身體的熱能會被地面吸走，導致熱量散失，因此需要好的睡袋避免失溫。</p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="living-book-forphone">
+      <img id="living-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="living-frame1">
+      <img id="living-phone-x1" src="./img/x.png" />
+      <img class="tent" id="tent" src="./img/package/tent.png" />
+      <img id="living-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">居住類</p>
+        <p class="explain">放置於背包的最頂層</p>
+        <p class="detail">1.帳篷</p>
+        <div class="tent-detail">          
+          <p>
+            在帳篷裡過夜可以恢復體力，儲備隔日攻頂的體力。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="living-frame2">
+      <img id="living-phone-x2" src="./img/x.png" />
+      <img class="sleepbag" id="sleepbag" src="./img/package/sleepbag.gif" />
+      <img id="living-forphone-arrow2" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">居住類</p>
+        <p class="explain">放置於背包的最頂層</p>
+        <p class="detail">2.睡袋</p>
+        <div class="sleepbag-detail">
+          <p>
+            睡覺時身體的熱能會被地面吸走，導致熱量散失，因此需要好的睡袋避免失溫。
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--雜項-->
+    <div class="other-book">
+      <img id="other-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="other-frame">
+      <img id="other-x" src="./img/x.png" />
+      <img class="garbagebag" id="garbagebag" src="./img/package/garbagebag.png" />
+      <img class="buttery" id="buttery" src="./img/package/buttery.gif" />
+      <div class="text">
+        <p class="title">雜項</p>
+        <p class="explain">放置於背包的背層</p>
+        <p class="detail1">1.垃圾袋</p>
+        <div class="garbagebag-detail">
+          <p>
+            遇難時將自己套起來、挖出透氣小洞，就能變成一個簡易避難處，讓身體避免長時間處於淋濕或吹風的狀態，保持身體溫度。
+          </p>
+        </div>
+        <p class="detail2">2.電池</p>
+        <div class="buttery-detail">
+          <p>
+            建議使用充電電池，較能夠掌握電量、對環境較友善，較不會有電池漏液的情況發生。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="other-book-forphone">
+      <img id="other-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="other-frame1">
+      <img id="other-phone-x1" src="./img/x.png" />
+      <img class="garbagebag" id="garbagebag" src="./img/package/garbagebag.png" />
+      <img id="other-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">雜項</p>
+        <p class="explain">放置於背包的背層</p>
+        <p class="detail">1.垃圾袋</p>
+        <div class="garbagebag-detail">
+          <p>
+            遇難時將自己套起來、挖出透氣小洞，就能變成一個簡易避難處，讓身體避免長時間處於淋濕或吹風的狀態，保持身體溫度。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="other-frame2">
+      <img id="other-phone-x2" src="./img/x.png" />
+      <img class="buttery" id="buttery" src="./img/package/buttery.gif" />
+      <img id="other-forphone-arrow2" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">雜項</p>
+        <p class="explain">放置於背包的背層</p>
+        <p class="detail">2.電池</p>
+        <div class="buttery-detail">
+          <p>
+            建議使用充電電池，較能夠掌握電量、對環境較友善，較不會有電池漏液的情況發生。
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--飲食求生-->
+    <div class="food-book">
+      <img id="food-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="food-frame1">
+      <img id="food-x1" src="./img/x.png" />
+      <img class="water" id="water" src="./img/package/water.png" />
+      <img class="map" id="map" src="./img/package/map.png" />
+      <img id="food-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail1">1.水</p>
+        <div class="water-detail">
+          <p>
+            水分是維持人體正常機能的必須物質，在大量流汗的情況下，甚至得補充四～五公升。
+          </p>
+        </div>
+        <p class="detail2">2.紙本地圖</p>
+        <div class="map-detail">
+          <p>
+            許多山難都是因為迷路造成的，若電子地圖沒電或壞掉了，就需要依靠紙本地圖。
+          </p>
+        </div>
+      </div>
+    </div>
+     <div class="food-frame2">
+      <img id="food-x2" src="./img/x.png" />
+      <img class="rope" id="rope" src="./img/package/rope.png" />
+      <img class="flashlight" id="flashlight" src="./img/package/flashlight.png" />
+      <img id="food-arrow2" src="./img/package/arrow.png"/>
+      <img id="food-arrow3" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail3">3.繩索</p>
+        <div class="rope-detail">
+          <p>
+            遇到垂直的岩壁或是陡坡這些困難地形，就需要繩索來輔助攀爬。
+          </p>
+        </div>
+        <p class="detail4">4.手電筒</p>
+        <div class="flashlight-detail">
+          <p>
+            照明設備是登山裝備清單不可缺少的一樣物品，如果在山中摸黑行進，會增添許多危險和風險。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame3">
+      <img id="food-x3" src="./img/x.png" />
+      <img class="innerfood" id="innerfood" src="./img/package/innerfood.png" />
+      <img class="south" id="south" src="./img/package/south.png" />
+      <img id="food-arrow4" src="./img/package/arrow.png"/>
+      <img id="food-arrow5" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail5">5.能量棒、鋁箔包快食</p>
+        <div class="innerfood-detail">
+          <p>
+            在步行中短暫休息時補充熱量用。因登山步行時間長，建議可攜帶高碳水、方便食用的食物。
+          </p>
+        </div>
+        <p class="detail6">6.指南針</p>
+        <div class="south-detail">
+          <p>
+            在迷路且電子產品故障時，配合地圖尋求相對位置明了自己身處的位置。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame4">
+      <img id="food-x4" src="./img/x.png" />
+      <img class="emergencybox" id="emergencybox" src="./img/package/emergencybox.png" />
+      <img id="food-arrow6" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail7">7.急救包</p>
+        <div class="emergencybox-detail">
+          <p>
+            包含個人習慣用藥、高山症藥物、止痛、止瀉藥及外傷用藥、包紮止血、繃帶、OK繃等。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="food-book-forphone">
+      <img id="food-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="food-frame1-1">
+      <img id="food-phone-x1" src="./img/x.png" />
+      <img class="water" id="water" src="./img/package/water.png" />
+      <img id="food-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">1.水</p>
+        <div class="water-detail">
+          <p>
+            水分是維持人體正常機能的必須物質，在大量流汗的情況下，甚至得補充四～五公升。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame2-1">
+      <img id="food-phone-x2" src="./img/x.png" />
+      <img class="map" id="map" src="./img/package/map.png" />
+      <img id="food-forphone-arrow2" src="./img/package/arrow.png"/>
+      <img id="food-forphone-arrow3" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">2.紙本地圖</p>
+        <div class="map-detail">
+          <p>
+            許多山難都是因為迷路造成的，若電子地圖沒電或壞掉了，就需要依靠紙本地圖。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame3-1">
+      <img id="food-phone-x3" src="./img/x.png" />
+      <img class="rope" id="rope" src="./img/package/rope.png" />
+      <img id="food-forphone-arrow4" src="./img/package/arrow.png"/>
+      <img id="food-forphone-arrow5" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">3.繩索</p>
+        <div class="rope-detail">
+          <p>
+            遇到垂直的岩壁或是陡坡這些困難地形，就需要繩索來輔助攀爬。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame4-1">
+      <img id="food-phone-x4" src="./img/x.png" />
+      <img class="flashlight" id="flashlight" src="./img/package/flashlight.png" />
+      <img id="food-forphone-arrow6" src="./img/package/arrow.png"/>
+      <img id="food-forphone-arrow7" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">4.手電筒</p>
+        <div class="flashlight-detail">
+          <p>
+            照明設備是登山裝備清單不可缺少的一樣物品，如果在山中摸黑行進，會增添許多危險和風險。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame5">
+      <img id="food-phone-x5" src="./img/x.png" />
+      <img class="innerfood" id="innerfood" src="./img/package/innerfood.png" />
+      <img id="food-forphone-arrow8" src="./img/package/arrow.png"/>
+      <img id="food-forphone-arrow9" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">5.能量棒、鋁箔包快食</p>
+        <div class="innerfood-detail">
+          <p>
+            在步行中短暫休息時補充熱量用。因登山步行時間長，建議可攜帶高碳水、方便食用的食物。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame6">
+      <img id="food-phone-x6" src="./img/x.png" />
+      <img class="south" id="south" src="./img/package/south.png" />
+      <img id="food-forphone-arrow10" src="./img/package/arrow.png"/>
+      <img id="food-forphone-arrow11" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">6.指南針</p>
+        <div class="south-detail">
+          <p>
+            在迷路且電子產品故障時，配合地圖尋求相對位置明了自己身處的位置。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="food-frame7">
+      <img id="food-phone-x7" src="./img/x.png" />
+      <img class="emergencybox" id="emergencybox" src="./img/package/emergencybox.png" />
+      <img id="food-forphone-arrow12" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">飲食安全求生</p>
+        <p class="explain">放置於背包的最下層</p>
+        <p class="detail">7.急救包</p>
+        <div class="emergencybox-detail">
+          <p>
+            包含個人習慣用藥、高山症藥物、止痛、止瀉藥及外傷用藥、包紮止血、繃帶、OK繃等。
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--烹煮-->
+    <div class="cook-book">
+      <img id="cook-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="cook-frame1">
+      <img id="cook-x1" src="./img/x.png" />
+      <img class="knife" id="knife" src="./img/package/knife.png" />
+      <img class="stove" id="stove" src="./img/package/stove.png" />
+      <img id="cook-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail1">1.小刀</p>
+        <div class="knife-detail">
+          <p>
+            不論在準備食材、生火、或是急救時刻都會派上用場。
+          </p>
+        </div>
+        <p class="detail2">2.攻頂爐</p>
+        <div class="stove-detail">
+          <p>
+            體積、重量是登山爐中最輕的，為了輕裝攻頂用，適合個人使用。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cook-frame2">
+      <img id="cook-x2" src="./img/x.png" />
+      <img class="lighter" id="lighter" src="./img/package/lighter.gif" />
+      <img class="spiderstove" id="spiderstove" src="./img/package/spider.png" />
+      <img id="cook-arrow2" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail3">3.打火機</p>
+        <div class="lighter-detail">
+          <p>
+            相比之下噴槍打火機、電子打火機因為高山氧氣濃度較低，反而常常失靈。
+          </p>
+        </div>
+        <p class="detail4">4.蜘蛛爐</p>
+        <div class="spiderstove-detail">
+          <p>
+            瓦斯接頭需透過瓦斯導管連接瓦斯罐，較穩固、承重高，適合多人使用。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="cook-book-forphone">
+      <img id="cook-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="cook-frame1-1">
+      <img id="cook-phone-x1" src="./img/x.png" />
+      <img class="knife" id="knife" src="./img/package/knife.png" />
+      <img id="cook-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail">1.小刀</p>
+        <div class="knife-detail">
+          <p>
+            不論在準備食材、生火、或是急救時刻都會派上用場。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cook-frame2-1">
+      <img id="cook-phone-x2" src="./img/x.png" />
+      <img class="stove" id="stove" src="./img/package/stove.png" />
+      <img id="cook-forphone-arrow2" src="./img/package/arrow.png"/>
+      <img id="cook-forphone-arrow3" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail">2.攻頂爐</p>
+        <div class="stove-detail">
+          <p>
+            體積、重量是登山爐中最輕的，為了輕裝攻頂用，適合個人使用。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cook-frame3">
+      <img id="cook-phone-x3" src="./img/x.png" />
+      <img class="lighter" id="lighter" src="./img/package/lighter.gif" />
+      <img id="cook-forphone-arrow4" src="./img/package/arrow.png"/>
+      <img id="cook-forphone-arrow5" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail">3.打火機</p>
+        <div class="lighter-detail">
+          <p>
+            相比之下噴槍打火機、電子打火機因為高山氧氣濃度較低，反而常常失靈。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cook-frame4">
+      <img id="cook-phone-x4" src="./img/x.png" />
+      <img class="spiderstove" id="spiderstove" src="./img/package/spider.png" />
+      <img id="cook-forphone-arrow6" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">烹煮器具</p>
+        <p class="explain">放置於背包中層的頂端</p>
+        <p class="detail">4.蜘蛛爐</p>
+        <div class="spiderstove-detail">
+          <p>
+            瓦斯接頭需透過瓦斯導管連接瓦斯罐，較穩固、承重高，適合多人使用。
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--行走-->
+    <div class="walk-book">
+      <img id="walk-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="walk-frame">
+      <img id="walk-x" src="./img/x.png" />
+      <img class="shoes" id="shoes" src="./img/package/shoes.png" />
+      <img class="pole" id="pole" src="./img/package/pole.png" />
+      <div class="text">
+        <p class="title">行走類</p>
+        <p class="explain">放置於背包中層的中間</p>
+        <p class="detail1">1.登山鞋</p>
+        <div class="shoes-detail">
+          <p>
+            登山鞋較一般鞋款更加抓地也具有排泥功能，更提供對腳步的支撐性，也可防水排汗等，較一般布鞋更加耐用。
+          </p>
+        </div>
+        <p class="detail2">2.登山杖</p>
+        <div class="pole-detail">
+          <p>
+            登山杖可協助上下坡時減輕四隻的肌肉負擔，並適用於各種地形保持平衡與支撐。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="walk-book-forphone">
+      <img id="walk-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="walk-frame1">
+      <img id="walk-phone-x1" src="./img/x.png" />
+      <img class="shoes" id="shoes" src="./img/package/shoes.png" />
+      <img id="walk-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">行走類</p>
+        <p class="explain">放置於背包中層的中間</p>
+        <p class="detail">1.登山鞋</p>
+        <div class="shoes-detail">
+          <p>
+            登山鞋較一般鞋款更加抓地也具有排泥功能，更提供對腳步的支撐性，也可防水排汗等，較一般布鞋更加耐用。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="walk-frame2">
+      <img id="walk-phone-x2" src="./img/x.png" />
+      <img class="pole" id="pole" src="./img/package/pole.png" />
+      <img id="walk-forphone-arrow2" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">行走類</p>
+        <p class="explain">放置於背包中層的中間</p>
+        <p class="detail">2.登山杖</p>
+        <div class="pole-detail">
+          <p>
+            登山杖可協助上下坡時減輕四隻的肌肉負擔，並適用於各種地形保持平衡與支撐。
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--衣物-->
+    <div class="cloth-book">
+      <img id="cloth-book" src="./img/雙頁書_闔上.gif" />
+    </div>
+    <div class="cloth-frame1">
+      <img id="cloth-x1" src="./img/x.png" />
+      <img class="sweat" id="sweat" src="./img/package/sweat.png" />
+      <img class="hot" id="hot" src="./img/package/hot.png" />
+      <img id="cloth-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail1">1.內層 排汗衫</p>
+        <div class="sweat-detail">
+          <p>
+            主要維持身體的乾爽，可以挑選合身、排汗性佳的材質。
+          </p>
+        </div>
+        <p class="detail2">2.中層 保暖衣</p>
+        <div class="coat-detail">
+          <p>
+            主要功能為儲蓄身體散發的熱能，防止失溫。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame2">
+      <img id="cloth-x2" src="./img/x.png" />
+      <img class="coat" id="coat" src="./img/package/coat.png" />
+      <img class="hat" id="hat" src="./img/package/hat.png" />
+      <img id="cloth-arrow2" src="./img/package/arrow.png"/>
+      <img id="cloth-arrow3" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail3">3.外層 防風水大衣</p>
+        <div class="hot-detail">
+          <p>
+          台灣的天氣潮濕，最需要注意的就是「防水」，否則衣服一濕就非常容易有失溫風險。
+          </p>
+        </div>
+        <p class="detail4">4.保暖帽</p>
+        <div class="hat-detail">
+          <p>
+            保暖、防風的保暖帽，蓋住後腦勺、太陽穴才能真的有效溫暖頭部。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame3">
+      <img id="cloth-x3" src="./img/x.png" />
+      <img class="raincoat" id="raincoat" src="./img/package/raincoat.png" />
+      <img class="pants" id="pants" src="./img/package/pants.png" />
+      <img id="cloth-arrow4" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail5">5.快乾登山褲</p>
+        <div class="pants-detail">
+          <p>
+            透氣、快乾、耐磨，適合行進中穿著。
+          </p>
+        </div>
+        <p class="detail6">6.雨衣</p>
+        <div class="raincoat-detail">
+          <p>
+            山上氣候千變萬化，防水雨衣、雨褲絕對是必備！
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="forphone">
+    <div class="cloth-book-forphone">
+      <img id="cloth-book-forphone" src="./img/單頁書_闔上.gif" />
+    </div>
+    <div class="cloth-frame1-1">
+      <img id="cloth-phone-x1" src="./img/x.png" />
+      <img class="sweat" id="sweat" src="./img/package/sweat.png" />
+      <img id="cloth-forphone-arrow1" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">1.內層 排汗衫</p>
+        <div class="sweat-detail">
+          <p>
+            主要維持身體的乾爽，可以挑選合身、排汗性佳的材質。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame2-1">
+      <img id="cloth-phone-x2" src="./img/x.png" />
+      <img class="hot" id="hot" src="./img/package/hot.png" />
+      <img id="cloth-forphone-arrow2" src="./img/package/arrow.png"/>
+      <img id="cloth-forphone-arrow3" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">2.中層 保暖衣</p>
+        <div class="coat-detail">
+          <p>
+            主要功能為儲蓄身體散發的熱能，防止失溫。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame3-1">
+      <img id="cloth-phone-x3" src="./img/x.png" />
+      <img class="coat" id="coat" src="./img/package/coat.png" />
+      <img id="cloth-forphone-arrow4" src="./img/package/arrow.png"/>
+      <img id="cloth-forphone-arrow5" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">3.外層 防風水大衣</p>
+        <div class="hot-detail">
+          <p>
+          台灣的天氣潮濕，最需要注意的就是「防水」，否則衣服一濕就非常容易有失溫風險。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame4">
+      <img id="cloth-phone-x4" src="./img/x.png" />
+      <img class="hat" id="hat" src="./img/package/hat.png" />
+      <img id="cloth-forphone-arrow6" src="./img/package/arrow.png"/>
+      <img id="cloth-forphone-arrow7" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">4.保暖帽</p>
+        <div class="hat-detail">
+          <p>
+            保暖、防風的保暖帽，蓋住後腦勺、太陽穴才能真的有效溫暖頭部。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame5">
+      <img id="cloth-phone-x5" src="./img/x.png" />
+      <img class="pants" id="pants" src="./img/package/pants.png" />
+      <img id="cloth-forphone-arrow8" src="./img/package/arrow.png"/>
+      <img id="cloth-forphone-arrow9" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">5.快乾登山褲</p>
+        <div class="pants-detail">
+          <p>
+            透氣、快乾、耐磨，適合行進中穿著。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="cloth-frame6">
+      <img id="cloth-phone-x6" src="./img/x.png" />
+      <img class="raincoat" id="raincoat" src="./img/package/raincoat.png" />
+      <img id="cloth-forphone-arrow10" src="./img/package/arrow.png"/>
+      <div class="text">
+        <p class="title">衣著類</p>
+        <p class="explain">放置於背包中層的最下方</p>
+        <p class="detail">6.雨衣</p>
+        <div class="raincoat-detail">
+          <p>
+            山上氣候千變萬化，防水雨衣、雨褲絕對是必備！
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--scroll hint-->
+    <div class="prepare-scroll-hint">
+      <img src="./img/青蛙向下.png">
+    </div>
+   </section>
+    <!-- 背包頁:End-->
+
+    <!--包紮夜彈跳視窗-->
+<div class="bounce">
+  <img id="bounce-frame" src="./img/package/bounce-bg.svg">
+  <p id="bounce-text">
+    早安冒險者！真是美好的一天！我是大南部史<br>
+學會自行緊急包紮是作為一名冒險家必備的技能_<br>
+想必你會需要一個傷痕累累的人吧_<br>
+就在剛剛我已經將自己調整成需要包紮的體態了_<br>
+這邊就由我來為你一步一步地進行實作包紮ㄅ_<br>
+  </p>
+  <img id="bounce-arrow" src="./img/package/bounce-arrow.svg">
+  <p id="bounce-go">確定</p>
+</div>
+    
+    <!--包紮頁：Start-->
+       <section class="hurt" id="hurt-id" >
+        <div class="hurt_forest">
+          <img src="./img/bg_forest.svg" alt="">
+        </div>
+    <div class="hurt-second-content">
+      <img id="whole-human" src="./img/hurt/hurt_人受傷動畫.gif" />
+      <div class="hurt_left-main-line">
+        <span></span>
+      </div>
+      <div class="hurt_left-first-line">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hurt_left-second-line">
+        <span></span>
+      </div>
+      <div class="hurt_left-third-line">
+        <span></span>
+      </div>
+      <div class="hurt_right-first-line">
+        <span></span>
+      </div>
+      <div class="hurt_right-second-line">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hurt_right-third-line">
+        <span></span>
+      </div>
+      <div class="hurt_frames">
+        <img id="cycle" src="./img/hurt/環形包紮法.svg" />
+        <img id="return" src="./img/hurt/回反包紮法.svg" />
+        <img id="spinreturn" src="./img/hurt/螺旋反折包紮法.svg" />
+        <img id="eight" src="./img/hurt/八字包紮法.svg" />
+        <img id="spin" src="./img/hurt/螺旋包紮法.svg" />
+      </div>
+      <div class="hurt_frames-forphone">
+        <img id="cycle-forphone" src="./img/閃圈/環形.gif" />
+        <img id="return-forphone" src="./img/閃圈/回反.gif" />
+        <img id="spinreturn-forphone" src="./img/閃圈/螺旋反折.gif" />
+        <img id="eight-forphone" src="./img/閃圈/八字.gif" />
+        <img id="spin-forphone" src="./img/閃圈/螺旋.gif" />
+      </div>
+      <div class="hurt_bookbackground"></div>
+      <!--環形-->
+      <div class="cycle-book">
+        <img id="cycle-book" src="./img/雙頁書_闔上.gif" />
+      </div>
+      <div class="cycle-frame">
+        <img id="cycle-x" src="./img/x.png" />
+        <img id="cycle-gif" alt="Transparent PNG" src="./img/hurt/環形包紮手.png" />
+        <img class="cycle-return"  id="cycle-return"  src="./img/hurt/return.png" />
+        <img class="cycle-hint1"  id="cycle-hint1" src="./img/hurt/circle.gif" />
+        <img class="cycle-hint2"  id="cycle-hint2" src="./img/hurt/circle.gif" />
+        <img class="cycle-hint3" id="cycle-hint3" src="./img/hurt/circle.gif" />
+        <div class="cycle-text">
+          <p class="hurt_title">環形包紮法</p>
+          <p class="hurt_explain">用於小範圍等粗之肢體</p>
+          <p class="hurt_detail">
+            1. 先做定帶，將繃帶以環形纏繞於傷口上方<br />
+            2. 第一圈環繞稍作斜狀，大致傾斜45度<br />
+            3. 將第一圈斜一角壓入環形圈內環繞第二圈
+          </p>
+        </div>
+      </div>
+      <div class="forphone">
+        <div class="cycle-book-forphone">
+        <img id="cycle-book-forphone" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="cycle-frame-forphone">
+        <img id="cycle-x-forphone" src="./img/x.png" />
+        <img id="cycle-gif-forphone" alt="Transparent PNG" class="transparent-img" src="./img/hurt/環形包紮手.png" />
+        <img class="cycle-return-forphone" id="cycle-return-forphone" src="./img/hurt/return.png" />
+        <img class="cycle-forphone-hint1"  id="cycle-forphone-hint1" src="./img/hurt/circle.gif" />
+        <img class="cycle-forphone-hint2" id="cycle-forphone-hint2" src="./img/hurt/circle.gif" />
+        <img class="cycle-forphone-hint3"  id="cycle-forphone-hint3" src="./img/hurt/circle.gif" />
+        <div class="cycle-forphone-text">
+          <p class="hurt_title-forphone">環形包紮法</p>
+          <p class="hurt_explain-forphone">用於小範圍等粗之肢體</p>
+          <p class="cycle_detail1-forphone">
+            1. 先做定帶，將繃帶以環形纏繞於傷口上方
+          </p>
+          <p class="cycle_detail2-forphone">
+            2. 第一圈環繞稍作斜狀，大致傾斜45度
+          </p>
+          <p class="cycle_detail3-forphone">
+            3. 將第一圈斜一角壓入環形圈內環繞第二圈
+          </p>
+        </div>
+      </div>
+      </div>
+      <!--回反-->
+      <div class="return-book">
+        <img id="return-book" src="./img/雙頁書_闔上.gif" />
+      </div>
+      <div class="return-frame">
+        <img id="return-x" src="./img/x.png" />
+        <img id="return-gif" alt="Transparent PNG" src="./img/hurt/回反包紮手.png" />
+        <img class="return-return" id="return-return" src="./img/hurt/return.png" />
+        <img class="return-hint1" id="return-hint1" src="./img/hurt/circle.gif" />
+        <img class="return-hint2" id="return-hint2" src="./img/hurt/circle.gif" />
+        <img class="return-hint3" id="return-hint3" src="./img/hurt/circle.gif" />
+        <img class="return-hint4" id="return-hint4" src="./img/hurt/circle.gif" />
+        <div class="return-text">
+          <p class="hurt_title">回反包紮法</p>
+          <p class="hurt_explain">用於包紮沒有頂端的部位如指端、頭部、截肢殘端</p>
+          <p class="hurt_detail">
+            1. 傷口用無菌或乾淨的敷料覆蓋，固定敷料<br />
+            2. 環形包紮兩周<br />
+            3. 將繃帶向上反折與環形包紮垂直，覆蓋殘端中央，再交替覆蓋左右兩邊，固定住反折部分，每周覆蓋上周三分之一到二分之一<br />
+            4. 再將繃帶反折環形包紮2周固定
+          </p>
+        </div>
+      </div>
+      <div class="forphone">
+        <div class="return-book-forphone">
+        <img id="return-book-forphone" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="return-frame-forphone">
+        <img id="return-x-forphone" src="./img/x.png" />
+        <img id="return-gif-forphone" alt="Transparent PNG" class="transparent-img" src="./img/hurt/回反包紮手.png" />
+        <img class="return-return-forphone" id="return-return-forphone" src="./img/hurt/return.png" />
+        <img class="return-forphone-hint1" id="return-forphone-hint1" src="./img/hurt/circle.gif" />
+        <img class="return-forphone-hint2" id="return-forphone-hint2" src="./img/hurt/circle.gif" />
+        <img class="return-forphone-hint3" id="return-forphone-hint3" src="./img/hurt/circle.gif" />
+        <img class="return-forphone-hint4" id="return-forphone-hint4" src="./img/hurt/circle.gif" />
+        <div class="return-forphone-text">
+          <p class="hurt_title-forphone">回反包紮法</p>
+          <p class="hurt_explain-forphone">用於包紮沒有頂端的部位如指端、頭部、截肢殘端</p>
+          <p class="return_detail1-forphone">
+            1. 傷口用無菌或乾淨的敷料覆蓋，固定敷料
+          </p>
+          <p class="return_detail2-forphone">
+            2. 環形包紮兩周
+          </p>
+          <p class="return_detail3-forphone">
+            3. 將繃帶向上反折與環形包紮垂直，覆蓋殘端中央，再交替覆蓋左右兩邊，固定住反折部分，每周覆蓋上周三分之一到二分之一
+          </p>
+          <p class="return_detail4-forphone">
+            4. 再將繃帶反折環形包紮2周固定
+          </p>
+        </div>
+      </div>
+      </div>
+      <!--螺旋反折-->
+      <div class="spinreturn-book">
+        <img id="spinreturn-book" src="./img/雙頁書_闔上.gif" />
+      </div>
+      <div class="spinreturn-frame">
+        <img id="spinreturn-x" src="./img/x.png" />
+        <img id="spinreturn-gif" alt="Transparent PNG" src="./img/hurt/螺旋反折手.png" />
+        <img
+          class="spinreturn-return"
+          id="spinreturn-return"
+          src="./img/hurt/return.png"
+        />
+        <img
+          class="spinreturn-hint1"
+          id="spinreturn-hint1"
+          src="./img/hurt/circle.gif"
+        />
+        <img
+          class="spinreturn-hint2"
+          id="spinreturn-hint2"
+          src="./img/hurt/circle.gif"
+        />
+        <img
+          class="spinreturn-hint3"
+          id="spinreturn-hint3"
+          src="./img/hurt/circle.gif"
+        />
+        <div class="spinreturn-text">
+          <p class="hurt_title">螺旋反折包紮法</p>
+          <p class="hurt_explain">應用肢體粗細不等處</p>
+          <p class="hurt_detail">
+            1. 先按環形法纏繞兩圈<br />
+            2. 將每圈繃帶反折，蓋住前圈三分之一或三分之二，由下而上地纏繞<br />
+            3.
+            折返時按住繃帶上面正中央，用另一隻手將繃帶向下折返，再向後繞拉緊以環形包紮結束
+          </p>
+        </div>
+      </div>
+      <div class="forphone">
+        <div class="spinreturn-book-forphone">
+        <img id="spinreturn-book-forphone" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="spinreturn-frame-forphone">
+        <img id="spinreturn-x-forphone" src="./img/x.png" />
+        <img id="spinreturn-gif-forphone" alt="Transparent PNG" class="transparent-img" src="./img/hurt/螺旋反折手.png" />
+        <img class="spinreturn-return-forphone" id="spinreturn-return-forphone" src="./img/hurt/return.png" />
+        <img class="spinreturn-forphone-hint1" id="spinreturn-forphone-hint1" src="./img/hurt/circle.gif" />
+        <img class="spinreturn-forphone-hint2" id="spinreturn-forphone-hint2" src="./img/hurt/circle.gif" />
+        <img class="spinreturn-forphone-hint3" id="spinreturn-forphone-hint3" src="./img/hurt/circle.gif" />
+        <div class="spinreturn-forphone-text">
+          <p class="hurt_title-forphone">螺旋反折包紮法</p>
+          <p class="hurt_explain-forphone">應用肢體粗細不等處</p>
+          <p class="spinreturn_detail1-forphone">
+            1. 先按環形法纏繞兩圈
+          </p>
+          <p class="spinreturn_detail2-forphone">
+            2. 將每圈繃帶反折，蓋住前圈三分之一或三分之二，由下而上地纏繞
+          </p>
+          <p class="spinreturn_detail3-forphone">
+            3.折返時按住繃帶上面正中央，用另一隻手將繃帶向下折返，再向後繞拉緊以環形包紮結束
+          </p>
+        </div>
+      </div>
+      </div>
+      <!--八字-->
+      <div class="eight-book">
+        <img id="eight-book" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="eight-frame">
+        <img id="eight-x" src="./img/x.png" />
+        <img id="eight-gif" alt="Transparent PNG" src="./img/hurt/八字包紮手.png" />
+        <img class="eight-return" id="eight-return" src="./img/hurt/return.png" />
+        <img class="eight-hint1" id="eight-hint1" src="./img/hurt/circle.gif" />
+        <img class="eight-hint2" id="eight-hint2" src="./img/hurt/circle.gif" />
+        <img class="eight-hint3" id="eight-hint3" src="./img/hurt/circle.gif" />
+        <div class="eight-text">
+          <p class="hurt_title">八字包紮法</p>
+          <p class="hurt_explain">多用於手掌、踝部和其他關節處傷口</p>
+          <p class="hurt_detail">
+            1. 包紮時從腕部開始，先環行纏繞兩圈<br />
+            2. 經手和腕「8」字形纏繞。<br />
+            3. 最後將繃帶尾端在腕部固定
+          </p>
+        </div>
+      </div>
+      <div class="forphone">
+        <div class="eight-book-forphone">
+        <img id="eight-book-forphone" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="eight-frame-forphone">
+        <img id="eight-x-forphone" src="./img/x.png" />
+        <img id="eight-gif-forphone" alt="Transparent PNG" class="transparent-img" src="./img/hurt/八字包紮手.png" />
+        <img class="eight-return-forphone" id="eight-return-forphone" src="./img/hurt/return.png" />
+        <img class="eight-forphone-hint1" id="eight-forphone-hint1" src="./img/hurt/circle.gif" />
+        <img class="eight-forphone-hint2" id="eight-forphone-hint2" src="./img/hurt/circle.gif" />
+        <img class="eight-forphone-hint3" id="eight-forphone-hint3" src="./img/hurt/circle.gif" />
+        <div class="eight-forphone-text">
+          <p class="hurt_title-forphone">八字包紮法</p>
+          <p class="hurt_explain-forphone">多用於手掌、踝部和其他關節處傷口</p>
+          <p class="eight_detail1-forphone">
+            1. 包紮時從腕部開始，先環行纏繞兩圈
+          </p>
+          <p class="eight_detail2-forphone">
+            2. 經手和腕「8」字形纏繞。
+          </p>
+          <p class="eight_detail3-forphone">
+            3.最後將繃帶尾端在腕部固定
+          </p>
+        </div>
+      </div>
+      </div>
+      <!--螺旋-->
+      <div class="spin-book">
+        <img id="spin-book" src="./img/雙頁書_闔上.gif" />
+      </div>
+      <div class="spin-frame">
+        <img id="spin-x" src="./img/x.png" />
+        <img id="spin-gif" alt="Transparent PNG" src="./img/hurt/螺旋包紮手.png" />
+        <img class="spin-return" id="spin-return" src="./img/hurt/return.png" />
+        <img class="spin-hint1" id="spin-hint1" src="./img/hurt/circle.gif" />
+        <img class="spin-hint2" id="spin-hint2" src="./img/hurt/circle.gif" />
+        <div class="spin-text">
+          <p class="hurt_title">螺旋包紮法</p>
+          <p class="hurt_explain">多用於粗細相同的肢體、軀幹處</p>
+          <p class="hurt_detail">
+            1.
+            先按環形法纏繞兩圈，從第三圈開始每圈蓋住前圈三分之一或二分之一呈螺旋形<br />
+            2. 最後以環形包紮結束
+          </p>
+        </div>
+      </div>
+      <div class="forphone">
+        <div class="spin-book-forphone">
+        <img id="spin-book-forphone" src="./img/單頁書_闔上.gif" />
+      </div>
+      <div class="spin-frame-forphone">
+        <img id="spin-x-forphone" src="./img/x.png" />
+        <img id="spin-gif-forphone" alt="Transparent PNG" class="transparent-img" src="./img/hurt/螺旋包紮手.png" />
+        <img class="spin-return-forphone" id="spin-return-forphone" src="./img/hurt/return.png" />
+        <img class="spin-forphone-hint1" id="spin-forphone-hint1" src="./img/hurt/circle.gif" />
+        <img class="spin-forphone-hint2" id="spin-forphone-hint2" src="./img/hurt/circle.gif" />
+        <div class="spin-forphone-text">
+          <p class="hurt_title-forphone">螺旋包紮法</p>
+          <p class="hurt_explain-forphone">多用於粗細相同的肢體、軀幹處</p>
+          <p class="spin_detail1-forphone">
+            1. 先按環形法纏繞兩圈，從第三圈開始每圈蓋住前圈三分之一或二分之一呈螺旋形
+          </p>
+          <p class="spin_detail2-forphone">
+            2. 最後以環形包紮結束
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+       </section>
+    <!-- 包紮頁:End-->
+    <!--span高度調整-->
+    <div id="hurt-entry">
+    </div>
+    <!--登山口:Start-->
+    <section class="entry parallax" id="entry-id">
+      <div class="bg"></div>
+      <div class="Btns">
+        <div class="Btn-purcahse">
+          <a id="topurcahse">購買</a>
+        </div>
+        <div class="Btn-entry">
+          <a href="./fight.html">進入登山口</a>
+        </div>
+        <div class="Btn-Login">
+          <a id="tologin">會員登入</a>
+        </div>
+      </div>
+      <div id="scene">
+        <div data-depth="0.15" class="entrybg_1">
+          <img src="./img/login/深處.png" alt="">
+        </div>
+        <div data-depth="0.4" class="entrybg_2">
+          <img src="./img/login/地面.png" alt="">
+        </div>
+        <div data-depth="0.25" class="entrybg_3">
+          <img src="./img/login/山壁.png" alt="">
+        </div>
+      </div>
+    </section>
+    <!--登山口:End-->
+    
+    <!--footer-->
+    <section class="footer">
+      <div class="contents">
+        <div class="shortcuts">
+          <a href="#" class="NOTICE">
+            <p>NOTICE</p>
+          </a>
+          <a href="./login.html" class="MEMBERSHIP">
+            <p>MEMBERSHIP</p>
+          </a>
+          <a href="#" class="GUIDE">
+            <p>GUIDE</p>
+          </a>
+          <a href="#" class="PRIVACY_POLICY">
+            <p>PRIVACY POLICY</p>
+          </a>
+          <a href="#" class="ABOUT">
+            <p>ABOUT</p>
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div class="infos">
+          <div class="info1">
+            <p>COMPANY：Down Go Work Studio</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+          <div class="info2">
+            <p>TEL:02-8960-4282</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyicon">©</p>
+        <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jq.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/prepare.js"></script>
+    <script src="./js/prepare-phone.js"></script>
+    <script src="./js/hurt.js"></script>
+    <script src="./js/hurt-forphone.js"></script>
+  </body>
+</html>

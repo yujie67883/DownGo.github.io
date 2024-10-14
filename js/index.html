@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Go</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet" />
+    <link href="./css/main_forphone.css" rel="stylesheet" />
+    </head>
+  <body>
+    <!-- 跳轉小青蛙 -->
+    <div id="frogjump">
+      <img id="jump" src="./img/goods/jump.gif" alt="" />
+    </div>
+    <!--index-->
+    <nav>
+      <div data-depth="0.3" class="logo">
+        <a href="#index">
+          <img src="./img/logotype_2.png" alt="">
+        </a>
+      </div>
+      <div id="menu_burger" class="burger" >
+        <a href="#menu">
+          <img src="./img/hambergur.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)">
+        </a>
+      </div>
+    </nav>
+   <!-- 提示句 -->
+    <div class="hint">
+      <p>- 點擊任意處跳至下一頁 -</p>
+    </div>
+    <section class="pareallax">
+      <div id="scene">
+        <div data-depth="0.1" class="bg">
+          <img src="./img/main/background.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_back">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="sea-monster">
+          <img src="./img/main/fish_updown.gif" alt="">
+        </div>
+        <div data-depth="0.15" class="watterflow">
+          <img src="./img/main/waterfall.gif" alt="">
+        </div>
+
+        <div data-depth="0.2" class="fm">
+          <img src="./img/main/front-mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_front">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.25" class="ground">
+          <img src="./img/main/gorund.png" alt="">
+        </div>
+        <div data-depth="0.3" class="flower">
+          <img src="./img/main/stinkyflower.png" alt="">
+        </div>
+        <div data-depth="0.25" class="woodenhouse">
+          <img src="./img/main/woodenhouse.gif" alt="">
+        </div>
+        <div data-depth="0.3" class="grass_left">
+          <img src="./img/main/grass_left.png" alt="">
+        </div>
+        <div data-depth="0.3" class="grass_right">
+          <img src="./img/main/grass_right.png" alt="">
+        </div>
+        <div data-depth="0.3" class="sign">
+          <img src="./img/main/sign.png" alt="">
+        </div>
+        <div data-depth="0.3" class="hook">
+          <img src="./img/main/hook-of-God.png" alt="">
+        </div>
+        <!--轉場點擊處-->
+        <div data-depth="0.3" class="circle">
+        </div>
+      </div>
+      <!--轉場遮罩-->
+      <div class="transition">
+        <button id="myButton"></button>
+      <div id="mask"></div>
+      </div>
+    </section>
+
+    <!-- 漢堡選單 -->
+    <section class="menu">
+      <nav>
+        <div data-depth="0.3" class="logo">
+          <a href="#index">
+            <img src="./img/logotype.png" alt="">
+          </a>
+        </div>
+        <div class="menu_close" id="close_icon" >
+          <a href="#menu">
+            <img src="./img/x.png" onmousedown="mDownx(this)" onmouseup="mUpx(this)">
+          </a>
+        </div>
+      </nav>
+      <div class="menu_bgimg">
+        <div data-depth="0.1" class="bg">
+          <img src="./img/main/background.png" alt="">
+        </div>
+        <div data-depth="0.1" class="bm">
+          <img src="./img/main/back-mountain.png" alt="">
+        </div>
+        <div class="menu_mountain">
+          <img src="./img/main/menu_mountain.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_1">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+        <div data-depth="0.3" class="cloud_2">
+          <img src="./img/main/clouds.png" alt="">
+        </div>
+      </div>
+      <div data-depth="0.3" class="cloud_3">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div data-depth="0.3" class="cloud_4">
+        <img src="./img/main/clouds.png" alt="">
+      </div>
+      <div class="hunted">
+        <img src="./img/main/menu_hunted.png" alt="">
+      </div>
+      <div class="menu_sign">
+        <img src="./img/main/menu_sign.png" alt="">
+      </div>
+      <div class="menu_hook">
+        <img src="./img/main/menu_hook.png" alt="">
+      </div>
+      <!-- 標題 -->
+      <div class="title">
+        <div class="woodtxt">
+          <h1>救難大木屋</h1>
+        </div>
+        <div class="entertxt">
+          <h1>登山口</h1>
+        </div>
+        <div class="heaven">
+          <h1>伊甸園</h1>
+        </div>
+      </div>
+      <!-- 分隔線 -->
+      <div class="cutline"></div>
+      <!--跳頁選項-->
+      <div class="wood_option">
+        <div class="preparing">
+          <a href="./bag_hurt.html">
+            <p>登山裝備</p>
+          </a>
+        </div>
+        <div class="bandage">
+          <a href="./bag_hurt.html">
+            <p>急救包紮</p>
+        </div>
+      </div>
+      <div class="enter_option">
+        <div class="snakbee">
+          <a href="./fight.html">
+            <p>毒螫魔</p>
+            <p class="purple">小心毒蟲</p>
+          </a>
+        </div>
+        <div class="fish">
+          <a href="./fight.html">
+            <p>鐵支麵粉鯛</p>
+            <p class="purple">水域安全</p>
+        </div href="./fight.html">
+        <div class="pig">
+          <a href="./fight.html">
+            <p>相撲熊豬刃牙</p>
+            <p class="purple">野獸防衛</p>
+        </div>
+        <div class="hypoxia">
+          <a href="./fight.html">
+            <p>高山絕氧獸</p>
+            <p class="purple">高山症</p>
+        </div>
+        <div class="hypothermia">
+          <a href="./fight.html">
+            <p>凝寒失溫龍</p>
+            <p class="purple">失溫防治</p>
+        </div>
+      </div>
+      <div class="heaven_option">
+        <div class="commodity">
+          <a id="toshop">
+            <p>商品購買</p>
+          </a>
+        </div>
+        <div class="membership">
+          <a id="tomember">
+            <p>會員登入</p>
+        </div>
+      </div>
+      <div class="alert">
+        <a href="./prelude.html">
+          <img src="./img/prelude/15+.png">
+        </a>
+      </div>
+    </section>
+
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/parallax.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,511 @@
+@font-face {
+  font-family: "Noto Sans TC medium";
+  src: local("Noto Sans TC"),
+    url("../../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Micro5";
+  src: local("Micro5-Regular"),
+    url("../../fonts/Micro5-Regular.ttf") format("ttf");
+}
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.icon {
+  display: none;
+}
+.logodiv {
+  display: block;
+}
+@media (max-width: 900px) {
+  .icon {
+    display: block;
+  }
+  .logodiv {
+    display: none;
+  }
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: fit-content;
+  background-color: #2e0d45;
+  transition: transform ease;
+  z-index: 99;
+  padding-left: 3.2vw;
+  padding-right: 3.2vw;
+}
+.header .nav {
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+#logotype {
+  width: 11vw;
+}
+.header_center {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 1vw;
+}
+.header_center div {
+  display: flex;
+  flex-direction: row;
+  margin-right: 1.2vw;
+  color: #ffffff;
+  font-family: Micro5;
+  font-size: 26px;
+}
+.header_center div p {
+  margin-right: 1.1vw;
+  align-items: center;
+}
+.unlimited {
+  font-family: Noto Sans TC;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+}
+@media (max-width: 1600px) {
+  .header_center div {
+    font-size: 20px;
+  }
+  .unlimited {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+.eleven {
+  letter-spacing: 5px;
+}
+.thecard img {
+  height: 3.5vh;
+  margin-right: 1vw;
+}
+.header_right {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+.notification,
+.cart {
+  padding-right: 1.5vw;
+  cursor: pointer;
+  user-select: none;
+}
+.bell {
+  width: 1.6vw;
+}
+.bell_badge {
+  width: 0.5vw;
+  position: fixed;
+  top: 2.3vh;
+  right: 9.9vw;
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.notify {
+  position: fixed;
+  width: 22.2vw;
+  height: 45vh;
+  top: 10.2vh;
+  right: 10vw;
+  background-color: #fafafa;
+  z-index: 2;
+  user-select: none;
+  box-shadow: 0 0 20px 0 rgba(46, 13, 69, 0.15);
+}
+#overlay .noti_header {
+  background-color: #2b0c40;
+  color: white;
+  width: -webkit-fill-available;
+  height: fit-content;
+  padding: 1.3vw 1vw;
+}
+.noti_header p {
+  font-family: Noto Sans TC;
+  font-size: 18px;
+  font-weight: 400;
+}
+.noti_li {
+  width: -webkit-fill-available;
+  padding: 1vw;
+  font-family: Noto Sans TC;
+  border-bottom: solid 1px #e1e1e1;
+  /* cursor: pointer; */
+}
+.noti_li:hover {
+  background-color: #f6f5f5;
+}
+.noti_li .noti_txt {
+  color: black;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 1.2vh;
+}
+.noti_li .time {
+  color: #ababab;
+  font-size: 14px;
+  margin-bottom: 0.5vh;
+}
+.cart_icon {
+  width: 1.7vw;
+}
+.cart_badge {
+  width: 1.2vw;
+  height: 2.1vh;
+  position: fixed;
+  top: 1.9vh;
+  right: 6.2vw;
+  background-image: url(../img/login_signup/badge.png);
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Micro5;
+}
+.profile_photo img {
+  width: 2.2vw;
+  user-select: none;
+}
+
+/* 完成訂購內容 */
+.main {
+  width: -webkit-fill-available;
+  height: 88vh;
+  margin-top: 12.2vh;
+  padding: 0 28.8vw;
+}
+h1 {
+  font-family: Noto Sans TC;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #b024e2;
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+h3 {
+  font-family: Noto Sans TC;
+  font-size: 28px;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+}
+.boxfrog img {
+  position: absolute;
+  top: 34vh;
+  left: 21vw;
+  width: 57vw;
+  pointer-events: none;
+}
+.Btns {
+  margin-top: 56.8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: -webkit-fill-available;
+  font-family: Noto Sans TC;
+  font-weight: 500;
+  justify-content: center;
+}
+#addcart {
+  width: 6.4vw;
+  padding: 12px 15px;
+  border: solid 1px #b024e2;
+  text-decoration: none;
+  color: #b024e2;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+#addcart:hover {
+  background-color: #f8f4f9;
+  cursor: pointer;
+}
+/* footer */
+.footer {
+  position: absolute;
+  height: 32vh;
+  width: -webkit-fill-available;
+  background-color: #2b0c40;
+  padding-top: 9vh;
+  padding-bottom: 4vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .contents {
+  margin-top: 0;
+  width: 70vw;
+  height: 22vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contents .shortcuts {
+  width: 32vw;
+  font-family: Micro5;
+  font-size: 23px;
+  line-height: auto;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+.shortcuts a {
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  border-bottom: solid 1.5px #2e0d45;
+}
+.shortcuts a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+  height: 1.5px;
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transition: transform 150ms ease-in-out;
+}
+.shortcuts a:hover::after {
+  transform: scale(1, 1);
+}
+.shortcuts p {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.divider {
+  width: -webkit-fill-available;
+  height: 0.1vh;
+  background-color: #5e3d6a;
+}
+.contents .infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 300;
+  color: #ffffff;
+}
+.infos div {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2vh;
+}
+.infos div p {
+  margin-right: 1vw;
+}
+.copyright {
+  font-family: Noto Sans TC;
+  color: #ffffff;
+  line-height: 29px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 9vh;
+}
+.copyicon {
+  font-size: 16px;
+  padding-right: 4px;
+}
+.copytext {
+  font-size: 12px;
+}
+
+/* 手機版 */
+@media (max-width: 900px) {
+  .header {
+    padding: 1.2vh 3.2vw;
+    width: -webkit-fill-available;
+    width: 94vw;
+  }
+  .header_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header_center {
+    display: none;
+  }
+  .icon {
+    width: 2.1vh;
+    margin-right: 1.2vh;
+  }
+  .notification,
+  .cart {
+    padding-right: 3.4vw;
+  }
+  .bell {
+    width: 4.6vw;
+  }
+  .bell_badge {
+    width: 1.5vw;
+    top: 0.9vh;
+    right: 28.7vw;
+  }
+  .cart_icon {
+    width: 4.7vw;
+  }
+  .cart_badge {
+    width: 17px;
+    height: 2.1vh;
+    top: 0.7vh;
+    right: 19.2vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 16px;
+  }
+  .profile_photo img {
+    width: 5.2vw;
+  }
+  /* 通知 */
+  .notify {
+    width: 25.2vh;
+    height: 25.2vh;
+    top: 6.7vh;
+    right: 3.8vw;
+  }
+  #overlay .noti_header {
+    padding: 1vh 1.3vh;
+  }
+  .noti_li {
+    padding: 1vh;
+  }
+  .noti_header p {
+    font-size: 12px;
+  }
+  .noti_li .noti_txt {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .noti_li .time {
+    font-size: 10px;
+  }
+  /* 完成訂購頁 */
+  .main {
+    padding: 0 4vw;
+    margin: 8.2vh 0 15vh 0;
+    width: 93vw;
+    height: 74vh;
+    /* overflow: hidden; */
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .boxfrog {
+    width: -webkit-fill-available;
+    overflow: hidden;
+  }
+  .boxfrog img {
+    width: 57vh;
+    left: -13vw;
+    top: 38vh;
+  }
+  .Btns {
+    margin-top: 49.8vh;
+  }
+  #addcart {
+    width: 10.4vh;
+  }
+
+  /* footer */
+  .footer {
+    padding-top: 4vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .footer .contents {
+    width: -webkit-fill-available;
+  }
+  .contents .shortcuts {
+    width: 26vh;
+    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1vh;
+  }
+  .shortcuts a {
+    margin-right: 4vw;
+  }
+  .contents .infos {
+    flex-wrap: wrap;
+  }
+  .contents .infos {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    font-size: 10px;
+    margin-top: 2.3vh;
+  }
+  .infos .info1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .infos .info1 p {
+    margin-bottom: 1vh;
+  }
+  .infos .info2 {
+    flex-direction: row;
+  }
+  .copyright {
+    margin-top: 6vh;
+  }
+  .copyicon {
+    font-size: 13px;
+  }
+  .copytext {
+    font-size: 10px;
+  }
+}

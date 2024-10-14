@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Down Go Shop 購物車</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/good_cart.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav">
+        <div class="header_left">
+          <a class="logodiv" href="./goods_main.html">
+            <img src="./img/logotype.png" id="logotype" />
+          </a>
+          <a href="javascript:history.back()" class="icon chevron-left">
+            <img src="./img/goods/white-chevron-left.svg" alt="" />
+          </a>
+          <a href="./goods_main.html" class="icon home-minimal">
+            <img src="./img/goods/home-minimal.svg" alt="" />
+          </a>
+        </div>
+        <div class="header_center">
+          <div class="altitude_texts">
+            <p class="altitude">ALTITUDE</p>
+            <p class="unlimited">∞</p>
+            <p class="M">M</p>
+          </div>
+          <div class="thecard">
+            <img src="./img/goods/title_purchase.png" alt="" />
+          </div>
+          <div class="level_texts">
+            <p class="level">LEVEL</p>
+            <div id="scrollingText" class="eleven">3-1</div>
+          </div>
+        </div>
+        <div class="header_right">
+          <div class="notification" onclick="on()">
+            <img class="bell" src="./img/login_signup/header_鈴鐺.png" alt="" />
+            <img class="bell_badge" src="./img/login_signup/badge.png" alt="" />
+          </div>
+          <div id="overlay" onclick="off()">
+            <div class="notify">
+              <div class="noti_header"><p>通知</p></div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  ▚ 新手村禮包 ▚
+                  村長已將一張優惠券放入你的背包，快去會員頁面查看吧！
+                </p>
+                <p class="time">5小時前</p>
+              </div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  歡迎加入Down Go的冒險者！首購即送精美小禮物，請盡情挑看選看～
+                </p>
+                <p class="time">12小時前</p>
+              </div>
+            </div>
+          </div>
+          <a href="./good_cart.html" class="cart">
+            <img
+              class="cart_icon"
+              src="./img/login_signup/header_購物車.png"
+              alt=""
+            />
+            <p class="cart_badge">2</p>
+          </a>
+          <a href="./login.html" class="profile_photo">
+            <img src="./img/login_signup/profile.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 購物車內容 -->
+    <section class="main">
+      <h2>購物車</h2>
+      <label class="card_group_section">
+        <div class="CheckBox">
+          <input class="cbclass" type="checkbox" checked />
+          <span class="checkmark"></span>
+        </div>
+        <p>全部商品</p>
+      </label>
+      <label class="product info1">
+        <div class="content">
+          <div class="CheckBox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+          </div>
+          <div class="pdt_detail">
+            <div class="pdt_img"></div>
+            <div class="txt">
+              <h5>小型盒裝包扎繃帶(兩盒一組)</h5>
+            </div>
+          </div>
+          <img class="x" src="./img/goods/x_black.svg" alt="" />
+        </div>
+        <div class="qnt_N_price">
+          <div class="qnt_Num">
+            <img src="./img/goods/minus.svg" alt="" />
+            <p class="num">1</p>
+            <img src="./img/goods/plus.svg" alt="" />
+          </div>
+          <p class="price">NTD$249</p>
+        </div>
+      </label>
+      <label class="product info2">
+        <div class="content">
+          <div class="CheckBox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+          </div>
+          <div class="pdt_detail">
+            <div class="pdt_img"></div>
+            <div class="txt">
+              <h5>回血救難包</h5>
+              <p>手冊x1 ＋ 骨折夾板x1 ＋ 繃帶x2 ＋ 標記帶x2</p>
+            </div>
+          </div>
+          <img class="x" src="./img/goods/x_black.svg" alt="" />
+        </div>
+        <div class="qnt_N_price">
+          <div class="qnt_Num">
+            <img src="./img/goods/minus.svg" alt="" />
+            <p class="num">1</p>
+            <img src="./img/goods/plus.svg" alt="" />
+          </div>
+          <p class="price">NTD$783</p>
+        </div>
+      </label>
+      <div class="card_sum">
+        <div class="tobuy">
+          <div class="total">
+            <div class="count">
+              <p class="sum">共2項</p>
+              <p>(不含運費)</p>
+            </div>
+            <h3>NTD＄1032</h3>
+          </div>
+          <div class="Btns">
+            <a href="cart_pay.html" id="tobuy">
+              <p>結帳</p>
+            </a>
+          </div>
+        </div>
+        <div class="hint">
+          <p>•</p>
+          <p>優惠及會員點數折抵使用的價格可以在結帳時確認。</p>
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <section class="footer">
+      <div class="contents">
+        <div class="shortcuts">
+          <a href="#" class="NOTICE">
+            <p>NOTICE</p>
+          </a>
+          <a href="./login.html" class="MEMBERSHIP">
+            <p>MEMBERSHIP</p>
+          </a>
+          <a href="#" class="GUIDE">
+            <p>GUIDE</p>
+          </a>
+          <a href="#" class="PRIVACY_POLICY">
+            <p>PRIVACY POLICY</p>
+          </a>
+          <a href="#" class="ABOUT">
+            <p>ABOUT</p>
+          </a>
+        </div>
+        <div class="divider"></div>
+        <div class="infos">
+          <div class="info1">
+            <p>COMPANY：Down Go Work Studio</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+          <div class="info2">
+            <p>TEL:02-8960-4282</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyicon">©</p>
+        <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
+      </div>
+    </section>
+
+    <script>
+      // 通知
+      function on() {
+        document.getElementById("overlay").style.display = "block";
+      }
+
+      function off() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      // checkbox連動
+      const groupCheckbox = document.querySelector(".card_group_section input");
+      const productCheckboxes = document.querySelectorAll(
+        '.product input[type="checkbox"]'
+      );
+
+      groupCheckbox.addEventListener("change", (e) => {
+        const isChecked = e.target.checked;
+        productCheckboxes.forEach((checkbox) => {
+          checkbox.checked = isChecked;
+        });
+      });
+
+      productCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          const allChecked = [...productCheckboxes].every((cb) => cb.checked);
+          groupCheckbox.checked = allChecked;
+        });
+      });
+
+      // 總金額跟著checkbox變動
+      const cardGroupCheckbox = document.querySelector(
+        '.card_group_section input[type="checkbox"]'
+      );
+      const info1Checkbox = document.querySelector(
+        '.info1 input[type="checkbox"]'
+      );
+      const info2Checkbox = document.querySelector(
+        '.info2 input[type="checkbox"]'
+      );
+      const totalPriceElement = document.querySelector(".total h3");
+      const toBuyButton = document.querySelector("#tobuy");
+
+      function updateTotalPrice() {
+        if (cardGroupCheckbox.checked) {
+          totalPriceElement.textContent = `NTD＄1032`;
+        } else {
+          const info1Checked = info1Checkbox.checked;
+          const info2Checked = info2Checkbox.checked;
+
+          let newPrice = 1032;
+
+          if (!info1Checked && info2Checked) {
+            newPrice = 783;
+          } else if (info1Checked && !info2Checked) {
+            newPrice = 249;
+          } else if (!info1Checked && !info2Checked) {
+            newPrice = 0;
+          }
+        }
+      }
+
+      //當總金額=0時button變灰
+      function updateTotalPrice() {
+        let newPrice = 0;
+
+        if (info1Checkbox.checked && info2Checkbox.checked) {
+          newPrice = 1032;
+        } else if (info1Checkbox.checked) {
+          newPrice = 249;
+        } else if (info2Checkbox.checked) {
+          newPrice = 783;
+        }
+
+        console.log(newPrice);
+
+        if (newPrice === 0) {
+          toBuyButton.classList.add("disabled");
+        } else {
+          toBuyButton.classList.remove("disabled");
+        }
+
+        totalPriceElement.textContent = `NTD＄${newPrice}`;
+      }
+
+      cardGroupCheckbox.addEventListener("change", updateTotalPrice);
+      info1Checkbox.addEventListener("change", updateTotalPrice);
+      info2Checkbox.addEventListener("change", updateTotalPrice);
+
+      updateTotalPrice();
+    </script>
+  </body>
+</html>
