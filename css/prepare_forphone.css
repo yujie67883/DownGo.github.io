@@ -1,0 +1,2327 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: local("Noto Sans TC"),
+    url("../fonts/NotoSansTC-Medium.woff") format("woff"),
+    url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
+}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none;
+  box-sizing: border-box;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Noto Sans TC";
+  font-weight: Medium;
+  scrollbar-color: transparent transparent;
+}
+.transparent-img {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(
+    3px 3px 3px rgba(89, 32, 96, 0.6)
+  ); /* x-offset, y-offset, blur-radius, color */
+}
+
+@media (max-width: 900px) {
+  /* header */
+  .header_right {
+    cursor: pointer;
+  }
+
+  /* hamburger */
+  .menu {
+    position: relative;
+    background-color: antiquewhite;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .menu nav {
+    position: absolute;
+    width: 96vw;
+    justify-content: space-between;
+    display: flex;
+    z-index: 4;
+    left: 0;
+    padding-top: 10;
+  }
+
+  .menu nav .logo {
+    width: 30vw;
+  }
+  .menu .logo img {
+    width: 40vw;
+    left: 0vw;
+    top: -20vh;
+  }
+  .menu_bgimg .bg img {
+    width: 110vw;
+    height: 110vh;
+    position: absolute;
+    left: -1vw;
+    top: -1vh;
+    filter: brightness(1.1);
+  }
+
+  /* 關閉漢堡的按鈕:S */
+  .menu_close {
+    text-align: center;
+  }
+
+  .menu_close {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu_bgimg .bm img {
+    position: absolute;
+    width: 100vw;
+    filter: brightness(0.85);
+    left: 0;
+    bottom: -30vh;
+    z-index: 0;
+  }
+  .menu_close a img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    width: 10vw;
+    text-shadow: 10px 10px 5px #5f1c68;
+    cursor: pointer;
+    margin: 0 0;
+  }
+  /* 關閉漢堡的按鈕:E */
+
+  .cloud_1 img {
+    position: absolute;
+    width: 70vw;
+    top: 12.2vh;
+    right: -70vw;
+    opacity: 70%;
+    z-index: 0;
+    animation-name: cloudfloat_menu;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 8s;
+  }
+
+  .cloud_2 img {
+    position: absolute;
+    width: 36vw;
+    bottom: 31vh;
+    right: -70vw;
+    opacity: 60%;
+    filter: brightness(0.98);
+    z-index: 1;
+    animation-name: cloudfloat_menu;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  .cloud_3 img {
+    position: absolute;
+    width: 60vw;
+    bottom: 7vh;
+    right: -70vw;
+    opacity: 85%;
+    filter: brightness(0.98);
+    z-index: 0;
+    animation-name: cloudfloat_menu;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    animation-delay: 9s;
+  }
+
+  .cloud_4 img {
+    position: absolute;
+    width: 39vw;
+    bottom: 36vh;
+    right: -70vw;
+    filter: brightness(0.98);
+    z-index: 1;
+    animation-name: cloudfloat_menu;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-delay: 11s;
+  }
+
+  @keyframes cloudfloat_menu {
+    0% {
+      right: -70vw;
+    }
+    100% {
+      right: 110vw;
+    }
+  }
+
+  .hunted img {
+    position: absolute;
+    width: 25vw;
+    left: 16vw;
+    bottom: 3vh;
+  }
+
+  .menu_sign img {
+    position: absolute;
+    width: 15vw;
+    left: 52vw;
+    bottom: 7.5vh;
+  }
+
+  .menu_hook img {
+    position: absolute;
+    width: 10vw;
+    right: 18vw;
+    top: 0;
+  }
+
+  .menu_mountain img {
+    position: absolute;
+    width: 120vw;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .alert {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+    z-index: 5;
+    opacity: 65%;
+  }
+
+  .alert img {
+    width: 10vw;
+    cursor: pointer;
+  }
+
+  /* menu的選項 畫面設定 */
+
+  .title {
+    position: absolute;
+    left: calc(50% - 40vw);
+    display: block;
+    justify-content: space-evenly;
+    width: 80vw;
+    z-index: 5;
+  }
+
+  .title div {
+    position: relative;
+    display: block;
+  }
+  .title .entertxt {
+    top: 11.5vh;
+  }
+  .title .heaven {
+    top: 35vh;
+  }
+  .title div h1 {
+    color: #262626;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .cutline,
+  .cutline2,
+  .cutline3 {
+    position: absolute;
+    left: calc(50% - 38vw);
+    top: 20vh;
+    width: 75vw;
+    height: 0.1vh;
+    background-color: #000000;
+    z-index: 5;
+  }
+  .cutline2 {
+    top: 35vh;
+  }
+  .cutline3 {
+    top: 63vh;
+  }
+
+  .menu p {
+    font-family: "Noto Sans TC";
+    font-weight: 200;
+  }
+
+  .wood_option {
+    position: absolute;
+    top: 22vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .wood_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+
+  .wood_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+  }
+
+  .wood_option div a {
+    z-index: 5;
+    text-align: center;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  .enter_option {
+    position: absolute;
+    top: 37vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .enter_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+  .enter_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+  }
+
+  .enter_option div a {
+    z-index: 3;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  .enter_option div a p {
+    display: inline-block;
+  }
+
+  .purple {
+    color: #5f1c68;
+    font-size: large;
+    opacity: 0;
+  }
+
+  .enter_option div:hover .purple {
+    opacity: 1;
+    transition: opacity 180ms ease-out;
+    width: 20vw;
+  }
+
+  .heaven_option {
+    position: relative;
+    top: 65vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .heaven_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+  .heaven_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+    width: 17vw;
+  }
+
+  .heaven_option div a {
+    z-index: 3;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  /* 漢堡選單 overflow 設定 */
+
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    visibility: hidden;
+    transition: ease-in 220ms;
+    z-index: 2000;
+  }
+
+  /* 開頭轉場動畫設定 */
+  #secondMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("../img/black_in.gif") center/cover no-repeat;
+    opacity: 100%;
+    pointer-events: none;
+    transition: opacity 0;
+    z-index: 2000;
+  }
+
+  .package {
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+  }
+  #logotype {
+    width: 50vw;
+    filter: brightness(0.9);
+    cursor: pointer;
+  }
+  #title,
+  #title2 {
+    width: 10vw;
+  }
+
+  #bag_burger {
+    text-align: center;
+    width: 20vw;
+    text-shadow: 10px 10px 5px #5f1c68;
+    cursor: pointer;
+  }
+
+  .header-forphone {
+    position: fixed;
+    width: 65vw;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    transition: transform ease;
+    z-index: 1000;
+    opacity: 1;
+    transform: scale(1);
+    background-color: #00000075;
+    border-radius: 50px;
+    top: 85vh;
+    left: 8vw;
+    padding: 5vw 10vw;
+    z-index: 1999;
+  }
+  .header-forphone p {
+    transform: scale(1);
+  }
+  .scrollingNumber-forphone {
+    position: absolute;
+    left: 10vw;
+  }
+  .M-forphone {
+    position: absolute;
+    left: 20vw;
+  }
+  .eleven-forphone {
+    margin-left: 55.5vw;
+    width: fit-content;
+  }
+  .header {
+    position: fixed;
+    width: 100vw;
+    color: #5f1c68;
+    /* font-family: Noto Sans TC; */
+    font-size: 16px;
+    font-style: Medium;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: transform ease;
+    z-index: 1000;
+  }
+  .header p {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    transform: scale(0);
+  }
+  .header img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .header_left {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5vw;
+  }
+  .header_left a {
+    height: max-content;
+  }
+  .header_center {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 62vw;
+  }
+  .header_center div {
+    display: inline-block;
+    transform: scale(0);
+  }
+  .altitude {
+    width: fit-content;
+    margin-right: 10vw;
+  }
+  .level {
+    width: fit-content;
+    margin-left: 5vw;
+  }
+  .scrollingNumber {
+    position: absolute;
+    top: 5.5vh;
+    left: 35vw;
+  }
+  .M {
+    position: absolute;
+    top: -0.1vh;
+    left: 38.7vw;
+  }
+  .eleven {
+    margin-left: 2vw;
+    width: fit-content;
+  }
+  .header_right {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+    width: 10vw;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* header翻牌效果:Start */
+
+  .flip-card {
+    position: relative;
+    left: 47.5vw;
+    top: -11vh;
+    width: 10vw;
+    transform: scale(0);
+    opacity: 0;
+  }
+  .flip-card-forphone {
+    position: absolute;
+    width: 28vw;
+    height: 10vh;
+    z-index: 1001;
+    transform: scale(1);
+    opacity: 1;
+    left: 31.5vw;
+    top: 2.2vh;
+  }
+
+  .thecard,
+  .thecard-forphone {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    background-image: url(../img/package/title.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  /* header翻牌效果:End */
+
+  /* 背包頁:start */
+  #closed_backpack {
+    margin-top: 8vh;
+    width: 90vw;
+    left: 4vw;
+  }
+  .openbag {
+    position: absolute;
+    width: 90vw;
+    margin-top: 8vh;
+    opacity: 0;
+    left: 4vw;
+  }
+  .openbag.active {
+    opacity: 1;
+    animation: apear;
+    animation-duration: 1800ms;
+  }
+  @keyframes apear {
+    0% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .bag {
+    display: inline-block;
+    width: 100vw;
+    height: 50vh;
+    text-align: center;
+    vertical-align: middle;
+    animation-delay: 100ms;
+  }
+  .contain {
+    margin-top: 8vh;
+    margin-left: 2vw;
+    position: relative;
+    z-index: 0;
+  }
+  .left-main-line,
+  .left-first-line,
+  .left-second-line,
+  .span1,
+  .span2,
+  .span3,
+  .span5,
+  .span6,
+  .right-first-line,
+  .right-second-line,
+  .right-third-line,
+  .span7,
+  .span8,
+  .span9 {
+    transform: scale(0);
+  }
+  .frames {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .frames-forphone {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .living-forphone,
+  .other-forphone,
+  .food-forphone,
+  .cloth-forphone,
+  .cook-forphone,
+  .walk-forphone {
+    z-index: 5;
+    position: absolute;
+    width: 20vw;
+  }
+  .cloth-forphone {
+    top: -22vh;
+    left: 70vw;
+  }
+  .living-forphone {
+    top: -40vh;
+    left: 38vw;
+  }
+  .other-forphone {
+    top: -25vh;
+    left: 38vw;
+  }
+  .cook-forphone {
+    top: -23vh;
+    left: 2vw;
+  }
+  .walk-forphone {
+    top: -8vh;
+    left: 2vw;
+  }
+  .food-forphone {
+    top: -5vh;
+    left: 38vw;
+  }
+  .text {
+    color: #7b3e0e;
+    font-family: Noto Sans TC;
+    font-style: Medium;
+    letter-spacing: 1.1px;
+    width: 20vw;
+    height: 30vh;
+  }
+  .title {
+    font-weight: 900;
+    font-size: 6vw;
+  }
+  .explain {
+    font-size: 3.5vw;
+  }
+  .detail {
+    font-size: 4vw;
+  }
+  .bookbackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url(../img/paler.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+  }
+  .bookbackground.active {
+    animation: frame-content;
+    animation-duration: 0.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+  }
+  .living-book-forphone,
+  .other-book-forphone,
+  .food-book-forphone,
+  .cook-book-forphone,
+  .walk-book-forphone,
+  .cloth-book-forphone {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    transform: scale(0);
+  }
+  .living-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .other-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .food-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .cook-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .walk-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .cloth-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  #living-book-forphone,
+  #other-book-forphone,
+  #food-book-forphone,
+  #cook-book-forphone,
+  #walk-book-forphone,
+  #cloth-book-forphone {
+    width: 90vw;
+    position: fixed;
+    margin-top: 20vh;
+    margin-left: 5vw;
+    z-index: 1;
+  }
+  .living-frame,
+  .other-frame,
+  .food-frame1,
+  .food-frame2,
+  .food-frame3,
+  .food-frame4,
+  .cook-frame1,
+  .cook-frame2,
+  .walk-frame,
+  .cloth-frame1,
+  .cloth-frame2,
+  .cloth-frame3 {
+    scale: 0;
+    opacity: 0;
+  }
+  .living-frame1,
+  .living-frame2,
+  .other-frame1,
+  .other-frame2,
+  .food-frame1-1,
+  .food-frame2-1,
+  .food-frame3-1,
+  .food-frame4-1,
+  .food-frame5,
+  .food-frame6,
+  .food-frame7,
+  .cook-frame1-1,
+  .cook-frame2-1,
+  .cook-frame3,
+  .cook-frame4,
+  .walk-frame1,
+  .walk-frame2,
+  .cloth-frame1-1,
+  .cloth-frame2-1,
+  .cloth-frame3-1,
+  .cloth-frame4,
+  .cloth-frame5,
+  .cloth-frame6 {
+    width: 90vw;
+    height: 70vh;
+    position: fixed;
+    opacity: 0;
+    scale: 0;
+  }
+  .living-frame1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .living-frame2.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .other-frame1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .other-frame2.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame1-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame2-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame3-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame4-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame5.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame6.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .food-frame7.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cook-frame1-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cook-frame2-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cook-frame3.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cook-frame4.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .walk-frame1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .walk-frame2.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame1-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame2-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame3-1.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame4.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame5.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  .cloth-frame6.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    scale: 1;
+  }
+  @keyframes frame-content {
+    0% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #living-phone-x1,
+  #living-phone-x2,
+  #other-phone-x1,
+  #other-phone-x2,
+  #food-phone-x1,
+  #food-phone-x2,
+  #food-phone-x3,
+  #food-phone-x4,
+  #food-phone-x5,
+  #food-phone-x6,
+  #food-phone-x7,
+  #cook-phone-x1,
+  #cook-phone-x2,
+  #cook-phone-x3,
+  #cook-phone-x4,
+  #walk-phone-x1,
+  #walk-phone-x2,
+  #cloth-phone-x1,
+  #cloth-phone-x2,
+  #cloth-phone-x3,
+  #cloth-phone-x4,
+  #cloth-phone-x5,
+  #cloth-phone-x6 {
+    position: absolute;
+    width: 8vw;
+    margin-left: 79vw;
+    margin-top: 24vh;
+    z-index: 2;
+    cursor: pointer;
+  }
+  #living-forphone-arrow1,
+  #other-forphone-arrow1,
+  #food-forphone-arrow1,
+  #food-forphone-arrow3,
+  #food-forphone-arrow5,
+  #food-forphone-arrow7,
+  #food-forphone-arrow9,
+  #food-forphone-arrow11,
+  #cook-forphone-arrow1,
+  #cook-forphone-arrow3,
+  #cook-forphone-arrow5,
+  #walk-forphone-arrow1,
+  #cloth-forphone-arrow1,
+  #cloth-forphone-arrow3,
+  #cloth-forphone-arrow5,
+  #cloth-forphone-arrow7,
+  #cloth-forphone-arrow9 {
+    position: absolute;
+    width: 7vw;
+    margin-top: 66vh;
+    margin-left: 78vw;
+    z-index: 2;
+    cursor: pointer;
+  }
+  #living-forphone-arrow2,
+  #other-forphone-arrow2,
+  #food-forphone-arrow2,
+  #food-forphone-arrow4,
+  #food-forphone-arrow6,
+  #food-forphone-arrow8,
+  #food-forphone-arrow10,
+  #food-forphone-arrow12,
+  #cook-forphone-arrow2,
+  #cook-forphone-arrow4,
+  #cook-forphone-arrow6,
+  #walk-forphone-arrow2,
+  #cloth-forphone-arrow2,
+  #cloth-forphone-arrow4,
+  #cloth-forphone-arrow6,
+  #cloth-forphone-arrow8,
+  #cloth-forphone-arrow10 {
+    position: absolute;
+    width: 7vw;
+    margin-top: 66vh;
+    margin-left: 23vw;
+    z-index: 2;
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+  .living-frame1 .title,
+  .living-frame2 .title,
+  .other-frame1 .title,
+  .other-frame2 .title,
+  .food-frame1-1 .title,
+  .food-frame2-1 .title,
+  .food-frame3-1 .title,
+  .food-frame4-1 .title,
+  .food-frame5 .title,
+  .food-frame6 .title,
+  .food-frame7 .title,
+  .cook-frame1-1 .title,
+  .cook-frame2-1 .title,
+  .cook-frame3 .title,
+  .cook-frame4 .title,
+  .walk-frame1 .title,
+  .walk-frame2 .title,
+  .cloth-frame1-1 .title,
+  .cloth-frame2-1 .title,
+  .cloth-frame3-1 .title,
+  .cloth-frame4 .title,
+  .cloth-frame5 .title,
+  .cloth-frame6 .title {
+    width: 40vw;
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 22vw;
+    z-index: 2;
+  }
+  .living-frame1 .explain,
+  .living-frame2 .explain,
+  .other-frame1 .explain,
+  .other-frame2 .explain,
+  .food-frame1-1 .explain,
+  .food-frame2-1 .explain,
+  .food-frame3-1 .explain,
+  .food-frame4-1 .explain,
+  .food-frame5 .explain,
+  .food-frame6 .explain,
+  .food-frame7 .explain,
+  .cook-frame1-1 .explain,
+  .cook-frame2-1 .explain,
+  .cook-frame3 .explain,
+  .cook-frame4 .explain,
+  .walk-frame1 .explain,
+  .walk-frame2 .explain,
+  .cloth-frame1-1 .explain,
+  .cloth-frame2-1 .explain,
+  .cloth-frame3-1 .explain,
+  .cloth-frame4 .explain,
+  .cloth-frame5 .explain,
+  .cloth-frame6 .explain {
+    position: absolute;
+    margin-top: 29vh;
+    margin-left: 27.5vw;
+    z-index: 2;
+  }
+  .living-frame1 .detail,
+  .living-frame2 .detail,
+  .other-frame1 .detail,
+  .other-frame2 .detail,
+  .food-frame1-1 .detail,
+  .food-frame2-1 .detail,
+  .food-frame3-1 .detail,
+  .food-frame4-1 .detail,
+  .food-frame5 .detail,
+  .food-frame6 .detail,
+  .food-frame7 .detail,
+  .cook-frame1-1 .detail,
+  .cook-frame2-1 .detail,
+  .cook-frame3 .detail,
+  .cook-frame4 .detail,
+  .walk-frame1 .detail,
+  .walk-frame2 .detail,
+  .cloth-frame1-1 .detail,
+  .cloth-frame2-1 .detail,
+  .cloth-frame3-1 .detail,
+  .cloth-frame4 .detail,
+  .cloth-frame5 .detail,
+  .cloth-frame6 .detail {
+    position: absolute;
+    margin-top: 55vh;
+    margin-left: 27.5vw;
+    z-index: 2;
+  }
+  .tent-detail,
+  .sleepbag-detail,
+  .buttery-detail,
+  .garbagebag-detail,
+  .water-detail,
+  .map-detail,
+  .innerfood-detail,
+  .rope-detail,
+  .flashlight-detail,
+  .south-detail,
+  .emergencybox-detail,
+  .lighter-detail,
+  .stove-detail,
+  .spiderstove-detail,
+  .knife-detail,
+  .pole-detail,
+  .shoes-detail,
+  .hot-detail,
+  .hat-detail,
+  .pants-detail,
+  .sweat-detail,
+  .coat-detail,
+  .raincoat-detail {
+    margin-top: 59vh;
+    margin-left: 29.5vw;
+    width: 50vw;
+    opacity: 1;
+    display: inline-block;
+  }
+  .tent-detail p,
+  .sleepbag-detail p,
+  .garbagebag-detail p,
+  .buttery-detail p,
+  .water-detail p,
+  .map-detail p,
+  .innerfood-detail p,
+  .rope-detail p,
+  .flashlight-detail p,
+  .south-detail p,
+  .emergencybox-detail p,
+  .lighter-detail p,
+  .stove-detail p,
+  .spiderstove-detail p,
+  .knife-detail p,
+  .pole-detail p,
+  .shoes-detail p,
+  .hot-detail p,
+  .hat-detail p,
+  .pants-detail p,
+  .sweat-detail p,
+  .coat-detail p,
+  .raincoat-detail p {
+    font-size: 3vw;
+    font-weight: 400;
+    line-height: 2.2vh;
+    vertical-align: middle;
+    display: inline-block;
+    width: 50vw;
+  }
+  #tent {
+    position: absolute;
+    width: 48vw;
+    margin-top: 36vh;
+    margin-left: 28vw;
+    z-index: 2;
+  }
+  #sleepbag {
+    position: absolute;
+    width: 40vw;
+    margin-top: 36vh;
+    margin-left: 33vw;
+    z-index: 2;
+  }
+  #garbagebag {
+    position: absolute;
+    width: 25vw;
+    margin-top: 34vh;
+    margin-left: 40vw;
+    z-index: 2;
+  }
+  #buttery {
+    position: absolute;
+    width: 18vw;
+    margin-top: 33vh;
+    margin-left: 42vw;
+    z-index: 2;
+  }
+  #water {
+    position: absolute;
+    width: 27vw;
+    margin-top: 34vh;
+    margin-left: 37vw;
+    z-index: 2;
+  }
+  #map {
+    position: absolute;
+    width: 35vw;
+    margin-top: 35vh;
+    margin-left: 30vw;
+    z-index: 2;
+  }
+  #innerfood {
+    position: absolute;
+    width: 37vw;
+    margin-top: 36vh;
+    margin-left: 30vw;
+    z-index: 2;
+  }
+  #rope {
+    position: absolute;
+    width: 26vw;
+    rotate: 25deg;
+    margin-top: 29vh;
+    margin-left: 38vw;
+    z-index: 2;
+  }
+  #flashlight {
+    position: absolute;
+    width: 35vw;
+    margin-top: 38vh;
+    margin-left: 32vw;
+    z-index: 2;
+  }
+  #south {
+    position: absolute;
+    width: 36vw;
+    margin-top: 35vh;
+    margin-left: 32vw;
+    z-index: 2;
+  }
+  #emergencybox {
+    position: absolute;
+    width: 36vw;
+    margin-top: 33vh;
+    margin-left: 31vw;
+    z-index: 2;
+  }
+  #knife {
+    position: absolute;
+    width: 17vw;
+    margin-top: 33vh;
+    margin-left: 42vw;
+    rotate: -90deg;
+    z-index: 2;
+  }
+  #stove {
+    position: absolute;
+    width: 30vw;
+    margin-top: 32vh;
+    margin-left: 34vw;
+    z-index: 2;
+  }
+  #lighter {
+    position: absolute;
+    width: 13vw;
+    margin-top: 33vh;
+    margin-left: 45vw;
+    z-index: 2;
+  }
+  #spiderstove {
+    position: absolute;
+    width: 50vw;
+    margin-top: 35vh;
+    margin-left: 27vw;
+    z-index: 2;
+  }
+  #shoes {
+    position: absolute;
+    width: 40vw;
+    margin-top: 33vh;
+    margin-left: 34vw;
+    z-index: 2;
+  }
+  #pole {
+    transform: rotate(18deg);
+    position: absolute;
+    width: 10vw;
+    margin-top: 30vh;
+    margin-left: 46vw;
+    z-index: 2;
+  }
+  #coat {
+    position: absolute;
+    width: 26vw;
+    margin-top: 32vh;
+    margin-left: 38vw;
+    z-index: 2;
+  }
+  #hat {
+    position: absolute;
+    width: 36vw;
+    margin-top: 32vh;
+    margin-left: 33vw;
+    z-index: 2;
+  }
+  #sweat {
+    position: absolute;
+    width: 36vw;
+    margin-top: 36vh;
+    margin-left: 33vw;
+    z-index: 2;
+  }
+  #hot {
+    position: absolute;
+    width: 36vw;
+    margin-top: 32vh;
+    margin-left: 33vw;
+    z-index: 2;
+  }
+  #raincoat {
+    position: absolute;
+    width: 36vw;
+    margin-top: 33vh;
+    margin-left: 33vw;
+    z-index: 2;
+  }
+  #pants {
+    position: absolute;
+    width: 32vw;
+    margin-top: 31vh;
+    margin-left: 35vw;
+    z-index: 2;
+  }
+  /*hurt start*/
+
+  .hurt {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 30;
+  }
+  .hurt_forest {
+    position: absolute;
+    height: 100vh;
+    margin-top: 0vh;
+    overflow: hidden;
+  }
+  .hurt_forest img {
+    position: relative;
+    width: auto;
+    height: 100vh;
+    left: -50vw;
+    top: 0vh;
+  }
+
+  .hurthuman {
+    overflow: hidden;
+    margin-top: 10vh;
+    width: 70vw;
+    height: 82vh;
+  }
+  #human {
+    width: 85vw;
+    z-index: 3;
+    cursor: pointer;
+    overflow-x: hidden;
+  }
+  #whole-human {
+    width: 100vw;
+    margin-left: 11vw;
+    margin-top: 21vh;
+    overflow-x: hidden;
+  }
+  .linear {
+    position: fixed;
+    margin-top: -20vh;
+    background: linear-gradient(#e3c9eb00, #e3c9eb);
+    width: 100vw;
+    height: 20vh;
+  }
+  .talk {
+    margin-left: 58vw;
+    margin-top: -97vh;
+  }
+  #talkframe {
+    width: 31.5vw;
+  }
+  .typetext {
+    width: 22vw;
+    color: #5f1c68;
+    font-family: Noto Sans TC;
+    font-size: 1.25vw;
+    font-style: Medium;
+    font-weight: 500;
+    letter-spacing: 0.1vw;
+    line-height: normal;
+    margin-top: -60vh;
+    margin-left: 7vw;
+  }
+
+  .hurt-second-content {
+    margin-top: 8vh;
+    position: absolute;
+    width: 95vw;
+    height: 85vh;
+    /* opacity: 0; */
+    margin-top: -4;
+    overflow-x: hidden;
+  }
+  .hurt-second-content.active {
+    margin-top: 8vh;
+    opacity: 1;
+    overflow-x: hidden;
+  }
+
+  .hurt_left-main-line,
+  .hurt_left-first-line,
+  .hurt_left-second-line,
+  .hurt_left-third-line,
+  .hurt_left-main-line span:nth-child(1),
+  .hurt_left-first-line span:nth-child(1),
+  .hurt_left-first-line span:nth-child(1),
+  .hurt_left-first-line span:nth-child(2),
+  .hurt_left-second-line span:nth-child(1),
+  .hurt_left-third-line span:nth-child(1),
+  .hurt_right-first-line,
+  .hurt_right-second-line,
+  .hurt_right-third-line,
+  .hurt_right-first-line span:nth-child(1),
+  .hurt_right-second-line span:nth-child(1),
+  .hurt_right-second-line span:nth-child(2),
+  .hurt_right-third-line span:nth-child(1) {
+    transform: scale(0);
+  }
+  #cycle,
+  #return,
+  #spinreturn,
+  #eight,
+  #spin {
+    transform: scale(0);
+  }
+  .hurt_frames-forphone {
+    position: absolute;
+    top: 0vh;
+    opacity: 1;
+    scale: 1;
+  }
+  #cycle-forphone,
+  #return-forphone,
+  #spinreturn-forphone,
+  #eight-forphone,
+  #spin-forphone {
+    z-index: 5;
+    position: absolute;
+    width: 20vw;
+  }
+  #cycle-forphone {
+    top: 36vh;
+    left: 9vw;
+  }
+  #return-forphone {
+    top: 50vh;
+    left: 6vw;
+  }
+  #spinreturn-forphone {
+    top: 60vh;
+    left: 34vw;
+  }
+  #eight-forphone {
+    top: 47vh;
+    left: 75vw;
+  }
+  #spin-forphone {
+    top: 60vh;
+    left: 64vw;
+  }
+  .cycle-forphone-text,
+  .return-forphone-text,
+  .spinreturn-forphone-text,
+  .eight-forphone-text,
+  .spin-forphone-text {
+    color: #7b3e0e;
+    font-family: Noto Sans TC;
+    font-style: Medium;
+    letter-spacing: 1.1px;
+    width: 50vw;
+    position: absolute;
+    margin-top: -39.5vh;
+    margin-left: 31vw;
+  }
+  .hurt_title-forphone {
+    font-weight: 900;
+    font-size: 6vw;
+    line-height: 5vh;
+  }
+  .hurt_explain-forphone {
+    font-size: 3.5vw;
+    line-height: 2.4vh;
+  }
+  .cycle_detail1-forphone,
+  .cycle_detail2-forphone,
+  .cycle_detail3-forphone,
+  .return_detail1-forphone,
+  .return_detail2-forphone,
+  .return_detail3-forphone,
+  .return_detail4-forphone,
+  .spinreturn_detail1-forphone,
+  .spinreturn_detail2-forphone,
+  .spinreturn_detail3-forphone,
+  .eight_detail1-forphone,
+  .eight_detail2-forphone,
+  .eight_detail3-forphone,
+  .spin_detail1-forphone,
+  .spin_detail2-forphone {
+    position: absolute;
+    margin-top: 2vh;
+    font-size: 3vw;
+    line-height: 2vh;
+    opacity: 0;
+    scale: 0;
+  }
+  .cycle_detail1-forphone.active,
+  .cycle_detail2-forphone.active,
+  .cycle_detail3-forphone.active,
+  .return_detail1-forphone.active,
+  .return_detail2-forphone.active,
+  .return_detail3-forphone.active,
+  .return_detail4-forphone.active,
+  .spinreturn_detail1-forphone.active,
+  .spinreturn_detail2-forphone.active,
+  .spinreturn_detail3-forphone.active,
+  .eight_detail1-forphone.active,
+  .eight_detail2-forphone.active,
+  .eight_detail3-forphone.active,
+  .spin_detail1-forphone.active,
+  .spin_detail2-forphone.active {
+    opacity: 1;
+    scale: 1;
+  }
+  .hurt_bookbackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    background-image: url(../img/paler.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hurt_bookbackground.active {
+    animation: frame-content;
+    animation-duration: 0.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+  }
+  .cycle-book-forphone,
+  .return-book-forphone,
+  .spinreturn-book-forphone,
+  .eight-book-forphone,
+  .spin-book-forphone {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    transform: scale(0);
+  }
+  .cycle-book-forphone.active,
+  .return-book-forphone.active,
+  .spinreturn-book-forphone.active,
+  .eight-book-forphone.active,
+  .spin-book-forphone.active {
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  #cycle-book-forphone,
+  #return-book-forphone,
+  #spinreturn-book-forphone,
+  #eight-book-forphone,
+  #spin-book-forphone {
+    width: 90vw;
+    position: fixed;
+    margin-top: 20vh;
+    margin-left: 5vw;
+    z-index: 1;
+  }
+  .cycle-frame-forphone,
+  .return-frame-forphone,
+  .spinreturn-frame-forphone,
+  .eight-frame-forphone,
+  .spin-frame-forphone {
+    width: 70vw;
+    height: 70vh;
+    position: fixed;
+    opacity: 0;
+  }
+  .cycle-frame-forphone.active,
+  .return-frame-forphone.active,
+  .spinreturn-frame-forphone.active,
+  .eight-frame-forphone.active,
+  .spin-frame-forphone.active {
+    animation: frame-content;
+    animation-duration: 1.5s;
+    opacity: 1;
+    top: 0vh;
+    left: 0vw;
+  }
+  @keyframes frame-content {
+    0% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #cycle-x-forphone,
+  #return-x-forphone,
+  #spinreturn-x-forphone,
+  #eight-x-forphone,
+  #spin-x-forphone {
+    position: absolute;
+    width: 10vw;
+    margin-left: 78vw;
+    margin-top: 24vh;
+    z-index: 2;
+    cursor: pointer;
+  }
+  #cycle-return-forphone,
+  #return-return-forphone,
+  #spinreturn-return-forphone,
+  #eight-return-forphone,
+  #spin-return-forphone {
+    position: fixed;
+    width: 15vw;
+    margin-left: 74vw;
+    margin-top: -1.5vh;
+  }
+  .cycle-return-forphone,
+  .return-return-forphone,
+  .spinreturn-return-forphone,
+  .eight-return-forphone,
+  .spin-return-forphone {
+    opacity: 0;
+    scale: 0;
+  }
+  .cycle-return-forphone.active,
+  .return-return-forphone.active,
+  .spinreturn-return-forphone.active,
+  .eight-return-forphone.active,
+  .spin-return-forphone.active {
+    scale: 1;
+    opacity: 1;
+    animation: apear;
+    animation-duration: 500ms;
+  }
+
+  #cycle-gif-forphone,
+  #return-gif-forphone,
+  #spinreturn-gif-forphone,
+  #eight-gif-forphone,
+  #spin-gif-forphone {
+    width: 60vw;
+    margin-top: 45vh;
+    margin-left: 25vw;
+  }
+
+  .cycle-forphone-hint1,
+  .cycle-forphone-hint2,
+  .cycle-forphone-hint3,
+  .return-forphone-hint1,
+  .return-forphone-hint2,
+  .return-forphone-hint3,
+  .return-forphone-hint4,
+  .spinreturn-forphone-hint1,
+  .spinreturn-forphone-hint2,
+  .spinreturn-forphone-hint3,
+  .eight-forphone-hint1,
+  .eight-forphone-hint2,
+  .eight-forphone-hint3,
+  .spin-forphone-hint1,
+  .spin-forphone-hint2 {
+    opacity: 0;
+    scale: 0;
+  }
+  .cycle-forphone-hint1.active,
+  .cycle-forphone-hint2.active,
+  .cycle-forphone-hint3.active,
+  .return-forphone-hint1.active,
+  .return-forphone-hint2.active,
+  .return-forphone-hint3.active,
+  .return-forphone-hint4.active,
+  .spinreturn-forphone-hint1.active,
+  .spinreturn-forphone-hint2.active,
+  .spinreturn-forphone-hint3.active,
+  .eight-forphone-hint1.active,
+  .eight-forphone-hint2.active,
+  .eight-forphone-hint3.active,
+  .spin-forphone-hint1.active,
+  .spin-forphone-hint2.active {
+    animation: apear;
+    animation-duration: 500ms;
+    opacity: 1;
+    scale: 1;
+  }
+  #cycle-forphone-hint1 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -14vh;
+    margin-left: 70vw;
+    cursor: pointer;
+  }
+  #cycle-forphone-hint2 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -12vh;
+    margin-left: 30vw;
+    cursor: pointer;
+  }
+  #cycle-forphone-hint3 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -14vh;
+    margin-left: 70vw;
+    cursor: pointer;
+  }
+  #return-forphone-hint1 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -16vh;
+    margin-left: 50vw;
+    cursor: pointer;
+  }
+  #return-forphone-hint2 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -10vh;
+    margin-left: 48vw;
+    cursor: pointer;
+  }
+  #return-forphone-hint3 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -16vh;
+    margin-left: 50vw;
+    cursor: pointer;
+  }
+  #return-forphone-hint4 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -18vh;
+    margin-left: 55vw;
+    cursor: pointer;
+  }
+  #spinreturn-forphone-hint1 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -18vh;
+    margin-left: 68vw;
+    cursor: pointer;
+  }
+  #spinreturn-forphone-hint2 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -15vh;
+    margin-left: 40vw;
+    cursor: pointer;
+  }
+  #spinreturn-forphone-hint3 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -22vh;
+    margin-left: 62vw;
+    cursor: pointer;
+  }
+  #eight-forphone-hint1 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -13vh;
+    margin-left: 40vw;
+    cursor: pointer;
+  }
+  #eight-forphone-hint2 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -25vh;
+    margin-left: 56vw;
+    cursor: pointer;
+  }
+  #eight-forphone-hint3 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -13vh;
+    margin-left: 40vw;
+    cursor: pointer;
+  }
+  #spin-forphone-hint1 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -16vh;
+    margin-left: 38vw;
+    cursor: pointer;
+  }
+  #spin-forphone-hint2 {
+    position: fixed;
+    width: 14vw;
+    margin-top: -20vh;
+    margin-left: 38vw;
+    cursor: pointer;
+  }
+  @keyframes apear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #hurt_start_arrow {
+    position: absolute;
+    margin-top: -3.8vh;
+    margin-left: 25vw;
+    width: 2vw;
+    cursor: pointer;
+  }
+
+  .hurt_start_arrow {
+    scale: 0;
+    opacity: 0;
+  }
+  .hurt_start_arrow.active {
+    scale: 1;
+    opacity: 1;
+    animation: apear;
+    animation-duration: 1s;
+  }
+  .gradient span {
+    position: absolute;
+    margin-top: -10vh;
+    z-index: 1;
+    height: 40vh;
+    width: 100vw;
+    background: linear-gradient(#eadfff00, #eadfff, #eadfff00);
+  }
+
+  /* 登山口開始 */
+  .pareallax {
+    background-image: url(../img/main/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    height: 100vh;
+    /* display: flex; */
+    overflow: hidden;
+  }
+
+  #scene div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: -1vw;
+    top: -1vh;
+  }
+
+  .entry {
+    position: relative;
+    top: 5vh;
+  }
+  .bg {
+    background-image: url(../img/login/深處.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 102vw;
+    height: 110vh;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 5vh;
+  }
+  .bg::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      bottom to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+  }
+  .entrybg_1 img {
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    left: -45vw;
+    z-index: 1;
+  }
+  .entrybg_2 img {
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    left: -47vw;
+    bottom: -10vh;
+    z-index: 2;
+  }
+  .entrybg_3 img {
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    left: -49vw;
+    top: 5vh;
+    z-index: 3;
+  }
+  .gress img {
+    position: absolute;
+    width: 106vw;
+    bottom: 39vh;
+    z-index: 4;
+  }
+  .Btns {
+    left: 16vw;
+    width: 80vw;
+    margin-top: 18vh;
+    margin-left: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    position: absolute;
+    z-index: 100;
+    display: block;
+    align-items: center;
+  }
+
+  .Btn-purcahse,
+  .Btn-entry,
+  .Btn-Login {
+    margin: 0vh 0vw 2vh 0vw;
+    width: 50vw;
+    height: 7vh;
+    background-image: url(../img/entery/grn-default.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .Btn-purcahse a,
+  .Btn-entry a,
+  .Btn-Login a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffe0b1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 2.8vh 8vw 0vh 0vw;
+    line-height: 0;
+  }
+  .Btn-purcahse:hover,
+  .Btn-entry:hover,
+  .Btn-login:hover {
+    background-image: url(../img/entery/grn-hover.png);
+  }
+  .Btn-purcahse a:hover,
+  .Btn-entry a:hover,
+  .Btn-login a:hover {
+    color: #ffe0b1;
+  }
+  .Btn-purcahse:active,
+  .Btn-entry:active,
+  .Btn-login:active {
+    background-image: url(../img/entery/grn-active.png);
+  }
+  .Btn-purcahse a:active,
+  .Btn-entry a:active,
+  .Btn-login a:active {
+    color: #b29d7c;
+  }
+
+  /* footer */
+  .footer {
+    position: absolute;
+    height: 32vh;
+    background-color: #2b0c40;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    flex-direction: column;
+  }
+  .footer .contents {
+    margin-top: 0;
+    width: 90vw;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .contents .shortcuts {
+    width: 90vw;
+    font-family: Micro5;
+    font-size: 12px;
+    line-height: auto;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+  }
+  .shortcuts a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  .shortcuts a:hover {
+    border-bottom: solid 1.5px #ffffff;
+  }
+  .shortcuts p {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    padding-bottom: 0vh;
+  }
+  .MEMBERSHIP {
+    border-bottom: solid 1.5px #ffffff;
+  }
+  .divider {
+    width: -webkit-fill-available;
+    height: 0.1vh;
+    background-color: #5e3d6a;
+  }
+  .contents .infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 9px;
+    font-weight: 300;
+    color: #ffffff;
+  }
+  .infos div {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1vh;
+  }
+  .infos div p {
+    margin-right: 1vw;
+  }
+  .copyright {
+    font-family: Noto Sans TC;
+    color: #ffffff;
+    line-height: 29px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vh;
+  }
+  .copyicon {
+    font-size: 13px;
+    padding-right: 4px;
+  }
+  .copytext {
+    font-size: 9px;
+  }
+
+  /* parallax設定 */
+  .package,
+  .hurt,
+  .entry {
+    background-size: cover;
+    background-attachment: fixed; /* 固定背景，創造parallax效果 */
+  }
+  .entry {
+    height: 105vh;
+  }
+  .hurt {
+    position: relative;
+    top: -10vh;
+  }
+  #hurt-entry {
+    background-color: #ba5200;
+    height: auto;
+    width: 100vw;
+    height: 60vh;
+    position: absolute;
+    top: 150vh;
+  }
+  /* 轉場 */
+  .parallax {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .transcloud1 {
+    width: fit-content;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    top: 103vh;
+    right: -10vw;
+    z-index: 100;
+    filter: brightness(0.93);
+    transition: top 0.3s linear;
+  }
+  .transcloud1 img {
+    width: 150vw;
+    opacity: 0;
+  }
+  .transcloud2 {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 125vh;
+    right: -18vw;
+    z-index: 100;
+    transition: top 0.3s linear;
+    transform: scaleX(-1);
+    filter: brightness(0.99);
+  }
+  .transcloud2 img {
+    width: 150vw;
+    opacity: 0;
+  }
+  .transcloud3 {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 146vh;
+    right: 20vw;
+    z-index: 100;
+    filter: brightness(1.03);
+    transition: top 0.3s linear;
+  }
+  .transcloud3 img {
+    width: 150vw;
+    opacity: 0;
+  }
+  .transcloud4 {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 160vh;
+    right: -42vw;
+    z-index: 100;
+    filter: brightness(1.07);
+    transition: top 0.3s linear;
+    transform: scaleX(-1);
+  }
+  .transcloud4 img {
+    width: 150vw;
+    opacity: 0;
+  }
+  /* 轉場22 */
+  .gress {
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 10vh;
+    z-index: 10;
+    filter: brightness(0.93);
+    transition: top 0.3s linear;
+    overflow-x: hidden;
+  }
+  .gress img {
+    width: 100vw;
+  }
+  .transcloud6 {
+    width: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 422vh;
+    /* right: -18vw; */
+    z-index: 100;
+    transition: top 0.3s linear;
+    transform: scaleX(-1);
+    filter: brightness(0.99);
+  }
+  .transcloud6 img {
+    width: 100vw;
+  }
+  .transcloud7 {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 443vh;
+    right: 20vw;
+    z-index: 100;
+    filter: brightness(1.03);
+    transition: top 0.3s linear;
+  }
+  .transcloud7 img {
+    width: 150vw;
+  }
+  .transcloud8 {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 448vh;
+    right: -42vw;
+    z-index: 100;
+    filter: brightness(1.07);
+    transition: top 0.3s linear;
+    transform: scaleX(-1);
+  }
+  .transcloud8 img {
+    width: 150vw;
+  }
+
+  .bounce.active {
+    position: absolute;
+    transform: scale(1);
+    width: 100vw;
+    margin-top: 0vh;
+    background-color: #00000065;
+    z-index: 1000;
+  }
+  .bounce {
+    position: absolute;
+    transform: scale(0);
+    margin-top: -25vh;
+    background-color: linear-gradient(#00000000, #00000065, #00000000);
+    z-index: -100;
+  }
+  #bounce-frame {
+    width: 90vw;
+    margin-top: 65vh;
+    margin-left: 5vw;
+  }
+  #bounce-text {
+    position: absolute;
+    margin-left: 13vw;
+    margin-top: -12vh;
+    color: #7b3e0e;
+    line-height: 1.5vh;
+    font-size: 1vh;
+  }
+  #bounce-arrow {
+    margin-top: 72vh;
+    margin-left: -11vw;
+    position: absolute;
+    width: 5vw;
+  }
+  #bounce-go {
+    margin-top: -10vh;
+    margin-left: 72vw;
+    position: absolute;
+    color: #ffe0b1;
+    font-size: 2.5vh;
+  }
+  .prepare-scroll-hint img {
+    right: 6vw;
+    width: 0vw;
+    scale: 0;
+    opacity: 0;
+    top: 85vh;
+  }
+
+  /* 跳轉小青蛙 */
+  #frogjump {
+    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fafafa;
+    z-index: 2001;
+    pointer-events: none;
+  }
+  #frogjump img {
+    position: absolute;
+    margin: 34vh -11vw;
+    width: 120%;
+    height: fit-content;
+    background-color: #fafafa;
+  }
+}

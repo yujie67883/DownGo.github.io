@@ -69,7 +69,14 @@
         <div class="password">
           <h5>密碼</h5>
           <div class="box">
-            <input type="password" placeholder="請輸入密碼" />
+            <input
+              class="password-input"
+              type="password"
+              placeholder="請輸入密碼"
+            />
+            <div class="eyes">
+              <img src="./img/login_signup/visibility.svg" alt="" />
+            </div>
             <input
               class="biocheck"
               type="password"
@@ -81,14 +88,41 @@
           <h5>出生日期</h5>
           <div class="box">
             <input class="year" type="text" placeholder="年" />
-            <input class="month" type="" placeholder="月" />
+            <div class="dropdown-container">
+              <input class="month" type="text" placeholder="月" readonly />
+              <div class="month-dropdown dropdown">
+                <div class="dropdown-option">January</div>
+                <div class="dropdown-option">Febuary</div>
+                <div class="dropdown-option">March</div>
+                <div class="dropdown-option">April</div>
+                <div class="dropdown-option">May</div>
+                <div class="dropdown-option">June</div>
+                <div class="dropdown-option">July</div>
+                <div class="dropdown-option">August</div>
+                <div class="dropdown-option">September</div>
+                <div class="dropdown-option">October</div>
+                <div class="dropdown-option">November</div>
+                <div class="dropdown-option">December</div>
+              </div>
+            </div>
+            <div class="pixeldropdown">
+              <img src="./img/goods/pixel_dropdown.svg" alt="" />
+            </div>
             <input class="date" type="text" placeholder="日" />
           </div>
         </div>
         <div class="phone">
           <h5>電話號碼</h5>
           <div class="box">
-            <input class="country" type="text" placeholder="+886" />
+            <div class="dropdown-container">
+              <input class="country" type="text" placeholder="+886" readonly />
+              <div class="country-dropdown dropdown">
+                <div class="dropdown-option">臺灣 +886</div>
+              </div>
+            </div>
+            <div class="pixeldropdown">
+              <img src="./img/goods/pixel_dropdown.svg" alt="" />
+            </div>
             <input class="phone_Num" type="text" placeholder="09-" />
           </div>
           <p>Down Go可能會撥打您的電話號碼，或是傳送有關會員資訊的簡訊</p>
@@ -155,6 +189,85 @@
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
       };
+
+      //顯示密碼
+      const eyesIcon = document.querySelector(".eyes img");
+      const passwordInput = document.querySelector(".password-input");
+      const biocheckInput = document.querySelector(".biocheck");
+
+      document.querySelector(".eyes").addEventListener("click", function () {
+        const isPasswordHidden = passwordInput.type === "password";
+
+        // Toggle password visibility
+        passwordInput.type = isPasswordHidden ? "text" : "password";
+        biocheckInput.type = isPasswordHidden ? "text" : "password";
+
+        // Toggle icon
+        eyesIcon.src = isPasswordHidden
+          ? "./img/login_signup/visibility_off.svg"
+          : "./img/login_signup/visibility.svg";
+      });
+
+      //月份dropdown
+      document.querySelector(".month").addEventListener("click", function () {
+        toggleDropdown(".month-dropdown");
+        toggleImageRotation(".born .pixeldropdown img");
+      });
+
+      document.querySelector(".country").addEventListener("click", function () {
+        toggleDropdown(".country-dropdown");
+        toggleImageRotation(".phone .pixeldropdown img");
+      });
+
+      function toggleDropdown(dropdownClass) {
+        document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+          dropdown.style.display = "none";
+        });
+
+        const dropdown = document.querySelector(dropdownClass);
+        if (dropdown) {
+          dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+        }
+      }
+
+      function toggleImageRotation(imgSelector) {
+        const img = document.querySelector(imgSelector);
+        if (img) {
+          img.classList.toggle("rotated");
+        }
+      }
+
+      document.querySelectorAll(".dropdown-option").forEach(function (option) {
+        option.addEventListener("click", function () {
+          const input = this.closest(".dropdown-container").querySelector(
+            "input"
+          );
+          input.value = this.textContent;
+          this.parentNode.style.display = "none";
+
+          resetImageRotation(".born .pixeldropdown img");
+          resetImageRotation(".phone .pixeldropdown img");
+        });
+      });
+
+      function resetImageRotation(imgSelector) {
+        const img = document.querySelector(imgSelector);
+        if (img) {
+          img.classList.remove("rotated");
+        }
+      }
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown-container")) {
+          document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+            dropdown.style.display = "none";
+          });
+
+          resetImageRotation(".born .pixeldropdown img");
+          resetImageRotation(".phone .pixeldropdown img");
+        }
+      });
     </script>
   </body>
 </html>

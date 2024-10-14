@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員個人帳號</title>
+    <link rel="icon" href="./img/mario.png" type="image/icon type" />
+    <link href="./css/reset.css" rel="stylesheet" />
+    <link href="./css/membership.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav">
+        <div class="header_left">
+          <a href="./goods_main.html">
+            <img src="./img/logotype.png" id="logotype" />
+          </a>
+        </div>
+        <div class="header_center">
+          <div class="altitude_texts">
+            <p class="altitude">ALTITUDE</p>
+            <p class="unlimited">∞</p>
+            <p class="M">M</p>
+          </div>
+          <div class="thecard">
+            <img src="./img/login_signup/pink_membership.png" alt="" />
+          </div>
+          <div class="level_texts">
+            <p class="level">LEVEL</p>
+            <div id="scrollingText" class="eleven">3-1</div>
+          </div>
+        </div>
+        <div class="header_right">
+          <div class="notification">
+            <img class="bell" src="./img/login_signup/header_鈴鐺.png" alt="" />
+            <img class="bell_badge" src="./img/login_signup/badge.png" alt="" />
+          </div>
+          <div class="cart">
+            <img
+              class="cart_icon"
+              src="./img/login_signup/header_購物車.png"
+              alt=""
+            />
+            <p class="cart_badge">2</p>
+          </div>
+          <a href="#membership" class="profile_photo">
+            <img src="./img/login_signup/profile.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--會員頁內容-->
+    <section class="contents">
+      <div class="main">
+        <div class="Settings">
+          <h2 class="title">設定</h2>
+          <div class="divider"></div>
+          <div>
+            <a href="./my_order.html" class="setting check">
+              <img class="icon" src="./img/goods/icon_dark_gray1.png" alt="" />
+              <p>我的訂單</p>
+            </a>
+            <div class="setting message">
+              <img class="icon" src="./img/goods/icon_dark_gray2.png" alt="" />
+              <p>帳號訊息</p>
+            </div>
+            <div class="setting mail">
+              <img class="icon" src="./img/goods/icon_dark_gray3.png" alt="" />
+              <p>電子郵件通知</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div>
+            <div class="setting policy">
+              <img class="icon" src="./img/goods/icon_dark_gray4.png" alt="" />
+              <p>使用條款</p>
+            </div>
+            <div class="setting service">
+              <img class="icon" src="./img/goods/icon_dark_gray5.png" alt="" />
+              <p>客服中心</p>
+            </div>
+            <div class="setting alert">
+              <img class="icon" src="./img/goods/icon_dark_gray6.png" alt="" />
+              <p>公告通知</p>
+            </div>
+            <div class="setting logout">
+              <img class="icon" src="./img/goods/icon_dark_gray7.png" alt="" />
+              <p>登出帳號</p>
+            </div>
+          </div>
+        </div>
+        <div class="member_info">
+          <div class="infotop">
+            <div class="profile">
+              <img class="photo" src="./img/login_signup/profile.png" alt="" />
+              <div class="info">
+                <h1>大南部史</h1>
+                <p>dananbushi@gmail.com</p>
+              </div>
+            </div>
+            <a class="Btn_edit">變更</a>
+          </div>
+          <div class="divider"></div>
+          <div class="points">
+            <div class="own_coupon">
+              <p>我的優惠券</p>
+              <h5>1</h5>
+            </div>
+            <div class="vertical_divider"></div>
+            <div class="own_point">
+              <p>持有點數</p>
+              <h5>0EXP</h5>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="details">
+            <div class="left_opt">
+              <div class="MEMnumber">
+                <p>會員編號</p>
+              </div>
+              <div class="true_name">名字</div>
+              <div class="bornday">出生年月日</div>
+              <div class="pone">電話號碼</div>
+            </div>
+            <div class="right_opt">
+              <div class="MEMnumber">
+                <p>UJTPDW</p>
+              </div>
+              <div class="true_name">部史 南</div>
+              <div class="bornday">2003/11/06</div>
+              <div class="pone">(+886)999517960</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--footer-->
+    <section class="footer">
+      <div class="contents">
+        <div class="shortcuts">
+          <p class="NOTICE">NOTICE</p>
+          <a href="./login.html" class="MEMBERSHIP">
+            <p>MEMBERSHIP</p>
+          </a>
+          <p class="GUIDE">GUIDE</p>
+          <p class="PRIVACY POLICY">PRIVACY POLICY</p>
+          <p class="ABOUT">ABOUT</p>
+        </div>
+        <div class="divider"></div>
+        <div class="infos">
+          <div class="info1">
+            <p>COMPANY：Down Go Work Studio</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+          <div class="info2">
+            <p>TEL:02-8960-4282</p>
+            <p>ADDRESS：106台北市大安區復興南路一段76號</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="copyicon">©</p>
+        <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
+      </div>
+    </section>
+    <script>
+      //刷新頁面時置頂復位
+      window.onbeforeunload = function () {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+
+      //setting hover換圖
+      document
+        .querySelector(".check")
+        .addEventListener("mouseover", function () {
+          const img = this.querySelector(".setting img");
+          img.src = "./img/goods/icon_purple_check.png";
+        });
+
+      document
+        .querySelector(".check")
+        .addEventListener("mouseout", function () {
+          const img = this.querySelector(".setting img");
+          img.src = "./img/goods/icon_dark_gray1.png";
+        });
+    </script>
+  </body>
+</html>

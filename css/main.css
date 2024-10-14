@@ -17,8 +17,19 @@ body {
   background-size: cover;
 }
 
-/* navigation */
+/* 跳轉小青蛙 */
+#frogjump {
+  opacity: 0;
+}
+#frogjump img {
+  position: fixed;
+  top: 0;
+  width: -webkit-fill-available;
+  background-color: #fafafa;
+  z-index: 100;
+}
 
+/* navigation */
 nav {
   position: absolute;
   width: 97vw;
@@ -293,7 +304,7 @@ nav .burger a img :active {
   bottom: 0;
   right: 0;
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   background: none;
   border: none;
   cursor: pointer;
@@ -305,6 +316,7 @@ nav .burger a img :active {
   animation-iteration-count: 1;
   animation-delay: 2.5s;
   animation-fill-mode: forwards; /*保留最後設定的樣式值*/
+  display: block;
 }
 
 @keyframes circleout {
@@ -387,8 +399,8 @@ nav .burger a img :active {
   max-width: 100%;
   height: auto;
   position: absolute;
-  right: 1vw;
-  width: 4.5vw;
+  right: 0.3vw;
+  width: 3.5vw;
   text-shadow: 10px 10px 5px #5f1c68;
   cursor: pointer;
   margin: 0 0;

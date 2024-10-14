@@ -6,6 +6,16 @@
     <title>會員登入</title>
     <link rel="icon" href="./img/mario.png" type="image/icon type" />
     <link href="./css/reset.css" rel="stylesheet" />
+    <!--email js-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("mPlnfjTE4QBc0aTho");
+      })();
+    </script>
     <link href="./css/login.css" rel="stylesheet" />
   </head>
   <body>
@@ -31,19 +41,37 @@
           </div>
         </div>
         <div class="header_right">
-          <div class="notification">
+          <div class="notification" onclick="on()">
             <img class="bell" src="./img/login_signup/header_鈴鐺.png" alt="" />
             <img class="bell_badge" src="./img/login_signup/badge.png" alt="" />
           </div>
-          <div class="cart">
+          <div id="overlay" onclick="off()">
+            <div class="notify">
+              <div class="noti_header"><p>通知</p></div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  ▚ 新手村禮包 ▚
+                  村長已將一張優惠券放入你的背包，快去會員頁面查看吧！
+                </p>
+                <p class="time">5小時前</p>
+              </div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  歡迎加入Down Go的冒險者！首購即送精美小禮物，請盡情挑看選看～
+                </p>
+                <p class="time">12小時前</p>
+              </div>
+            </div>
+          </div>
+          <a href="./good_cart.html" class="cart">
             <img
               class="cart_icon"
               src="./img/login_signup/header_購物車.png"
               alt=""
             />
             <p class="cart_badge">2</p>
-          </div>
-          <a href="#membership" class="profile_photo">
+          </a>
+          <a href="./login.html" class="profile_photo">
             <img src="./img/login_signup/profile.png" alt="" />
           </a>
         </div>
@@ -54,13 +82,23 @@
     <div class="contents">
       <div class="main">
         <div class="inputs">
-          <input class="email" type="email" placeholder="會員帳號 / Email" />
+          <input
+            class="email"
+            type="email"
+            placeholder="會員帳號 / Email"
+            id="email"
+          />
           <input class="password" type="password" placeholder="密碼" />
+          <div class="password-contain">
+            <div class="invisible">
+              <img src="./img/login_signup/visibility.svg" alt="" />
+            </div>
+          </div>
         </div>
         <div class="connections">
-          <div id="loginbtn">
+          <a href="./membership.html" id="loginbtn" onclick="SendMail()">
             <p>登入</p>
-          </div>
+          </a>
           <div class="help">
             <label class="keeplogin">
               <input type="checkbox" />
@@ -138,12 +176,10 @@
         <p class="copytext">DOWN GO STUDIO All rights reserved.</p>
       </div>
     </section>
-    <script>
-      //刷新頁面時置頂復位
-      window.onbeforeunload = function () {
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      };
-    </script>
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/parallax.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

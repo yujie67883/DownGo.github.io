@@ -23,7 +23,7 @@
             <p class="M">M</p>
           </div>
           <div class="thecard">
-            <img src="./img/title_purchase.png" alt="" />
+            <img src="./img/goods/title_purchase.png" alt="" />
           </div>
           <div class="level_texts">
             <p class="level">LEVEL</p>
@@ -31,18 +31,36 @@
           </div>
         </div>
         <div class="header_right">
-          <div class="notification">
+          <div class="notification" onclick="on()">
             <img class="bell" src="./img/login_signup/header_鈴鐺.png" alt="" />
             <img class="bell_badge" src="./img/login_signup/badge.png" alt="" />
           </div>
-          <div class="cart">
+          <div id="overlay" onclick="off()">
+            <div class="notify">
+              <div class="noti_header"><p>通知</p></div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  ▚ 新手村禮包 ▚
+                  村長已將一張優惠券放入你的背包，快去會員頁面查看吧！
+                </p>
+                <p class="time">5小時前</p>
+              </div>
+              <div class="noti_li">
+                <p class="noti_txt">
+                  歡迎加入Down Go的冒險者！首購即送精美小禮物，請盡情挑看選看～
+                </p>
+                <p class="time">12小時前</p>
+              </div>
+            </div>
+          </div>
+          <a href="./good_cart.html" class="cart">
             <img
               class="cart_icon"
               src="./img/login_signup/header_購物車.png"
               alt=""
             />
             <p class="cart_badge">2</p>
-          </div>
+          </a>
           <a href="./login.html" class="profile_photo">
             <img src="./img/login_signup/profile.png" alt="" />
           </a>
@@ -50,29 +68,54 @@
       </div>
     </div>
 
-    <!--登入內容框-->
+    <!--banner-->
     <div class="bg">
       <img src="./img/goods/bg.png" alt="" />
+    </div>
+    <div class="cubes">
+      <img src="./img/goods/cubes.png" alt="" />
+    </div>
+    <div class="carousel">
+      <div class="carousel_track-container">
+        <ul class="carousel_track">
+          <li class="carousel_slide">
+            <img src="./img/goods/new_/IMG_9854.png" alt="" />
+          </li>
+          <li class="carousel_slide">
+            <img src="./img/goods/new_/IMG_9800.png" alt="" />
+          </li>
+          <li class="carousel_slide">
+            <img src="./img/goods/new_/IMG_9828.png" alt="" />
+          </li>
+          <li class="carousel_slide banner4">
+            <img src="./img/goods/new_/IMG_9845.png" alt="" />
+          </li>
+          <li class="carousel_slide banner5">
+            <img src="./img/goods/new_/banner_watchout.png" alt="" />
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="content">
       <div class="banner">
         <div class="chevrons">
-          <div class="chevron-left">
+          <div class="chevron-left carousel_button">
             <img src="./img/next.png" alt="" />
           </div>
-          <div class="chevron-right">
+          <div class="chevron-right carousel_button">
             <img src="./img/next.png" alt="" />
           </div>
         </div>
+        <div id="located"></div>
         <div class="dots">
-          <span class="p1"></span>
+          <span class="p1 current_slide"></span>
           <span class="p2"></span>
           <span class="p3"></span>
           <span class="p4"></span>
           <span class="p5"></span>
         </div>
       </div>
-      <div class="Segmented_Controls">
+      <div class="Segmented_Controls" id="Segmented_Controls">
         <span class="segmented_control equipment">登山配備</span>
         <span class="segmented_control package">組合包</span>
         <span class="segmented_control faq">FAQ</span>
@@ -81,7 +124,7 @@
     <!-- 登山配備 -->
     <section id="equipment_page" class="page active">
       <div class="Products">
-        <div class="product bandage">
+        <a href="./good_bandage.html" class="product bandage">
           <div class="picture"></div>
           <div class="depiction">
             <div class="top">
@@ -109,8 +152,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="product marktape">
+        </a>
+        <a href="./good_marktape.html" class="product marktape">
           <div class="picture"></div>
           <div class="depiction">
             <div class="top">
@@ -138,8 +181,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="product splint">
+        </a>
+        <a href="./good_splint.html" class="product splint">
           <div class="picture"></div>
           <div class="depiction">
             <div class="top">
@@ -167,8 +210,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="product manual">
+        </a>
+        <a href="./good_maual.html" class="product manual">
           <div class="picture"></div>
           <div class="depiction">
             <div class="top">
@@ -192,14 +235,14 @@
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <!-- 組合包 -->
     <section id="package_page" class="page">
       <div class="Products">
-        <div class="product bandaging_set">
+        <a href="./good_rescue_kit.html" class="product rescue_kit">
           <div class="picture_border">
             <div class="picture"></div>
             <div class="border"></div>
@@ -233,8 +276,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="product rescue_kit">
+        </a>
+        <a href="./good_bdgset.html" class="product bandaging_set">
           <div class="picture_border">
             <div class="picture"></div>
             <div class="border"></div>
@@ -266,12 +309,105 @@
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq_page" class="page"></section>
+    <section id="faq_page" class="page">
+      <ul class="questions">
+        <ul class="qt">
+          <a class="qt-1" href="#">
+            <p>Q: 有哪些支付方式可供選擇？</p>
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-1">
+            A:
+            我們接受常見的支付方式，包括信用卡、PayPal、貨到付款等。這些支付方式均為安全可靠的電子支付方式。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-2" href="#">
+            Q: 是否有季節性的促銷活動？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-2">
+            A:
+            是的，我們定期舉辦促銷活動，包括季節性特價、套裝優惠等。客戶可以在網站上查看最新的促銷資訊。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-3" href="#">
+            Q: 退換貨政策是什麼？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-3">
+            A:
+            若商品有品質問題或客戶不滿意，提供14天內的退換貨服務。請參閱我們的退換貨政策獲取詳細資訊。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-4" href="#">
+            Q: 如何處理產品退換貨的過程？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-4">
+            A:
+            退換貨的過程簡單明瞭，客戶只需按照網站上的指引填寫退換貨申請，我們的客服團隊將協助處理。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-5" href="#">
+            Q: 商品是否有保固？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-5">
+            A:
+            是的，我們提供的商品具有限保固，具體保固期限和條件可在購買時查看商品資訊或聯繫客服獲取詳細資訊。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-6" href="#">
+            Q: 是否有會員制度和會員專屬優惠？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-6">
+            A:
+            是的，我們有會員制度，註冊會員可以享有專屬折扣、提前購物和其他會員福利。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-7" href="#">
+            Q: 是否提供教學資源，協助客戶正確使用裝備？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-7">
+            A:
+            是的，我們有會員制度，註冊會員可以享有專屬折扣、提前購物和其他會員福利。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-8" href="#">
+            Q: 如何處理遺失或損壞的包裹？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-8">
+            A:
+            若客戶的包裹遺失或損壞，請聯繫我們的客服團隊。我們將盡快處理並提供解決方案。
+          </li>
+        </ul>
+        <ul class="qt">
+          <a class="qt-9" href="#">
+            Q: 是否提供國際運送服務？
+            <img src="./img/hurt/arrow.png" alt=""
+          /></a>
+          <li class="dropdown ans-9">
+            A:
+            目前並無國際運送服務，僅提供中華民國境內（含離島）之寄送服務，請見諒。
+          </li>
+        </ul>
+      </ul>
+    </section>
 
     <!-- 滾動條 -->
     <div class="rollingbar">

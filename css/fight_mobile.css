@@ -1,0 +1,577 @@
+/* 手機版hamburger */
+@media (max-width: 1000px) {
+  /* header */
+  .header_right {
+    cursor: pointer;
+  }
+
+  /* hamburger */
+  .menu {
+    position: relative;
+    background-color: antiquewhite;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .menu nav {
+    position: absolute;
+    width: 84vw;
+    justify-content: space-between;
+    display: flex;
+    z-index: 4;
+    left: 0;
+    padding: 12px 20px;
+  }
+
+  .menu nav .logo {
+    width: 30vw;
+  }
+  .menu .logo {
+    width: fit-content;
+    padding-top: 0vh;
+    margin-left: 2vw;
+  }
+  .menu .logo img {
+    width: 50vw;
+    left: 0vw;
+    top: -20vh;
+  }
+  .menu_bgimg .bg img {
+    width: 110vw;
+    height: 110vh;
+    position: absolute;
+    left: -1vw;
+    top: -1vh;
+    filter: brightness(1.1);
+  }
+
+  /* 關閉漢堡的按鈕:S */
+  .menu_close {
+    text-align: center;
+  }
+
+  .menu_close {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu_bgimg .bm img {
+    position: absolute;
+    width: 100vw;
+    filter: brightness(0.85);
+    left: 0;
+    bottom: -30vh;
+    z-index: 0;
+  }
+  .menu_close a img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    width: 10vw;
+    text-shadow: 10px 10px 5px #5f1c68;
+    cursor: pointer;
+    margin: 0 0;
+    top: 2vh;
+  }
+  /* 關閉漢堡的按鈕:E */
+
+  .cloud_1 img {
+    position: absolute;
+    width: 70vw;
+    top: 12.2vh;
+    right: -70vw;
+    opacity: 70%;
+    z-index: 0;
+    animation-name: cloudfloat_menu;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 8s;
+  }
+
+  .cloud_2 img {
+    position: absolute;
+    width: 36vw;
+    bottom: 31vh;
+    right: -70vw;
+    opacity: 60%;
+    filter: brightness(0.98);
+    z-index: 1;
+    animation-name: cloudfloat_menu;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  .cloud_3 img {
+    position: absolute;
+    width: 60vw;
+    bottom: 7vh;
+    right: -70vw;
+    opacity: 85%;
+    filter: brightness(0.98);
+    z-index: 0;
+    animation-name: cloudfloat_menu;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    animation-delay: 9s;
+  }
+
+  .cloud_4 img {
+    position: absolute;
+    width: 39vw;
+    bottom: 36vh;
+    right: -70vw;
+    filter: brightness(0.98);
+    z-index: 1;
+    animation-name: cloudfloat_menu;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-delay: 11s;
+  }
+
+  @keyframes cloudfloat_menu {
+    0% {
+      right: -70vw;
+    }
+    100% {
+      right: 110vw;
+    }
+  }
+
+  .hunted img {
+    position: absolute;
+    width: 25vw;
+    left: 16vw;
+    bottom: 3vh;
+  }
+
+  .menu_sign img {
+    position: absolute;
+    width: 15vw;
+    left: 52vw;
+    bottom: 7.5vh;
+  }
+
+  .menu_hook img {
+    position: absolute;
+    width: 10vw;
+    right: 18vw;
+    top: 0;
+  }
+
+  .menu_mountain img {
+    position: absolute;
+    width: 120vw;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .alert {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+    z-index: 5;
+    opacity: 65%;
+  }
+
+  .alert img {
+    width: 10vw;
+    cursor: pointer;
+  }
+
+  /* menu的選項 畫面設定 */
+
+  .title {
+    position: absolute;
+    left: calc(50% - 40vw);
+    display: block;
+    justify-content: space-evenly;
+    width: 80vw;
+    z-index: 5;
+  }
+
+  .title div {
+    position: relative;
+    display: block;
+  }
+  .title .entertxt {
+    top: 11.5vh;
+  }
+  .title .heaven {
+    top: 35vh;
+  }
+  .title div h1 {
+    color: #262626;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .cutline,
+  .cutline2,
+  .cutline3 {
+    position: absolute;
+    left: calc(50% - 38vw);
+    top: 20vh;
+    width: 75vw;
+    height: 0.1vh;
+    background-color: #000000;
+    z-index: 5;
+  }
+  .cutline2 {
+    top: 35vh;
+  }
+  .cutline3 {
+    top: 63vh;
+  }
+
+  .menu p {
+    font-family: "Noto Sans TC";
+    font-weight: 200;
+  }
+
+  .wood_option {
+    position: absolute;
+    top: 22vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .wood_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+
+  .wood_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+  }
+
+  .wood_option div a {
+    z-index: 5;
+    text-align: center;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  .enter_option {
+    position: absolute;
+    top: 37vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .enter_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+  .enter_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+  }
+
+  .enter_option div a {
+    z-index: 3;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  .enter_option div a p {
+    display: inline-block;
+  }
+
+  .purple {
+    color: #5f1c68;
+    font-size: large;
+    opacity: 0;
+  }
+
+  .enter_option div:hover .purple {
+    opacity: 1;
+    transition: opacity 180ms ease-out;
+    width: 20vw;
+  }
+
+  .heaven_option {
+    position: relative;
+    top: 65vh;
+    left: 15vw;
+    z-index: 5;
+  }
+
+  .heaven_option div {
+    padding-top: 5px;
+    font-size: 16px;
+    border-bottom-style: none;
+    border-bottom-color: #262626;
+  }
+  .heaven_option div:hover {
+    border-bottom-style: outset;
+    padding-bottom: 5px;
+    transition: all 180ms ease-out;
+    cursor: pointer;
+    width: 17vw;
+  }
+
+  .heaven_option div a {
+    z-index: 3;
+    text-decoration: none;
+    color: #262626;
+  }
+
+  /* 漢堡選單 overflow 設定 */
+
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    visibility: hidden;
+    transition: ease-in 220ms;
+    z-index: 2000;
+  }
+
+  /* 手機版設定 */
+  .mobile {
+    height: 90vh;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: #2e0d45;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Noto Sans TC";
+    scrollbar-color: transparent transparent;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* header */
+  .mobile_nav {
+    position: fixed;
+    top: 0;
+    padding-left: 1.3vw;
+    width: -webkit-fill-available;
+    height: 8vh;
+    color: #fff2df;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    align-items: center;
+    padding: 0.3vw 4vw;
+  }
+  .nav_right img {
+    width: 18vw;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.5vh;
+  }
+  .nav_left {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10vw;
+    margin-left: 1vw;
+  }
+  .nav_left a {
+    height: fit-content;
+  }
+  .nav_left img {
+    width: 50vw;
+  }
+
+  /*戰鬥框*/
+  .mbmt {
+    position: fixed;
+    width: 100vw;
+    z-index: 0;
+    bottom: 43vh;
+    background-color: #5f1c68;
+    transition: bottom 800ms ease-in-out;
+  }
+  .mobile_mt {
+    width: 100%;
+  }
+  .mbbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/fight/mobile/fight_box.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 4;
+  }
+  .wall {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 30vh;
+    transform: rotateX(180deg);
+    background-image: url(../img/fight/mobile/wall.png);
+    z-index: 1;
+  }
+  .mbbox {
+    position: fixed;
+    width: 100vw;
+    height: 40vh;
+    background-image: url(../img/fight/mobile/mbbox_info.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 4;
+    bottom: 24vh;
+  }
+
+  /* 內容切換鍵 */
+  .mb_btn {
+    position: fixed;
+    bottom: 52.3vh;
+    left: 14vw;
+    width: 43.1vw;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff2df;
+  }
+  .mb_btn div {
+    padding: 0.8vh;
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* 前進後退鍵 */
+  .mb_Btns {
+    position: fixed;
+    right: 10.7vw;
+    bottom: 35.3vh;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+  }
+  .mb_Btns div {
+    width: 16vw;
+    height: 5.9vh;
+    background-image: url(../img/fight/mobile/mb_btn.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .mb_Btns div:active {
+    background-image: url(../img/fight/mobile/mb_btn_active.png);
+  }
+  .mb_Btns div p {
+    width: 100%;
+    height: 80%;
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5vh;
+  }
+  .mbtext {
+    position: fixed;
+    bottom: 35.65vh;
+    left: 12vw;
+    width: 48vw;
+    height: 12.5vh;
+    z-index: 5;
+    font-size: 11px;
+    color: #331047;
+    line-height: 15px;
+    overflow: hidden;
+  }
+  .typean_content {
+    position: absolute;
+    top: 0vh;
+  }
+  .mbgrond {
+    position: fixed;
+    left: 3vw;
+    bottom: 55vh;
+    width: 94vw;
+    height: 11vh;
+    background-image: url(../img/fight/2.0_草地\ 1.png);
+    background-size: 100%;
+    z-index: 2;
+  }
+  .mbperson {
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    left: 13vw;
+    bottom: 60.2vh;
+    z-index: 5;
+    filter: drop-shadow(-2px 2px 2px #331047);
+  }
+  .mbperson img {
+    width: 16vw;
+  }
+
+  /* 怪獸 */
+  .wtsnake {
+    left: 4vw;
+    bottom: 34vh; /* ->62vh */
+  }
+  .wtsnake img {
+    width: 95vw;
+  }
+  .wtfish {
+    left: -6vw;
+    bottom: 36vh; /* ->60vh */
+  }
+  .wtfish img {
+    width: 135vw;
+  }
+  .wtpig {
+    left: 3vw;
+    bottom: 35vh; /* ->61vh */
+  }
+  .wtpig img {
+    width: 93vw;
+  }
+  .wthypoxia {
+    left: 3vw;
+    bottom: 35vh; /* ->61vh */
+  }
+  .wthypoxia img {
+    width: 95vw;
+  }
+  .wtcold {
+    left: 2vw;
+    bottom: 37vh; /* ->63vh */
+  }
+  .wtcold img {
+    width: 97vw;
+  }
+
+  /* 手機版 跳轉小青蛙 */
+  #frogjump {
+    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fafafa;
+    z-index: 1001;
+    pointer-events: none;
+  }
+  #frogjump img {
+    position: absolute;
+    margin: 34vh -11vw;
+    width: 120%;
+    background-color: #fafafa;
+  }
+}

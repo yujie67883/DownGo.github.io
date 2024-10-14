@@ -1,73 +1,9 @@
-document.getElementById("human").addEventListener("click", function () {
-  document
-    .getElementsByClassName("hurt_first-content")[0]
-    .classList.add("active");
-  document
-    .getElementsByClassName("hurt-second-content")[0]
-    .classList.add("active");
+document.getElementById("bounce-arrow").addEventListener("click", function () {
+  document.getElementsByClassName("bounce")[0].classList.remove("active");
 });
-document.getElementById("whole-human").addEventListener("click", function () {
-  document
-    .getElementsByClassName("hurt_first-content")[0]
-    .classList.remove("active");
-  document
-    .getElementsByClassName("hurt-second-content")[0]
-    .classList.remove("active");
+document.getElementById("bounce-go").addEventListener("click", function () {
+  document.getElementsByClassName("bounce")[0].classList.remove("active");
 });
-
-var aText = new Array(
-  "早安冒險者！",
-  "真是美好的一天！",
-  "我是大南部史_",
-  "學會自行緊急包紮是作為一名冒險家必備的技能_",
-  "想必你會需要一個傷痕累累的人吧_",
-  "就在剛剛我已經將自己調整成需要包紮的體態了_",
-  "這邊就由我來為你一步一步地進行實作包紮ㄅ_",
-  " ",
-  "點擊大南部史進行演練"
-);
-var iSpeed = 110; // time delay of print out
-var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 20; // start scrolling up at this many lines
-var iTextPos = 0; // initialise text position
-var sContents = ""; // initialise contents variable
-var iRow; // initialise current row
-
-var functionEnable = false;
-
-document.getElementById("hurt-id").addEventListener("mouseover", function () {
-  if (!functionEnable) {
-    functionEnable = true;
-    setTimeout(() => {
-      typewriter();
-    }, 700);
-  }
-});
-
-function typewriter() {
-  sContents = " ";
-  iRow = Math.max(0, iIndex - iScrollAt);
-  var destination = document.getElementById("typeanimation");
-
-  while (iRow < iIndex) {
-    sContents += aText[iRow++] + "<br />";
-  }
-  if (aText[iIndex]) {
-    destination.innerHTML =
-      sContents + aText[iIndex].substring(0, iTextPos) + "|";
-    if (iTextPos++ == iArrLength) {
-      iTextPos = 0;
-      iIndex++;
-      if (iIndex != aText.length) {
-        iArrLength = aText[iIndex].length;
-        setTimeout("typewriter()", 500);
-      }
-    } else {
-      setTimeout("typewriter()", iSpeed);
-    }
-  }
-}
 
 // 環形包紮
 document.getElementById("cycle").addEventListener("mouseover", function () {
@@ -87,7 +23,7 @@ document.getElementById("cycle").addEventListener("click", function () {
   var img = document.getElementById("cycle-gif");
   img.src = "img/hurt/環形包紮手.png";
   var img = document.getElementById("cycle-book");
-  img.src = "img/書_翻開.gif";
+  img.src = "img/雙頁書_翻開.gif";
   document.getElementsByClassName("cycle-hint2")[0].classList.remove("active");
   document.getElementsByClassName("cycle-hint3")[0].classList.remove("active");
   {
@@ -132,7 +68,7 @@ document.getElementById("cycle-x").addEventListener("click", function () {
   document.getElementsByClassName("cycle-frame")[0].classList.remove("active");
   document.getElementsByClassName("cycle-return")[0].classList.remove("active");
   var img = document.getElementById("cycle-book");
-  img.src = "img/書_闔上.gif";
+  img.src = "img/雙頁書_闔上.gif";
   if (
     !document
       .getElementsByClassName("cycle-hint2")[0]
@@ -168,7 +104,7 @@ document.getElementById("return").addEventListener("click", function () {
     .getElementsByClassName("hurt_bookbackground")[0]
     .classList.add("active");
   var img = document.getElementById("return-book");
-  img.src = "img/書_翻開.gif";
+  img.src = "img/雙頁書_翻開.gif";
   var img = document.getElementById("return-gif");
   img.src = "img/hurt/回反包紮手.png";
   document.getElementsByClassName("return-hint2")[0].classList.remove("active");
@@ -230,7 +166,7 @@ document.getElementById("return-x").addEventListener("click", function () {
     .getElementsByClassName("return-return")[0]
     .classList.remove("active");
   var img = document.getElementById("return-book");
-  img.src = "img/書_闔上.gif";
+  img.src = "img/雙頁書_闔上.gif";
   if (
     !document
       .getElementsByClassName("return-hint2")[0]
@@ -275,7 +211,7 @@ document.getElementById("spinreturn").addEventListener("click", function () {
     .getElementsByClassName("hurt_bookbackground")[0]
     .classList.add("active");
   var img = document.getElementById("spinreturn-book");
-  img.src = "img/書_翻開.gif";
+  img.src = "img/雙頁書_翻開.gif";
   var img = document.getElementById("spinreturn-gif");
   img.src = "img/hurt/螺旋反折手.png";
   document
@@ -356,7 +292,7 @@ document.getElementById("spinreturn-x").addEventListener("click", function () {
     .getElementsByClassName("spinreturn-return")[0]
     .classList.remove("active");
   var img = document.getElementById("spinreturn-book");
-  img.src = "img/書_闔上.gif";
+  img.src = "img/雙頁書_闔上.gif";
   if (
     !document
       .getElementsByClassName("spinreturn-hint2")[0]
@@ -394,7 +330,7 @@ document.getElementById("eight").addEventListener("click", function () {
     .getElementsByClassName("hurt_bookbackground")[0]
     .classList.add("active");
   var img = document.getElementById("eight-book");
-  img.src = "img/書_翻開.gif";
+  img.src = "img/雙頁書_翻開.gif";
   var img = document.getElementById("eight-gif");
   img.src = "img/hurt/八字包紮手.png";
   document.getElementsByClassName("eight-hint2")[0].classList.remove("active");
@@ -441,7 +377,7 @@ document.getElementById("eight-x").addEventListener("click", function () {
   document.getElementsByClassName("eight-frame")[0].classList.remove("active");
   document.getElementsByClassName("eight-return")[0].classList.remove("active");
   var img = document.getElementById("eight-book");
-  img.src = "img/書_闔上.gif";
+  img.src = "img/雙頁書_闔上.gif";
   if (
     !document
       .getElementsByClassName("eight-hint2")[0]
@@ -477,7 +413,7 @@ document.getElementById("spin").addEventListener("click", function () {
     .getElementsByClassName("hurt_bookbackground")[0]
     .classList.add("active");
   var img = document.getElementById("spin-book");
-  img.src = "img/書_翻開.gif";
+  img.src = "img/雙頁書_翻開.gif";
   document.getElementsByClassName("spin-hint2")[0].classList.remove("active");
   var img = document.getElementById("spin-gif");
   img.src = "img/hurt/螺旋包紮手.png";
@@ -515,7 +451,7 @@ document.getElementById("spin-x").addEventListener("click", function () {
   document.getElementsByClassName("spin-frame")[0].classList.remove("active");
   document.getElementsByClassName("spin-return")[0].classList.remove("active");
   var img = document.getElementById("spin-book");
-  img.src = "img/書_闔上.gif";
+  img.src = "img/雙頁書_闔上.gif";
   if (
     !document
       .getElementsByClassName("spin-hint2")[0]
