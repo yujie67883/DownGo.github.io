@@ -99,10 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundImageSource = "./img/package/title.png";
     }
 
-    // 应用翻牌效果
-    // theCard.style.transition = "all 0.1s ease";
-    // theCard.style.transform = "rotateY(180deg)";
-
     // 在翻牌效果完成后更改背景图
     setTimeout(function () {
       theCard.style.backgroundImage = `url("${backgroundImageSource}")`;
@@ -120,19 +116,15 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("scrollingNumber-forphone").textContent
     );
 
-    let backgroundImageSource = "../img/entery/title.png";
+    let backgroundImageSource = "../img/fight/tag_equipment_text.png";
 
     if (scrollingNumber >= 200 && scrollingNumber < 400) {
-      backgroundImageSource = "./img/hurt/title.png";
+      backgroundImageSource = "./img/fight/tag_hurt_text.png";
     } else if (scrollingNumber >= 400) {
-      backgroundImageSource = "./img/entery/title.png";
+      backgroundImageSource = "./img/fight/tag_entry_text.png";
     } else {
-      backgroundImageSource = "./img/package/title.png";
+      backgroundImageSource = "./img/fight/tag_equipment_text.png";
     }
-
-    // 应用翻牌效果
-    // theCard.style.transition = "all 0.1s ease";
-    // theCard.style.transform = "rotateY(180deg)";
 
     // 在翻牌效果完成后更改背景图
     setTimeout(function () {
@@ -210,7 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // 手機header海拔高度滾動效果
 document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber-forphone");
+  const scrollingNumberElement = document.getElementById(
+    "scrollingNumber-forphone"
+  );
 
   let currentNumber = 100;
 
@@ -218,7 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const bottomOffset = window.innerHeight * 0.34; // 34vh
     const scrollPercentage =
       (window.scrollY /
-        (document.documentElement.scrollHeight - bottomOffset - window.innerHeight)) *
+        (document.documentElement.scrollHeight -
+          bottomOffset -
+          window.innerHeight)) *
       100;
 
     const newNumber = Math.round(100 + (scrollPercentage / 100) * 400);
@@ -268,10 +264,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 手機header level 等級滾動效果
 document.addEventListener("DOMContentLoaded", function () {
-  const scrollingNumberElement = document.getElementById("scrollingNumber-forphone");
-  const scrollingTextElement = document.getElementById("scrollingText-forphone");
-  const headerElement = document.querySelector('.header-forphone');
-  
+  const scrollingNumberElement = document.getElementById(
+    "scrollingNumber-forphone"
+  );
+  const scrollingTextElement = document.getElementById(
+    "scrollingText-forphone"
+  );
+  const headerElement = document.querySelector(".header-forphone");
+
   let currentNumber = 1000;
   let isFixed = false; // 标记 header 是否已经固定
 
@@ -301,22 +301,22 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollingTextElement.textContent = newText;
     }
 
- // 计算 200vh 对应的像素值
- const thresholdY = window.innerHeight * 2; // 300vh 等于窗口高度的 3 倍
- const currentScrollY = window.scrollY;
+    // 计算 200vh 对应的像素值
+    const thresholdY = window.innerHeight * 2; // 300vh 等于窗口高度的 3 倍
+    const currentScrollY = window.scrollY;
 
- if (currentScrollY < thresholdY) {
-   // 当滚动位置小于 300vh 时，header 固定
-   headerElement.style.position = 'fixed';
-   headerElement.style.top = `${window.innerHeight * 0.85}px`; // 固定 header，距离视口顶部 40vh
-   isFixed = true; // 更新状态为已固定
- } else if (currentScrollY >= thresholdY && isFixed) {
-   // 当滚动位置超过 300vh 时，header 变为绝对定位
-   headerElement.style.position = 'absolute';
-   headerElement.style.top = `${window.innerHeight * 2.8}px`; // 固定 header，距离视口顶部 40vh
-   isFixed = false; // 更新状态为未固定
- }
-});
+    if (currentScrollY < thresholdY) {
+      // 当滚动位置小于 300vh 时，header 固定
+      headerElement.style.position = "fixed";
+      headerElement.style.top = `${window.innerHeight * 0.85}px`; // 固定 header，距离视口顶部 40vh
+      isFixed = true; // 更新状态为已固定
+    } else if (currentScrollY >= thresholdY && isFixed) {
+      // 当滚动位置超过 300vh 时，header 变为绝对定位
+      headerElement.style.position = "absolute";
+      headerElement.style.top = `${window.innerHeight * 2.8}px`; // 固定 header，距离视口顶部 40vh
+      isFixed = false; // 更新状态为未固定
+    }
+  });
 });
 
 // 背包頁:Start
