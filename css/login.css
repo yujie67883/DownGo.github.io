@@ -641,7 +641,7 @@ input[type="checkbox"]:checked:hover + span {
     font-family: Noto Sans TC;
     font-weight: 500;
     margin-bottom: 4.1vh;
-    font-size: 22px;
+    font-size: 18px;
     color: #b024e2;
   }
   .fast_title {
