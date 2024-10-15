@@ -837,10 +837,11 @@ h1 {
   }
   .chip_fill {
     font-size: 10px;
+    padding: 0.6vh 1vh 0.6vh 0.5vh;
   }
   .chip_fill img {
     width: 1.5vh;
-    margin-right: 1vw;
+    margin-right: 0;
     padding: 1.2vw 0.8vh;
   }
   .Pictures {
@@ -906,12 +907,14 @@ h1 {
   /* 會員點數 */
   .point_use {
     font-size: 14px;
-    line-height: 20px;
-    padding: 1.1vw;
+    line-height: 17px;
+    padding: 1.1vh;
   }
   #Btn_all_in {
     font-size: 14px;
     padding: 0.7vh 1.7vh;
+    margin-left: 0.5vh;
+    align-items: center;
   }
   .own_txt {
     font-size: 12px;

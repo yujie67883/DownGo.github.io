@@ -21,21 +21,6 @@
   background: transparent;
 }
 
-.icon {
-  display: none;
-}
-.logodiv {
-  display: block;
-}
-@media (max-width: 900px) {
-  .icon {
-    display: block;
-  }
-  .logodiv {
-    display: none;
-  }
-}
-
 body {
   background-color: #fafafa;
 }
@@ -323,6 +308,7 @@ h2 {
 .member_info .divider {
   background-color: #e1e1e1;
   margin: 1.7vh 0;
+  display: flex;
 }
 .infotop {
   display: flex;
@@ -413,6 +399,25 @@ h5 {
   margin-right: 7vw;
 }
 
+.icon,
+.arrow_edit {
+  display: none;
+}
+.logodi,
+.Btn_edit {
+  display: block;
+}
+@media (max-width: 900px) {
+  .icon,
+  .arrow_edit {
+    display: block;
+  }
+  .logodiv,
+  .Btn_edit {
+    display: none;
+  }
+}
+
 /* 手機版 */
 @media (max-width: 900px) {
   .header {
@@ -441,8 +446,8 @@ h5 {
   }
   .bell_badge {
     width: 1.5vw;
-    top: 0.9vh;
-    right: 28.7vw;
+    top: 1.2vh;
+    right: 18.7vw;
   }
   .cart_icon {
     width: 4.7vw;
@@ -450,8 +455,8 @@ h5 {
   .cart_badge {
     width: 17px;
     height: 2.1vh;
-    top: 0.7vh;
-    right: 19.2vw;
+    top: 0.9vh;
+    right: 9.2vw;
     background-size: contain;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -483,11 +488,126 @@ h5 {
     font-size: 10px;
   }
   /* 完成訂購頁 */
+  .contents {
+    margin-top: 4vh;
+    height: fit-content;
+  }
   .main {
-    padding: 0 4vw;
-    margin: 8.2vh 0 15vh 0;
+    padding: 0 6vw;
+    margin: 4.4vh 0 15vh 0;
     width: 93vw;
-    height: 74vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     /* overflow: hidden; */
+  }
+  .member_info {
+    width: -webkit-fill-available;
+    padding: 3.3vw 7.1vw;
+  }
+  .infotop {
+    margin-top: 1vw;
+  }
+  .details {
+    display: none;
+  }
+  .member_info .divider {
+    margin: 2.1vh 0;
+  }
+  .member_info .d2 {
+    display: none;
+  }
+  .arrow_edit {
+    transform: rotate(-90deg);
+  }
+  .arrow_edit img {
+    width: 2.5vw;
+  }
+  .profile img {
+    width: 5.6vh;
+    height: 5.6vh;
+    margin-right: 2vw;
+  }
+  .info h1 {
+    font-size: 27px;
+  }
+  .info p {
+    font-size: 12px;
+  }
+  .points p {
+    font-size: 12px;
+  }
+  h5 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .Settings {
+    width: -webkit-fill-available;
+    margin-top: 3.5vh;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 29px;
+    margin: 0;
+  }
+  .setting {
+    padding: 0.7vh 1.4vw;
+  }
+  .setting img {
+    width: 3.2vh;
+    margin-right: 1vh;
+  }
+  .setting p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  /* footer */
+  .footer {
+    padding-top: 4vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .footer .contents {
+    width: -webkit-fill-available;
+  }
+  .contents .shortcuts {
+    width: 26vh;
+    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1vh;
+  }
+  .shortcuts a {
+    margin-right: 4vw;
+  }
+  .contents .infos {
+    flex-wrap: wrap;
+  }
+  .contents .infos {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    font-size: 10px;
+    margin-top: 2.3vh;
+  }
+  .infos .info1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .infos .info1 p {
+    margin-bottom: 1vh;
+  }
+  .infos .info2 {
+    flex-direction: row;
+  }
+  .copyright {
+    margin-top: 6vh;
+  }
+  .copyicon {
+    font-size: 13px;
+  }
+  .copytext {
+    font-size: 10px;
   }
 }

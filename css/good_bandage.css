@@ -691,7 +691,7 @@ body {
 }
 .logodiv,
 .item_page {
-  display: block;
+  display: flex;
 }
 @media (max-width: 900px) {
   .icon {

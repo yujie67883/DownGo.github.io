@@ -629,20 +629,23 @@ input[type="checkbox"]:checked:hover + span {
     right: 12vw;
   }
   .born .pixeldropdown {
-    bottom: 40.5vh;
-    right: 35.5vw;
+    bottom: 41.2vh;
+    right: 34.5vw;
   }
   .phone .pixeldropdown {
-    bottom: 30.2vh;
-    right: 9.5vw;
+    bottom: 30.8vh;
+    left: 21vw;
+  }
+  .pixeldropdown img {
+    width: 2.4vw;
   }
   #signup {
-    width: 14vh;
+    width: 20vh;
     padding: 10px 5px;
     font-size: 14px;
   }
   #goback {
-    width: 14vh;
+    width: 20vh;
     padding: 10px 5px;
     font-size: 14px;
   }
