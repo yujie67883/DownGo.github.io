@@ -857,6 +857,8 @@
   top: 30vh;
   left: 28.6vw;
   z-index: 5;
+  font-family: Noto Sans TC;
+  font-weight: normal;
 }
 @media (min-width: 1400px) and (max-width: 1599px) {
   .wood_option {
@@ -895,6 +897,8 @@
   top: 30vh;
   left: 49.1vw;
   z-index: 5;
+  font-family: Noto Sans TC;
+  font-weight: normal;
 }
 
 .enter_option div {
@@ -964,6 +968,8 @@
   top: 30vh;
   left: 66vw;
   z-index: 5;
+  font-family: Noto Sans TC;
+  font-weight: normal;
 }
 
 .heaven_option div {
