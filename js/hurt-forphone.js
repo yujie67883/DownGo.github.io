@@ -3,15 +3,20 @@ const targetDiv = document.querySelector(".hurt_right-third-line");
 
 // 創建一個 IntersectionObserver 來監控目標 div
 const observer = new IntersectionObserver((entries, observer) => {
-  // 如果 div 可見，則添加 active class 到 bounce，並且只觸發一次
-  if (entries[0].isIntersecting) {
-    document.getElementsByClassName("bounce")[0].classList.add("active");
-    // 停止觀察目標元素，確保只觸發一次
-    observer.unobserve(targetDiv);
-  }
+  entries.forEach((entry) => {
+    const bounceElement = document.getElementsByClassName("bounce")[0];
+
+    if (entry.isIntersecting) {
+      // 如果 div 可見，添加 active class 到 bounce
+      bounceElement.classList.add("active");
+    } else {
+      // 如果 div 不可見，移除 active class 到 bounce
+      bounceElement.classList.remove("active");
+    }
+  });
 });
 
-// 開始觀察目標 div
+// 監控目標 div
 observer.observe(targetDiv);
 
 // 環形包紮

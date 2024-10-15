@@ -137,27 +137,37 @@
     <!--開頭轉場動畫-->
     <div id="secondMask"></div>
 
-    <!-- 背包頁:Start -->
-    <div class="header">
-      <div class="header_left">
-        <a href="./index.html">
-          <img src="./img/logotype.png" id="logotype" />
-        </a>
-      </div>
-      <div class="header_center">
-        <p class="altitude">ALTITUDE</p> <div id="scrollingNumber" class="scrollingNumber">100</div> <p class="M">M</p>
-        <p class="level">LEVEL</p>
-        <div id="scrollingText" class="eleven">1-1</div>
-      </div>
-      <div class="header_right">
-        <img src="./img/hambergur.png" id="bag_burger" />
-      </div>
-      <!-- 翻牌效果:S -->
-      <div class="flip-card" id="maincontainer">
-        <div class="thecard">
-        </div>
-      </div>
-      <!-- 翻牌效果:E -->
+<!-- 背包頁:Start -->
+<div class="header-forphone">
+  <div id="scrollingNumber-forphone" class="scrollingNumber-forphone">100</div>
+  <p class="M-forphone">M</p>
+  <div class="flip-card-forphone" id="maincontainer-forphone">
+    <div class="thecard-forphone">
+    </div>
+  </div>
+  <div id="scrollingText-forphone" class="eleven-forphone">1-1</div>
+</div>
+<div class="header">
+<div class="header_left">
+  <a href="./index.html">
+    <img src="./img/logotype.png" id="logotype" />
+  </a>
+</div>
+<div class="header_center">
+  <p class="altitude">ALTITUDE</p> <div id="scrollingNumber" class="scrollingNumber">100</div> <p class="M">M</p>
+  <p class="level">LEVEL</p>
+  <div id="scrollingText" class="eleven">1-1</div>
+</div>
+<div class="header_right">
+  <img src="./img/hambergur.png" onmousedown="mDownb(this)" onmouseup="mUpb(this)" id="bag_burger" />
+</div>
+<!-- 翻牌效果:S -->
+<div class="flip-card" id="maincontainer">
+  <div class="thecard">
+  </div>
+</div>
+<!-- 翻牌效果:E -->
+</div>
     </div>
     </div>
    <section class="package" id="package-id">
