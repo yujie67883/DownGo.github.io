@@ -686,7 +686,8 @@ body {
   font-size: 12px;
 }
 
-.icon {
+.icon,
+.mobile_page {
   display: none;
 }
 .logodiv,
@@ -694,7 +695,8 @@ body {
   display: flex;
 }
 @media (max-width: 900px) {
-  .icon {
+  .icon,
+  .mobile_page {
     display: block;
   }
   .logodiv,
@@ -783,9 +785,122 @@ body {
   }
 
   /* 購物車內容 */
+  .mobile_page {
+    width: -webkit-fill-available;
+    height: 100vh;
+    /* padding: 0 4vw; */
+  }
+  .Pictures {
+    width: 100vw;
+    margin: 0;
+  }
+  /* control bar */
+  .Segmented_Controls {
+    padding-left: 6vw;
+    padding-right: 4vw;
+    margin-top: 5.1vh;
+  }
+  .segmented_control {
+    padding: 2vh 1vw;
+  }
+  .equipment,
+  .package {
+    font-size: 14px;
+    margin-right: 4vw;
+  }
+  .faq {
+    font-size: 22px;
+  }
+  .crumbs {
+    padding: 0 6vw;
+  }
+  .crumbs a {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  /* 手機版商品頁 */
+  .banner {
+    padding: 0;
+  }
+  .carousel {
+    width: 100vw;
+    height: 100vw;
+  }
+  .carousel_track-container {
+    width: 100vw;
+  }
+  .carousel_slide img {
+    width: 100vw;
+  }
+  .dots {
+    position: absolute;
+    width: 18vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40vh;
+    padding-left: 40vw;
+    z-index: 2;
+  }
+  .dots span {
+    width: 4px;
+    height: 4px;
+    border: solid 1px #ffffff;
+    transition: border 1s ease-in-out;
+    cursor: pointer;
+  }
+  .dots span.current_slide {
+    background-color: #ffffff;
+  }
+  /* 商品介紹 */
   .main {
-    padding: 0 4vw;
-    margin-top: 8.2vh;
+    margin: 3vh 4vw 0 4vw;
+    border-bottom: 0;
+  }
+  .pdtDetail {
+    height: 2.7vh;
+    font-size: 12px;
+    color: #6e6e6e;
+  }
+  .title_N_codes {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  .title_N_share {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .title_N_share .title {
+    font-family: Noto Sans TC;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: normal;
+  }
+  .pixel_star {
+    width: 18.8vw;
+    margin-right: 0.7vh;
+  }
+  .score {
+    color: #ff893c;
+  }
+  .chip_outline {
+    font-size: 10px;
+    border: solid 0.9px #7d7d7d;
+    padding: 0.6vh;
+    margin-bottom: 0.6vh;
+  }
+  .chip_fill {
+    font-size: 10px;
+    padding: 0.6vh 1vh 0.6vh 0.5vh;
+  }
+  .chip_fill img,
+  .chip_outline img {
+    width: 1.5vh;
+    margin-right: 0.5vh;
   }
 
   /* footer */
