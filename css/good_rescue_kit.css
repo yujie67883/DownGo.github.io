@@ -61,7 +61,7 @@ body {
   flex-direction: row;
   margin-right: 1.2vw;
   color: #ffffff;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 26px;
 }
 .header_center div p {
@@ -182,7 +182,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
 }
 .profile_photo img {
   width: 2.2vw;
@@ -227,7 +227,7 @@ body {
   letter-spacing: 1px;
 }
 .faq {
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 27px;
   line-height: 16px;
   letter-spacing: 1px;
@@ -432,13 +432,13 @@ body {
   margin-right: 0.3vw;
 }
 .scoretype .score {
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 22px;
   line-height: 13px;
 }
 .scoretype .comments {
   color: #4b4b4b;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 19px;
   line-height: 14px;
   display: flex;
@@ -454,7 +454,7 @@ body {
 }
 /* divider */
 .main .price {
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 52px;
   color: #b024e2;
   margin: 1.2vh 0;
@@ -624,7 +624,7 @@ body {
 }
 .contents .shortcuts {
   width: 32vw;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 23px;
   line-height: auto;
   color: #ffffff;

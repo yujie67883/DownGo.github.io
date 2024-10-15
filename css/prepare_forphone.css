@@ -2046,7 +2046,7 @@ body {
   }
   .contents .shortcuts {
     width: 90vw;
-    font-family: Micro5;
+    font-family: "Micro 5", sans-serif;
     font-size: 12px;
     line-height: auto;
     color: #ffffff;

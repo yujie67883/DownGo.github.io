@@ -85,7 +85,7 @@ body {
   flex-direction: row;
   margin-right: 1.2vw;
   color: #ffffff;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 26px;
 }
 .header_center div p {
@@ -206,7 +206,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
 }
 .profile_photo img {
   width: 2.2vw;
@@ -479,7 +479,7 @@ input[type="checkbox"]:checked:hover + span {
 }
 .contents .shortcuts {
   width: 32vw;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 23px;
   line-height: auto;
   color: #ffffff;
