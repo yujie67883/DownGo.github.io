@@ -457,12 +457,12 @@
 /* 提示句 */
 .hint {
   position: fixed;
-  bottom: 13vh;
-  right: 25vw;
+  bottom: 13vh; /*13vh*/
+  right: 32vw; /*25vw*/
   display: none;
-  opacity: 0;
+  opacity: 1; /*0*/
   z-index: 50;
-  animation: moving 1500ms ease-in-out infinite, flash 1500ms infinite;
+  /* animation: moving 1500ms ease-in-out infinite, flash 1500ms infinite; */
   pointer-events: none;
 }
 @keyframes flash {
@@ -482,6 +482,9 @@
     bottom: 18vh;
     right: 28vw;
   }
+}
+.hint img {
+  width: 2.5vw;
 }
 /* 跳轉小青蛙 */
 #frogjump {
@@ -629,8 +632,8 @@
   bottom: 7.7vh;
   width: 39vw;
   height: 14vh;
-  font-family: "Noto Sans TC";
-  font-style: normal;
+  font-family: Noto Sans TC;
+  font-weight: normal;
   font-size: 18px;
   color: #7b3e0e;
   line-height: 1.5;
