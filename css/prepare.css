@@ -9,7 +9,6 @@
   src: local("Micro5-Regular"),
     url("../../fonts/Micro5-Regular.ttf") format("ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
 ::-webkit-scrollbar {
@@ -486,11 +485,6 @@ body {
   width: 6vw;
   text-shadow: 10px 10px 5px #5f1c68;
   cursor: pointer;
-}
-.header-forphone {
-  opacity: 0;
-  transform: scale(0);
-  height: 0;
 }
 .header {
   position: fixed;
@@ -3499,8 +3493,7 @@ body {
 }
 
 .bounce.active {
-  position: fixed;
-  top: 0;
+  position: absolute;
   transform: scale(1);
   width: 100vw;
   height: 150vh;
@@ -3516,27 +3509,26 @@ body {
   z-index: -100;
 }
 #bounce-frame {
-  position: fixed;
   margin-top: 90vh;
   margin-left: calc(50vw - 444px);
 }
 #bounce-text {
-  position: fixed;
-  left: 33vw;
-  bottom: 37.3vh;
+  position: absolute;
+  margin-left: 33vw;
+  margin-top: -23.5vh;
   color: #7b3e0e;
   line-height: 3vh;
   font-size: 1.8vh;
 }
 #bounce-arrow {
-  position: fixed;
-  right: 73vh;
-  bottom: 22vw;
+  margin-top: 104vh;
+  margin-left: -5vw;
+  position: absolute;
 }
 #bounce-go {
-  bottom: 42.5vh;
-  left: 63vw;
-  position: fixed;
+  margin-top: -17.5vh;
+  margin-left: 61vw;
+  position: absolute;
   color: #ffe0b1;
   font-size: 4vh;
 }

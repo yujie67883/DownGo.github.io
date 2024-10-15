@@ -4,7 +4,6 @@
     url("../fonts/NotoSansTC-Medium.woff") format("woff"),
     url("../fonts/NotoSansTC-Medium.woff2") format("woff2");
 }
-@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 body {
   width: 100vw;
@@ -375,7 +374,7 @@ body {
     opacity: 100%;
     pointer-events: none;
     transition: opacity 0;
-    z-index: 2000;
+    z-index: 1001;
   }
 
   .package {
@@ -404,41 +403,6 @@ body {
     cursor: pointer;
   }
 
-  .header-forphone {
-    position: fixed;
-    width: 65vw;
-    color: #ffffff;
-    font-size: 20px;
-    letter-spacing: 1px;
-    vertical-align: middle;
-    transition: transform ease;
-    z-index: 1000;
-    opacity: 1;
-    transform: scale(1);
-    background-color: #00000075;
-    border-radius: 50px;
-    top: 85vh;
-    left: 8vw;
-    padding: 5vw 10vw;
-    z-index: 1999;
-    display: flex;
-    align-items: center;
-  }
-  .header-forphone p {
-    transform: scale(1);
-  }
-  .scrollingNumber-forphone {
-    position: absolute;
-    left: 10vw;
-  }
-  .M-forphone {
-    position: absolute;
-    left: 20vw;
-  }
-  .eleven-forphone {
-    margin-left: 55.5vw;
-    width: fit-content;
-  }
   .header {
     position: fixed;
     width: 100vw;
@@ -521,29 +485,25 @@ body {
     left: 47.5vw;
     top: -11vh;
     width: 10vw;
+    height: 4vh;
+    margin-left: 1vw;
     transform: scale(0);
     opacity: 0;
   }
-  .flip-card-forphone {
-    position: absolute;
-    width: 28vw;
-    height: 10vh;
-    z-index: 1001;
-    transform: scale(1);
-    opacity: 1;
-    left: 31.5vw;
-    top: 1.2vh;
-  }
 
-  .thecard,
-  .thecard-forphone {
-    width: 100%;
-    height: 100%;
+  .thecard {
+    position: absolute;
     transform-style: preserve-3d;
-    transition: all 0.5s ease;
-    background-image: url(../img/fight/tag_equipment_text.png);
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  .firstCard,
+  .secondCard,
+  .thirdCard {
+    position: absolute;
+    top: 1.5vh;
+    backface-visibility: hidden;
   }
 
   /* header翻牌效果:End */
@@ -1413,7 +1373,7 @@ body {
   #whole-human {
     width: 100vw;
     margin-left: 11vw;
-    margin-top: 21vh;
+    margin-top: 25vh;
     overflow-x: hidden;
   }
   .linear {
@@ -1916,7 +1876,6 @@ body {
 
   .entry {
     position: relative;
-    top: 5vh;
   }
   .bg {
     background-image: url(../img/login/深處.png);
@@ -1943,14 +1902,14 @@ body {
     position: absolute;
     width: auto;
     height: 100vh;
-    left: -45vw;
+    left: -60vw;
     z-index: 1;
   }
   .entrybg_2 img {
     position: absolute;
     width: auto;
     height: 100vh;
-    left: -47vw;
+    left: -60vw;
     bottom: -10vh;
     z-index: 2;
   }
@@ -1958,8 +1917,8 @@ body {
     position: absolute;
     width: auto;
     height: 100vh;
-    left: -49vw;
-    top: 5vh;
+    left: -60vw;
+    top: -1vh;
     z-index: 3;
   }
   .gress img {
@@ -1971,8 +1930,7 @@ body {
   .Btns {
     left: 16vw;
     width: 80vw;
-    margin-top: 18vh;
-    margin-left: 5vw;
+    margin-top: 24vh;
     padding-left: 10vw;
     padding-right: 10vw;
     position: absolute;
@@ -2002,7 +1960,7 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 16px;
-    padding: 2.8vh 8vw 0vh 0vw;
+    padding: 2.8vh 0.5vw 0vh 0vw;
     line-height: 0;
   }
   .Btn-purcahse:hover,
@@ -2114,11 +2072,9 @@ body {
   .package,
   .hurt,
   .entry {
+    height: 90vh;
     background-size: cover;
     background-attachment: fixed; /* 固定背景，創造parallax效果 */
-  }
-  .entry {
-    height: 105vh;
   }
   .hurt {
     position: relative;
@@ -2130,7 +2086,7 @@ body {
     width: 100vw;
     height: 60vh;
     position: absolute;
-    top: 150vh;
+    top: 160vh;
   }
   /* 轉場 */
   .parallax {
@@ -2262,15 +2218,15 @@ body {
   }
 
   .bounce.active {
-    position: fixed;
+    position: absolute;
     transform: scale(1);
     width: 100vw;
-    margin-top: 0vh;
+    margin-top: -25vh;
     background-color: #00000065;
     z-index: 1000;
   }
   .bounce {
-    position: fixed;
+    position: absolute;
     transform: scale(0);
     margin-top: -25vh;
     background-color: linear-gradient(#00000000, #00000065, #00000000);
@@ -2278,26 +2234,26 @@ body {
   }
   #bounce-frame {
     width: 90vw;
-    margin-top: 65vh;
+    margin-top: 90vh;
     margin-left: 5vw;
   }
   #bounce-text {
-    position: fixed;
-    margin-left: -21vw;
-    bottom: 73.5vh;
+    position: absolute;
+    margin-left: 13vw;
+    margin-top: -11.5vh;
     color: #7b3e0e;
     line-height: 1.5vh;
     font-size: 1vh;
   }
   #bounce-arrow {
-    bottom: 76vh;
-    right: 25vw;
-    position: fixed;
+    margin-top: 96.5vh;
+    margin-left: -11vw;
+    position: absolute;
     width: 5vw;
   }
   #bounce-go {
-    bottom: 76vh;
-    left: 77vw;
+    margin-top: -9.2vh;
+    margin-left: 70vw;
     position: absolute;
     color: #ffe0b1;
     font-size: 2.5vh;
@@ -2310,21 +2266,21 @@ body {
     top: 85vh;
   }
 
-  /* 手機版 跳轉小青蛙 */
+  /* 跳轉小青蛙 */
   #frogjump {
     opacity: 0;
     position: fixed;
     height: 100vh;
     width: 100vw;
     background-color: #fafafa;
-    z-index: 1001;
+    z-index: 2001;
     pointer-events: none;
   }
   #frogjump img {
     position: absolute;
     margin: 34vh -11vw;
     width: 120%;
-    background-color: #fafafa;
     height: fit-content;
+    background-color: #fafafa;
   }
 }

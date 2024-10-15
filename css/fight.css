@@ -9,7 +9,6 @@
   src: local("Micro5-Regular"),
     url("../../fonts/Micro5-Regular.ttf") format("ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
 ::-webkit-scrollbar {
@@ -405,7 +404,6 @@
   letter-spacing: 5px;
   cursor: pointer;
   z-index: 9;
-  text-decoration: none;
 }
 @media (min-width: 1600px) {
   .Btn_go {

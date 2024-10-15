@@ -9,7 +9,6 @@
   src: local("Micro5-Regular"),
     url("../../fonts/Micro5-Regular.ttf") format("ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Micro+5&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 
 ::-webkit-scrollbar {
@@ -19,21 +18,6 @@
 }
 ::-webkit-scrollbar-track {
   background: transparent;
-}
-
-.icon {
-  display: none;
-}
-.logodiv {
-  display: block;
-}
-@media (max-width: 900px) {
-  .icon {
-    display: block;
-  }
-  .logodiv {
-    display: none;
-  }
 }
 
 body {
@@ -408,83 +392,4 @@ h5 {
 }
 .left_opt {
   margin-right: 7vw;
-}
-
-/* 手機版 */
-@media (max-width: 900px) {
-  .header {
-    padding: 1.2vh 3.2vw;
-    width: -webkit-fill-available;
-    width: 94vw;
-  }
-  .header_left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .header_center {
-    display: none;
-  }
-  .icon {
-    width: 2.1vh;
-    margin-right: 1.2vh;
-  }
-  .notification,
-  .cart {
-    padding-right: 3.4vw;
-  }
-  .bell {
-    width: 4.6vw;
-  }
-  .bell_badge {
-    width: 1.5vw;
-    top: 0.9vh;
-    right: 28.7vw;
-  }
-  .cart_icon {
-    width: 4.7vw;
-  }
-  .cart_badge {
-    width: 17px;
-    height: 2.1vh;
-    top: 0.7vh;
-    right: 19.2vw;
-    background-size: contain;
-    background-repeat: no-repeat;
-    font-size: 16px;
-  }
-  .profile_photo img {
-    width: 5.2vw;
-  }
-  /* 通知 */
-  .notify {
-    width: 25.2vh;
-    height: 25.2vh;
-    top: 6.7vh;
-    right: 3.8vw;
-  }
-  #overlay .noti_header {
-    padding: 1vh 1.3vh;
-  }
-  .noti_li {
-    padding: 1vh;
-  }
-  .noti_header p {
-    font-size: 12px;
-  }
-  .noti_li .noti_txt {
-    font-size: 12px;
-    line-height: 18px;
-  }
-  .noti_li .time {
-    font-size: 10px;
-  }
-  /* 完成訂購頁 */
-  .main {
-    padding: 0 4vw;
-    margin: 8.2vh 0 15vh 0;
-    width: 93vw;
-    height: 74vh;
-    /* overflow: hidden; */
-  }
 }
