@@ -579,6 +579,8 @@ nav .burger a img :active {
   border-bottom-style: none;
   border-bottom-color: #262626;
   border-width: 2px;
+  font-family: Noto Sans TC;
+  font-weight: 400;
 }
 .wood_option div:hover {
   border-bottom-style: outset;
@@ -598,6 +600,8 @@ nav .burger a img :active {
   top: 30vh;
   left: 49.1vw;
   z-index: 5;
+  font-family: Noto Sans TC;
+  font-weight: 400;
 }
 
 .enter_option div {
@@ -667,6 +671,8 @@ nav .burger a img :active {
   top: 30vh;
   left: 66vw;
   z-index: 5;
+  font-family: Noto Sans TC;
+  font-weight: 400;
 }
 
 .heaven_option div {
