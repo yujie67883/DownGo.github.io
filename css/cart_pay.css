@@ -80,7 +80,7 @@ body {
   flex-direction: row;
   margin-right: 1.2vw;
   color: #ffffff;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 26px;
 }
 .header_center div p {
@@ -201,7 +201,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
 }
 .profile_photo img {
   width: 2.2vw;
@@ -448,7 +448,7 @@ h1 {
   margin-right: 0.4vw;
 }
 .points {
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 30px;
   font-weight: 500;
   color: #ff893c;
@@ -554,7 +554,7 @@ h1 {
   font-weight: normal;
 }
 .total_price {
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 66px;
   line-height: 60px;
   color: #b024e2;
@@ -631,7 +631,7 @@ h1 {
 }
 .contents .shortcuts {
   width: 32vw;
-  font-family: Micro5;
+  font-family: "Micro 5", sans-serif;
   font-size: 23px;
   line-height: auto;
   color: #ffffff;
@@ -901,6 +901,10 @@ h1 {
     font-size: 14px;
   }
   .warrant p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .warrant .link {
     font-size: 14px;
     line-height: 20px;
   }
