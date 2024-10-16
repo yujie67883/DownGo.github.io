@@ -498,7 +498,7 @@ body {
   font-weight: 400;
 }
 .pdt_info p {
-  font: Noto Sans TC;
+  font-family: Noto Sans TC;
   font-size: 14px;
   color: #4b4b4b;
   font-weight: 400;
@@ -787,7 +787,7 @@ body {
   /* 購物車內容 */
   .mobile_page {
     width: -webkit-fill-available;
-    height: 100vh;
+    height: 112.2vh;
     /* padding: 0 4vw; */
   }
   .Pictures {
@@ -858,6 +858,9 @@ body {
     margin: 3vh 4vw 0 4vw;
     border-bottom: 0;
   }
+  .section {
+    border-bottom: 1vh solid #f5f5f5;
+  }
   .pdtDetail {
     height: 2.7vh;
     font-size: 12px;
@@ -902,53 +905,55 @@ body {
     width: 1.5vh;
     margin-right: 0.5vh;
   }
-
-  /* footer */
-  .footer {
-    padding-top: 4vh;
-    padding-left: 4vw;
-    padding-right: 4vw;
-  }
-  .footer .contents {
-    width: -webkit-fill-available;
-  }
-  .contents .shortcuts {
-    width: 26vh;
-    font-size: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 1vh;
-  }
-  .shortcuts a {
-    margin-right: 4vw;
-  }
-  .contents .infos {
-    flex-wrap: wrap;
-  }
-  .contents .infos {
-    flex-direction: column;
-    align-items: center;
+  .pdt_info {
     margin-top: 3vh;
-    font-size: 10px;
-    margin-top: 2.3vh;
   }
-  .infos .info1 {
-    flex-direction: column;
+  .pdt_info h3 {
+    font-size: 14px;
+  }
+  .pdt_info p {
+    font-size: 12px;
+  }
+  .title_N_more {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
-  .infos .info1 p {
-    margin-bottom: 1vh;
-  }
-  .infos .info2 {
+  .more {
+    display: flex;
     flex-direction: row;
+    align-items: center;
   }
-  .copyright {
-    margin-top: 6vh;
+  .more p {
+    font-size: 12px;
+    line-height: 17px;
+    color: #b024e2;
   }
-  .copyicon {
-    font-size: 13px;
+  /* 購買Btn */
+  .Btns {
+    width: -webkit-fill-available;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 3vh;
+    border-top: 1px solid #e1e1e1;
+    background-color: #fafafa;
   }
-  .copytext {
-    font-size: 10px;
+  #tobuy {
+    width: -webkit-fill-available;
+    height: 4.6vh;
+    margin-top: 0;
+    font-size: 16px;
+    padding: 0;
+    align-items: center;
+    content: "購買";
+    text-decoration: none;
+  }
+  #tobuy:hover {
+    background-color: #9219be;
+    border: solid 1px #9219be;
+    color: #ffffff;
+    cursor: pointer;
   }
 }
