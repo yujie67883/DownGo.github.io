@@ -640,6 +640,9 @@ input[type="checkbox"]:checked:hover + span {
     bottom: 30.8vh;
     left: 21vw;
   }
+  .dropdown-option {
+    font-size: 12px;
+  }
   .pixeldropdown img {
     width: 2.4vw;
   }
